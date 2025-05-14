@@ -1,0 +1,34 @@
+.nav {
+  width: 100%;
+  display: flex;
+  gap: 10rem;
+  align-items: center;
+  padding: 0 2rem;
+  
+  .logo {
+    /* Add styles for your logo if needed */
+  }
+  
+  &_links {
+    display: flex;
+    justify-content: space-between;
+    width: 100dvh;
+    
+    li {
+      list-style: none;
+      
+      a {
+        text-decoration: none;
+        
+        &.active {
+          font-weight: bold;
+          /* Add any other active link styles */
+        }
+        
+        &:hover {
+          /* Add hover styles */
+        }
+      }
+    }
+  }
+}
