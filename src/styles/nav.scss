@@ -1,34 +1,53 @@
-.nav {
+@import "./abstract/variable.scss";
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+
+
+
+
+.nav{
   width: 100%;
   display: flex;
-  gap: 10rem;
+  gap: 6rem;
   align-items: center;
   padding: 0 2rem;
-  
-  .logo {
-    /* Add styles for your logo if needed */
+  align-items: center;
+  // background-color: aqua;
+  .spc-cha{
+    color: $primary-color1;
+  }
+  .logo{
+  font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    font-weight: 700;
   }
   
-  &_links {
+  li{
+    list-style: none;
     display: flex;
-    justify-content: space-between;
-    width: 100dvh;
-    
-    li {
-      list-style: none;
-      
-      a {
-        text-decoration: none;
-        
-        &.active {
-          font-weight: bold;
-          /* Add any other active link styles */
-        }
-        
-        &:hover {
-          /* Add hover styles */
-        }
+    gap: 3rem; 
+    width: 100%; 
+    align-items: center;
+
+    .link{
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 2rem;
+      color: rgb(245, 245, 245);
+      &:hover{
+        color: $primary-color1;
       }
+      &:active{
+        color: $primary-color1;
+        opacity: 0.4;
+      }
+    }
+    .btn-1{
+      padding: .5rem 1.6rem;
+      background-color: $primary-color1;
+      border: none;
+      border-radius: .5rem;
+     
     }
   }
 }
