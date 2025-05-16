@@ -1,5 +1,5 @@
 import {NavLink } from 'react-router-dom';
-import"../styles/nav.scss"
+import "../styles/component/nav.scss"
 
 export function Nav (){
   return(
@@ -9,15 +9,15 @@ export function Nav (){
     </div>
     <ul>
       <li>
-        <NavLink className="link" to="/">Home</NavLink>
-        <NavLink className="link" to="about">About</NavLink>
-        <NavLink className="link" to="service">Service</NavLink>   
-        <NavLink className="link" to="resume">Resume</NavLink>    
-        <NavLink className="link" to="skills">Skills</NavLink>
-        <NavLink className="link" to="projects">Projects</NavLink>
-        <NavLink className="link" to="contact">Contact</NavLink>
+        <NavLink className={({isActive}) => isActive ? "link active": "link"} to="/">Home</NavLink>
+        <NavLink className={({isActive}) => isActive ? "link active": "link"} to="about">About</NavLink>
+        <NavLink className={({isActive}) => isActive ? "link active": "link"} to="service">Service</NavLink>   
+        <NavLink className={({isActive}) => isActive ? "link active": "link"} to="resume">Resume</NavLink>    
+        <NavLink className={({isActive}) => isActive ? "link active": "link"} to="skills">Skills</NavLink>
+        <NavLink className={({isActive}) => isActive ? "link active": "link"} to="projects">Projects</NavLink>
+        <NavLink className={({isActive}) => isActive ? "link active": "link"} to="contact">Contact</NavLink>
         <button className='btn-1'>
-        <NavLink className="link" to="hireme">Hire Me</NavLink>              
+        <NavLink className={({isActive}) => isActive ? "link active": "link"} to="hireme">Hire Me</NavLink>              
         </button>
             
       </li>

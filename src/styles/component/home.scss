@@ -1,0 +1,68 @@
+@import "../abstract/variable.scss";
+.main-intro__con{
+  display: flex;
+  margin-top: 3.5rem;
+  font-size: 2rem;
+  justify-content: space-between;
+
+  .intro{
+    width: 50%;
+    height: 50%;
+
+    &__site{
+      // width: 3rem;
+      display: flex;
+      gap: 4rem;
+    }
+
+    .btns{
+      display: flex;
+      gap: 2rem;
+      margin-top: 3.6rem;
+      margin-bottom: 3.6rem;
+      
+      .intro__btns{
+        width: 25%;
+        height: 4rem;
+        background-color: $primary-color1;
+        color: #fff;
+        border: none;
+        border-radius: 1rem;
+      }
+      .intro__btns-2{
+         width: 25%;
+        height: 4rem;
+        background-color: transparent, ;
+        color: #fff;
+        border: 1px $primary-color1 solid;
+        border-radius: 1rem;
+      }
+
+    }
+
+    &__header{
+     font-size: 1.3rem;
+     font-weight: 700;
+     color: rgb(146, 143, 143); 
+     margin-bottom: 1rem;
+    }
+    &__name{
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+
+      .name-style{
+        color: $primary-color1;
+      }
+    }
+    &__occupation{
+      margin-bottom: 3rem;
+    }
+   
+  }
+  .profile-img{
+    border-radius: 5%;
+     width: 25%;
+     border: .5rem solid $primary-color1;
+  }
+}
