@@ -1,25 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 
 #root {
-  max-width: 1050px; 
+  max-width: 1200px; 
   margin: 0 auto;
   padding: 2rem;
   font-family: "Titillium";
   /* text-align: center; */
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 3rem;
-}
-
-/* Add padding to account for fixed navbar if needed */
-section {
-  scroll-margin-top: 70px; /* Adjust based on your navbar height */
-}
