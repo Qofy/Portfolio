@@ -1,34 +1,46 @@
-// import { useState } from 'react'
-import { Route,Routes } from 'react-router-dom'
-import { Home } from './component/Home'
-import { About } from './component/About'
-import { Service } from './component/Service'
-import { Resume } from './component/Resume'
-import { Skills } from './component/Skill'
-import { Projects } from './component/Projects'
-import { Contact } from './component/Contact'
-import { HireMe } from './component/HireMe'
-import { Nav } from './component/Nav'
-import './App.css'
+import { Nav } from './component/Nav';
+import { Home } from './component/Home';
+import { About } from './component/About';
+import { Service } from './component/Service';
+import { Resume } from './component/Resume';
+import { Skills } from './component/Skill';
+import { Projects } from './component/Projects';
+import { Contact } from './component/Contact';
+import { HireMe } from './component/HireMe';
+import './App.css';
 
 function App() {
-
   return (
     <>
- 
-      <Nav/>
-     <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='about' element={<About/>}/>
-      <Route path='service' element={<Service/>}/>
-      <Route path='resume' element={<Resume/>}/>
-      <Route path='skills' element={<Skills/>}/>
-      <Route path='projects' element={<Projects/>}/>
-      <Route path='contact' element={<Contact/>}/>
-      <Route path='hireme' element={<HireMe/>}/>
-     </Routes>
+      <Nav />
+      <main>
+        <section id="home">
+          <Home />
+        </section>
+        <section id="about">
+          <About />
+        </section>
+        <section id="service">
+          <Service />
+        </section>
+        <section id="resume">
+          <Resume />
+        </section>
+        <section id="skills">
+          <Skills />
+        </section>
+        <section id="projects">
+          <Projects />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
+        <section id="hireme">
+          <HireMe />
+        </section>
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
