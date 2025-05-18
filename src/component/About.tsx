@@ -1,9 +1,20 @@
-import { Contact } from "./Contact"
-export function About (){
-  
-  return(
-    <>
-      <Contact/>
-      </>
-  )
+import "../styles/component/about.scss";
+import { SectionContainer } from "../sub-components/SectionContainer";
+import { Profile } from "../sub-components/Profile";
+import { ContactInfo } from "../sub-components/ContactInfo";
+
+export function About() {
+  return (
+    <SectionContainer>
+      <h1>About Me</h1>
+      <Profile/>
+      <h2>Kofi Safo Agyekum</h2>
+      <ContactInfo/>
+    </SectionContainer>
+  );
 }
+
+
+
+
+

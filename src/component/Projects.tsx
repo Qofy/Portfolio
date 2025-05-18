@@ -1,5 +1,6 @@
+import { About } from "./About"
 export function Projects (){
   return(
-    <div>Projects</div>
+    <About/>
   )
 }

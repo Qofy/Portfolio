@@ -1,6 +1,6 @@
 import { Nav } from './component/Nav';
 import { About } from './component/About';
-import { Resume } from './component/Resume';
+// import { Resume } from './component/Resume';
 import { Skills } from './component/Skill';
 import { Projects } from './component/Projects';
 import { Contact } from './component/Contact';
@@ -15,11 +15,12 @@ function App() {
           <Contact />
         </section>
         <section id="about">
-          <About />
+          <About>
+          </About>
         </section>
-        <section id="resume">
+        {/* <section id="resume">
           <Resume />
-        </section>
+        </section> */}
         <section id="skills">
           <Skills />
         </section>

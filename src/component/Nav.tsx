@@ -43,7 +43,6 @@ export function Nav({nav}:NavProps) {
       <ul>
         <li>
           <HashLink smooth className={activeSection === 'about' ? 'link active' : 'link'} to="#about">About</HashLink>
-          <HashLink smooth className={activeSection === 'resume' ? 'link active' : 'link'} to="#resume">Resume</HashLink>
           <HashLink smooth className={activeSection === 'skills' ? 'link active' : 'link'} to="#skills">Skills</HashLink>
           <HashLink smooth className={activeSection === 'projects' ? 'link active' : 'link'} to="#projects">Projects</HashLink>
           <HashLink smooth className={activeSection === 'contact' ? 'link active' : 'link'} to="#contact">Contact Me</HashLink>
