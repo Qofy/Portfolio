@@ -2,6 +2,7 @@ import "../styles/component/contact.scss"
 import { Github, Linkedin, Mail } from "lucide-react"
 import { Nav } from "./Nav"
 import { Link } from "react-router-dom"
+import profilePic from "../img/p4.png"
 
 export function Contact() {
   return (
@@ -23,7 +24,7 @@ export function Contact() {
 
       <div className="nav-image-container">
         <Nav nav="nav1" />
-        {/* Add an image or avatar here if needed */}
+        <img className="profile-pic" src={profilePic} alt="" />
       </div>
 
       <div className="myself-container">

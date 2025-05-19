@@ -7,7 +7,7 @@ type NavProps = {
 }
 
 export function Nav({nav}: NavProps) {
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState('contact');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +25,7 @@ export function Nav({nav}: NavProps) {
         }
       });
       
-      if (current) {
+      if (current && current !== activeSection) {
         setActiveSection(current);
       }
     };
@@ -37,7 +37,7 @@ export function Nav({nav}: NavProps) {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, []); // R
 
   return (
     <nav className={nav}>

@@ -1,6 +1,7 @@
-import { About } from "./About"
+import { SectionContainer } from "../sub-components/SectionContainer"
 export function Projects (){
+  
   return(
-    <About/>
+    <SectionContainer children=""/>
   )
 }

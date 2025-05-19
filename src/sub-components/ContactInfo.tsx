@@ -9,7 +9,7 @@ export function ContactInfo(){
       </div>
       <div className="contact-item">
         <Mail color="rgb(233, 63, 91)" />
-        <p>your.email@example.com</p>
+        <p>safokofi888@gmail.com</p>
       </div>
       <div className="contact-item">
         <CircleUser color="rgb(233, 63, 91)" />

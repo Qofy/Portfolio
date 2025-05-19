@@ -2,17 +2,16 @@
 
 .contact-container {
   display: grid;
-  grid-template-columns: 1fr 2fr; // Two equal columns
-  grid-template-rows: auto auto; // Two rows, height based on content
+  grid-template-columns: 1fr 2fr; 
+  grid-template-rows: auto auto; 
   grid-template-areas: 
     "text nav-image"
     "myself myself";
-  // gap: 2rem; // Gap between grid items
-  //  padding: 2rem;
+  
   padding-bottom: 0 !important;
   width: 100%;
-  max-width: 1200px; // Optional: limit maximum width
-  margin: 0 auto; // Center the container  
+  max-width: 1200px;
+  margin: 0 auto;   
   
   // Text container (left side)
   .text-container {
@@ -81,13 +80,13 @@
       padding: 0 2rem;
       margin-bottom: 5rem;
       font-size: 1.5rem;
-      z-index: 1000; // Ensures the nav stays above other content
-      
+     
       ul {
         display: flex;
         gap: 2rem;
         margin: 0;
         padding: 0;
+        
         li {
           list-style: none;
           display: flex;
@@ -99,23 +98,30 @@
             font-weight: 500;
             padding: 0.5rem 1rem;
             transition: all 0.3s ease;
+            position: relative;
             
             &:hover {
               color: #666;
             }
             
-            &.active {
-              color: #f00;
-              font-weight: 700;
-              border-bottom: 2px solid #f00;
-            }
+           &:active {
+             color: $primary-color1;
+             font-weight: 700;
+             padding: .7rem 2.3rem;
+             background-color: #fff;
+             border-radius: 2rem;
+           }
           }
         }
       }
     }
+    .profile-pic{
+      width: 50%;
+      border-radius: 50%;
+    }
   }
   
-  // Myself container (spans full width at bottom)
+  
   .myself-container {
     grid-area: myself;
     height: 21rem;
