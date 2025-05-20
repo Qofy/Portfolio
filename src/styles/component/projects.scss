@@ -1,0 +1,101 @@
+@import "../abstract/variable.scss";
+// @import Tesla from "../img/tsl.png"
+
+
+.project-main__con {
+  background-color: black;
+  padding: 2rem;
+  margin-top: 2rem;
+  height: 80dvh;
+
+  
+  .p-header {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .display-projects {
+    max-width: 600px;
+    margin: 0 auto;
+    // background-color: aqua;
+    
+    .works {
+      display: grid;
+      grid-template-columns: repeat(2, 250px);
+      grid-template-rows: repeat(2, auto);
+      column-gap: 7rem;
+      row-gap: 2rem;
+      
+      .min-work1{
+        background-image: url("/src/img/tsl.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .min-work2{
+        background-image: url("/src/img/music.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .min-work3{
+        background-image: url("/src/img/tsl.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .min-work4{
+        background-image: url("/src/img/music.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .min-work__container {
+        
+        border-radius: 8px;
+        overflow: hidden;
+        height: 30rem;
+        width: 30rem;
+
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        // .project-image {
+        //   height: 200px;
+        //   overflow: hidden;
+          
+        //   img {
+        //     width: 40%;
+        //     height: 100%;
+        //     object-fit: cover;
+        //     background-repeat: no-repeat;
+        //     transition: transform 0.5s ease;
+            
+        //     &:hover {
+        //       transform: scale(1.05);
+        //     }
+        //   }
+        // }
+        
+        h3 {
+          padding: 1rem;
+          font-size: 1.5rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .project-main__con .display-projects .works {
+    grid-template-columns: 1fr;
+  }
+}

@@ -18,9 +18,8 @@ export function Nav({nav}: NavProps) {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
         
-        // Improved calculation to determine active section
-        if (window.scrollY >= sectionTop - 200 && 
-            window.scrollY < sectionTop + sectionHeight - 200) {
+        if (window.scrollY >= sectionTop + 200 && 
+            window.scrollY < sectionTop + sectionHeight + 200) {
           current = section.getAttribute('id') || '';
         }
       });
