@@ -2,7 +2,10 @@
 .about-me-main__container{
   width: 100%;
   max-width: 1200px;
-  background-color: #c2bfbf;
+  // background-color: #c2bfbf;
+  background-color: #0c0d0d;
+  
+
   height: 80dvh;
   padding: 50px 75px ;
      margin-bottom: 3rem;
@@ -20,7 +23,7 @@
   }
   p{
     font-size: 2rem;
-    color: #615e5e;
+    color: #ffffff;
   }
   h2{
     color: $primary-color1;

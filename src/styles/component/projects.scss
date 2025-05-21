@@ -6,13 +6,20 @@
   background-color: black;
   padding: 2rem;
   margin-top: 2rem;
+  max-width: 1200px;
+  // background-color: #c2bfbf;
+  background-color: #0c0d0d;
+
   height: 80dvh;
 
   
   .p-header {
-    font-size: 2.5rem;
+    font-family: $cursive-font;
+    font-size: 3.7rem;
+    font-weight: 700;
     margin-bottom: 2rem;
     text-align: center;
+    color: $primary-color1;
   }
   
   .display-projects {

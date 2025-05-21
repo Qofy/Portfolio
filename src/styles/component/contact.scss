@@ -12,6 +12,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;   
+  background: #fff;
   
   // Text container (left side)
   .text-container {
@@ -19,8 +20,7 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    // gap: 3rem;
-    //  background-color:aqua;
+    // background-color: #fff;
     color: #000000;
     height: 70dvh;
     text-align: center;
@@ -29,6 +29,7 @@
       text-align: start;
       font-size: 2.5rem;
       margin-bottom: 2.4rem;
+
     }
     h3{
       text-align: start;
