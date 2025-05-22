@@ -1,5 +1,4 @@
-import { HashLink } from 'react-router-hash-link';
-import { useState, useEffect } from 'react';
+import { Link } from 'react-scroll';
 import "../styles/component/nav.scss";
 
 type NavProps = {
@@ -7,69 +6,54 @@ type NavProps = {
 }
 
 export function Nav({nav}: NavProps) {
-  const [activeSection, setActiveSection] = useState('contact');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll('section');
-      let current = '';
-      
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
-        if (window.scrollY >= sectionTop + 200 && 
-            window.scrollY < sectionTop + sectionHeight + 200) {
-          current = section.getAttribute('id') || '';
-        }
-      });
-      
-      if (current && current !== activeSection) {
-        setActiveSection(current);
-      }
-    };
-
-    // Initial call to set active section on page load
-    handleScroll();
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []); // R
-
   return (
     <nav className={nav}>
       <ul>
         <li>
-          <HashLink 
-            smooth 
-            className={activeSection === 'about' ? 'link active' : 'link'} 
-            to="#about"
+          <Link 
+            to="about" 
+            spy={true}
+            smooth={true} 
+            duration={500}
+            offset={-62}
+            activeClass="active"
+            className="link"
           >
             About
-          </HashLink>
-          <HashLink 
-            smooth 
-            className={activeSection === 'skills' ? 'link active' : 'link'} 
-            to="#skills"
+          </Link>
+          <Link 
+            to="skills" 
+            spy={true}
+            smooth={true} 
+            duration={500}
+            offset={-62}
+            activeClass="active"
+            className="link"
           >
             Skills
-          </HashLink>
-          <HashLink 
-            smooth 
-            className={activeSection === 'projects' ? 'link active' : 'link'} 
-            to="#projects"
+          </Link>
+          <Link 
+            to="projects" 
+            spy={true}
+            smooth={true} 
+            duration={500}
+            offset={-100}
+            activeClass="active"
+            className="link"
           >
             Projects
-          </HashLink>
-          <HashLink 
-            smooth 
-            className={activeSection === 'contact' ? 'link active' : 'link'} 
-            to="#contact"
+          </Link>
+          <Link 
+            to="contact" 
+            spy={true}
+            smooth={true} 
+            duration={500}
+            offset={-100}
+            activeClass="active"
+            className="link"
           >
             Contact Me
-          </HashLink>
+          </Link>
         </li>
       </ul>
     </nav>
