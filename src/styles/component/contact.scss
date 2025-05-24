@@ -11,8 +11,9 @@
   padding-bottom: 0 !important;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;   
+  // margin: 0 auto;   
   background: #fff;
+  margin-bottom: 4rem;
   
   // Text container (left side)
   .text-container {
@@ -129,7 +130,7 @@
     padding: 1rem;
     color: #ffff;
     background-color: #000000;
-    margin-bottom: 3rem;
+    // margin-bottom: 3rem;
     h2{
       color: $primary-color1;
     }

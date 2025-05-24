@@ -1,7 +1,7 @@
 import { Nav } from './component/Nav';
 import { About } from './component/About';
 // import { Resume } from './component/Resume';
-import { Skills } from './component/Skill';
+ import { Skills } from './component/Skill';
 import { Projects } from './component/Projects';
 import { Contact } from './component/Contact';
 import './App.css';
@@ -22,10 +22,10 @@ function App() {
           <Resume />
         </section> */}
         <section id="skills">
-          <Skills />
+           <Skills /> 
         </section>
         <section id="projects">
-          <Projects />
+          <Projects sectionCon='project-main__con' header='p-header 'sectionId='projects'/>
         </section>
        
         

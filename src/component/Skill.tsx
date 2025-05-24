@@ -1,82 +1,52 @@
-import { SectionContainer } from "../sub-components/SectionContainer"
+// import { SectionContainer } from "../sub-components/SectionContainer"
 import "../styles/component/skills.scss"
 import { skillsData } from "../data/skillsData"
-import GH1 from "../img/GH1.png"
-import German from "../img/Germany-Flag.jpg"
-import UK from "../img/uk-sphere-01.png"
+import { Projects } from "./Projects"
 
 export function Skills() {
-  const skillContent = (
-    <section id="skills" className="section-main__container">
-      <h1>My Skills</h1>
-      <SkillsContent />
-    </section>
-  )
-  
-  return (
-    <SectionContainer children={skillContent} />
-  )
-}
-
-export function SkillsContent() {
-  return (
+  const skillsContent = (
+    <>
     <div className="skills-main">
-      <h4>Using Now :</h4>
+      <h4>Now using</h4>
       <div className="skills-grid">
-        
-       {skillsData.using.map((data) => (
-          <div className="skill-item" key={data.id}>
-            <data.icon className="skill-icon" />
-            <span>{data.txt}</span>
+        {skillsData.using.map((sk) => (
+          <div key={sk.id} className="skill-item">
+            <sk.icon className="skill-icon" />
+            <span>{sk.txt}</span>
           </div>
-       ))}        
+        ))}
       </div>
       
-      <h4>
-        Learning:
-      </h4>
+      <h4>Currently Learning</h4>
       <div className="skills-grid">
-        {skillsData.learning.map((data) => (
-          <div className="skill-item" key={data.id}>
-            <data.icon className="skill-icon" />
-            <span>{data.txt}</span>
+        {skillsData.learning.map((sk) => (
+          <div key={sk.id} className="skill-item">
+            <sk.icon className="skill-icon" />
+            <span>{sk.txt}</span>
           </div>
         ))}
       </div>
-
-      <h4>
-        Other Skills:
-      </h4>
+      
+      <h4>Other Technologies</h4>
       <div className="skills-grid">
-        {skillsData.others.map((data) => (
-          <div className="skill-item" key={data.id}>
-            <data.icon className="skill-icon" />
-            <span>{data.txt}</span>
+        {skillsData.others.map((sk) => (
+          <div key={sk.id} className="skill-item">
+            <sk.icon className="skill-icon" />
+            <span>{sk.txt}</span>
           </div>
         ))}
       </div>
-
-      <h4>
-        Languages:
-        <div className="languages">
-          <div className="lng">
-            <img className="lng-flag" src={UK} alt="uk-flag" />
-          <h3>English &#45; <em className="special-2">Good</em></h3>
-
-          </div>
-          <div className="lng">
-            <img className="lng-flag" src={German} alt="german-flag" />
-          <h3>German &#45; <em className="special-2">A2</em></h3>
-
-          </div>
-          <div className="lng">
-            <img className="lng-flag" src={GH1} alt="ghana" />
-          <h3>Twi &#45; <em className="special-2">Mother Language</em></h3>
-
-          </div>
-        </div>
-      </h4>
-     
     </div>
-  )
+    </>
+  );
+
+  return (
+    <Projects 
+      sectionCon="skills-section"
+      header="header"
+      title="Skills"
+      children={skillsContent}
+      sectionId="skills"
+    />
+  );
 }

@@ -1,109 +1,300 @@
 @import "../abstract/variable.scss";
-// @import Tesla from "../img/tsl.png"
 
+// CSS Custom Properties
+:root {
+  --project-bg-primary: #0c0d0d;
+  --project-bg-secondary: #1a1a1a;
+  --project-text-primary: #{$primary-color1};
+  --project-text-secondary: #ffffff;
+  --project-accent: #0066ff;
+  --project-shadow: rgba(0, 0, 0, 0.3);
+  --project-hover-shadow: rgba(0, 0, 0, 0.5);
+  --project-overlay: rgba(0, 0, 0, 0.7);
+  --project-border-radius: 12px;
+  --project-transition: all 0.3s ease;
+}
 
 .project-main__con {
-  background-color: black;
+  background-color: var(--project-bg-primary);
   padding: 2rem;
-  margin-top: 2rem;
   max-width: 1200px;
-  // background-color: #c2bfbf;
-  background-color: #0c0d0d;
+  min-height: 80dvh;
+  height: auto;
+  margin: 0 auto;
+  border-radius: var(--project-border-radius);
+  box-shadow: 0 10px 30px var(--project-shadow);
+  overflow-y: auto;
 
-  height: 80dvh;
-
-  
   .p-header {
-    font-family: $cursive-font;
-    font-size: 3.7rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    text-align: center;
-    color: $primary-color1;
-  }
-  
-  .display-projects {
-    max-width: 600px;
-    margin: 0 auto;
-    // background-color: aqua;
+     color: $primary-color1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: $cursive-font;
+  text-align: center;
+  font-size: 5rem;
+  margin-bottom: 3rem;
     
+    // Add decorative underline
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--project-accent), #61dafb);
+      border-radius: 2px;
+    }
+  }
+
+  .display-projects {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+
     .works {
       display: grid;
-      grid-template-columns: repeat(2, 250px);
-      grid-template-rows: repeat(2, auto);
-      column-gap: 7rem;
-      row-gap: 2rem;
-      
-      .min-work1{
-        background-image: url("/src/img/tsl.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-
-     
-
-      .min-work2{
-        background-image: url("/src/img/african-music-logo.webp");
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-
-      .min-work4{
-        background-image: url("/src/img/tsl.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-      .min-work3{
-        background-image: url("/src/img/african-music-logo.webp");
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      justify-items: center;
+      align-items: center;
 
       .min-work__container {
-        
-        border-radius: 8px;
+        position: relative;
+        border-radius: var(--project-border-radius);
         overflow: hidden;
-        height: 30rem;
-        width: 30rem;
+        height: 20rem;
+        width: 100%;
+        max-width: 300px;
+        box-shadow: 0 8px 20px var(--project-shadow);
+        transition: var(--project-transition);
+        cursor: pointer;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
 
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        
-        &:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        // Project overlay for better text readability
+        .project-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(
+            135deg,
+            transparent 0%,
+            transparent 60%,
+            var(--project-overlay) 100%
+          );
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          padding: 1.5rem;
+          transition: var(--project-transition);
+
+          h3 {
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            font-weight: 600;
+            text-align: center;
+            color: var(--project-text-secondary);
+            margin: 0;
+            transform: translateY(20px);
+            opacity: 0.8;
+            transition: var(--project-transition);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+          }
         }
-        
-        // .project-image {
-        //   height: 200px;
-        //   overflow: hidden;
-          
-        //   img {
-        //     width: 40%;
-        //     height: 100%;
-        //     object-fit: cover;
-        //     background-repeat: no-repeat;
-        //     transition: transform 0.5s ease;
-            
-        //     &:hover {
-        //       transform: scale(1.05);
-        //     }
-        //   }
-        // }
-        
-        h3 {
-          padding: 1rem;
-          font-size: 1.5rem;
-          text-align: center;
+
+        &:hover {
+          transform: translateY(-8px) scale(1.02);
+          box-shadow: 0 15px 35px var(--project-hover-shadow);
+
+          .project-overlay {
+            background: linear-gradient(
+              135deg,
+              rgba(0, 102, 255, 0.1) 0%,
+              rgba(0, 102, 255, 0.2) 60%,
+              var(--project-overlay) 100%
+            );
+
+            h3 {
+              transform: translateY(0);
+              opacity: 1;
+              color: #ffffff;
+            }
+          }
+        }
+
+        // Specific background images
+        &.min-work1 {
+          background-image: url("/src/img/tsl.png");
+        }
+
+        &.min-work2 {
+          background-image: url("/src/img/african-music-logo.webp");
+        }
+
+        &.min-work3 {
+          background-image: url("/src/img/african-music-logo.webp");
+        }
+
+        &.min-work4 {
+          background-image: url("/src/img/tsl.png");
         }
       }
     }
   }
 }
 
-/* Responsive adjustments */
+// Responsive Design
+@media (max-width: 1024px) {
+  .project-main__con {
+    padding: 1.5rem;
+    min-height: 70dvh;
+
+    .display-projects .works {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.8rem;
+
+      .min-work__container {
+        height: 18rem;
+      }
+    }
+  }
+}
+
 @media (max-width: 768px) {
-  .project-main__con .display-projects .works {
-    grid-template-columns: 1fr;
+  .project-main__con {
+    padding: 1rem;
+    min-height: 60dvh;
+
+    .p-header {
+      margin-bottom: 2rem;
+
+      &::after {
+        width: 60px;
+        height: 3px;
+      }
+    }
+
+    .display-projects {
+      padding: 0.5rem;
+
+      .works {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+
+        .min-work__container {
+          height: 16rem;
+
+          .project-overlay {
+            padding: 1rem;
+
+            h3 {
+              font-size: clamp(1.1rem, 2vw, 1.3rem);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .project-main__con {
+    padding: 0.8rem;
+    min-height: 50dvh;
+
+    .p-header {
+      margin-bottom: 1.5rem;
+
+      &::after {
+        width: 40px;
+        height: 2px;
+      }
+    }
+
+    .display-projects .works {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+
+      .min-work__container {
+        height: 14rem;
+        max-width: 100%;
+
+        .project-overlay {
+          padding: 0.8rem;
+
+          h3 {
+            font-size: clamp(1rem, 1.8vw, 1.2rem);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Accessibility improvements
+@media (prefers-reduced-motion: reduce) {
+  .min-work__container {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
+
+    .project-overlay h3 {
+      transition: none;
+      transform: none;
+      opacity: 1;
+    }
+  }
+}
+
+// Dark mode enhancements
+@media (prefers-color-scheme: dark) {
+  :root {
+    --project-bg-primary: #0a0a0a;
+    --project-bg-secondary: #151515;
+    --project-shadow: rgba(0, 0, 0, 0.5);
+    --project-hover-shadow: rgba(0, 0, 0, 0.7);
+  }
+}
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  .min-work__container {
+    border: 2px solid var(--project-text-secondary);
+
+    &:hover {
+      border-color: var(--project-accent);
+    }
+  }
+}
+
+// Focus styles for accessibility
+.min-work__container:focus {
+  outline: 3px solid var(--project-accent);
+  outline-offset: 2px;
+}
+
+// Custom scrollbar for container
+.project-main__con {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--project-accent);
+    border-radius: 4px;
+
+    &:hover {
+      background: #0052cc;
+    }
   }
 }

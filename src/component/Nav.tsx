@@ -5,13 +5,13 @@ type NavProps = {
   nav: string
 }
 
-export function Nav({nav}: NavProps) {
+export function Nav({ nav }: NavProps) {
   return (
     <nav className={nav}>
       <ul>
         <li>
           <Link 
-            to="about" 
+            to="about"
             spy={true}
             smooth={true} 
             duration={500}
@@ -21,8 +21,10 @@ export function Nav({nav}: NavProps) {
           >
             About
           </Link>
+        </li>
+        <li>
           <Link 
-            to="skills" 
+            to="skills"
             spy={true}
             smooth={true} 
             duration={500}
@@ -32,8 +34,10 @@ export function Nav({nav}: NavProps) {
           >
             Skills
           </Link>
+        </li>
+        <li>
           <Link 
-            to="projects" 
+            to="projects"
             spy={true}
             smooth={true} 
             duration={500}
@@ -43,8 +47,10 @@ export function Nav({nav}: NavProps) {
           >
             Projects
           </Link>
+        </li>
+        <li>
           <Link 
-            to="contact" 
+            to="contact"
             spy={true}
             smooth={true} 
             duration={500}
