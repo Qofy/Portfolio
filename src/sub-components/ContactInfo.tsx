@@ -1,9 +1,13 @@
 import { CircleUser, Mail, Phone } from "lucide-react";
+type contactinfoProps= {
+  contactinfoClassName:string,
+  children:React.ReactNode
+}
 
-export function ContactInfo(){
-  return(
-    <div className="contact-info">
-      <div className="contact-item">
+export function ContactInfo({contactinfoClassName="contact-info",children}:contactinfoProps){
+  const contactContent=(
+    <>
+    <div className="contact-item">
         <Phone color="rgb(233, 63, 91)" />
         <p>+49 176 47089256</p>
       </div>
@@ -15,6 +19,12 @@ export function ContactInfo(){
         <CircleUser color="rgb(233, 63, 91)" />
         <p>Software Engineer</p>
       </div>
+      </>
+  )
+  return(
+    <div className={contactinfoClassName}>
+      {contactContent}
+      {children}
     </div>
   )
 }

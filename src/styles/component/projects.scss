@@ -33,18 +33,6 @@
   font-size: 5rem;
   margin-bottom: 3rem;
     
-    // Add decorative underline
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--project-accent), #61dafb);
-      border-radius: 2px;
-    }
   }
 
   .display-projects {
