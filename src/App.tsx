@@ -4,6 +4,7 @@ import { About } from './component/About';
  import { Skills } from './component/Skill';
 import { Projects } from './component/Projects';
 import { Contact } from './component/Contact';
+import { AboutBackground } from './component/AboutBackground';
 import './App.css';
 
 function App() {
@@ -18,9 +19,9 @@ function App() {
           <About>
           </About>
         </section>
-        {/* <section id="resume">
-          <Resume />
-        </section> */}
+         <section id="background">
+          <AboutBackground />
+        </section> 
         <section id="skills">
            <Skills /> 
         </section>

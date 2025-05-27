@@ -1,0 +1,262 @@
+@import "../abstract/variable.scss";
+
+
+
+.background-section {
+  display: flex;
+  width: 100%;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+
+  @media (max-width: $tablet) {
+    padding: 0 0.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.educational-bg {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  // Typography
+  h1 {
+    font-family: $titilliun-font;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+
+    @media (max-width: $tablet) {
+      font-size: 1.5rem;
+      text-align: left;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 1.3rem;
+    }
+
+    .location {
+      font-weight: 600;
+      color: $primary-color1;
+    }
+
+    em {
+      font-style: italic;
+      font-weight: 400;
+      color: lighten($text-color, 20%);
+    }
+  }
+
+  h3 {
+    font-family: $titilliun-font;
+    font-size: 2.5rem;
+    color: $primary-color1;
+    text-align: center;
+    margin-bottom: 1.5rem;
+
+    @media (max-width: $tablet) {
+      font-size: 2rem;
+      text-align: left;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 1.8rem;
+    }
+  }
+
+  h4 {
+    font-family: $titilliun-font;
+    font-size: 1.3rem;
+    color: $primary-color1;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+
+    @media (max-width: $mobile) {
+      font-size: 1.2rem;
+    }
+  }
+
+  // University Section
+  .university {
+    margin-bottom: 3rem;
+
+    @media (max-width: $tablet) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .courses-main {
+    .courses-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 0 1rem;
+
+      @media (max-width: $tablet) {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        padding: 0;
+      }
+
+      @media (max-width: $mobile) {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .semester-courses {
+        background: lighten($bg-secondary, 5%);
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-left: 4px solid $primary-color1;
+
+        @media (max-width: $mobile) {
+          padding: 1rem;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+
+            @media (max-width: $mobile) {
+              font-size: 1rem;
+            }
+
+            &::before {
+              content: "•";
+              color: $primary-color1;
+              position: absolute;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Senior High Section
+  .senior-high {
+    margin-bottom: 3rem;
+
+    @media (max-width: $tablet) {
+      margin-bottom: 2rem;
+    }
+
+    .subjects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 0 1rem;
+
+      @media (max-width: $tablet) {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0;
+      }
+
+      .subject-group {
+        background: lighten($bg-secondary, 3%);
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-top: 3px solid $secondary-color;
+
+        @media (max-width: $mobile) {
+          padding: 1rem;
+        }
+
+        h3 {
+          font-size: 1.8rem;
+          margin-bottom: 1rem;
+          text-align: left;
+
+          @media (max-width: $mobile) {
+            font-size: 1.5rem;
+          }
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+
+            @media (max-width: $mobile) {
+              font-size: 1rem;
+            }
+
+            &::before {
+              content: "→";
+              color: $secondary-color;
+              position: absolute;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Software Section
+  .software-used-at-uni {
+    padding: 2rem;
+    background: lighten($bg-primary, 2%);
+    border-radius: 8px;
+    margin-top: 2rem;
+
+    @media (max-width: $tablet) {
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: $mobile) {
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+  }
+}
+
+// Additional responsive utilities
+@media (max-width: $mobile) {
+  .background-section {
+    .educational-bg {
+      h1, h3 {
+        text-align: left;
+      }
+    }
+  }
+}
+
+// Print styles
+@media print {
+  .educational-bg {
+    h1 {
+      font-size: 1.5rem;
+      page-break-after: avoid;
+    }
+
+    .courses-container,
+    .subjects-container {
+      display: block;
+      
+      .semester-courses,
+      .subject-group {
+        break-inside: avoid;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

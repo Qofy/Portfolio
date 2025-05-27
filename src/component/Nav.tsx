@@ -37,11 +37,24 @@ export function Nav({ nav }: NavProps) {
         </li>
         <li>
           <Link 
+            to="background"
+            spy={true}
+            smooth={true} 
+            duration={500}
+            offset={-62}
+            activeClass="active"
+            className="link"
+          >
+            Backgroung
+          </Link>
+        </li>
+        <li>
+          <Link 
             to="projects"
             spy={true}
             smooth={true} 
             duration={500}
-            offset={-100}
+            offset={-80}
             activeClass="active"
             className="link"
           >

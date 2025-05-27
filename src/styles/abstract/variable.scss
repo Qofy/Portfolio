@@ -5,12 +5,18 @@ $cursive-font: "Dancing Script", cursive;
 $titilliun-font:"Titillium Web", sans-serif;
 $bg-primary: #000000;
 $bg-secondary: rgba(0, 0, 0, 0.95);
+$secondary-color:#007bff;
+$text-color: #333333;
 $text-primary: #ffffff;
 $text-secondary: #e0e0e0;
 $text-Tertialry:#000000;
 $transition: all 0.3s ease;
 
 
-
+// Breakpoints
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+$large-desktop: 1200px;
 
 
