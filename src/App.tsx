@@ -19,9 +19,7 @@ function App() {
           <About>
           </About>
         </section>
-         <section id="background">
-          <AboutBackground />
-        </section> 
+        
         <section id="skills">
            <Skills /> 
         </section>
@@ -29,7 +27,9 @@ function App() {
           <Projects sectionCon='project-main__con' header='p-header 'sectionId='projects'/>
         </section>
        
-        
+         <section id="background">
+          <AboutBackground />
+        </section> 
       </main>
     </>
   );

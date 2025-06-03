@@ -11,6 +11,19 @@ export function Nav({ nav }: NavProps) {
       <ul>
         <li>
           <Link 
+            to="contact"
+            spy={true}
+            smooth={true} 
+            duration={500}
+            offset={-80}
+            activeClass="active"
+            className="link"
+          >
+            Contact Me
+          </Link>
+        </li>
+        <li>
+          <Link 
             to="about"
             spy={true}
             smooth={true} 
@@ -35,19 +48,7 @@ export function Nav({ nav }: NavProps) {
             Skills
           </Link>
         </li>
-        <li>
-          <Link 
-            to="background"
-            spy={true}
-            smooth={true} 
-            duration={500}
-            offset={-62}
-            activeClass="active"
-            className="link"
-          >
-            Backgroung
-          </Link>
-        </li>
+        
         <li>
           <Link 
             to="projects"
@@ -61,17 +62,18 @@ export function Nav({ nav }: NavProps) {
             Projects
           </Link>
         </li>
+        
         <li>
           <Link 
-            to="contact"
+            to="background"
             spy={true}
             smooth={true} 
             duration={500}
-            offset={-100}
+            offset={-62}
             activeClass="active"
             className="link"
           >
-            Contact Me
+            Backgroung
           </Link>
         </li>
       </ul>

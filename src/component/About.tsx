@@ -9,7 +9,7 @@ export function About() {
       <h1 className="about-header">About Me</h1>
       <Profile />
       <h2 className="name-header">Kofi Safo Agyekum</h2>
-      <ContactInfo />
+      <ContactInfo contactinfoClassName="contact-info"children/>
     </SectionContainer>
   );
 }

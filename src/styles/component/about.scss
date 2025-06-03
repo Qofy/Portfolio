@@ -2,14 +2,9 @@
 
 // CSS Custom Properties
 :root {
-  --about-bg-primary: #0c0d0d;
-  --about-bg-secondary: #1a1a1a;
-  --about-text-primary: #ffffff;
-  --about-text-secondary: #e0e0e0;
   --about-accent: #{$primary-color1};
   --about-shadow: rgba(0, 0, 0, 0.3);
   --about-border-radius: 12px;
-  --about-transition: all 0.3s ease;
   --about-max-width: 1200px;
   --about-content-width: 1000px;
 }
@@ -17,7 +12,7 @@
 .about-me-main__container {
   width: 100%;
   max-width: var(--about-max-width);
-  background: linear-gradient(135deg, var(--about-bg-primary) 0%, var(--about-bg-secondary) 100%);
+  background: linear-gradient(135deg, $bg-primary 0%, $bg-secondary 100%);
   min-height: 80dvh;
   height: auto;
   padding: 3rem 4rem;
@@ -27,7 +22,6 @@
   overflow-y: auto;
   position: relative;
 
-  // Subtle background pattern
   &::before {
     content: '';
     position: absolute;
@@ -77,16 +71,16 @@
 
       p {
         font-size: clamp(1.1rem, 2.2vw, 1.8rem);
-        color: var(--about-text-primary);
+        color: $text-primary;
         line-height: 1.7;
         margin-bottom: 1.5rem;
         text-align: left;
         opacity: 0.95;
-        transition: var(--about-transition);
+        transition: $transition;
 
         &:hover {
           opacity: 1;
-          color: var(--about-text-secondary);
+          color: $text-secondary;
         }
 
         &:last-child {
@@ -137,7 +131,7 @@
         gap: 1rem;
         padding: 0.8rem;
         border-radius: 8px;
-        transition: var(--about-transition);
+        transition: $transition;
         cursor: pointer;
 
         &:hover {
@@ -148,7 +142,7 @@
         p {
           margin: 0;
           font-size: clamp(1.1rem, 2vw, 1.5rem);
-          color: var(--about-text-primary);
+          color: $text-primary;
           text-align: center;
         }
 
@@ -156,7 +150,7 @@
         .contact-icon {
           font-size: 1.5rem;
           color: var(--about-accent);
-          transition: var(--about-transition);
+          transition: $transition;
         }
 
         &:hover .contact-icon {

@@ -16,6 +16,9 @@ export function Projects({ sectionCon, header, title = "Projects", children, sec
         <h1 className={header || "p-header"}>
           {title}
         </h1>
+        <h2>
+          Top 4 Project.
+        </h2>
         {children || (
           <div className="display-projects">
             <div className="works">
@@ -36,13 +39,39 @@ export function Projects({ sectionCon, header, title = "Projects", children, sec
               </div>
               <div className="min-work__container min-work4">
                 <div className="project-overlay">
-                  <h3>Weather Dashboard</h3>
+                  <h3>Dinsey Movie Clone</h3>
                 </div>
               </div>
+              
             </div>
+        <div className="figma_works">
+             <h2>
+          Figma Works
+        </h2>
+          <a 
+          className="link" 
+            href="https://www.figma.com/design/gzCx94h7Z2f6osm3kSWKgK/Mywork-Kofi-Safo-Agyekum-?node-id=0-1&t=SG8x0A3Z5JXBvuuI-1" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Figma"
+          >
+          Stock Market Mobile &gt;
+          </a>
+          <a 
+          className="link" 
+            href="https://www.figma.com/design/JssgmEomCRVoDqFCd46Ixg/Food-Recipe?node-id=0-1&t=TVvbWTtf6eZmzsow-1" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Figma"
+          >
+          Food Recipe &gt;
+          </a>
+        </div>
           </div>
         )}
+       
       </div>
+      
     </section>
   )
 }
