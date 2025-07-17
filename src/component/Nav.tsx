@@ -28,7 +28,7 @@ export function Nav({ nav }: NavProps) {
             spy={true}
             smooth={true} 
             duration={500}
-            offset={-62}
+            offset={-80}
             activeClass="active"
             className="link"
           >
@@ -41,7 +41,7 @@ export function Nav({ nav }: NavProps) {
             spy={true}
             smooth={true} 
             duration={500}
-            offset={-62}
+            offset={-80}
             activeClass="active"
             className="link"
           >
@@ -69,7 +69,7 @@ export function Nav({ nav }: NavProps) {
             spy={true}
             smooth={true} 
             duration={500}
-            offset={-62}
+            offset={-80}
             activeClass="active"
             className="link"
           >

@@ -14,6 +14,8 @@
   --project-transition: all 0.3s ease;
 }
 
+
+
 .project-main__con {
   background-color: var(--project-bg-primary);
   padding: 2rem;
@@ -35,13 +37,7 @@
   margin-bottom: 3rem;
     
   }
-  h2{
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 700;
-    font-style: oblique;
-    
-  }
+  
 
   .figma_works{
     width: 100%;
@@ -66,30 +62,43 @@
     max-width: 100%;
     margin: 0 auto;
     padding: 1rem;
-
+h2{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    font-style: oblique;
+    margin-bottom: 3rem;
+    
+  }
     .works {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(2, minmax(0,600px));
+      grid-gap: 2.5rem;
+      gap:1rem;
       justify-items: center;
       align-items: center;
+      width: 100%;
+      max-width: 100%;
+      height: 70rem;
+      // background-color: blue;
 
       .min-work__container {
         position: relative;
         border-radius: var(--project-border-radius);
         overflow: hidden;
-        height: 20rem;
+        height: 30rem;
         width: 100%;
         max-width: 300px;
         box-shadow: 0 8px 20px var(--project-shadow);
         transition: var(--project-transition);
         cursor: pointer;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        // background-color: palevioletred;
+        // background-position: center;
+        // background-repeat: no-repeat;
+        // background-size: cover;
 
         // Project overlay for better text readability
-        .project-overlay {
+        .project-link {
           position: absolute;
           top: 0;
           left: 0;
@@ -101,23 +110,52 @@
             transparent 60%,
             var(--project-overlay) 100%
           );
+          width: 100%;
+          height: 100%;
           display: flex;
-          align-items: flex-end;
-          justify-content: center;
-          padding: 1.5rem;
+          flex-direction: column;
+          // align-items: center;
+          // justify-content: center;
+          // padding: 1.5rem;
+          gap: 1rem;
           transition: var(--project-transition);
+          margin-bottom: 1.5rem;
+          text-decoration: none;
+          text-align: center;
+          color: var(--project-text-secondary);
+          font-size: 2rem;
+          
+.project-overlay {
+  height: 25rem;
+  position: relative;
+  width: 100%;
+  // background-color: red;
+  
+  img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--project-border-radius);
+  }
+  
+  h3 {
+    position: absolute;
+    bottom: 1rem;
+    left: 0%;
+    transform: translateX(-50%) translateY(20px);
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+    text-align: center;
+    color: var(--project-text-secondary);
+    margin: 0;
+    opacity: 0.8;
+    transition: var(--project-transition);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    z-index: 1;
+  }
+}
 
-          h3 {
-            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-            font-weight: 600;
-            text-align: center;
-            color: var(--project-text-secondary);
-            margin: 0;
-            transform: translateY(20px);
-            opacity: 0.8;
-            transition: var(--project-transition);
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-          }
         }
 
         &:hover {
@@ -140,22 +178,22 @@
           }
         }
 
-        // Specific background images
-        &.min-work1 {
-          background-image: url("/src/img/tsl.png");
-        }
+        // // Specific background images
+        // &.min-work1 {
+        //   background-image: url("/src/img/tsl.png");
+        // }
 
-        &.min-work2 {
-          background-image: url("/src/img/african-music-logo.webp");
-        }
+        // &.min-work2 {
+        //   background-image: url("/src/img/african-music-logo.webp");
+        // }
 
-        &.min-work3 {
-          background-image: url("/src/img/african-music-logo.webp");
-        }
+        // &.min-work3 {
+        //   background-image: url("/src/img/african-music-logo.webp");
+        // }
 
-        &.min-work4 {
-          background-image: url("/public/logo.svg");  
-        }
+        // &.min-work4 {
+        //   background-image: url("/public/logo.svg");  
+        // }
       }
     }
   }
