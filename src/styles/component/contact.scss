@@ -136,13 +136,14 @@
   .myself-container {
     grid-area: myself;
     min-height: 21rem;
-    padding: 2rem 1rem;
+    padding: 2rem;
     color: $text-primary;
     background-color: $bg-primary;
 
     h2 {
       color: $primary-color1;
       margin-bottom: 1.5rem;
+      font-size: 2.5rem;
     }
 
     p {

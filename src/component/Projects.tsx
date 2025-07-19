@@ -46,7 +46,7 @@ export function Projects({ sectionCon, header, title = "Projects", children, sec
   <div className="min-work__container min-work3">
     <Link to="/kmovie" className="project-link">
       <div className="project-overlay">
-        <img src="/public/kmovie.png" alt="kmovie" />
+        <img src="/kmovie.png" alt="kmovie" />
       </div>
         <h3>KMovie</h3>
     </Link>
@@ -55,7 +55,7 @@ export function Projects({ sectionCon, header, title = "Projects", children, sec
   <div className="min-work__container min-work4">
     <Link to="/disney-clone" className="project-link">
       <div className="project-overlay">
-        <img src="/public/disney.svg" alt="disney" />
+        <img src="/disney.svg" alt="disney" />
       </div>
         <h3>Disney Movie Clone</h3>
     </Link>
