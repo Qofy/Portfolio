@@ -26,7 +26,7 @@ export function Projects({ sectionCon, header, title = "Projects", children, sec
         </h2>
           <div className="works">
   <div className="min-work__container min-work1">
-    <Link to="/tesla-clone" className="project-link">
+    <Link to="https://teslr.vercel.app/" className="project-link">
       <div className="project-overlay">
         <img src="/tesla.svg" alt="tesla" />
       </div>
@@ -35,7 +35,7 @@ export function Projects({ sectionCon, header, title = "Projects", children, sec
   </div>
   
   <div className="min-work__container min-work2">
-    <Link to="/ait-food" className="project-link">
+    <Link to="https://food-prescription-system-hoyk.vercel.app/" className="project-link">
       <div className="project-overlay">
         <img src="/ait.png" alt="ai-food" />
       </div>
@@ -44,7 +44,7 @@ export function Projects({ sectionCon, header, title = "Projects", children, sec
   </div>
   
   <div className="min-work__container min-work3">
-    <Link to="/kmovie" className="project-link">
+    <Link to="https://kmovie-tau.vercel.app/" className="project-link">
       <div className="project-overlay">
         <img src="/kmovie.png" alt="kmovie" />
       </div>
