@@ -199,52 +199,49 @@ h2{
   }
 }
 
-// Responsive Design
-@media (max-width: 1024px) {
+// Ultra-wide screens (1600px and up)
+@media (min-width: 1600px) {
   .project-main__con {
-    padding: 1.5rem;
-    min-height: 70dvh;
-
-    .display-projects .works {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.8rem;
-
-      .min-work__container {
-        height: 18rem;
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .project-main__con {
-    padding: 1rem;
-    min-height: 60dvh;
+    max-width: 1600px;
+    padding: 3rem 4rem;
+    min-height: 90dvh;
 
     .p-header {
-      margin-bottom: 2rem;
+      font-size: clamp(5.5rem, 6vw, 7rem);
+      margin-bottom: 4rem;
+    }
 
-      &::after {
-        width: 60px;
-        height: 3px;
+    .figma_works {
+      height: 8rem;
+      margin-top: 2rem;
+
+      a {
+        font-size: 3.5rem;
       }
     }
 
     .display-projects {
-      padding: 0.5rem;
+      padding: 2rem;
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 4rem;
+      }
 
       .works {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: repeat(3, minmax(350px, 1fr));
+        gap: 3rem;
+        height: auto;
 
         .min-work__container {
-          height: 16rem;
+          height: 35rem;
+          max-width: 400px;
 
-          .project-overlay {
-            padding: 1rem;
+          .project-link .project-overlay {
+            height: 30rem;
 
             h3 {
-              font-size: clamp(1.1rem, 2vw, 1.3rem);
+              font-size: clamp(1.4rem, 2.5vw, 1.8rem);
             }
           }
         }
@@ -253,33 +250,386 @@ h2{
   }
 }
 
-@media (max-width: 480px) {
+// Large desktops (1400px - 1599px)
+@media (min-width: 1400px) and (max-width: 1599px) {
   .project-main__con {
-    padding: 0.8rem;
-    min-height: 50dvh;
+    max-width: 1400px;
+    padding: 2.5rem 3.5rem;
+    min-height: 85dvh;
 
     .p-header {
-      margin-bottom: 1.5rem;
+      font-size: clamp(5.2rem, 6vw, 6.5rem);
+      margin-bottom: 3.5rem;
+    }
 
-      &::after {
-        width: 40px;
-        height: 2px;
+    .figma_works {
+      height: 7rem;
+      margin-top: 1.5rem;
+
+      a {
+        font-size: 3.2rem;
       }
     }
 
+    .display-projects {
+      padding: 1.5rem;
+
+      h2 {
+        font-size: 2.3rem;
+        margin-bottom: 3.5rem;
+      }
+
+      .works {
+        grid-template-columns: repeat(3, minmax(320px, 1fr));
+        gap: 2.5rem;
+        height: auto;
+
+        .min-work__container {
+          height: 32rem;
+          max-width: 350px;
+
+          .project-link .project-overlay {
+            height: 27rem;
+
+            h3 {
+              font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Standard desktops (992px - 1399px)
+@media (min-width: 992px) and (max-width: 1399px) {
+  .project-main__con {
+    padding: 2rem 3rem;
+    min-height: 80dvh;
+
+    .p-header {
+      font-size: clamp(4.5rem, 6vw, 5.5rem);
+      margin-bottom: 3rem;
+    }
+
+    .figma_works {
+      height: 6.5rem;
+      margin-top: 1.2rem;
+
+      a {
+        font-size: 2.8rem;
+      }
+    }
+
+    .display-projects {
+      padding: 1.2rem;
+
+      h2 {
+        font-size: 2.2rem;
+        margin-bottom: 3rem;
+      }
+
+      .works {
+        grid-template-columns: repeat(2, minmax(280px, 1fr));
+        gap: 2.2rem;
+        height: auto;
+
+        .min-work__container {
+          height: 28rem;
+          max-width: 320px;
+
+          .project-link .project-overlay {
+            height: 23rem;
+
+            h3 {
+              font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Tablets and small desktops (768px - 991px)
+@media (min-width: 768px) and (max-width: 991px) {
+  .project-main__con {
+    padding: 1.8rem 2.5rem;
+    min-height: 75dvh;
+
+    .p-header {
+      font-size: clamp(3.8rem, 6vw, 4.8rem);
+      margin-bottom: 2.5rem;
+    }
+
+    .figma_works {
+      height: 6rem;
+      margin-top: 1rem;
+
+      a {
+        font-size: 2.5rem;
+      }
+    }
+
+    .display-projects {
+      padding: 1rem;
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .works {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+        gap: 2rem;
+        height: auto;
+
+        .min-work__container {
+          height: 25rem;
+          max-width: 280px;
+
+          .project-link .project-overlay {
+            height: 20rem;
+
+            h3 {
+              font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Large mobile phones and small tablets (576px - 767px)
+@media (min-width: 576px) and (max-width: 767px) {
+  .project-main__con {
+    padding: 1.5rem 2rem;
+    min-height: 70dvh;
+
+    .p-header {
+      font-size: clamp(3.2rem, 6vw, 4rem);
+      margin-bottom: 2rem;
+    }
+
+    .figma_works {
+      height: 5rem;
+      margin-top: 1rem;
+
+      a {
+        font-size: 2.2rem;
+      }
+    }
+
+    .display-projects {
+      padding: 0.8rem;
+
+      h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+      }
+
+      .works {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        gap: 1.5rem;
+        height: auto;
+
+        .min-work__container {
+          height: 22rem;
+          max-width: 250px;
+
+          .project-link .project-overlay {
+            height: 17rem;
+
+            h3 {
+              font-size: clamp(1rem, 2.5vw, 1.3rem);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile phones (375px - 575px)
+@media (min-width: 375px) and (max-width: 575px) {
+  .project-main__con {
+    padding: 1.2rem 1.5rem;
+    min-height: 65dvh;
+
+    .p-header {
+      font-size: clamp(2.8rem, 6vw, 3.5rem);
+      margin-bottom: 1.8rem;
+    }
+
+    .figma_works {
+      height: 4.5rem;
+      margin-top: 0.8rem;
+
+      a {
+        font-size: 2rem;
+      }
+    }
+
+    .display-projects {
+      padding: 0.6rem;
+
+      h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1.8rem;
+      }
+
+      .works {
+        grid-template-columns: 1fr;
+        gap: 1.3rem;
+        height: auto;
+
+        .min-work__container {
+          height: 20rem;
+          max-width: 100%;
+
+          .project-link .project-overlay {
+            height: 15rem;
+
+            h3 {
+              font-size: clamp(1rem, 2.5vw, 1.2rem);
+              left: 50%;
+              transform: translateX(-50%) translateY(20px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Small mobile phones (up to 374px)
+@media (max-width: 374px) {
+  .project-main__con {
+    padding: 1rem;
+    min-height: 60dvh;
+
+    .p-header {
+      font-size: clamp(2.4rem, 6vw, 3rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .figma_works {
+      height: 4rem;
+      margin-top: 0.6rem;
+
+      a {
+        font-size: 1.8rem;
+      }
+    }
+
+    .display-projects {
+      padding: 0.4rem;
+
+      h2 {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .works {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        height: auto;
+
+        .min-work__container {
+          height: 18rem;
+          max-width: 100%;
+
+          .project-link .project-overlay {
+            height: 13rem;
+
+            h3 {
+              font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+              left: 50%;
+              transform: translateX(-50%) translateY(20px);
+              bottom: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Landscape orientation for mobile devices
+@media (max-height: 500px) and (orientation: landscape) {
+  .project-main__con {
+    padding: 1rem 1.5rem;
+    min-height: auto;
+
+    .p-header {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      margin-bottom: 1rem;
+    }
+
+    .figma_works {
+      height: 3rem;
+      margin-top: 0.5rem;
+
+      a {
+        font-size: 1.6rem;
+      }
+    }
+
+    .display-projects {
+      padding: 0.5rem;
+
+      h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+      }
+
+      .works {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        height: auto;
+
+        .min-work__container {
+          height: 14rem;
+
+          .project-link .project-overlay {
+            height: 9rem;
+
+            h3 {
+              font-size: clamp(0.8rem, 2vw, 1rem);
+              bottom: 0.3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Specific breakpoint for very large screens (4K displays)
+@media (min-width: 2000px) {
+  .project-main__con {
+    max-width: 1800px;
+    padding: 4rem 5rem;
+
+    .p-header {
+      font-size: clamp(6rem, 6vw, 8rem);
+      margin-bottom: 5rem;
+    }
+
     .display-projects .works {
-      grid-template-columns: 1fr;
-      gap: 1.2rem;
+      grid-template-columns: repeat(4, minmax(350px, 1fr));
+      gap: 4rem;
 
       .min-work__container {
-        height: 14rem;
-        max-width: 100%;
+        height: 40rem;
+        max-width: 450px;
 
-        .project-overlay {
-          padding: 0.8rem;
+        .project-link .project-overlay {
+          height: 35rem;
 
           h3 {
-            font-size: clamp(1rem, 1.8vw, 1.2rem);
+            font-size: clamp(1.6rem, 2.5vw, 2rem);
           }
         }
       }
