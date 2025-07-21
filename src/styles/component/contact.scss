@@ -2,7 +2,7 @@
 
 .contact-container {
   display: grid;
-  grid-template-columns: 1fr 2fr;   
+  grid-template-columns: 2fr 1fr;   
   grid-template-rows: auto auto;   
   grid-template-areas: 
     "text nav-image"
@@ -77,7 +77,7 @@
     background-color: $bg-primary;
     height: 70dvh;
     text-align: center;
-    clip-path: polygon(19% 0%, 100% 0%, 100% 50%, 100% 100%, 0% 100%);
+    clip-path: polygon(19% 0%, 100% 0%, 100% 100%, 0% 100%);
     
     .nav1 {
       display: flex;
@@ -352,6 +352,7 @@
       p {
         font-size: 1.5rem;
         margin-bottom: 6rem;
+        display: flex;
       }
       
       div {
@@ -454,70 +455,176 @@
   }
 }
 
-// Mobile phones (375px - 575px)
-@media (min-width: 375px) and (max-width: 575px) {
+// Medium mobile phones (450px - 575px)
+@media (min-width: 450px) and (max-width: 575px) {
   .contact-container {
     grid-template-columns: 1fr;
     grid-template-areas: 
       "text"
       "nav-image"
       "myself";
+    margin-bottom: 3rem;
       
     .text-container {
       padding: 2rem 1.5rem;
       height: auto;
+      max-height: none;
+      overflow: visible;
       
       h4 {
         font-size: 2rem;
         text-align: center;
+        margin-bottom: 1.5rem;
       }
       
       h3 {
         font-size: 2.5rem;
         text-align: center;
+        margin-bottom: 1.5rem;
       }
       
       p {
         text-align: center;
         font-size: 1.4rem;
-        margin-bottom: 3rem;
+        margin-bottom: 2.5rem;
+        line-height: 1.5;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
       }
       
       div {
         justify-content: center;
-        gap: 2rem;
+        gap: 1.8rem;
+        flex-wrap: wrap;
       }
     }
     
     .nav-image-container {
       height: auto;
+      max-height: 50vh;
       clip-path: none;
+      padding: 1.5rem 1rem;
+      overflow: hidden;
       
       .nav1 {
         padding-left: 0;
-        height: 5rem;
-        font-size: 1.3rem;
+        height: 4.5rem;
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
         
         ul {
-          gap: 1.5rem;
+          gap: 1.2rem;
+          flex-wrap: wrap;
+          justify-content: center;
         }
       }
       
       .profile-pic {
-        width: 55%;
-        max-width: 200px;
+        width: 50%;
+        max-width: 180px;
+        height: auto;
       }
     }
     
     .myself-container {
-      padding: 2rem;
+      padding: 2rem 1.5rem;
       
       h2 {
         font-size: 2.2rem;
+        margin-bottom: 1.2rem;
       }
       
       p {
         font-size: 1.6rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+// Small mobile phones (375px - 449px)
+@media (min-width: 375px) and (max-width: 449px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "text"
+      "nav-image"
+      "myself";
+    margin-bottom: 2.5rem;
+      
+    .text-container {
+      padding: 1.8rem 1.2rem;
+      height: auto;
+      max-height: none;
+      overflow: visible;
+      
+      h4 {
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 1.2rem;
+      }
+      
+      h3 {
+        font-size: 2.2rem;
+        text-align: center;
+        margin-bottom: 1.2rem;
+        line-height: 1.2;
+      }
+      
+      p {
+        text-align: center;
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        line-height: 1.4;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+      
+      div {
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+    }
+    
+    .nav-image-container {
+      height: auto;
+      max-height: 45vh;
+      clip-path: none;
+      padding: 1.2rem 0.8rem;
+      overflow: hidden;
+      
+      .nav1 {
+        padding-left: 0;
+        height: 4rem;
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        
+        ul {
+          gap: 1rem;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+      
+      .profile-pic {
+        width: 45%;
+        max-width: 160px;
+        height: auto;
+      }
+    }
+    
+    .myself-container {
+      padding: 1.8rem 1.2rem;
+      
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      
+      p {
+        font-size: 1.5rem;
+        line-height: 1.4;
       }
     }
   }
