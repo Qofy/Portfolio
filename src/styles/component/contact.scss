@@ -205,3 +205,41 @@
     }
   }
 }
+
+@media (max-width: 390px){
+  .contact-container {
+    .text-container {
+      padding: 1rem;
+      
+      h4 {
+        font-size: 1.8rem;
+      }
+      
+      h3 {
+        font-size: 2.2rem;
+      }
+      
+      p {
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+      }
+    }
+    
+    .nav-image-container {
+      .profile-pic {
+        width: 70%;
+        max-width: 200px;
+      }
+    }
+    
+    .myself-container {
+      h2 {
+        font-size: 2rem;
+      }
+      
+      p {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
