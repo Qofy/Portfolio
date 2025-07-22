@@ -66,7 +66,7 @@ export function Projects({ sectionCon, header, title = "Projects", children, sec
       <div className="project-overlay">
         <img src="/bankist.png" alt="disney" />
       </div>
-        <h3>Bankist Calculatio(user:js, pin:1111)</h3>
+        <h3>Bankist(user:js, pin:1111)</h3>
     </Link>
   </div>
 </div>
