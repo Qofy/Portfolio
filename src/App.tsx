@@ -1,7 +1,6 @@
 import { Nav } from './component/Nav';
 import { About } from './component/About';
-// import { Resume } from './component/Resume';
- import { Skills } from './component/Skill';
+import { Skills } from './component/Skill';
 import { Projects } from './component/Projects';
 import { Contact } from './component/Contact';
 import { AboutBackground } from './component/AboutBackground';
@@ -12,22 +11,19 @@ function App() {
     <>
       <Nav nav='nav'/>
       <main>
-      <section id="contact">
+        <section id="contact">
           <Contact />
         </section>
         <section id="about">
-          <About>
-          </About>
+          <About />
         </section>
-        
         <section id="skills">
-           <Skills /> 
+          <Skills /> 
         </section>
         <section id="projects">
-          <Projects sectionCon='project-main__con' header='p-header 'sectionId='projects'/>
+          <Projects sectionCon='project-main__con' header='p-header' sectionId='projects'/>
         </section>
-       
-         <section id="background">
+        <section id="background">
           <AboutBackground />
         </section> 
       </main>
