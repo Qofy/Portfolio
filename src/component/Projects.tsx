@@ -51,6 +51,15 @@ export function Projects({ sectionCon, header, title = "Projects", children, sec
         <h3>KMovie</h3>
     </Link>
   </div>
+
+    <div className="min-work__container min-work3">
+    <Link to="https://music-dashboard-using-typescript.vercel.app/" className="project-link">
+      <div className="project-overlay">
+        <img src="/african-music-logo.webp" alt="african-music" />
+      </div>
+        <h3>African Music</h3>
+    </Link>
+  </div>
   
   <div className="min-work__container min-work4">
     <Link to="/disney-clone" className="project-link">
