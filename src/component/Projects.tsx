@@ -62,7 +62,7 @@ export function Projects({ sectionCon, header, title = "Projects", children, sec
   </div>
   
   <div className="min-work__container min-work4">
-    <Link to="https://bankist-two-orpin.vercel.app/" className="project-link">
+    <Link to="https://bankist-master.vercel.app/" className="project-link">
       <div className="project-overlay">
         <img src="/bankist.png" alt="disney" />
       </div>
