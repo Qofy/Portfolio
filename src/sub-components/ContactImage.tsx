@@ -1,5 +1,5 @@
 import { Nav } from "../component/Nav";
-import profilePic from "/public/profile.png";
+import profilePic from "/public/pro1.jpg";
 export function ContactImage(){
   return(
 <div className="nav-image-container">
