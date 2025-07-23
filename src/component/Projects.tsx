@@ -30,7 +30,7 @@ export function Projects({ sectionCon, header, title = "Projects", children, sec
       <div className="project-overlay">
         <img src="/tesla.svg" alt="tesla" />
       </div>
-        <h3>Tesla Clone</h3>
+        <h3>Tesla Clone(desktop only)</h3>
     </Link>
   </div>
   
@@ -48,7 +48,7 @@ export function Projects({ sectionCon, header, title = "Projects", children, sec
       <div className="project-overlay">
         <img src="/kmovie.png" alt="kmovie" />
       </div>
-        <h3>KMovie</h3>
+        <h3>KMovie(desktop only)</h3>
     </Link>
   </div>
 
