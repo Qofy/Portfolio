@@ -26,11 +26,11 @@ export function Projects({ sectionCon, header, title = "Projects", children, sec
         </h2>
           <div className="works">
   <div className="min-work__container min-work1">
-    <Link to="https://teslr.vercel.app/" className="project-link">
+    <Link to="densy.vercel.app" className="project-link">
       <div className="project-overlay">
-        <img src="/tesla.svg" alt="tesla" />
+        <img src="/disney.svg" alt="disney" />
       </div>
-        <h3>Tesla Clone(desktop only)</h3>
+        <h3>Disney Clone(Still in progess)</h3>
     </Link>
   </div>
   
