@@ -26,7 +26,7 @@ export function Projects({ sectionCon, header, title = "Projects", children, sec
         </h2>
           <div className="works">
   <div className="min-work__container min-work1">
-    <Link to="densy.vercel.app" className="project-link">
+    <Link to="https://densy.vercel.app/" className="project-link">
       <div className="project-overlay">
         <img src="/disney.svg" alt="disney" />
       </div>
