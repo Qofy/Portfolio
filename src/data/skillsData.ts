@@ -1,5 +1,5 @@
-import { FaHtml5, FaSass, FaCss3, FaReact, FaJs, FaFigma, FaGitAlt, FaJava, FaPython, FaJira } from "react-icons/fa";
-import { SiTypescript, SiCplusplus, SiFlutter } from "react-icons/si"
+import { FaHtml5, FaSass, FaCss3, FaReact, FaJs, FaFigma, FaJava, FaPython, FaJira, FaDocker, FaNodeJs, FaNpm} from "react-icons/fa";
+import { SiTypescript, SiCplusplus, SiFlutter, SiFirebase, SiPostgresql, SiRedux } from "react-icons/si"
 
 export const skillsData = {
   using: [
@@ -34,43 +34,69 @@ export const skillsData = {
       txt: "Figma"
     },
     {
-      id: 10,
+      id: 17,
       icon: SiTypescript,
       txt: "Typescript"
     },
     {
       id: 6,
-      icon: FaGitAlt,
-      txt: 'Git'
+      icon: FaDocker,
+      txt: 'Docker'
+    },
+    {
+      id: 7,
+      icon: SiPostgresql,
+      txt: 'Postgresql'
+    },
+    {
+      id: 8,
+      icon: FaNodeJs,
+      txt: 'Nodejs'
+    },
+    {
+      id: 9,
+      icon: FaNpm,
+      txt: 'Npm'
+    },
+    {
+      id: 10,
+      icon: SiFirebase,
+      txt: 'Firebase'
+    },
+    {
+      id: 11,
+      icon: SiRedux,
+      txt: 'Redux'
     },
   ],
   learning: [
      
     {
-      id: 9,
+      id: 12,
       icon: FaJira,
       txt: "Jira"
     },
+    
      
   ],
   others:[
     {
-      id: 11,
+      id: 13,
       icon: SiCplusplus,
       txt: "C++"
     },
     {
-      id: 8,
+      id: 14,
       icon: FaPython,
       txt: "Python"
     },
     {
-      id: 12,
+      id: 15,
       icon: SiFlutter,
       txt: "Flutter"
     },
     {
-      id: 7,
+      id: 16,
       icon: FaJava,
       txt: "Java"
     },
