@@ -44,11 +44,11 @@ export function Projects({ sectionCon, header, title = "Projects", children, sec
   </div>
   
   <div className="min-work__container min-work3">
-    <Link to="https://kmovie-tau.vercel.app/" className="project-link">
+    <Link to="https://pick-game-master.vercel.app/" className="project-link">
       <div className="project-overlay">
-        <img src="/kmovie.png" alt="kmovie" />
+        <img src="/dice.png" alt="kmovie" />
       </div>
-        <h3>KMovie(desktop only)</h3>
+        <h3>Roll-Dice-Game</h3>
     </Link>
   </div>
 
