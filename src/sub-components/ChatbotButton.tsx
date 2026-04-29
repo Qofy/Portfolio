@@ -17,7 +17,7 @@ export function ChatbotButton() {
 
       {open && (
         <div className="chatbot-window" role="dialog" aria-label="Chat window">
-          <div className="chatbot-header">Chat</div>
+          <div className="chatbot-header">Chat with Agyekum bot</div>
           <div className="chatbot-body">This is a placeholder chat window.</div>
         </div>
       )}
