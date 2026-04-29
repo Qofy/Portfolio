@@ -218,15 +218,23 @@
 
 // Responsive Design - Mobile First Approach
 @media (max-width: 1024px) {
-  .section-main__container {
-    height: auto;
-    min-height: 70dvh;
+  .skills-section {
     padding: 1.5rem;
+    margin-bottom: 3rem;
+  }
 
-    .skills-main {
-      .skills-grid {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-        gap: 1.5rem;
+  .skills-main {
+    .skills-grid {
+      grid-template-columns: repeat(3, minmax(130px, 1fr));
+      gap: 1.2rem;
+      
+      .skill-item {
+        padding: 1.2rem;
+        min-height: 110px;
+        
+        .skill-icon {
+          font-size: clamp(2.2rem, 4.5vw, 3rem);
+        }
       }
     }
   }
@@ -234,46 +242,64 @@
 
 @media (max-width: 768px) {
   .skills-section {
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
+    margin-bottom: 2.5rem;
   }
 
-  .section-main__container {
-    height: auto;
-    min-height: 60dvh;
-    padding: 1rem;
-    margin-bottom: 3rem;
+  .skills-main {
+    padding: 1rem 0;
 
-    .skills-main {
-      padding: 0.5rem 0;
+    h4 {
+      font-size: clamp(1.6rem, 4vw, 2rem);
+      margin-bottom: 1.5rem;
+      margin-top: 1.8rem;
 
-      h4 {
-        font-size: clamp(1.5rem, 3.5vw, 1.8rem);
-        margin-bottom: 1.5rem;
-        margin-top: 1.5rem;
-
-        &::after {
-          width: 40px;
-          height: 2px;
-        }
+      &:first-child {
+        margin-top: 0;
       }
 
-      .skills-grid {
-        grid-template-columns: repeat(2, minmax(120px, 1fr));
-        gap: 1.2rem;
-        margin-bottom: 1.5rem;
+      &::after {
+        width: 50px;
+        height: 3px;
+      }
+    }
 
-        .skill-item {
-          padding: 1rem;
-          min-height: 100px;
+    .skills-category {
+      margin-bottom: 2rem;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
 
-          .skill-icon {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            margin-bottom: 0.8rem;
-          }
+    .skills-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 0;
+      max-width: 100%;
 
-          &:hover {
-            transform: translateY(-4px) scale(1.01);
-          }
+      .skill-item {
+        padding: 1rem 0.5rem;
+        min-height: 95px;
+        border-radius: 8px;
+        
+        // Better touch targets
+        min-width: 44px;
+        min-height: 44px;
+        
+        .skill-icon {
+          font-size: clamp(2rem, 5vw, 2.5rem);
+          margin-bottom: 0.5rem;
+        }
+        
+        span {
+          font-size: clamp(0.85rem, 2.2vw, 1rem);
+          line-height: 1.3;
+          padding: 0 0.25rem;
+        }
+
+        &:hover {
+          transform: translateY(-3px) scale(1.02);
         }
       }
     }
@@ -281,45 +307,81 @@
 }
 
 @media (max-width: 480px) {
-  .section-main__container {
-    height: auto;
-    min-height: 50dvh;
-    padding: 0.8rem;
+  .skills-section {
+    padding: 1rem 0.75rem;
     margin-bottom: 2rem;
+  }
 
-    .skills-main {
-      h4 {
-        font-size: clamp(1.3rem, 3vw, 1.6rem);
-        margin-bottom: 1rem;
-        margin-top: 1rem;
+  .skills-main {
+    h4 {
+      font-size: clamp(1.4rem, 4vw, 1.7rem);
+      margin-bottom: 1.2rem;
+      margin-top: 1.5rem;
 
-        &::after {
-          width: 30px;
-          height: 2px;
-        }
+      &:first-child {
+        margin-top: 0;
       }
 
-      .skills-grid {
-        grid-template-columns: repeat(2, minmax(100px, 1fr));
-        gap: 1rem;
-        margin-bottom: 1rem;
+      &::after {
+        width: 35px;
+        height: 2px;
+      }
+    }
 
-        .skill-item {
-          padding: 0.8rem;
-          min-height: 90px;
+    .skills-grid {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+      margin-bottom: 0;
 
-          .skill-icon {
-            font-size: clamp(1.8rem, 3.5vw, 2rem);
-            margin-bottom: 0.6rem;
-          }
+      .skill-item {
+        padding: 0.8rem 1rem;
+        min-height: 70px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+        
+        .skill-icon {
+          font-size: clamp(1.5rem, 4vw, 1.8rem);
+          margin-bottom: 0;
+          margin-right: 0.8rem;
+          flex-shrink: 0;
+        }
+        
+        span {
+          font-size: clamp(0.9rem, 2.5vw, 1rem);
+          font-weight: 500;
+          text-align: left;
+        }
 
-          span {
-            font-size: clamp(0.8rem, 1.8vw, 0.9rem);
-          }
+        &:hover {
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+}
 
-          &:hover {
-            transform: translateY(-2px);
-          }
+// Extra small screens (320px and below)
+@media (max-width: 320px) {
+  .skills-section {
+    padding: 0.8rem 0.5rem;
+  }
+  
+  .skills-main {
+    .skills-grid {
+      .skill-item {
+        padding: 0.6rem 0.8rem;
+        min-height: 60px;
+        
+        .skill-icon {
+          font-size: 1.4rem;
+          margin-right: 0.6rem;
+        }
+        
+        span {
+          font-size: 0.85rem;
         }
       }
     }
