@@ -1,4 +1,4 @@
-import { uniCourses } from "../data/background";
+// import { uniCourses } from "../data/background";
 import { seniorHCourses } from "../data/background";
 
 export function Educational() {
@@ -15,7 +15,7 @@ export function Educational() {
         <div className="courses-main">
           <h3>Courses</h3>
           <div className="courses-container">
-            {Object.entries(uniCourses).map(([semester, courses], index) => (
+            {/* {Object.entries(uniCourses).map(([semester, courses], index) => (
               <div key={semester} className="semester-courses">
                 <h4>Semester {index + 1}</h4>
                 <ul>
@@ -24,7 +24,7 @@ export function Educational() {
                   ))}
                 </ul>
               </div>
-            ))}
+            ))} */}
           </div>
         </div>
       </section>
@@ -33,7 +33,7 @@ export function Educational() {
         <h1>
           Intuivo OÜ
           <br />
-          <span className="location">Eastern Region</span> | <em>2019 – 2021</em>
+          <span className="location">Germany-Berlin</span> | <em>2025 – 2026</em>
         </h1>
         
         <div className="subjects-container">

@@ -7,12 +7,12 @@ export const uniCourses = {
 }
 export const seniorHCourses= {
   coreSubjects:{
-      header:"Core Subjects",
-      courses:["Mathematic", "Science","Social Studies","English"],
+      header:"Responsibilities",
+      courses:["Developed and maintained full-stack web applications using modern frontend and backend frameworks.", "Implemented backend services using Node.js, NestJS, Python, and Rust.","Built user interfaces using React, Vue, and Svelte.","Integrated databases including PostgreSQL, MySQL, and SQLite.", "Used Git and GitLab for version control and collaboration.", "Tested and debugged applications to ensure reliability and performance.","Learned and applied professional software development workflows.","Used AI tools responsibly to design, implement, and troubleshoot software solutions."],
   },
   electiveSubject:{
-    header:"Elective Subjects",
-    courses:["Ceramics", "Elective ICT", "Graphics Design", "General Knowledge In Art (GKA)"]
+    header:"Achievements",
+    courses:["ransitioned from theoretical knowledge to practical software development in a professional environment.", "Improved debugging, problem-solving, and attention to detail.", "Gained experience in modern development ecosystems and team workflows.", "Built complete full-stack applications connecting frontend and backend systems.", "Developed the ability to work independently on technical tasks."]
   }
   } 
 
