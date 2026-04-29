@@ -31,7 +31,7 @@ export function Educational() {
 
       <section className="senior-high">
         <h1>
-          Mt. Sinai Senior High School, Ghana — WASSCE, Visual Arts & ICT Focus
+          Intuivo OÜ
           <br />
           <span className="location">Eastern Region</span> | <em>2019 – 2021</em>
         </h1>
