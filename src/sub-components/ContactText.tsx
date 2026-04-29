@@ -9,7 +9,7 @@ export function ContactText(){
           <em className="special-character">Kofi Safo</em> Agyekum
         </h3>
         <p>
-          Front-end Engineer • UI/UX Designer • React & TypeScript Developer
+          Front-end Engineer • UI/UX Designer • Prompt Engineer • Full-stack Develpoer
         </p>
         <div>
           <a className="link" href="mailto:safokofi888@gmail.com" aria-label="Send email">

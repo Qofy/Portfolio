@@ -1,9 +1,9 @@
 export function ContactMyself(){
   return(
     <div className="myself-container">
-        <h2>My Frontend Journey</h2>
+        <h2>My Journey</h2>
         <p>
-          My journey into frontend development began with a passion for design and interactivity during my Visual Arts & ICT studies in high school. That creative curiosity led me to explore HTML, CSS, and JavaScript—building small but exciting projects like a Facebook login clone and music web app using vanilla JS.
+          Motivated and adaptable software developer with hands-on experience in modern web development, backend systems, and AI-assisted development workflows. Strong foundation in practical software engineering gained through a six-month internship in a professional development environment. Demonstrated growth from theoretical knowledge to building production-ready full-stack applications. Passionate about system architecture, security awareness, and continuous learning.
         </p>
         <p>
           As I progressed, I embraced modern frameworks like React and TypeScript to build responsive, accessible web apps. Projects like <strong>Teslr</strong> (a voting platform UI) and a <strong>Task Dashboard</strong> with reusable components and stateful logic showcase my growth in scalable frontend architecture.
