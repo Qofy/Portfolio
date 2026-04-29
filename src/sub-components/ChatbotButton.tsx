@@ -66,12 +66,7 @@ export function ChatbotButton() {
     setIsLoading(true);
 
     try {
-      // Use localhost for development, production URL for deployed version
-      const apiUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
-        ? 'http://localhost:11434/api/generate'
-        : 'https://www.kofiagye.com/api/ollama/generate';
-        
-      const response = await fetch(apiUrl, {
+      const response = await fetch('/api/ollama/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

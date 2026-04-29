@@ -1,0 +1,7 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "env": {
+    "OLLAMA_API_URL": "@ollama_api_url"
+  }
+}
