@@ -5,39 +5,21 @@ import { Projects } from "./Projects"
 
 export function Skills() {
   const skillsContent = (
-    <>
     <div className="skills-main">
-      <h4>Now using</h4>
-      <div className="skills-grid">
-        {skillsData.using.map((sk) => (
-          <div key={sk.id} className="skill-item">
-            <sk.icon className="skill-icon" />
-            <span>{sk.txt}</span>
+      {skillsData.title && <h3 className="skills-title">{skillsData.title}</h3>}
+      {skillsData.categories.map((cat, idx) => (
+        <section key={cat.name + idx} className="skills-category">
+          <h4>{cat.name}</h4>
+          <div className="skills-grid">
+            {cat.items.map((item, i) => (
+              <div key={item + i} className="skill-item">
+                <span>{item}</span>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      
-      <h4>Currently Learning</h4>
-      <div className="skills-grid">
-        {skillsData.learning.map((sk) => (
-          <div key={sk.id} className="skill-item">
-            <sk.icon className="skill-icon" />
-            <span>{sk.txt}</span>
-          </div>
-        ))}
-      </div>
-      
-      <h4>Other Technologies</h4>
-      <div className="skills-grid">
-        {skillsData.others.map((sk) => (
-          <div key={sk.id} className="skill-item">
-            <sk.icon className="skill-icon" />
-            <span>{sk.txt}</span>
-          </div>
-        ))}
-      </div>
+        </section>
+      ))}
     </div>
-    </>
   );
 
   return (

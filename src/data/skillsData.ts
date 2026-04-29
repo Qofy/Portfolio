@@ -1,109 +1,61 @@
-import { FaHtml5, FaSass, FaCss3, FaReact, FaJs, FaFigma, FaJava, FaPython, FaJira, FaDocker, FaNodeJs, FaNpm} from "react-icons/fa";
-import { SiTypescript, SiCplusplus, SiFlutter, SiFirebase, SiPostgresql, SiRedux } from "react-icons/si"
-
 export const skillsData = {
-  using: [
+  title: "Technical Skills",
+  categories: [
     {
-      id: 0,
-      icon: FaHtml5,
-      txt: "HTML"
+      name: "Programming Languages",
+      items: [
+        "JavaScript / TypeScript",
+        "Python",
+        "Rust",
+        "Bash / Shell scripting",
+      ],
     },
     {
-      id: 1,
-      icon: FaSass,
-      txt: "Saas"
+      name: "Frontend Development",
+      items: [
+        "React",
+        "Vue.js",
+        "Svelte",
+        "HTML / CSS",
+      ],
     },
     {
-      id: 2,
-      icon: FaCss3,
-      txt: "CSS"
+      name: "Backend Development",
+      items: [
+        "Node.js",
+        "NestJS",
+        "Django",
+        "REST API development",
+      ],
     },
     {
-      id: 3,
-      icon: FaReact,
-      txt: "React"
+      name: "Databases",
+      items: [
+        "PostgreSQL",
+        "MySQL",
+        "SQLite",
+      ],
     },
     {
-      id: 4,
-      icon: FaJs,
-      txt: "JavaScript"
+      name: "Tools & Technologies",
+      items: [
+        "Git (GitHub, GitLab)",
+        "Linux / macOS environments",
+        "Docker (basic)",
+        "Logging and debugging tools",
+        "Software architecture planning",
+        "Version control workflows",
+        "Command-line tools (tar, bash utilities)",
+      ],
     },
     {
-      id: 5,
-      icon: FaFigma,
-      txt: "Figma"
-    },
-    {
-      id: 17,
-      icon: SiTypescript,
-      txt: "Typescript"
-    },
-    {
-      id: 6,
-      icon: FaDocker,
-      txt: 'Docker'
-    },
-    {
-      id: 7,
-      icon: SiPostgresql,
-      txt: 'Postgresql'
-    },
-    {
-      id: 8,
-      icon: FaNodeJs,
-      txt: 'Nodejs'
-    },
-    {
-      id: 9,
-      icon: FaNpm,
-      txt: 'Npm'
-    },
-    {
-      id: 10,
-      icon: SiFirebase,
-      txt: 'Firebase'
-    },
-    {
-      id: 11,
-      icon: SiRedux,
-      txt: 'Redux'
+      name: "AI & Development Workflow",
+      items: [
+        "Prompt engineering",
+        "AI-assisted software development",
+        "System design and problem decomposition",
+        "Code analysis and debugging with AI tools",
+      ],
     },
   ],
-  learning: [
-     
-    {
-      id: 12,
-      icon: FaJira,
-      txt: "Jira"
-    },
-    
-     
-  ],
-  others:[
-    {
-      id: 13,
-      icon: SiCplusplus,
-      txt: "C++"
-    },
-    {
-      id: 14,
-      icon: FaPython,
-      txt: "Python"
-    },
-    {
-      id: 15,
-      icon: SiFlutter,
-      txt: "Flutter"
-    },
-    {
-      id: 16,
-      icon: FaJava,
-      txt: "Java"
-    },
-  ]
-}
-
-// <div className="skill-item">
-//           <FaHtml5 className="skill-icon" />
-//           <span>HTML</span>
-//         </div>
+};
