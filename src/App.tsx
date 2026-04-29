@@ -4,6 +4,7 @@ import { Skills } from './component/Skill';
 import { Projects } from './component/Projects';
 import { Contact } from './component/Contact';
 import { AboutBackground } from './component/AboutBackground';
+import { ChatbotButton } from './sub-components/ChatbotButton';
 import './App.css';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <AboutBackground />
         </section> 
       </main>
+      <ChatbotButton />
     </>
   );
 }
