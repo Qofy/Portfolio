@@ -31,6 +31,7 @@ export function Educational() {
       </section>
 
       <section className="senior-high">
+        <h1>Professional Experience</h1>
         <h1>
           Intuivo OÜ
           <br />
