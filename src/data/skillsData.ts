@@ -1,5 +1,5 @@
 export const skillsData = {
-  title: "Technical Skills",
+  title: "",
   categories: [
     {
       name: "Programming Languages",
