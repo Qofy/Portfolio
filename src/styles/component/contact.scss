@@ -75,6 +75,10 @@
     grid-area: nav-image;
     padding: 1rem;
     background-color: $bg-primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 70dvh;
     text-align: center;
     clip-path: polygon(19% 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -131,7 +135,6 @@
       width: 50%;
       border-radius: 50%;
       max-width: 300px;
-      margin: 10px auto;
     }
   }      
 

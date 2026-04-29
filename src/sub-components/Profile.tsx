@@ -2,16 +2,7 @@ export function Profile() {
   return (
     <div className="profile-content">
       <p>
-        I'm a motivated and self-driven Software Engineering student with a strong academic foundation and a deep passion for frontend engineering, user experience, and clean design. From crafting visually engaging interfaces to optimizing performance and accessibility, I thrive at the intersection of creativity and logic.
-      </p>
-      <p>
-        With hands-on experience building responsive, user-centric web applications using TypeScript, React, and modern frontend tooling, I focus on writing clean, maintainable code that delivers real value. My projects span from interactive voting platforms and task dashboards to CMS-driven websites and UI/UX prototypes built in Figma.
-      </p>
-      <p>
-        I actively seek out new technologies, follow agile workflows, and contribute to collaborative development environments. Whether working solo or as part of a distributed team, I take full ownership of my features—from ideation to deployment.
-      </p>
-      <p>
-        What drives me is more than code—it's solving meaningful problems, building intuitive digital experiences, and continuously learning to become a better engineer every day.
+      Motivated and adaptable software developer with hands-on experience in modern web development, backend systems, and AI-assisted development workflows. Strong foundation in practical software engineering gained through a six-month internship in a professional development environment. Demonstrated growth from theoretical knowledge to building production-ready full-stack applications. Passionate about system architecture, security awareness, and continuous learning.
       </p>
     </div>
   );
