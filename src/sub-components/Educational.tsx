@@ -13,7 +13,7 @@ export function Educational() {
         </h1>
         
         <div className="courses-main">
-          <h3>Courses</h3>
+          <h3>Major GPA (76)</h3>
           <div className="courses-container">
             {/* {Object.entries(uniCourses).map(([semester, courses], index) => (
               <div key={semester} className="semester-courses">
