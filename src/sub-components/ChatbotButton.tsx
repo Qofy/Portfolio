@@ -66,7 +66,7 @@ export function ChatbotButton() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:11434/api/generate', {
+      const response = await fetch('https://www.kofiagye.com/api/ollama/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
