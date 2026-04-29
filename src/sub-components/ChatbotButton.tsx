@@ -94,9 +94,12 @@ export function ChatbotButton() {
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
       console.error('Ollama error:', error);
+      const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
       const errorMessage: Message = {
         id: Date.now() + 1,
-        content: "Sorry, I'm having trouble connecting. Please make sure Ollama is running locally.",
+        content: isProduction 
+          ? "The AI assistant is currently being set up. In the meantime, feel free to explore the portfolio to learn about Agyekum's skills and experience!"
+          : "Sorry, I'm having trouble connecting. Please make sure Ollama is running locally.",
         isBot: true
       };
       setMessages(prev => [...prev, errorMessage]);
