@@ -54,12 +54,12 @@ const projects: Project[] = [
   // },
   {
     id: 4,
-    title: "African Music Dashboard",
-    description: "A modern music streaming dashboard showcasing African artists with playlist management, discovery features, and cultural insights.",
-    image: "/african-music-logo.webp",
-    liveUrl: "https://music-dashboard-using-typescript.vercel.app/",
+    title: "My Portfolio",
+    description: "A portfolio which contain information about me which include my experience, background, contact information and my projects(not all)",
+    image: "/portfolio.png",
+    liveUrl: "https://www.kofiagye.com/",
     githubUrl: "#",
-    technologies: ["TypeScript", "React", "SCSS",],
+    technologies: ["TypeScript", "React", "SCSS","Lucide icons"],
     featured: true
   },
   // {
