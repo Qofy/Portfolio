@@ -16,15 +16,14 @@ export const skillsData = {
         "tailwind"
       ],
     },
-    // {
-    //   name: "Backend Development",
-    //   items: [
-    //     "Node.js",
-    //     "NestJS",
-    //     "Django",
-    //     "REST API development",
-    //   ],
-    // },
+    {
+      name: "Backend Development",
+      items: [
+        "NestJS (For APIs)",
+        "Django (For APIs)",
+        "REST API development",
+      ],
+    },
     // {
     //   name: "Databases",
     //   items: [

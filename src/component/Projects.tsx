@@ -29,7 +29,7 @@ const projects: Project[] = [
     image: "/afriqnet.jpg",
     liveUrl: "https://afriqnet-ten.vercel.app/",
     githubUrl: "#",
-    technologies: ["Nextjs", "Firebase","lucide icons","cloudinary"],
+    technologies: ["Nextjs", "Firebase APIs","lucide icons","cloudinary","Movies APIs", "React(v19)","Tailwind CSS", "Lucia"],
     featured: true
   },
   {
@@ -59,7 +59,7 @@ const projects: Project[] = [
     image: "/portfolio.png",
     liveUrl: "https://www.kofiagye.com/",
     githubUrl: "#",
-    technologies: ["TypeScript", "React", "SCSS","Lucide icons"],
+    technologies: ["TypeScript", "React", "SCSS","Lucide icons", "Vite", "React", "React Router and Hash Link"],
     featured: true
   },
   // {
