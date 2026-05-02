@@ -8,11 +8,11 @@ export const uniCourses = {
 export const seniorHCourses= {
   coreSubjects:{
       header:"Responsibilities",
-      courses:["Developed and maintained full-stack web applications using modern frontend and backend frameworks.", "Implemented backend services using Node.js, NestJS, Python, and Rust.","Built user interfaces using React, Vue, and Svelte.","Integrated databases including PostgreSQL, MySQL, and SQLite.", "Used Git and GitLab for version control and collaboration.", "Tested and debugged applications to ensure reliability and performance.","Learned and applied professional software development workflows.","Used AI tools responsibly to design, implement, and troubleshoot software solutions."],
+      courses:["Developed and maintained web applications using modern frontend", "Implemented backend services using Node.js, NestJS, Python, and Rust For APIs.","Built user interfaces using React, Nextjs, and Svelte.", "Used Git and GitLab for version control and collaboration.", "Tested and debugged applications to ensure reliability and performance.","Learned and applied professional software development workflows.","Used AI tools responsibly to design, implement, and troubleshoot software solutions."],
   },
   electiveSubject:{
     header:"Achievements",
-    courses:["ransitioned from theoretical knowledge to practical software development in a professional environment.", "Improved debugging, problem-solving, and attention to detail.", "Gained experience in modern development ecosystems and team workflows.", "Built complete full-stack applications connecting frontend and backend systems.", "Developed the ability to work independently on technical tasks."]
+    courses:["Transitioned from theoretical knowledge to practical software development in a professional environment.", "Improved debugging, problem-solving, and attention to detail.", "Gained experience in modern development ecosystems and team workflows.", "Built complete frontend applications connecting to backend systems.", "Developed the ability to work independently on technical tasks."]
   }
   } 
 
