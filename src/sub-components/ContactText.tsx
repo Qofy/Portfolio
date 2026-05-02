@@ -9,7 +9,7 @@ export function ContactText(){
           <em className="special-character">Kofi Safo</em> Agyekum
         </h3>
         <p>
-          Front-end Engineer • UI/UX Designer • Prompt Engineer • Full-stack Develpoer
+          Front-end Engineer • Front-end Develooper • Prompt Engineer 
         </p>
         <div>
           <a className="link" href="mailto:safokofi888@gmail.com" aria-label="Send email">
@@ -26,7 +26,7 @@ export function ContactText(){
           </a>
           <a 
             className="link" 
-            href="https://www.linkedin.com/in/safo-agyekum-870569298/" 
+            href="https://www.linkedin.com/in/kofi-agyekum-870569298/" 
             target="_blank" 
             rel="noopener noreferrer"
             aria-label="Visit LinkedIn profile"

@@ -5,37 +5,34 @@ export const skillsData = {
       name: "Programming Languages",
       items: [
         "JavaScript / TypeScript",
-        "Python",
-        "Rust",
-        "Bash / Shell scripting",
       ],
     },
     {
       name: "Frontend Development",
       items: [
         "React",
-        "Vue.js",
-        "Svelte",
+        "Nextjs",
         "HTML / CSS",
+        "tailwind"
       ],
     },
-    {
-      name: "Backend Development",
-      items: [
-        "Node.js",
-        "NestJS",
-        "Django",
-        "REST API development",
-      ],
-    },
-    {
-      name: "Databases",
-      items: [
-        "PostgreSQL",
-        "MySQL",
-        "SQLite",
-      ],
-    },
+    // {
+    //   name: "Backend Development",
+    //   items: [
+    //     "Node.js",
+    //     "NestJS",
+    //     "Django",
+    //     "REST API development",
+    //   ],
+    // },
+    // {
+    //   name: "Databases",
+    //   items: [
+    //     "PostgreSQL",
+    //     "MySQL",
+    //     "SQLite",
+    //   ],
+    // },
     {
       name: "Tools & Technologies",
       items: [
