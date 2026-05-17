@@ -1,5 +1,5 @@
 // import { Children } from "react"
-import { icon } from "@fortawesome/fontawesome-svg-core";
+// import { icon } from "@fortawesome/fontawesome-svg-core";
 import "../styles/component/projects.scss"
 import { ExternalLink, Github } from "lucide-react"
 
