@@ -16,13 +16,13 @@ export const seniorHCourses= {
   }
   } 
 
-export const juniorHCourses = {
-  coreSubjects:{
-      header:"Core Subjects",
-      courses:["Religious And Moral Education", "Core ICT","Creative Art","Ashanti Twi", "Basic Design And Technology (BDT)", "French"],
-  },
-  electiveSubject:{
-    header:"Elective Subjects",
-    courses:["Mathematic", "Science","Social Studies","English"]
-  }
-}
+// export const juniorHCourses = {
+//   coreSubjects:{
+//       header:"Core Subjects",
+//       courses:["Religious And Moral Education", "Core ICT","Creative Art","Ashanti Twi", "Basic Design And Technology (BDT)", "French"],
+//   },
+//   electiveSubject:{
+//     header:"Elective Subjects",
+//     courses:["Mathematic", "Science","Social Studies","English"]
+//   }
+// }

@@ -1,4 +1,5 @@
 // import { Children } from "react"
+import { icon } from "@fortawesome/fontawesome-svg-core";
 import "../styles/component/projects.scss"
 import { ExternalLink, Github } from "lucide-react"
 
@@ -29,7 +30,7 @@ const projects: Project[] = [
     image: "/afriqnet.jpg",
     liveUrl: "https://afriqnet-ten.vercel.app/",
     githubUrl: "#",
-    technologies: ["Nextjs", "Firebase APIs","lucide icons","cloudinary","Movies APIs", "React(v19)","Tailwind CSS", "Lucia"],
+    technologies: ["Nextjs", "Firebase APIs","lucide icons","cloudinary","Movies APIs", "React(v19)","Tailwind CSS", "Lucia","Redux","Redux Toolkit"],
     featured: true
   },
   {
@@ -42,16 +43,16 @@ const projects: Project[] = [
     technologies: ["Nextjs", "Lucide icons","cloudinary"],
     featured: true
   },
-  // {
-  //   id: 3,
-  //   title: "Roll Dice Game",
-  //   description: "An interactive multiplayer dice game with real-time scoring, animations, and competitive gameplay features.",
-  //   image: "/dice.png",
-  //   liveUrl: "https://pick-game-master.vercel.app/",
-  //   githubUrl: "#",
-  //   technologies: ["JavaScript", "HTML5", "CSS3", "Canvas API"],
-  //   featured: false
-  // },
+   {
+     id: 3,
+     title: "NutriScan",
+     description: "An AI assitance in health. It is used checking patience dietary food prescription.",
+     image: "/nutriScan.png",
+     liveUrl: "https://nutri-scan-murex.vercel.app",
+    githubUrl: "#",
+    technologies: ["Nextjs", "React","Tailwind CSS","Canvas","Redux","Redux Toolkit","Cloudinary","Lucia icon","Django APIs"],
+    featured: true
+  },
   {
     id: 4,
     title: "My Portfolio",

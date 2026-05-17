@@ -13,7 +13,10 @@ export const skillsData = {
         "React",
         "Nextjs",
         "HTML / CSS",
-        "tailwind"
+        "tailwind",
+        "Redux",
+        "Redux toolkit",
+        "Firebase"
       ],
     },
     {
