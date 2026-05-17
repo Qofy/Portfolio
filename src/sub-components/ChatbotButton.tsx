@@ -66,14 +66,23 @@ export function ChatbotButton() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('/api/ollama/generate', {
+      const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: 'llama3.2',
-          prompt: `${PORTFOLIO_CONTEXT}\n\nUser question: ${inputValue}`,
+          model: 'gemma3:4b',
+          messages: [
+            {
+              role: 'system',
+              content: PORTFOLIO_CONTEXT
+            },
+            {
+              role: 'user',
+              content: inputValue
+            }
+          ],
           stream: false
         })
       });
@@ -82,19 +91,16 @@ export function ChatbotButton() {
       
       const botMessage: Message = {
         id: Date.now() + 1,
-        content: data.response || "Sorry, I couldn't process your request.",
+        content: data.message?.content || data.choices?.[0]?.message?.content || "Sorry, I couldn't process your request.",
         isBot: true
       };
 
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
-      console.error('Ollama error:', error);
-      const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
+      console.error('Ollama Cloud error:', error);
       const errorMessage: Message = {
         id: Date.now() + 1,
-        content: isProduction 
-          ? "The AI assistant is currently being set up. In the meantime, feel free to explore the portfolio to learn about Agyekum's skills and experience!"
-          : "Sorry, I'm having trouble connecting. Please make sure Ollama is running locally.",
+        content: "Sorry, I'm having trouble connecting to the AI service. Please try again in a moment.",
         isBot: true
       };
       setMessages(prev => [...prev, errorMessage]);

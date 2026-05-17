@@ -6,10 +6,9 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api/ollama': {
-        target: 'http://localhost:11434',
+      '/api': {
+        target: 'http://localhost:3001',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api\/ollama/, ''),
       },
     },
   },

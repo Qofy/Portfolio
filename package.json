@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:api": "node server/chat-proxy.js",
+    "dev:vercel": "vercel dev",
     "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -12,6 +14,8 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
     "lucide-react": "^0.510.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
