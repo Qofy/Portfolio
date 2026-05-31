@@ -14,7 +14,6 @@ export const seniorHCourses = {
       "Engineered frontend features and maintained production codebases at Intuivo OÜ, Berlin, using Git and Axio.",
       "Built user interfaces with React, React Native, Next.js, and Svelte across multiple roles.",
       "Integrated backend APIs using Django REST Framework, Redux, Axios, Clerk, and Expo.",
-      "Designed and implemented computerized business application systems at theSOFTtribe Ltd. in Accra, Ghana.",
       "Used AI tools responsibly to accelerate design, implementation, and troubleshooting workflows.",
     ],
   },
@@ -81,22 +80,6 @@ export const professionalExperience = [
     achievements: [
       "Delivered multiple full-stack client projects over a 1-year engagement.",
       "Strengthened expertise in Next.js, Redux.js, and remote team workflows.",
-    ],
-  },
-  {
-    company: "theSOFTtribe Ltd.",
-    role: "Frontend Developer",
-    location: "Greater Accra, Ghana · On-site",
-    period: "Mar 2022 – Aug 2023",
-    responsibilities: [
-      "Designed and implemented computerized business application systems.",
-      "Built and maintained frontend interfaces using TypeScript and modern web technologies.",
-      "Collaborated with cross-functional teams on client-facing software products.",
-      "Contributed to Ghana's leading software development company serving enterprise clients.",
-    ],
-    achievements: [
-      "Completed 1.5 years of full-time on-site professional frontend development.",
-      "Gained foundational professional experience working alongside senior engineers at an enterprise-level company.",
     ],
   },
 ];

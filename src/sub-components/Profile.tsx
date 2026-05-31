@@ -2,24 +2,24 @@ export function Profile() {
   return (
     <div className="profile-content">
       <p>
-        I'm Kofi (Safo) Agyekum — a Software Engineer with 4 years of experience
-        specializing in React, React Native, and Next.js. I've built web and
-        mobile applications across Ghana and Germany, working across full-time,
-        remote, and freelance environments for clients ranging from local
-        businesses to international product teams.
+        I'm Kofi (Safo) Agyekum — a Software Engineer with 4+ years of experience
+        specializing in React, React Native, and Next.js. I've built and shipped
+        production web and mobile applications across Ghana and Europe, including
+        2+ years of hands-on experience at <strong>Platinum Africa Solution Ltd.</strong> and
+        <strong> Intuivo OÜ</strong> — two companies where I worked across remote and
+        on-site environments delivering real products for real clients.
       </p>
       <p>
-        My work spans the full frontend spectrum — from crafting pixel-perfect
-        UIs to architecting scalable component systems and integrating backend
-        APIs with tools like Django REST Framework, Redux, Axios, and Clerk.
-        I care deeply about clean code, maintainable architecture, and shipping
-        software that actually works.
+        At Platinum Africa, I built full-stack client solutions using Next.js and Redux.
+        At Intuivo in Berlin, I engineered frontend and backend features within a
+        team of software architects building innovative products. Today, I operate
+        as a <strong>Freelance Frontend Developer</strong> from Hamburg — bringing the
+        same production-level quality to every client project I take on.
       </p>
       <p>
-        Currently freelancing from Hamburg, Germany, and studying at the
-        University of Europe for Applied Sciences. I'm always open to
-        challenging projects and teams that value quality, creativity, and
-        continuous growth.
+        My stack centers on React, Next.js, TypeScript, SCSS, Redux, Django REST
+        Framework, and Expo. I care about clean architecture, maintainable code,
+        and software that works reliably at scale.
       </p>
     </div>
   );
