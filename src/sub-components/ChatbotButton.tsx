@@ -25,7 +25,7 @@ GitHub: https://github.com/Qofy
 LinkedIn: https://www.linkedin.com/in/kofi-agyekum-870569298/
 Portfolio website: https://www.kofiagye.com/
 
-Bio: Aspiring software developer with practical experience in front-end development, debugging, and modern development workflows gained through hands-on project work and professional roles across Ghana and Germany. Strong interest in front-end systems, software architecture, continuous learning, and backend APIs. Known for persistence, attention to detail, and the ability to adapt quickly to new technologies.
+Bio: Software Engineer with 2+ years of professional experience at Platinum Africa Solution Ltd. and Intuivo OÜ, plus ongoing freelance work. Specialises in front-end development with React, Next.js, and React Native. Built and shipped production applications across Ghana and Germany. Known for clean code, strong attention to detail, and the ability to adapt quickly to new technologies and teams.
 
 --- EDUCATION ---
 University: University of Europe for Applied Sciences
@@ -41,7 +41,8 @@ University Courses by Semester:
 - Semester 3: IT Platforms, Software Engineering 2, Cloud Computing & Distributed Systems, Operating Systems, Software Quality Assurance, GUI Design & Web Optimization
 - Semester 4: Artificial Intelligence (AI), Frontend Development (Flutter, HTML, JavaScript, CSS, Node.js), IT Agile, Corporate Management, Machine Learning & Smart Systems, IT Security
 
---- PROFESSIONAL EXPERIENCE (4+ years total) ---
+--- PROFESSIONAL EXPERIENCE ---
+Total: 2+ years of focused professional experience across Platinum Africa and Intuivo, plus current freelance work.
 
 1. Safo Kofi — Freelance Frontend Developer
    Location: Hamburg, Germany
@@ -66,8 +67,7 @@ University Courses by Semester:
    - Tested and debugged applications to ensure reliability and performance
    - Used AI tools responsibly to design, implement, and troubleshoot software solutions
    Achievements:
-   - Transitioned from theoretical knowledge to practical, production-level software development
-   - Gained hands-on experience with modern development ecosystems and team workflows
+   - Engineered production-level frontend and backend features within a team of software architects
    - Built complete frontend applications integrated with backend APIs
    - Developed the ability to work independently on complex technical tasks
 
@@ -83,23 +83,11 @@ University Courses by Semester:
    - Delivered multiple full-stack client projects over a 1-year engagement
    - Strengthened expertise in Next.js, Redux.js, and remote team workflows
 
-4. theSOFTtribe Ltd. — Frontend Developer
-   Location: Greater Accra, Ghana (On-site)
-   Period: March 2022 – August 2023
-   Responsibilities:
-   - Designed and implemented computerized business application systems
-   - Built and maintained frontend interfaces using TypeScript and modern web technologies
-   - Collaborated with cross-functional teams on client-facing software products
-   - Contributed to Ghana's leading software development company serving enterprise clients
-   Achievements:
-   - Completed 1.5 years of full-time on-site professional frontend development
-   - Gained foundational professional experience working alongside senior engineers at an enterprise-level company
-
 --- TECHNICAL SKILLS ---
 Programming Languages: JavaScript, TypeScript
-Frontend: React, Next.js, React Native, Redux, Redux Toolkit, HTML/CSS, Tailwind CSS, Svelte, Vue.js, Firebase, Expo
+Frontend: React, Next.js, React Native, Redux, Redux Toolkit, HTML/CSS, Tailwind CSS, SCSS, Svelte, Vue.js, Firebase, Expo
 Backend: Django REST Framework, NestJS, Node.js, REST API development
-Tools & Technologies: Git (GitHub, GitLab), Linux/macOS, Docker (basic), Logging & debugging tools, Software architecture planning, Command-line tools (Bash, tar)
+Tools & Technologies: Git (GitHub, GitLab), Linux/macOS, Docker (basic), Logging & debugging tools, Software architecture planning, Command-line tools (Bash)
 AI & Workflow: Prompt engineering, AI-assisted development, System design, Code analysis and debugging with AI tools
 
 --- PROJECTS ---
