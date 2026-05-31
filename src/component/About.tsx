@@ -5,11 +5,11 @@ import { ContactInfo } from "../sub-components/ContactInfo";
 
 export function About() {
   return (
-    <SectionContainer>
+    <SectionContainer id="about">
       <h1 className="about-header">About Me</h1>
       <Profile />
       <h2 className="name-header">Kofi Safo Agyekum</h2>
-      <ContactInfo contactinfoClassName="contact-info"children/>
+      <ContactInfo contactinfoClassName="contact-info" />
     </SectionContainer>
   );
 }

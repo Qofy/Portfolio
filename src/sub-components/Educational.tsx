@@ -1,67 +1,55 @@
-// import { uniCourses } from "../data/background";
-import { seniorHCourses } from "../data/background";
+import { professionalExperience } from "../data/background";
 
 export function Educational() {
   return (
     <div className="educational-bg">
+
+      {/* University */}
       <section className="university">
-        <h1>
-          University of Europe for Applied Sciences — Bachelor of Software Engineering
-          <br />
-          <span className="location">Hamburg, Germany</span> | 
-          <em> 2023 – 2026</em>
-        </h1>
-        
+        <h1>University of Europe for Applied Sciences</h1>
+        <span>Bachelor of Software Engineering</span>
+        <p className="location">Hamburg, Germany &nbsp;|&nbsp; <em>2023 – 2026</em></p>
         <div className="courses-main">
-          <h3>Major GPA (76)</h3>
-          <h1>Current Status (Thesis writing)</h1>
-          <div className="courses-container">
-            {/* {Object.entries(uniCourses).map(([semester, courses], index) => (
-              <div key={semester} className="semester-courses">
-                <h4>Semester {index + 1}</h4>
+          <h3>Major GPA: 76</h3>
+          <p className="status">Current Status: Thesis Writing</p>
+        </div>
+      </section>
+
+      {/* Professional Experience */}
+      <section className="senior-high">
+        <h2>Professional Experience</h2>
+
+        {professionalExperience.map((job, index) => (
+          <div key={index} className="job-entry">
+            <h3>
+              {job.company}
+              <span className="role"> — {job.role}</span>
+            </h3>
+            <p className="location">{job.location} &nbsp;|&nbsp; <em>{job.period}</em></p>
+
+            <div className="subjects-container">
+              <div className="subject-group">
+                <h4>Responsibilities</h4>
                 <ul>
-                  {courses.map((course, courseIndex) => (
-                    <li key={courseIndex}>{course}</li>
+                  {job.responsibilities.map((item, i) => (
+                    <li key={i}>{item}</li>
                   ))}
                 </ul>
               </div>
-            ))} */}
+
+              <div className="subject-group">
+                <h4>Achievements</h4>
+                <ul>
+                  {job.achievements.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
+        ))}
       </section>
 
-      <section className="senior-high">
-        <h1>Professional Experience</h1>
-        <h1>
-          Intuivo OÜ
-          <br />
-          <span className="location">Germany-Berlin</span> | <em>2025 – 2026</em>
-        </h1>
-        
-        <div className="subjects-container">
-          <div className="subject-group">
-            <h3>{seniorHCourses.coreSubjects.header}</h3>
-            <ul>
-              {seniorHCourses.coreSubjects.courses.map((course, index) => (
-                <li key={index}>{course}</li>
-              ))}
-            </ul>
-          </div>
-          
-          <div className="subject-group">
-            <h3>{seniorHCourses.electiveSubject.header}</h3>
-            <ul>
-              {seniorHCourses.electiveSubject.courses.map((course, index) => (
-                <li key={index}>{course}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="software-used-at-uni">
-        {/* Add software/tools content here */}
-      </section>
     </div>
   );
 }

@@ -1,26 +1,18 @@
-import { Projects } from "./Projects";
 import "../styles/component/background.scss";
 import { Educational } from "../sub-components/Educational";
 
 export function AboutBackground() {
-  const backgroundContent = (
-    <>
-      <div>
+  return (
+    <section id="background" className="background-section">
+      <div className="background-container">
+        <header className="background-header">
+          <h1 className="header">Background</h1>
+        </header>
         <Educational />
         <div className="all-software-used">
-          {/* Add content here */}
+          {/* Tools & Software — add content here */}
         </div>
       </div>
-    </>
-  );
-
-  return (
-    <Projects 
-      sectionCon="background-section"
-      header="header"
-      title="About My Background (Educational Background)"
-      children={backgroundContent}
-      sectionId="Background"
-    />
+    </section>
   );
 }

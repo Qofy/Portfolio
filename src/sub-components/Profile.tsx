@@ -2,10 +2,24 @@ export function Profile() {
   return (
     <div className="profile-content">
       <p>
-        Aspiring software developer with practical experience in front-end development and with 1year experience, debugging, and modern development workflows gained through hands-on project work and a professional internship environment. Strong interest in front-end systems, and continuous learning with a focus on building reliable and maintainable software solutions(Frontend).
+        I'm Kofi (Safo) Agyekum — a Software Engineer with 4 years of experience
+        specializing in React, React Native, and Next.js. I've built web and
+        mobile applications across Ghana and Germany, working across full-time,
+        remote, and freelance environments for clients ranging from local
+        businesses to international product teams.
       </p>
       <p>
-        Known for persistence, attention to detail, and the ability to adapt quickly to new technologies. I am motivated to grow professionally, contribute to team success, and continuously improve my technical and problem-solving skills in real-world software development environments.
+        My work spans the full frontend spectrum — from crafting pixel-perfect
+        UIs to architecting scalable component systems and integrating backend
+        APIs with tools like Django REST Framework, Redux, Axios, and Clerk.
+        I care deeply about clean code, maintainable architecture, and shipping
+        software that actually works.
+      </p>
+      <p>
+        Currently freelancing from Hamburg, Germany, and studying at the
+        University of Europe for Applied Sciences. I'm always open to
+        challenging projects and teams that value quality, creativity, and
+        continuous growth.
       </p>
     </div>
   );

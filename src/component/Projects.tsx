@@ -2,13 +2,17 @@
 // import { icon } from "@fortawesome/fontawesome-svg-core";
 import "../styles/component/projects.scss"
 import { ExternalLink, Github } from "lucide-react"
+import afriqnetImg from "../assets/images/afriqnet.jpg"
+import firepupImg from "../assets/images/firepup.png"
+import nutriScanImg from "../assets/images/nutriScan.png"
+import portfolioImg from "../assets/images/portfolio.png"
 
-type projectProps = {
-  sectionCon: string,
-  sectionId?: string,
-  header?: string,
-  title?: string,
-  children?: React.ReactNode
+type ProjectSectionProps = {
+  sectionCon?: string;
+  sectionId?: string;
+  header?: string;
+  title?: string;
+  children?: React.ReactNode;
 }
 
 interface Project {
@@ -26,56 +30,52 @@ const projects: Project[] = [
   {
     id: 1,
     title: "Afriqnet",
-    description: "An ongoing project to allow africaans to hav their own streaming platform instead of using 'Youtube.'",
-    image: "/afriqnet.jpg",
+    description: "A streaming platform built for African audiences — a homegrown alternative to YouTube, featuring movies, shows, and content that reflects African stories and culture.",
+    image: afriqnetImg,
     liveUrl: "https://afriqnet-ten.vercel.app/",
     githubUrl: "#",
-    technologies: ["Nextjs", "Firebase APIs","lucide icons","cloudinary","Movies APIs", "React(v19)","Tailwind CSS", "Lucia","Redux","Redux Toolkit"],
+    technologies: ["Next.js", "React (v19)", "Redux Toolkit", "Firebase", "Cloudinary", "Movies API", "Tailwind CSS", "Lucia", "Lucide Icons"],
     featured: true
   },
   {
     id: 2,
     title: "FirePup",
-    description: "food platform that allow users to post and share their meal and recipe",
-    image: "/firepup.png",
+    description: "A community food platform where users can post, share, and discover meals and recipes from around the world.",
+    image: firepupImg,
     liveUrl: "https://firepup.vercel.app/community",
     githubUrl: "#",
-    technologies: ["Nextjs", "Lucide icons","cloudinary"],
+    technologies: ["Next.js", "Cloudinary", "Lucide Icons"],
     featured: true
   },
-   {
-     id: 3,
-     title: "NutriScan",
-     description: "An AI assitance in health. It is used checking patience dietary food prescription.",
-     image: "/nutriScan.png",
-     liveUrl: "https://nutri-scan-murex.vercel.app",
+  {
+    id: 3,
+    title: "NutriScan",
+    description: "An AI-powered health assistant that helps patients track and evaluate their dietary food prescriptions for better nutrition management.",
+    image: nutriScanImg,
+    liveUrl: "https://nutri-scan-murex.vercel.app",
     githubUrl: "#",
-    technologies: ["Nextjs", "React","Tailwind CSS","Canvas","Redux","Redux Toolkit","Cloudinary","Lucia icon","Django APIs"],
+    technologies: ["Next.js", "React", "Redux Toolkit", "Django REST API", "Cloudinary", "Tailwind CSS", "Canvas", "Lucide Icons"],
     featured: true
   },
   {
     id: 4,
     title: "My Portfolio",
-    description: "A portfolio which contain information about me which include my experience, background, contact information and my projects(not all)",
-    image: "/portfolio.png",
+    description: "A personal portfolio showcasing my background, experience, projects, and contact information — built with a focus on clean design and performance.",
+    image: portfolioImg,
     liveUrl: "https://www.kofiagye.com/",
     githubUrl: "#",
-    technologies: ["TypeScript", "React", "SCSS","Lucide icons", "Vite", "React", "React Router and Hash Link"],
+    technologies: ["TypeScript", "React", "React Router", "Hash Link", "SCSS", "Vite", "Lucide Icons"],
     featured: true
   },
-  // {
-  //   id: 5,
-  //   title: "Bankist",
-  //   description: "A modern banking interface with account management, transaction history, and financial analytics. Demo credentials: user 'js', pin '1111'.",
-  //   image: "/bankist.png",
-  //   liveUrl: "https://bankist-master.vercel.app/",
-  //   githubUrl: "#",
-  //   technologies: ["JavaScript", "HTML5", "CSS3", "Chart.js"],
-  //   featured: false
-  // }
 ];
 
-export function Projects({ sectionCon, header, title = "Projects", children, sectionId }: projectProps) {
+export function Projects({
+  sectionCon = 'project-main__con',
+  header,
+  title = 'Projects',
+  children,
+  sectionId = 'projects',
+}: ProjectSectionProps) {
   const featuredProjects = projects.filter(project => project.featured);
   // const otherProjects = projects.filter(project => !project.featured);
 

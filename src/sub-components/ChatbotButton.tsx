@@ -25,67 +25,103 @@ GitHub: https://github.com/Qofy
 LinkedIn: https://www.linkedin.com/in/kofi-agyekum-870569298/
 Portfolio website: https://www.kofiagye.com/
 
-Bio: Aspiring software developer with practical experience in front-end development, debugging, and modern development workflows gained through hands-on project work and a professional internship. Strong interest in front-end systems, software architecture, continuous learning, and backend APIs, with a focus on building reliable and maintainable software solutions. Known for persistence, attention to detail, and the ability to adapt quickly to new technologies.
+Bio: Aspiring software developer with practical experience in front-end development, debugging, and modern development workflows gained through hands-on project work and professional roles across Ghana and Germany. Strong interest in front-end systems, software architecture, continuous learning, and backend APIs. Known for persistence, attention to detail, and the ability to adapt quickly to new technologies.
 
 --- EDUCATION ---
 University: University of Europe for Applied Sciences
 Degree: Bachelor of Software Engineering
 Location: Hamburg, Germany
 Duration: 2023 – 2026
-Current Status: Thesis writing (final stage)
+Current Status: Thesis Writing (final stage)
 GPA: 76 (Major GPA)
 
 University Courses by Semester:
-- Semester 1: Programming (Python), Computer Architecture, Software Engineering 1, Mathematics and Statistics, Business Employability in English, Management Bases
-- Semester 2: Big Data Analysis, Start-up Management, Parallel Programming, Back-end Development, Digital and Media Communication
+- Semester 1: Programming (Python), Computer Architecture, Software Engineering 1, Mathematics & Statistics, Business English, Management Fundamentals
+- Semester 2: Big Data Analysis, Start-up Management, Parallel Programming, Back-end Development, Digital & Media Communication
 - Semester 3: IT Platforms, Software Engineering 2, Cloud Computing & Distributed Systems, Operating Systems, Software Quality Assurance, GUI Design & Web Optimization
 - Semester 4: Artificial Intelligence (AI), Frontend Development (Flutter, HTML, JavaScript, CSS, Node.js), IT Agile, Corporate Management, Machine Learning & Smart Systems, IT Security
 
---- PROFESSIONAL EXPERIENCE ---
-Company: Intuivo OÜ
-Location: Berlin, Germany
-Role: Software Developer Intern
-Duration: September 2025 – March 2026
+--- PROFESSIONAL EXPERIENCE (4+ years total) ---
 
-Responsibilities:
-- Developed and maintained web applications using modern frontend and backend technologies
-- Built user interfaces using React, Next.js, and Svelte
-- Implemented backend services using Node.js, NestJS, Python, and Rust for APIs
-- Used Git and GitLab for version control and collaboration
-- Tested and debugged applications to ensure reliability and performance
-- Learned and applied professional software development workflows
-- Used AI tools responsibly to design, implement, and troubleshoot software solutions
+1. Safo Kofi — Freelance Frontend Developer
+   Location: Hamburg, Germany
+   Period: May 2026 – Present
+   Responsibilities:
+   - Building web applications and mobile apps for clients as an independent freelance developer
+   - Developing cross-platform mobile apps using React Native and Expo
+   - Integrating third-party services including Clerk, Axios, and Django REST Framework
+   - Managing full project lifecycles from design to deployment
+   Achievements:
+   - Established an independent freelance practice serving clients remotely from Hamburg
+   - Delivering projects using React, React Native, Next.js, Redux, and Django REST Framework
 
-Achievements:
-- Transitioned from theoretical knowledge to practical software development in a professional environment
-- Improved debugging, problem-solving, and attention to detail
-- Gained experience in modern development ecosystems and team workflows
-- Built complete frontend applications connecting to backend systems
-- Developed the ability to work independently on technical tasks
+2. Intuivo OÜ — Software Engineer
+   Location: Berlin, Germany
+   Period: September 2025 – May 2026
+   Responsibilities:
+   - Developed and maintained web applications using modern frontend frameworks
+   - Implemented backend services using Django REST Framework
+   - Built user interfaces with React, Next.js, and Svelte
+   - Used Git and GitLab for version control and team collaboration
+   - Tested and debugged applications to ensure reliability and performance
+   - Used AI tools responsibly to design, implement, and troubleshoot software solutions
+   Achievements:
+   - Transitioned from theoretical knowledge to practical, production-level software development
+   - Gained hands-on experience with modern development ecosystems and team workflows
+   - Built complete frontend applications integrated with backend APIs
+   - Developed the ability to work independently on complex technical tasks
+
+3. Platinum Africa Solution Ltd. — Software Developer
+   Location: Ghana (Remote)
+   Period: March 2024 – April 2025
+   Responsibilities:
+   - Built full-stack web applications for clients seeking business software solutions
+   - Managed and maintained client web applications end-to-end
+   - Developed frontend interfaces using Next.js and Redux.js
+   - Collaborated remotely with clients to deliver reliable and scalable solutions
+   Achievements:
+   - Delivered multiple full-stack client projects over a 1-year engagement
+   - Strengthened expertise in Next.js, Redux.js, and remote team workflows
+
+4. theSOFTtribe Ltd. — Frontend Developer
+   Location: Greater Accra, Ghana (On-site)
+   Period: March 2022 – August 2023
+   Responsibilities:
+   - Designed and implemented computerized business application systems
+   - Built and maintained frontend interfaces using TypeScript and modern web technologies
+   - Collaborated with cross-functional teams on client-facing software products
+   - Contributed to Ghana's leading software development company serving enterprise clients
+   Achievements:
+   - Completed 1.5 years of full-time on-site professional frontend development
+   - Gained foundational professional experience working alongside senior engineers at an enterprise-level company
 
 --- TECHNICAL SKILLS ---
 Programming Languages: JavaScript, TypeScript
-Frontend Development: React, Next.js, HTML/CSS, Tailwind CSS, Svelte, Vue.js
-Backend Development: NestJS (for APIs), Django (for APIs), Node.js, REST API development, Python, Rust
-Databases: PostgreSQL, MySQL, SQLite
-Tools & Technologies: Git (GitHub, GitLab), Linux/macOS environments, Docker (basic), Logging and debugging tools, Software architecture planning, Version control workflows, Command-line tools (tar, bash utilities)
-AI & Workflow: Prompt engineering, AI-assisted software development, System design and problem decomposition, Code analysis and debugging with AI tools
+Frontend: React, Next.js, React Native, Redux, Redux Toolkit, HTML/CSS, Tailwind CSS, Svelte, Vue.js, Firebase, Expo
+Backend: Django REST Framework, NestJS, Node.js, REST API development
+Tools & Technologies: Git (GitHub, GitLab), Linux/macOS, Docker (basic), Logging & debugging tools, Software architecture planning, Command-line tools (Bash, tar)
+AI & Workflow: Prompt engineering, AI-assisted development, System design, Code analysis and debugging with AI tools
 
 --- PROJECTS ---
 1. Afriqnet (Featured, Ongoing)
-   Description: An ongoing project to allow Africans to have their own streaming platform instead of using YouTube.
-   Live URL: https://afriqnet-ten.vercel.app/
-   Tech stack: Next.js, React (v19), Firebase APIs, Cloudinary, Movies APIs, Tailwind CSS, Lucide icons, Lucia (auth)
+   Description: A streaming platform built for African audiences — a homegrown alternative to YouTube, featuring movies, shows, and content that reflects African stories and culture.
+   Live: https://afriqnet-ten.vercel.app/
+   Tech: Next.js, React (v19), Redux Toolkit, Firebase, Cloudinary, Movies API, Tailwind CSS, Lucia (auth), Lucide Icons
 
 2. FirePup (Featured)
-   Description: A food platform that allows users to post and share their meals and recipes.
-   Live URL: https://firepup.vercel.app/community
-   Tech stack: Next.js, Cloudinary, Lucide icons
+   Description: A community food platform where users can post, share, and discover meals and recipes from around the world.
+   Live: https://firepup.vercel.app/community
+   Tech: Next.js, Cloudinary, Lucide Icons
 
-3. My Portfolio (Featured)
-   Description: A portfolio containing information about Agyekum, including his experience, background, contact information, and projects.
-   Live URL: https://www.kofiagye.com/
-   Tech stack: TypeScript, React, SCSS, Vite, Lucide icons, React Router, React Hash Link
+3. NutriScan (Featured)
+   Description: An AI-powered health assistant that helps patients track and evaluate their dietary food prescriptions for better nutrition management.
+   Live: https://nutri-scan-murex.vercel.app
+   Tech: Next.js, React, Redux Toolkit, Django REST API, Cloudinary, Tailwind CSS, Canvas, Lucide Icons
+
+4. My Portfolio (Featured)
+   Description: A personal portfolio showcasing his background, experience, projects, and contact information — built with a focus on clean design and performance.
+   Live: https://www.kofiagye.com/
+   Tech: TypeScript, React, React Router, Hash Link, SCSS, Vite, Lucide Icons
 `;
 
 export function ChatbotButton() {

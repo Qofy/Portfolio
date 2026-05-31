@@ -1,276 +1,263 @@
 @import "../abstract/variable.scss";
 
-
+/* ─── Section Shell ──────────────────────────────────────────── */
 .background-section {
-  display: flex;
   width: 100%;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   padding: 0 1rem;
+}
 
-  .university {
-    margin-bottom: 3rem;
+.background-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.background-header {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  h1 {
+    font-family: $titilliun-font;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: $primary-color1;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 60%;
+      height: 3px;
+      background: $primary-color1;
+      margin: 0.6rem auto 0;
+      border-radius: 2px;
+    }
   }
 }
 
+/* ─── Shared Wrapper ─────────────────────────────────────────── */
 .educational-bg {
   display: flex;
   flex-direction: column;
+  gap: 4rem;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+}
 
-  
+/* ─── University Card ────────────────────────────────────────── */
+.university {
+  background: $bg-secondary;
+  border-radius: 12px;
+  padding: 3rem;
+  border-left: 5px solid $primary-color1;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 
   h1 {
     font-family: $titilliun-font;
     font-size: 2rem;
-    text-align: center;
-    line-height: 1.4;
-    margin-bottom: 2rem;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: 0.5rem;
+  }
 
-    .location {
-      font-weight: 600;
-      color: $primary-color1;
-    }
+  span {
+    font-size: 1.4rem;
+    color: $primary-color1;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .location {
+    font-size: 1.2rem;
+    color: $text-secondary;
+    margin-bottom: 1.5rem;
 
     em {
+      color: lighten($text-secondary, 15%);
       font-style: italic;
-      font-weight: 400;
-      color: lighten($text-color, 20%);
     }
+  }
+
+  .courses-main {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    h3 {
+      font-size: 1.4rem;
+      color: $text-secondary;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .status {
+      font-size: 1.3rem;
+      background: rgba(233, 63, 91, 0.15);
+      color: $primary-color1;
+      padding: 0.4rem 1.2rem;
+      border-radius: 20px;
+      border: 1px solid rgba(233, 63, 91, 0.3);
+      font-weight: 600;
+    }
+  }
+}
+
+/* ─── Professional Experience ────────────────────────────────── */
+.senior-high {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  > h2 {
+    font-family: $titilliun-font;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: 0.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(233, 63, 91, 0.3);
+  }
+}
+
+/* ─── Individual Job Card ────────────────────────────────────── */
+.job-entry {
+  background: $bg-secondary;
+  border-radius: 12px;
+  padding: 2.5rem;
+  border-top: 4px solid $secondary-color;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: $transition;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
   }
 
   h3 {
     font-family: $titilliun-font;
-    font-size: 2.5rem;
-    color: $primary-color1;
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: 0.4rem;
 
-  h4 {
-    font-family: $titilliun-font;
-    font-size: 1.3rem;
-    color: $primary-color1;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-  }
-
-
-  .courses-main {
-    .courses-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 0 1rem;
-
-      .semester-courses {
-        background: lighten($bg-secondary, 5%);
-        padding: 1.5rem;
-        border-radius: 8px;
-        border-left: 4px solid $primary-color1;
-
-        ul {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-
-          li {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            padding-left: 1rem;
-            position: relative;
-
-            &::before {
-              content: "•";
-              color: $primary-color1;
-              position: absolute;
-              left: 0;
-            }
-          }
-        }
-      }
+    .role {
+      font-weight: 400;
+      color: $secondary-color;
+      font-size: 1.5rem;
     }
   }
 
-  .senior-high {
-    margin-bottom: 3rem;
-
-    .subjects-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      padding: 0 1rem;
-
-      .subject-group {
-        background: lighten($bg-secondary, 3%);
-        padding: 1.5rem;
-        border-radius: 8px;
-        border-top: 3px solid $secondary-color;
-
-        h3 {
-          font-size: 1.8rem;
-          margin-bottom: 1rem;
-          text-align: left;
-        }
-
-        ul {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-
-          li {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            padding-left: 1rem;
-            position: relative;
-
-            &::before {
-              content: "→";
-              color: $secondary-color;
-              position: absolute;
-              left: 0;
-            }
-          }
-        }
-      }
-    }
-  }
-
-
-  .software-used-at-uni {
-    padding: 2rem;
-    background: lighten($bg-primary, 2%);
-    border-radius: 8px;
-    margin-top: 2rem;
-  }
-}
-
-
-
-// Tablet Styles
-@media (max-width: $tablet) {
-  .background-section {
-    padding: 0 0.5rem;
+  .location {
+    font-size: 1.2rem;
+    color: $text-secondary;
     margin-bottom: 2rem;
 
-    .educational-bg {
-      h1 {
-        font-size: 1.5rem;
-        text-align: left;
-      }
-
-      h3 {
-        font-size: 2rem;
-        text-align: left;
-      }
-
-      .courses-main {
-        .courses-container {
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 1.5rem;
-          padding: 0;
-        }
-      }
-
-      .senior-high {
-        margin-bottom: 2rem;
-
-        .subjects-container {
-          grid-template-columns: 1fr;
-          gap: 1.5rem;
-          padding: 0;
-        }
-      }
-
-      .software-used-at-uni {
-        padding: 1.5rem;
-        margin-top: 1.5rem;
-      }
+    em {
+      font-style: italic;
+      color: lighten($text-secondary, 10%);
     }
   }
-}
 
-// Mobile Styles
-@media (max-width: $mobile) {
-  .background-section {
-    .educational-bg {
-      h1 {
-        font-size: 1.3rem;
-        text-align: left;
-      }
+  .subjects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
 
-      h3 {
-        font-size: 1.8rem;
-        text-align: left;
-      }
+  .subject-group {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-left: 3px solid rgba(0, 123, 255, 0.4);
 
-      h4 {
+    h4 {
+      font-family: $titilliun-font;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: $secondary-color;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+
+      li {
         font-size: 1.2rem;
-      }
+        color: $text-secondary;
+        padding-left: 1.4rem;
+        position: relative;
+        line-height: 1.5;
 
-      .university {
-        margin-bottom: 2rem;
-      }
-
-      .courses-main {
-        .courses-container {
-          grid-template-columns: 1fr;
-          gap: 1rem;
-
-          .semester-courses {
-            padding: 1rem;
-
-            ul li {
-              font-size: 1rem;
-            }
-          }
+        &::before {
+          content: "→";
+          color: $secondary-color;
+          position: absolute;
+          left: 0;
+          font-size: 1rem;
         }
-      }
-
-      .senior-high {
-        .subjects-container {
-          .subject-group {
-            padding: 1rem;
-
-            h3 {
-              font-size: 1.5rem;
-            }
-
-            ul li {
-              font-size: 1rem;
-            }
-          }
-        }
-      }
-
-      .software-used-at-uni {
-        padding: 1rem;
-        margin-top: 1rem;
       }
     }
   }
 }
 
-// PRINT STYLES
+/* ─── Tablet ─────────────────────────────────────────────────── */
+@media (max-width: $tablet) {
+  .background-header h1 {
+    font-size: 2.4rem;
+  }
 
+  .university {
+    padding: 2rem;
 
-@media print {
-  .educational-bg {
-    h1 {
-      font-size: 1.5rem;
-      page-break-after: avoid;
-    }
+    h1 { font-size: 1.7rem; }
+  }
 
-    .courses-container,
+  .job-entry {
+    padding: 2rem;
+
     .subjects-container {
-      display: block;
+      grid-template-columns: 1fr;
+    }
+  }
+}
 
-      .semester-courses,
-      .subject-group {
-        break-inside: avoid;
-        margin-bottom: 1rem;
-      }
+/* ─── Mobile ─────────────────────────────────────────────────── */
+@media (max-width: $mobile) {
+  .background-header h1 {
+    font-size: 2rem;
+  }
+
+  .university {
+    padding: 1.5rem;
+
+    h1 { font-size: 1.5rem; }
+    span { font-size: 1.2rem; }
+
+    .courses-main {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+  }
+
+  .job-entry {
+    padding: 1.5rem;
+
+    h3 { font-size: 1.4rem; }
+
+    .subject-group ul li {
+      font-size: 1.1rem;
     }
   }
 }
