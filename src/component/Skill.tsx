@@ -7,7 +7,7 @@ export function Skills() {
       <div className="skills-container">
         <header className="skills-header">
           <h1 className="header">Skills</h1>
-          <p className="skills-subtitle">Technologies and tools I work with</p>
+          {/* <p className="skills-subtitle">Technologies and tools I work with</p> */}
         </header>
 
         <div className="skills-main">

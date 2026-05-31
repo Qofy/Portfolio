@@ -6,7 +6,7 @@ export const skillsData = {
       items: [
         "JavaScript",
         "TypeScript",
-        "Python",
+        // "Python",
       ],
     },
     {
@@ -23,16 +23,16 @@ export const skillsData = {
         "Expo",
       ],
     },
-    {
-      name: "Backend Development",
-      items: [
-        "Django REST Framework",
-        "NestJS",
-        "REST API Development",
-        "Firebase",
-        "Cloudinary",
-      ],
-    },
+    // {
+    //   name: "Backend Development",
+    //   items: [
+    //     "Django REST Framework",
+    //     "NestJS",
+    //     "REST API Development",
+    //     "Firebase",
+    //     "Cloudinary",
+    //   ],
+    // },
     {
       name: "Auth & Integrations",
       items: [
