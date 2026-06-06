@@ -10,8 +10,7 @@ export const seniorHCourses = {
     header: "Responsibilities",
     courses: [
       "Built and shipped web applications and mobile apps for clients as a freelance Frontend Developer in Hamburg, Germany.",
-      "Developed full-stack web applications for business clients at Platinum Africa Solution Ltd. using Next.js and Redux.js.",
-      "Engineered frontend features and maintained production codebases at Intuivo OÜ, Berlin, using Git and Axio.",
+      "Engineered frontend features and maintained production codebases at Intuivo OÜ, Berlin, using Git and GitLab.",
       "Built user interfaces with React, React Native, Next.js, and Svelte across multiple roles.",
       "Integrated backend APIs using Django REST Framework, Redux, Axios, Clerk, and Expo.",
       "Used AI tools responsibly to accelerate design, implementation, and troubleshooting workflows.",
@@ -20,9 +19,7 @@ export const seniorHCourses = {
   electiveSubject: {
     header: "Achievements",
     courses: [
-      "Accumulated 4+ years of professional experience across full-time, part-time, and freelance software roles.",
       "Successfully transitioned from Ghana to Germany while continuing to grow professionally in the European tech industry.",
-      "Delivered full-stack client solutions remotely as a Software Developer at Platinum Africa Solution Ltd.",
       "Gained professional experience at Intuivo OÜ, a Berlin-based team of software architects and product builders.",
       "Built and launched multiple live projects including Afriqnet, FirePup, NutriScan, and a personal portfolio.",
     ],
@@ -67,19 +64,19 @@ export const professionalExperience = [
     ],
   },
   {
-    company: "Platinum Africa Solution Ltd.",
-    role: "Software Developer",
-    location: "Ghana · Remote",
-    period: "Mar 2024 – Apr 2025",
+    company: "theSOFTtribe Ltd.",
+    role: "Frontend Developer",
+    location: "Greater Accra, Ghana · On-site",
+    period: "Mar 2022 – July 2023",
     responsibilities: [
-      "Built full-stack web applications for clients seeking business software solutions.",
-      "Managed and maintained client web applications end-to-end.",
-      "Developed frontend interfaces using Next.js and Redux.js.",
-      "Collaborated remotely with clients to deliver reliable and scalable solutions.",
+      "Designed and implemented computerized business application systems.",
+      "Built and maintained frontend interfaces using TypeScript and modern web technologies.",
+      "Collaborated with cross-functional teams on client-facing software products.",
+      "Contributed to Ghana's leading software development company serving enterprise clients.",
     ],
     achievements: [
-      "Delivered multiple full-stack client projects over a 1-year engagement.",
-      "Strengthened expertise in Next.js, Redux.js, and remote team workflows.",
+      "Completed 1.5 years of full-time on-site professional frontend development.",
+      "Gained foundational professional experience working alongside senior engineers at an enterprise-level company.",
     ],
   },
 ];

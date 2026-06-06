@@ -9,11 +9,11 @@ export function ContactMyself() {
         experiences I could have asked for.
       </p>
       <p>
-        I kicked off my professional career at <strong>Platinum Africa Solution Ltd.</strong> as a
-        Software Developer, spending over a year delivering full-stack client
-        solutions remotely using Next.js and Redux. Working directly with business
-        clients taught me how to own a product end-to-end — from requirements to
-        deployment.
+        I kicked off my professional career at <strong>theSOFTtribe Ltd.</strong> in
+        Accra — Ghana's leading enterprise software company — where I spent over a
+        year as a Frontend Developer building business application systems alongside
+        senior engineers. That role gave me the discipline and production mindset I
+        carry to this day.
       </p>
       <p>
         My journey then took me to Berlin, Germany, where I joined
@@ -24,7 +24,7 @@ export function ContactMyself() {
         well-rounded, production-ready engineer.
       </p>
       <p>
-        Between <strong>Platinum Africa</strong> and <strong>Intuivo</strong>, I
+        Between <strong>theSOFTtribe</strong> and <strong>Intuivo</strong>, I
         accumulated <strong>2+ years</strong> of focused, professional software
         engineering experience — building real products, for real clients, in
         real teams.

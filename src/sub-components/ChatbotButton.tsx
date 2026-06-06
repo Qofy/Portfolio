@@ -25,7 +25,7 @@ GitHub: https://github.com/Qofy
 LinkedIn: https://www.linkedin.com/in/kofi-agyekum-870569298/
 Portfolio website: https://www.kofiagye.com/
 
-Bio: Software Engineer with 2+ years of professional experience at Platinum Africa Solution Ltd. and Intuivo OÜ, plus ongoing freelance work. Specialises in front-end development with React, Next.js, and React Native. Built and shipped production applications across Ghana and Germany. Known for clean code, strong attention to detail, and the ability to adapt quickly to new technologies and teams.
+Bio: Software Engineer with professional experience at theSOFTtribe Ltd. and Intuivo OÜ, plus ongoing freelance work. Specialises in front-end development with React, Next.js, and React Native. Built and shipped production applications across Ghana and Germany. Known for clean code, strong attention to detail, and the ability to adapt quickly to new technologies and teams.
 
 --- EDUCATION ---
 University: University of Europe for Applied Sciences
@@ -42,7 +42,7 @@ University Courses by Semester:
 - Semester 4: Artificial Intelligence (AI), Frontend Development (Flutter, HTML, JavaScript, CSS, Node.js), IT Agile, Corporate Management, Machine Learning & Smart Systems, IT Security
 
 --- PROFESSIONAL EXPERIENCE ---
-Total: 2+ years of focused professional experience across Platinum Africa and Intuivo, plus current freelance work.
+Total: Professional experience across theSOFTtribe Ltd. and Intuivo OÜ, plus current freelance work — spanning Ghana and Germany.
 
 1. Safo Kofi — Freelance Frontend Developer
    Location: Hamburg, Germany
@@ -71,17 +71,17 @@ Total: 2+ years of focused professional experience across Platinum Africa and In
    - Built complete frontend applications integrated with backend APIs
    - Developed the ability to work independently on complex technical tasks
 
-3. Platinum Africa Solution Ltd. — Software Developer
-   Location: Ghana (Remote)
-   Period: March 2024 – April 2025
+4. theSOFTtribe Ltd. — Frontend Developer
+   Location: Greater Accra, Ghana (On-site)
+   Period: March 2022 – August 2023
    Responsibilities:
-   - Built full-stack web applications for clients seeking business software solutions
-   - Managed and maintained client web applications end-to-end
-   - Developed frontend interfaces using Next.js and Redux.js
-   - Collaborated remotely with clients to deliver reliable and scalable solutions
+   - Designed and implemented computerized business application systems
+   - Built and maintained frontend interfaces using TypeScript and modern web technologies
+   - Collaborated with cross-functional teams on client-facing software products
+   - Contributed to Ghana's leading software development company serving enterprise clients
    Achievements:
-   - Delivered multiple full-stack client projects over a 1-year engagement
-   - Strengthened expertise in Next.js, Redux.js, and remote team workflows
+   - Completed 1.5 years of full-time on-site professional frontend development
+   - Gained foundational professional experience working alongside senior engineers at an enterprise-level company
 
 --- TECHNICAL SKILLS ---
 Programming Languages: JavaScript, TypeScript
