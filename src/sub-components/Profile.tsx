@@ -20,8 +20,7 @@ export function Profile() {
         same production-level quality to every client project I take on.
       </p>
       <p>
-        My stack centers on React, Next.js, TypeScript, SCSS, Redux, Django REST
-        Framework, and Expo. I care about clean architecture, maintainable code,
+        My stack centers on React, Next.js, TypeScript, SCSS, Redux, and Expo. I care about clean architecture, maintainable code,
         and software that works reliably at scale.
       </p>
     </div>

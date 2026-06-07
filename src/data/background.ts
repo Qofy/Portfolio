@@ -35,12 +35,12 @@ export const professionalExperience = [
     responsibilities: [
       "Building web applications and mobile apps for clients as an independent freelance developer.",
       "Developing cross-platform mobile apps using React Native and Expo.",
-      "Integrating third-party services including Clerk, Axios, and Django REST Framework.",
+      "Integrating third-party services including Clerk, Axios.",
       "Managing full project lifecycles from design to deployment.",
     ],
     achievements: [
       "Established an independent freelance practice serving clients remotely from Hamburg.",
-      "Delivering projects using React, React Native, Next.js, Redux, and Django REST Framework.",
+      "Delivering projects using React, React Native, Next.js, Redux.",
     ],
   },
   {
@@ -50,7 +50,7 @@ export const professionalExperience = [
     period: "Sep 2025 – May 2026",
     responsibilities: [
       "Developed and maintained web applications using modern frontend frameworks.",
-      "Implemented backend services using Django REST Framework.",
+      "Implemented backend services .",
       "Built user interfaces with React, Next.js, and Svelte.",
       "Used Git and GitLab for version control and team collaboration.",
       "Tested and debugged applications to ensure reliability and performance.",
