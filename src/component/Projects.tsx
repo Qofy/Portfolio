@@ -34,7 +34,7 @@ const projects: Project[] = [
     image: afriqnetImg,
     liveUrl: "https://afriqnet-ten.vercel.app/",
     githubUrl: "#",
-    technologies: ["Next.js", "React (v19)", "Redux Toolkit", "Firebase", "Cloudinary", "Movies API", "Tailwind CSS", "Lucia", "Lucide Icons"],
+    technologies: ["Next.js", "React (v19)", "Redux Toolkit", "Firebase", "Cloudinary", "Tailwind CSS", "Lucia", "Lucide Icons","Axios", "React Query"],
     featured: true
   },
   {
