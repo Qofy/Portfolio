@@ -21,6 +21,7 @@ export const skillsData = {
         "SCSS",
         "HTML / CSS",
         "Expo",
+        "Zod"
       ],
     },
     // {

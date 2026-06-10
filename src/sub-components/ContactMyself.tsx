@@ -25,7 +25,7 @@ export function ContactMyself() {
       </p>
       <p>
         Between <strong>theSOFTtribe</strong> and <strong>Intuivo</strong>, I
-        accumulated <strong>2+ years</strong> of focused, professional software
+        accumulated <strong>1+ years</strong> of focused, professional software
         engineering experience — building real products, for real clients, in
         real teams.
       </p>

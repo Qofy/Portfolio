@@ -50,7 +50,7 @@ export const professionalExperience = [
     period: "Sep 2025 – May 2026",
     responsibilities: [
       "Developed and maintained web applications using modern frontend frameworks.",
-      "Implemented backend services .",
+      // "Implemented backend services .",
       "Built user interfaces with React, Next.js, and Svelte.",
       "Used Git and GitLab for version control and team collaboration.",
       "Tested and debugged applications to ensure reliability and performance.",
