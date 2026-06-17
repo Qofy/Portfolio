@@ -6,7 +6,8 @@ export const skillsData = {
       items: [
         "JavaScript",
         "TypeScript",
-        // "Python",
+        "Zod",
+        "Python",
       ],
     },
     {
@@ -21,7 +22,6 @@ export const skillsData = {
         "SCSS",
         "HTML / CSS",
         "Expo",
-        "Zod"
       ],
     },
     // {
@@ -51,6 +51,7 @@ export const skillsData = {
         "Docker (Basic)",
         "Linux / macOS",
         "Vite",
+        "Cypress",
         "Command-line Tools",
         "Software Architecture Planning",
         "Version Control Workflows",
