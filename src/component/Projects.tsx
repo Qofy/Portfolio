@@ -4,7 +4,7 @@ import "../styles/component/projects.scss"
 import { ExternalLink, Github } from "lucide-react"
 import afriqnetImg from "../assets/images/afriqnet.jpg"
 import firepupImg from "../assets/images/firepup.png"
-import nutriScanImg from "../assets/images/nutriScan.png"
+// import nutriScanImg from "../assets/images/nutriScan.png"
 import portfolioImg from "../assets/images/portfolio.png"
 
 type ProjectSectionProps = {
@@ -47,16 +47,16 @@ const projects: Project[] = [
     technologies: ["Next.js", "Cloudinary", "Lucide Icons"],
     featured: true
   },
-  {
-    id: 3,
-    title: "NutriScan",
-    description: "An AI-powered health assistant that helps patients track and evaluate their dietary food prescriptions for better nutrition management.",
-    image: nutriScanImg,
-    liveUrl: "https://nutri-scan-murex.vercel.app",
-    githubUrl: "#",
-    technologies: ["Next.js", "React", "Redux Toolkit", "Django REST API", "Cloudinary", "Tailwind CSS", "Canvas", "Lucide Icons"],
-    featured: true
-  },
+  // {
+  //   id: 3,
+  //   title: "NutriScan",
+  //   description: "An AI-powered health assistant that helps patients track and evaluate their dietary food prescriptions for better nutrition management.",
+  //   image: nutriScanImg,
+  //   liveUrl: "https://nutri-scan-murex.vercel.app",
+  //   githubUrl: "#",
+  //   technologies: ["Next.js", "React", "Redux Toolkit", "Django REST API", "Cloudinary", "Tailwind CSS", "Canvas", "Lucide Icons"],
+  //   featured: true
+  // },
   {
     id: 4,
     title: "My Portfolio",

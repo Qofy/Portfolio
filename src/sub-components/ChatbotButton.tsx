@@ -33,7 +33,7 @@ Degree: Bachelor of Software Engineering
 Location: Hamburg, Germany
 Duration: 2023 – 2026
 Current Status: Thesis Writing (final stage)
-GPA: 76 (Major GPA)
+GPA: 2.3 (Major GPA)
 
 University Courses by Semester:
 - Semester 1: Programming (Python), Computer Architecture, Software Engineering 1, Mathematics & Statistics, Business English, Management Fundamentals

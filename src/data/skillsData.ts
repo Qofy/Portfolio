@@ -40,7 +40,8 @@ export const skillsData = {
         "Lucia Auth",
         "Axios",
         "Third-party API Integration",
-        "React Query"
+        "React Query",
+        "Formik"
       ],
     },
     {
