@@ -4,8 +4,9 @@ import "../styles/component/projects.scss"
 import { ExternalLink, Github } from "lucide-react"
 import afriqnetImg from "../assets/images/afriqnet.jpg"
 import firepupImg from "../assets/images/firepup.png"
-// import nutriScanImg from "../assets/images/nutriScan.png"
+ import nutriScanImg from "../assets/images/nutriScan.png"
 import portfolioImg from "../assets/images/portfolio.png"
+import hexaShop from "../img/hexaShop.png"
 
 type ProjectSectionProps = {
   sectionCon?: string;
@@ -47,16 +48,16 @@ const projects: Project[] = [
     technologies: ["Next.js", "Cloudinary", "Lucide Icons"],
     featured: true
   },
-  // {
-  //   id: 3,
-  //   title: "NutriScan",
-  //   description: "An AI-powered health assistant that helps patients track and evaluate their dietary food prescriptions for better nutrition management.",
-  //   image: nutriScanImg,
-  //   liveUrl: "https://nutri-scan-murex.vercel.app",
-  //   githubUrl: "#",
-  //   technologies: ["Next.js", "React", "Redux Toolkit", "Django REST API", "Cloudinary", "Tailwind CSS", "Canvas", "Lucide Icons"],
-  //   featured: true
-  // },
+  {
+    id: 3,
+    title: "NutriScan",
+    description: "An AI-powered health assistant that helps patients track and evaluate their dietary food prescriptions for better nutrition management.",
+    image: nutriScanImg,
+    liveUrl: "https://nutri-scan-murex.vercel.app",
+    githubUrl: "#",
+    technologies: ["Next.js", "React", "Redux Toolkit", "Django REST API", "Cloudinary", "Tailwind CSS", "Canvas", "Lucide Icons"],
+    featured: false
+  },
   {
     id: 4,
     title: "My Portfolio",
@@ -65,6 +66,16 @@ const projects: Project[] = [
     liveUrl: "https://www.kofiagye.com/",
     githubUrl: "#",
     technologies: ["TypeScript", "React", "React Router", "Hash Link", "SCSS", "Vite", "Lucide Icons"],
+    featured: true
+  },
+  {
+    id: 5,
+    title: "HexaShop",
+    description: "Full-featured e-commerce platform for fashion and accessories",
+    image: hexaShop,
+    liveUrl: "#",
+    githubUrl: "https://github.com/Qofy/hexashop",
+    technologies: ["Next.js", "Redux Toolkit", "Tailwind CSS", "React Query", "Formik","Zod"],
     featured: true
   },
 ];
