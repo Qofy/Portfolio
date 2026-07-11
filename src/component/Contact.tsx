@@ -6,10 +6,9 @@ import { ContactImage } from "../sub-components/ContactImage";
 export function Contact() {
   return (
     <section id="contact" className="contact-container">
-      <ContactText/>
-      <ContactImage/>
-      <ContactMyself/>
+      <ContactText />
+      <ContactImage />
+      <ContactMyself />
     </section>
   );
 }
-

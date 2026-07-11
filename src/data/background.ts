@@ -49,22 +49,21 @@ export const professionalExperience = [
     location: "Berlin, Germany",
     period: "Sep 2025 – May 2026",
     responsibilities: [
-  "Developed and maintained responsive web applications using modern frontend technologies.",
-  "Designed and implemented user interfaces with React, Next.js, and Svelte, focusing on performance and usability.",
-  "Collaborated with cross-functional teams using Git and GitLab for version control, code reviews, and project management.",
-  "Conducted testing, debugging, and performance optimization to ensure application reliability and quality.",
-  "Integrated and automated end-to-end testing workflows using Cypress.",
-  "Leveraged AI-assisted development tools to improve productivity, accelerate implementation, and support troubleshooting.",
-  "Worked with RESTful APIs and backend services to deliver seamless user experiences."
-],
-
-achievements: [
-  "Successfully transitioned from academic software engineering concepts to production-level software development practices.",
-  "Gained hands-on experience working within agile development environments and collaborative team workflows.",
-  "Delivered fully functional frontend applications integrated with backend APIs and third-party services.",
-  "Demonstrated the ability to independently analyze requirements, solve complex technical challenges, and deliver high-quality solutions.",
-  "Strengthened expertise in modern web development, testing methodologies, and software engineering best practices."
-]
+      "Developed and maintained responsive web applications using modern frontend technologies.",
+      "Designed and implemented user interfaces with React, Next.js, and Svelte, focusing on performance and usability.",
+      "Collaborated with cross-functional teams using Git and GitLab for version control, code reviews, and project management.",
+      "Conducted testing, debugging, and performance optimization to ensure application reliability and quality.",
+      "Integrated and automated end-to-end testing workflows using Cypress.",
+      "Leveraged AI-assisted development tools to improve productivity, accelerate implementation, and support troubleshooting.",
+      "Worked with RESTful APIs and backend services to deliver seamless user experiences.",
+    ],
+    achievements: [
+      "Successfully transitioned from academic software engineering concepts to production-level software development practices.",
+      "Gained hands-on experience working within agile development environments and collaborative team workflows.",
+      "Delivered fully functional frontend applications integrated with backend APIs and third-party services.",
+      "Demonstrated the ability to independently analyze requirements, solve complex technical challenges, and deliver high-quality solutions.",
+      "Strengthened expertise in modern web development, testing methodologies, and software engineering best practices.",
+    ],
   },
   {
     company: "theSOFTtribe Ltd.",

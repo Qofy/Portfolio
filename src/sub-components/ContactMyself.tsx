@@ -32,9 +32,9 @@ export function ContactMyself() {
       <p>
         Today, I operate as a <strong>Freelance Frontend Developer</strong> based
         in Hamburg — taking on client projects across web and mobile using React,
-        React Native, Next.js, Expo, Redux , Clerk, and
-        Axios. I bring the technical depth of an experienced engineer with the
-        agility and ownership mindset of an independent builder.
+        React Native, Next.js, Expo, Redux, Clerk, and Axios. I bring the
+        technical depth of an experienced engineer with the agility and ownership
+        mindset of an independent builder.
       </p>
     </div>
   );

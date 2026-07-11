@@ -1,8 +1,7 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 
-
-export function ContactText(){
-  return(
+export function ContactText() {
+  return (
     <div className="text-container">
         <h4>Hi, I am</h4>
         <h3>
@@ -34,7 +33,6 @@ export function ContactText(){
             <Linkedin />
           </a>
         </div>
-        
       </div>
-  )
+  );
 }

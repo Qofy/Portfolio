@@ -10,7 +10,7 @@ export function Educational() {
         <span>Bachelor of Software Engineering</span>
         <p className="location">Hamburg, Germany &nbsp;|&nbsp; <em>2023 – 2026</em></p>
         <div className="courses-main">
-          <h3>Major GPA: 2.3</h3>
+          <h3>German Grade: 2.3 (Good)</h3>
           <p className="status">Current Status: Thesis Writing</p>
         </div>
       </section>
