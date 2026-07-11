@@ -73,7 +73,7 @@ const projects: Project[] = [
     title: "HexaShop",
     description: "Full-featured e-commerce platform for fashion and accessories",
     image: hexaShop,
-    liveUrl: "#",
+    liveUrl: "",
     githubUrl: "https://github.com/Qofy/hexashop",
     technologies: ["Next.js", "Redux Toolkit", "Tailwind CSS", "React Query", "Formik","Zod"],
     featured: true

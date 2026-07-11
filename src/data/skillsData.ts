@@ -5,7 +5,7 @@ export const skillsData = {
       name: "Programming Languages",
       items: [
         "JavaScript",
-        "TypeScript(Zod)",
+        "TypeScript & Zod",
         "Python",
       ],
     },
