@@ -1,3 +1,8 @@
+import homeImg from "../assets/images/Home.png";
+import searchImg from "../assets/images/Search.png";
+import profileImg from "../assets/images/manage-profile.png";
+import movieDetailImg from "../assets/images/movie-detail.png";
+
 export interface CaseStudy {
   id: number;
   title: string;
@@ -32,7 +37,7 @@ export const projectCaseStudies: CaseStudy[] = [
     tagline: "African Streaming Made Accessible",
     description: "A digital movie streaming platform designed to provide affordable access to African and international films, delivering an accessible and user-friendly entertainment experience for global audiences.",
     liveUrl: "https://afriqnet-ten.vercel.app/",
-    repositoryUrl: "", // To be added
+    repositoryUrl: "https://github.com/Qofy/AfriqNet", // To be added
     problem: "African audiences lack affordable, dedicated platforms to discover and stream African cinema and cultural content. Existing streaming services either don't feature African content prominently or charge premium prices, making African films inaccessible to many potential viewers.",
     kofiRole: "Led frontend architecture and implementation. Designed responsive UI component system, integrated Firebase for authentication and content management, implemented real-time search and filtering, built video streaming interface with progress tracking, and handled API integration with backend content services.",
     architecture: "Next.js with server-side rendering for optimal performance and SEO. Redux Toolkit for state management across complex user workflows. Firebase for real-time database and authentication. Cloudinary for optimized image delivery. Component-driven architecture with reusable UI patterns.",
@@ -71,10 +76,10 @@ export const projectCaseStudies: CaseStudy[] = [
     technologies: ["Next.js", "React (v19)", "Redux Toolkit", "Firebase", "Cloudinary", "Tailwind CSS", "Lucia Auth", "React Query", "Axios"],
     timeline: "6 months (design, development, testing, deployment)",
     screenshots: [
-      { title: "Homepage with featured content" },
-      { title: "Movie detail and streaming interface" },
-      { title: "Search and filter functionality" },
-      { title: "User profile and watch history" }
+      { title: "Homepage with featured content", url: homeImg },
+      { title: "Movie detail and streaming interface", url: movieDetailImg },
+      { title: "Search and filter functionality", url: searchImg },
+      { title: "User profile and watch history", url: profileImg }
     ],
     featured: true
   },

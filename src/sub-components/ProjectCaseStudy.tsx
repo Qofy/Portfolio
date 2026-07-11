@@ -100,20 +100,34 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
           </div>
         </section>
 
-        <section className="case-study-section screenshots-section">
-          <h3>Project Screenshots</h3>
-          <div className="screenshots-placeholder">
-            <p>Screenshots coming soon</p>
-            <div className="screenshots-grid">
-              {project.screenshots?.map((screenshot, index) => (
-                <div key={index} className="screenshot-placeholder">
-                  <div className="placeholder-image" />
-                  <p>{screenshot.title}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {project.screenshots && project.screenshots.length > 0 && (
+          <section className="case-study-section screenshots-section">
+            <h3>Project Screenshots</h3>
+            {project.screenshots.some((s) => s.url) ? (
+              <div className="screenshots-grid">
+                {project.screenshots.map((screenshot, index) => (
+                  <div key={index} className="screenshot-item">
+                    {screenshot.url ? (
+                      <>
+                        <img src={screenshot.url} alt={screenshot.title} />
+                        <p>{screenshot.title}</p>
+                      </>
+                    ) : (
+                      <>
+                        <div className="placeholder-image" />
+                        <p>{screenshot.title}</p>
+                      </>
+                    )}
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="screenshots-placeholder">
+                <p>Screenshots coming soon</p>
+              </div>
+            )}
+          </section>
+        )}
 
         <section className="case-study-section">
           <h3>Tech Stack</h3>
