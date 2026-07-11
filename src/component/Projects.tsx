@@ -76,7 +76,7 @@ const projects: Project[] = [
     liveUrl: "",
     githubUrl: "https://github.com/Qofy/hexashop",
     technologies: ["Next.js", "Redux Toolkit", "Tailwind CSS", "React Query", "Formik","Zod"],
-    featured: true
+    featured: false
   },
 ];
 
@@ -140,20 +140,22 @@ function ProjectCard({ project, featured = false }: ProjectCardProps) {
         <img src={project.image} alt={project.title} loading="lazy" />
         <div className="project-overlay">
           <div className="project-links">
-            <a 
-              href={project.liveUrl} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="project-link live"
-              aria-label={`View ${project.title} live`}
-            >
-              <ExternalLink size={20} />
-              <span>Live Demo</span>
-            </a>
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-link live"
+                aria-label={`View ${project.title} live`}
+              >
+                <ExternalLink size={20} />
+                <span>Live Demo</span>
+              </a>
+            )}
             {project.githubUrl && project.githubUrl !== '#' && (
-              <a 
-                href={project.githubUrl} 
-                target="_blank" 
+              <a
+                href={project.githubUrl}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="project-link github"
                 aria-label={`View ${project.title} source code`}
