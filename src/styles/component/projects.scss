@@ -494,4 +494,19 @@
   }
 }
 
+// Case Studies View
+.projects-content.case-studies-view {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  > * {
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+}
+
 
