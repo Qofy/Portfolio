@@ -3,6 +3,16 @@ import searchImg from "../assets/images/Search.png";
 import profileImg from "../assets/images/manage-profile.png";
 import movieDetailImg from "../assets/images/movie-detail.png";
 
+// HexaShop images
+import hexaHomeImg from "../img/hexa-Home.png";
+import productDetailsImg from "../img/product-details.png";
+import shoppingCartImg from "../img/Shopping-cart.png";
+import checkoutImg from "../img/check-out.png";
+import orderPlaceImg from "../img/order-place.png";
+import congratulationImg from "../img/Congratulation.png";
+import purchaseHistoryImg from "../img/purchase-history.png";
+import trackingImg from "../img/tracking.png";
+
 export interface CaseStudy {
   id: number;
   title: string;
@@ -239,5 +249,73 @@ export const projectCaseStudies: CaseStudy[] = [
       { title: "Skills and technical capabilities" }
     ],
     featured: true
-  }
+  },
+  {
+  id: 4,
+  title: "HexaShop",
+  tagline: "Full-Stack E-Commerce Platform for Fashion",
+  description: "A complete e-commerce platform for browsing, purchasing, and tracking fashion items across men's, women's, and kids' categories. Features real-time shopping cart, order tracking, purchase history, and persistent order management.",
+  liveUrl: "https://hexashop-theta.vercel.app",
+  repositoryUrl: "https://github.com/Qofy/hexashop",
+  problem: "Need for a modern, feature-rich e-commerce platform that demonstrates full-stack capabilities including state management, API design, form handling, and real-time user interactions. Requires seamless product browsing, secure checkout, and order tracking.",
+  kofiRole: "Designed and built the entire platform from concept to deployment. Created system architecture with Redux for state management, built all product category pages, implemented checkout flow with multi-step forms, designed order tracking system, and optimized for production deployment.",
+  architecture: "Next.js 16 with TypeScript for type-safe full-stack development. Redux Toolkit for centralized state management (cart, favorites, checkout). React Query for server state (product data). Tailwind CSS for responsive styling. API routes for product data. localStorage for order persistence.",
+  technicalDecisions: [
+    "Used Redux Toolkit over Context API for complex state management across multiple slices (cart, favorites, checkout)",
+    "Implemented React Query alongside Redux to separate server state (products) from client state (cart, orders)",
+    "Created modular component architecture with sub-components for reusability (checkout components, tracking components)",
+    "Built API routes to centralize product data with category filtering and pagination",
+    "Used Formik with Yup validation for robust checkout form handling",
+    "Implemented localStorage persistence for order history across browser sessions",
+    "Created unique ID system for products across categories (men: 1-40, women: 41-80, kids: 81-119)",
+    "Used Suspense boundaries for client components with server state dependencies"
+  ],
+  testing: "Tested responsive design across all screen sizes (mobile, tablet, desktop). E2E flow testing for checkout process. Cart and favorites functionality across categories. Order tracking and purchase history. Cross-browser compatibility. Performance optimization with Lighthouse.",
+  deployment: "Deployed on Vercel with automatic deployments on commits to main. Next.js production optimizations enabled. Image optimization with next/image. API routes auto-deployed as serverless functions.",
+  outcome: "Fully functional e-commerce platform demonstrating production-ready full-stack capabilities. Features complete user journey from browsing to checkout to order tracking.",
+  keyFeatures: [
+    {
+      title: "Multi-Category Product Browsing",
+      description: "Browse men's, women's, and kids' fashion items organized by latest, featured, casual, and trending categories with dynamic filtering."
+    },
+    {
+      title: "Smart Shopping Cart",
+      description: "Real-time cart management with add/remove items, quantity adjustment, automatic total calculation, and modal-based UI for seamless shopping."
+    },
+    {
+      title: "Favorites/Wishlist",
+      description: "Save favorite items across categories, persistent favorites state, and quick access through favorites modal."
+    },
+    {
+      title: "Multi-Step Checkout",
+      description: "Complete checkout flow with personal info, address, and payment method forms. Form validation with Formik. Order confirmation screens."
+    },
+    {
+      title: "Order Tracking",
+      description: "Real-time order tracking with status timeline (Processing → Shipped → Delivered). Unique order IDs and tracking numbers. Search by order ID."
+    },
+    {
+      title: "Purchase History",
+      description: "View all previous orders in table and card layouts. Sort by date or amount. Access order details and tracking information."
+    },
+    {
+      title: "Product Details Page",
+      description: "Detailed product view with images, pricing, ratings, size selection, and related product recommendations."
+    }
+  ],
+  technologies: ["Next.js 16", "TypeScript", "Redux Toolkit", "React Query", "Tailwind CSS", "Formik", "Yup", "Lucide Icons", "Axios"],
+  timeline: "Ongoing development with phases: core e-commerce (2 weeks), checkout system (1.5 weeks), order tracking (1 week), purchase history (1 week), components refactoring (1 week)",
+  screenshots: [
+    { title: "Product categories and browsing", url: hexaHomeImg },
+    { title: "Product details page", url: productDetailsImg },
+    { title: "Shopping cart management", url: shoppingCartImg },
+    { title: "Checkout flow", url: checkoutImg },
+    { title: "Order placement confirmation", url: orderPlaceImg },
+    { title: "Order success", url: congratulationImg },
+    { title: "Purchase history", url: purchaseHistoryImg },
+    { title: "Order tracking and delivery status", url: trackingImg }
+  ],
+  featured: true
+}
+
 ];
