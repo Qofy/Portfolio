@@ -13,14 +13,11 @@ export const skillsData = {
       name: "Frontend Development",
       items: [
         "React",
-        // "React Native",
         "Next.js",
-        // "Svelte / SvelteKit",
         "Redux / Redux Toolkit",
         "Tailwind CSS",
         "SCSS",
         "HTML / CSS",
-        // "Expo",
       ],
     },
     // {

@@ -143,7 +143,7 @@ export const projectCaseStudies: CaseStudy[] = [
       { title: "Post recipe interface" },
       { title: "User profile and saved recipes" }
     ],
-    featured: true
+    featured: false
   },
   {
     id: 3,
@@ -154,7 +154,7 @@ export const projectCaseStudies: CaseStudy[] = [
     repositoryUrl: "", // To be added
     problem: "Patients with dietary restrictions or nutritional requirements struggle to track compliance with prescribed diets. Doctors lack tools to monitor patient adherence. Existing solutions are fragmented and don't integrate AI-powered insights for personalized recommendations.",
     kofiRole: "Architected the entire React/Next.js frontend application. Built the food scanning interface using Canvas API for image analysis. Designed the nutrition dashboard with charts and metrics. Implemented Redux state management for complex patient data flows. Integrated Django REST API for backend communication.",
-    architecture: "React with Next.js for server-side rendering. Redux Toolkit for complex state management (patient data, nutrition history, recommendations). Canvas API for image processing. Django REST API backend integration. Responsive design for desktop and mobile use in clinical settings.",
+    architecture: "React with Next.js for server-side rendering. Redux Toolkit for complex state management (patient data, nutrition history, recommendations). Canvas API for image processing. Django REST API backend integration. Responsive design for web-based clinical use.",
     technicalDecisions: [
       "Implemented Canvas API for client-side image processing before sending to backend, reducing server load",
       "Used Redux Toolkit to manage complex nutrition data flows and patient information across multiple pages",

@@ -1,5 +1,5 @@
 KOFI SAFO AGYEKUM
-SENIOR FRONTEND SOFTWARE ENGINEER
+FRONTEND ENGINEER
 Hamburg / Germany | +49 17647089256 | safokofi888@gmail.com
 www.linkedin.com/in/kofi-agyekum | www.kofiagye.com
 
@@ -13,20 +13,17 @@ SKILLS
 CORE TECHNOLOGIES: HTML, CSS, JAVASCRIPT, TYPESCRIPT
 FRAMEWORK / LIBRARIES: REACT, NEXT.JS
 STATE MANAGERS: REDUX TOOLKIT, REACT QUERY (TANSTACK)
-CSS LIBRARIES: TAILWIND CSS.
-FORMS & VALIDATION: ZOD, REACKHOOKS, FORMIK
-TESTING TOOLS: CYPRESS.
-TOOLING: VITE, GIT, GITHUB, GITLAB, ESLINT,BUN
+CSS LIBRARIES: TAILWIND CSS
+FORMS & VALIDATION: ZOD, FORMIK
+TESTING TOOLS: CYPRESS
+TOOLING: VITE, GIT, GITHUB, GITLAB, ESLINT
 OS: LINUX, MAC, WINDOWS
 
 PROFESSIONAL EXPERIENCE
 
-SAFO KOFI (FREELANCE)HAMBURG / GERMANY
-Software Engineer — May 2026 – Present
-
-INTUIVO OÜ BERLIN / GERMANY
-Software Engineer — September 2025 – March 2026
-- Developed and maintained complex, production-grade web applications using React, Next.js, and Svelte,
+INTUIVO OÜ — BERLIN / GERMANY
+Software Engineer — September 2025 – May 2026
+- Developed and maintained complex, production-grade web applications using React, Next.js, and TypeScript,
 improving overall user experience and performance.
 - Implemented modular and reusable UI components with a focus on responsiveness, usability, and
 long-term code maintainability.
@@ -37,7 +34,7 @@ consistent team quality standards.
 - Conducted end-to-end testing with Cypress and performance debugging to ensure cross-browser
 reliability in production environments.
 
-THESOFTTRIBE LTD. GREATER ACCRA / GHANA
+THESOFTTRIBE LTD. — GREATER ACCRA / GHANA
 Frontend Developer — March 2022 – July 2023
 - Designed and implemented responsive frontend interfaces for enterprise-level web applications used by
 large organisations across multiple industries.
@@ -50,25 +47,30 @@ production environment.
 
 PROJECTS
 
-• AFRIQNET — afriqnet-ten.vercel.app
-TECHNOLOGIES: React, Next.js, TypeScript, REST APIs
-Digital movie streaming platform providing affordable access to African and international films. Features responsive
-user interfaces, dynamic content delivery, and seamless API integration for a global audience.
+• AFRIQNET — https://afriqnet-ten.vercel.app/
+TECHNOLOGIES: React, Next.js, TypeScript, Redux Toolkit, Firebase, Cloudinary, React Query
+Digital movie streaming platform providing affordable access to African and international films. Full-featured
+platform with user authentication, advanced search filtering, video streaming, and personalized recommendations.
 
-• FIREPUP — firepup.vercel.app
+• FIREPUP — https://firepup.vercel.app/community
 TECHNOLOGIES: Next.js, React, Cloudinary, Tailwind CSS
-Community food-sharing platform enabling users to discover, share, and inspire others with recipes and meal ideas
-from around the world.
+Community food-sharing platform enabling users to discover, share, and inspire others with recipes and meal
+ideas from around the world. Features social interactions including likes, comments, and a community feed.
 
-• NUTRISCAN — nutri-scan-murex.vercel.app
+• NUTRISCAN — https://nutri-scan-murex.vercel.app
 TECHNOLOGIES: React, Next.js, Redux Toolkit, Django REST API, Cloudinary, Canvas
-AI-powered health assistant application for dietary analysis and nutrition management, helping users track and
-evaluate food prescriptions for better health outcomes.
+AI-powered health assistant application for dietary analysis and nutrition management. Helps users track and
+evaluate food prescriptions with intelligent recommendations and visual analytics.
 
-• PORTFOLIO — www.kofiagye.com
+• HEXASHOP — https://hexashop-theta.vercel.app
+TECHNOLOGIES: Next.js, TypeScript, Redux Toolkit, Tailwind CSS, Formik
+Full-featured e-commerce platform for fashion retail with multi-category browsing, shopping cart, checkout
+flow, order tracking, and purchase history management.
+
+• PORTFOLIO — https://www.kofiagye.com/
 TECHNOLOGIES: React, TypeScript, React Router, SCSS, Vite
-Personal portfolio showcasing background, experience, projects, and professional journey—built with clean design
-and performance optimization.
+Personal portfolio showcasing background, experience, projects, and professional journey—built with clean
+design and performance optimization.
 
 EDUCATION
 

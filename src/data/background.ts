@@ -9,10 +9,10 @@ export const seniorHCourses = {
   coreSubjects: {
     header: "Responsibilities",
     courses: [
-      "Built and shipped web applications and mobile apps for clients as a freelance Frontend Developer in Hamburg, Germany.",
-      "Engineered frontend features and maintained production codebases at Intuivo OÜ, Berlin, using Git and GitLab.",
-      "Built user interfaces with React, React Native, Next.js, and Svelte across multiple roles.",
-      "Integrated backend APIs using Django REST Framework, Redux, Axios, Clerk, and Expo.",
+      "Engineered frontend features and maintained production codebases using React, Next.js, TypeScript, and Svelte.",
+      "Designed and implemented responsive user interfaces with a focus on performance and user experience.",
+      "Integrated backend APIs and third-party services including Firebase, Django REST Framework, Redux, Axios, and Clerk.",
+      "Collaborated with cross-functional teams on code reviews, testing, and deployment processes.",
       "Used AI tools responsibly to accelerate design, implementation, and troubleshooting workflows.",
     ],
   },
@@ -21,28 +21,12 @@ export const seniorHCourses = {
     courses: [
       "Successfully transitioned from Ghana to Germany while continuing to grow professionally in the European tech industry.",
       "Gained professional experience at Intuivo OÜ, a Berlin-based team of software architects and product builders.",
-      "Built and launched multiple live projects including Afriqnet, FirePup, NutriScan, and a personal portfolio.",
+      "Built and launched multiple live web projects including Afriqnet, FirePup, NutriScan, and a personal portfolio.",
     ],
   },
 };
 
 export const professionalExperience = [
-  {
-    company: "Safo Kofi (Freelance)",
-    role: "Frontend Developer",
-    location: "Hamburg, Germany",
-    period: "May 2026 – Present",
-    responsibilities: [
-      "Building web applications and mobile apps for clients as an independent freelance developer.",
-      "Developing cross-platform mobile apps using React Native and Expo.",
-      "Integrating third-party services including Clerk, Axios.",
-      "Managing full project lifecycles from design to deployment.",
-    ],
-    achievements: [
-      "Established an independent freelance practice serving clients remotely from Hamburg.",
-      "Delivering projects using React, React Native, Next.js, Redux.",
-    ],
-  },
   {
     company: "Intuivo OÜ",
     role: "Software Engineer",
