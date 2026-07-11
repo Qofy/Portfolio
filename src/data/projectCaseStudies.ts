@@ -151,7 +151,7 @@ export const projectCaseStudies: CaseStudy[] = [
     tagline: "AI-Powered Nutrition Intelligence",
     description: "An AI-powered health assistant application that helps patients track and evaluate their dietary food prescriptions for better nutrition management.",
     liveUrl: "https://nutri-scan-murex.vercel.app",
-    repositoryUrl: "", // To be added
+    repositoryUrl: "https://github.com/Qofy/NutriScan", // To be added
     problem: "Patients with dietary restrictions or nutritional requirements struggle to track compliance with prescribed diets. Doctors lack tools to monitor patient adherence. Existing solutions are fragmented and don't integrate AI-powered insights for personalized recommendations.",
     kofiRole: "Architected the entire React/Next.js frontend application. Built the food scanning interface using Canvas API for image analysis. Designed the nutrition dashboard with charts and metrics. Implemented Redux state management for complex patient data flows. Integrated Django REST API for backend communication.",
     architecture: "React with Next.js for server-side rendering. Redux Toolkit for complex state management (patient data, nutrition history, recommendations). Canvas API for image processing. Django REST API backend integration. Responsive design for web-based clinical use.",
@@ -203,7 +203,7 @@ export const projectCaseStudies: CaseStudy[] = [
     tagline: "Professional Showcase & Digital Resume",
     description: "A personal portfolio showcasing my background, experience, projects, and professional journey—built with clean design and performance optimization.",
     liveUrl: "https://www.kofiagye.com/",
-    repositoryUrl: "", // To be added
+    repositoryUrl: "https://github.com/Qofy/Portfolio", // To be added
     problem: "As a frontend developer seeking opportunities, I needed a platform that goes beyond a traditional resume. A portfolio that demonstrates technical skills, design thinking, project work, and professional narrative all in one place.",
     kofiRole: "Designed and built the entire portfolio from concept to deployment. Created the information architecture, implemented responsive design system, built custom components, optimized performance, and managed continuous deployment.",
     architecture: "React with React Router for navigation. SCSS for responsive and maintainable styling. Vite for fast development and optimized builds. Semantic HTML for accessibility. Mobile-first responsive design approach.",
