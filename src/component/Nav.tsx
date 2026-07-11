@@ -1,5 +1,5 @@
 import { Link } from 'react-scroll';
-import { Download } from 'lucide-react';
+// import { Download } from 'lucide-react';
 import "../styles/component/nav.scss";
 
 type NavProps = {
@@ -34,7 +34,7 @@ export function Nav({ nav = 'nav' }: NavProps) {
             </Link>
           </li>
         ))}
-        <li className="resume-item">
+        {/* <li className="resume-item">
           <a
             href="/Kofi_Safo_Agyekum_CV.pdf"
             download
@@ -44,7 +44,7 @@ export function Nav({ nav = 'nav' }: NavProps) {
             <Download size={18} />
             <span>Resume</span>
           </a>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );
