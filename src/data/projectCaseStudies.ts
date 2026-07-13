@@ -13,6 +13,13 @@ import congratulationImg from "../img/Congratulation.png";
 import purchaseHistoryImg from "../img/purchase-history.png";
 import trackingImg from "../img/tracking.png";
 
+//NutriScan
+import dashboard from '../assets/images/dashboard.png';
+import FoodScan from '../assets/images/Food-scan.png'
+import Recommendation from'../assets/images/recommendation.png'
+import MdedicalReportUpload from '../assets/images/medical-r-upload.png'
+import Profile from '../assets/images/profileNutri.png'
+
 export interface CaseStudy {
   id: number;
   title: string;
@@ -187,13 +194,14 @@ export const projectCaseStudies: CaseStudy[] = [
         description: "Complete food scanning history with exportable reports for doctor consultations."
       }
     ],
-    technologies: ["React", "Next.js", "Redux Toolkit", "Django REST API", "Cloudinary", "Tailwind CSS", "Canvas API", "Chart.js", "Formik", "Zod"],
+    technologies: ["React", "Next.js", "Redux Toolkit", "Django REST API", "Cloudinary", "Tailwind CSS", "Canvas API", "Chart.js", "Typescript"],
     timeline: "5 months (concept to clinical deployment)",
     screenshots: [
-      { title: "Food scanning interface" },
-      { title: "Nutrition dashboard with metrics" },
-      { title: "Prescription tracking view" },
-      { title: "AI recommendation suggestions" }
+      { title: "Food scanning interface", url: FoodScan },
+      { title: "Nutrition dashboard with metrics", url: dashboard },
+      { title: "Medical report upload", url: MdedicalReportUpload },
+      { title: "AI recommendation suggestions", url: Recommendation },
+      { title: "User profile and history", url: Profile }
     ],
     featured: true
   },
