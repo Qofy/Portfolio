@@ -11,7 +11,7 @@ export function Educational() {
         <p className="location">Hamburg, Germany &nbsp;|&nbsp; <em>2023 – 2026</em></p>
         <div className="courses-main">
           <h3>German Grade: 2.3 (Good)</h3>
-          <p className="status">Current Status: Thesis Writing</p>
+          {/* <p className="status">Current Status: Thesis Writing</p> */}
         </div>
       </section>
 

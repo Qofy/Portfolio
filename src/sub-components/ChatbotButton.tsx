@@ -32,7 +32,7 @@ University: University of Europe for Applied Sciences
 Degree: Bachelor of Software Engineering
 Location: Hamburg, Germany
 Duration: 2023 – 2026
-Current Status: Thesis Writing (final stage)
+// Current Status: Thesis Writing (final stage)
 GPA: 2.3 (Major GPA)
 
 University Courses by Semester:
