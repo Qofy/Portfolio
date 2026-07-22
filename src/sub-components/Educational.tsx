@@ -8,7 +8,7 @@ export function Educational() {
       <section className="university">
         <h1>University of Europe for Applied Sciences</h1>
         <span>Bachelor of Software Engineering</span>
-        <p className="location">Hamburg, Germany &nbsp;|&nbsp; <em>2023 – 2026</em></p>
+        <p className="location">Potsdam, Germany</p>
         <div className="courses-main">
           <h3>German Grade: 2.3 (Good)</h3>
           {/* <p className="status">Current Status: Thesis Writing</p> */}

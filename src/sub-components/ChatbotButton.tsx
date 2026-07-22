@@ -25,15 +25,13 @@ GitHub: https://github.com/Qofy
 LinkedIn: https://www.linkedin.com/in/kofi-agyekum-870569298/
 Portfolio website: https://www.kofiagye.com/
 
-Bio: Software Engineer with professional experience at theSOFTtribe Ltd. and Intuivo OÜ, plus ongoing freelance work. Specialises in front-end development with React, Next.js, and React Native. Built and shipped production applications across Ghana and Germany. Known for clean code, strong attention to detail, and the ability to adapt quickly to new technologies and teams.
+Bio: Software Engineer with professional experience at theSOFTtribe Ltd. and Intuivo OÜ. Specialises in frontend development with React, Next.js, and modern web technologies. Full-stack capabilities with Node.js, Express, and Django REST Framework. Built and shipped production applications across Ghana and Germany. Known for clean code, strong attention to detail, and the ability to adapt quickly to new technologies and teams.
 
 --- EDUCATION ---
 University: University of Europe for Applied Sciences
 Degree: Bachelor of Software Engineering
-Location: Hamburg, Germany
-Duration: 2023 – 2026
-// Current Status: Thesis Writing (final stage)
-GPA: 2.3 (Major GPA)
+Location: Potsdam, Germany
+German Grade: 2.3 (Good)
 
 University Courses by Semester:
 - Semester 1: Programming (Python), Computer Architecture, Software Engineering 1, Mathematics & Statistics, Business English, Management Fundamentals
@@ -42,74 +40,106 @@ University Courses by Semester:
 - Semester 4: Artificial Intelligence (AI), Frontend Development (Flutter, HTML, JavaScript, CSS, Node.js), IT Agile, Corporate Management, Machine Learning & Smart Systems, IT Security
 
 --- PROFESSIONAL EXPERIENCE ---
-Total: Professional experience across theSOFTtribe Ltd. and Intuivo OÜ, plus current freelance work — spanning Ghana and Germany.
+Total: 2+ years of professional experience across theSOFTtribe Ltd. and Intuivo OÜ, spanning Ghana and Germany.
 
-1. Safo Kofi — Freelance Frontend Developer
-   Location: Hamburg, Germany
-   Period: May 2026 – Present
-   Responsibilities:
-   - Building web applications and mobile apps for clients as an independent freelance developer
-   - Developing cross-platform mobile apps using React Native and Expo
-   - Integrating third-party services including Clerk, Axios, and Django REST Framework
-   - Managing full project lifecycles from design to deployment
-   Achievements:
-   - Established an independent freelance practice serving clients remotely from Hamburg
-   - Delivering projects using React, React Native, Next.js, Redux, and Django REST Framework
-
-2. Intuivo OÜ — Software Engineer
+1. Intuivo OÜ — Software Engineer
    Location: Berlin, Germany
    Period: September 2025 – May 2026
    Responsibilities:
-   - Developed and maintained web applications using modern frontend frameworks
-   - Implemented backend services using Django REST Framework
-   - Built user interfaces with React, Next.js, and Svelte
-   - Used Git and GitLab for version control and team collaboration
-   - Tested and debugged applications to ensure reliability and performance
-   - Used AI tools responsibly to design, implement, and troubleshoot software solutions
+   - Developed and maintained production-grade web applications using React, Next.js, and TypeScript
+   - Designed and implemented responsive user interfaces with performance optimization
+   - Integrated backend APIs and third-party services using Django REST Framework and Firebase
+   - Collaborated with cross-functional teams using Git and GitLab workflows
+   - Conducted end-to-end testing with Cypress and performance debugging
+   - Leveraged AI-assisted development tools for improved productivity
    Achievements:
-   - Engineered production-level frontend and backend features within a team of software architects
-   - Built complete frontend applications integrated with backend APIs
-   - Developed the ability to work independently on complex technical tasks
+   - Successfully transitioned from academic concepts to production-level software development
+   - Delivered fully functional frontend applications integrated with backend APIs
+   - Gained hands-on experience in agile development environments
+   - Demonstrated ability to work independently on complex technical tasks
 
-4. theSOFTtribe Ltd. — Frontend Developer
+2. theSOFTtribe Ltd. — Frontend Developer
    Location: Greater Accra, Ghana (On-site)
-   Period: March 2022 – August 2023
+   Period: March 2022 – July 2023
    Responsibilities:
-   - Designed and implemented computerized business application systems
-   - Built and maintained frontend interfaces using TypeScript and modern web technologies
+   - Designed and implemented responsive frontend interfaces for enterprise-level web applications
+   - Built and maintained UI components using TypeScript and modern web technologies
    - Collaborated with cross-functional teams on client-facing software products
-   - Contributed to Ghana's leading software development company serving enterprise clients
+   - Contributed to Ghana's leading enterprise software development company
    Achievements:
    - Completed 1.5 years of full-time on-site professional frontend development
-   - Gained foundational professional experience working alongside senior engineers at an enterprise-level company
+   - Gained foundational experience working alongside senior engineers at enterprise-level
 
 --- TECHNICAL SKILLS ---
-Programming Languages: JavaScript, TypeScript
-Frontend: React, Next.js, React Native, Redux, Redux Toolkit, HTML/CSS, Tailwind CSS, SCSS, Svelte, Vue.js, Firebase, Expo
-Backend: Django REST Framework, NestJS, Node.js, REST API development
-Tools & Technologies: Git (GitHub, GitLab), Linux/macOS, Docker (basic), Logging & debugging tools, Software architecture planning, Command-line tools (Bash)
-AI & Workflow: Prompt engineering, AI-assisted development, System design, Code analysis and debugging with AI tools
+
+Programming Languages:
+- JavaScript, TypeScript, Python
+
+Frontend Development:
+- React (Hooks, Components, State Management)
+- Context API
+- State Management Patterns
+- Next.js (SSR, SSG, API Routes, Routing)
+- Redux / Redux Toolkit
+- Tailwind CSS, SCSS, HTML/CSS
+
+Backend Development:
+- Node.js
+- Express.js (Middleware, Routing, Controllers, Error Handling)
+- Prisma
+- JWT Authentication
+- Django REST Framework (Serializers, Viewsets, Permissions)
+- REST API Development
+- Firebase
+- AWS S3
+
+Auth & Integrations:
+- Clerk, Lucia Auth
+- Axios
+- Third-party API Integration
+- React Query, Formik
+
+Tools & Technologies:
+- Git (GitHub, GitLab), Docker (Basic)
+- Linux/macOS, Vite, Cypress
+- Command-line Tools, Software Architecture Planning
+- Version Control Workflows, Debugging & Logging Tools
+
+AI & Development Workflow:
+- Prompt Engineering
+- AI-assisted Software Development
+- Code Rabbit
+- System Design & Problem Decomposition
+- Code Analysis & Debugging with AI Tools
 
 --- PROJECTS ---
-1. Afriqnet (Featured, Ongoing)
-   Description: A streaming platform built for African audiences — a homegrown alternative to YouTube, featuring movies, shows, and content that reflects African stories and culture.
+1. Afriqnet (Featured)
+   Description: A streaming platform built for African audiences — a homegrown alternative to YouTube, featuring movies, shows, and content that reflects African stories and culture. Full-featured with user authentication, advanced search, video streaming, and personalized recommendations.
    Live: https://afriqnet-ten.vercel.app/
-   Tech: Next.js, React (v19), Redux Toolkit, Firebase, Cloudinary, Movies API, Tailwind CSS, Lucia (auth), Lucide Icons
+   Repository: https://github.com/Qofy/AfriqNet
+   Tech: Next.js, React (v19), Redux Toolkit, Django REST Framework, Firebase, AWS S3, Tailwind CSS, React Query, Axios
 
 2. FirePup (Featured)
-   Description: A community food platform where users can post, share, and discover meals and recipes from around the world.
+   Description: A community food-sharing platform enabling users to discover, share, and inspire others with recipes and meal ideas from around the world. Features social interactions including likes, comments, and community feed.
    Live: https://firepup.vercel.app/community
-   Tech: Next.js, Cloudinary, Lucide Icons
+   Tech: Next.js, React, Cloudinary, Tailwind CSS, SCSS
 
 3. NutriScan (Featured)
-   Description: An AI-powered health assistant that helps patients track and evaluate their dietary food prescriptions for better nutrition management.
+   Description: An AI-powered health assistant application for dietary analysis and nutrition management. Helps users track and evaluate food prescriptions with intelligent recommendations and visual analytics.
    Live: https://nutri-scan-murex.vercel.app
-   Tech: Next.js, React, Redux Toolkit, Django REST API, Cloudinary, Tailwind CSS, Canvas, Lucide Icons
+   Tech: React, Next.js, Redux Toolkit, Django REST API, Cloudinary, Canvas, Chart.js, Formik, Zod
 
-4. My Portfolio (Featured)
-   Description: A personal portfolio showcasing his background, experience, projects, and contact information — built with a focus on clean design and performance.
+4. HexaShop (Featured)
+   Description: Full-featured e-commerce platform for fashion retail with multi-category browsing, shopping cart, checkout flow, order tracking, and purchase history management. Demonstrates full-stack capabilities.
+   Live: https://hexashop-theta.vercel.app
+   Repository: https://github.com/Qofy/hexashop
+   Tech: Next.js 16, TypeScript, Redux Toolkit, React Query, Tailwind CSS, Formik, Yup
+
+5. My Portfolio (Featured)
+   Description: Personal portfolio showcasing background, experience, projects, and professional journey — built with clean design and performance optimization.
    Live: https://www.kofiagye.com/
-   Tech: TypeScript, React, React Router, Hash Link, SCSS, Vite, Lucide Icons
+   Repository: https://github.com/Qofy/Portfolio
+   Tech: React, TypeScript, React Router, SCSS, Vite
 `;
 
 export function ChatbotButton() {
@@ -152,7 +182,7 @@ export function ChatbotButton() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: 'gemma3:4b',
+          model: 'nemotron-3-nano:30b',
           messages: [
             { role: 'system', content: PORTFOLIO_CONTEXT },
             ...conversationHistory,

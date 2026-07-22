@@ -57,12 +57,13 @@ export const projectCaseStudies: CaseStudy[] = [
     repositoryUrl: "https://github.com/Qofy/AfriqNet", // To be added
     problem: "African audiences lack affordable, dedicated platforms to discover and stream African cinema and cultural content. Existing streaming services either don't feature African content prominently or charge premium prices, making African films inaccessible to many potential viewers.",
     kofiRole: "Led frontend architecture and implementation. Designed responsive UI component system, integrated Firebase for authentication and content management, implemented real-time search and filtering, built video streaming interface with progress tracking, and handled API integration with backend content services.",
-    architecture: "Next.js with server-side rendering for optimal performance and SEO. Redux Toolkit for state management across complex user workflows. Firebase for real-time database and authentication. Cloudinary for optimized image delivery. Component-driven architecture with reusable UI patterns.",
+    architecture: "Next.js with server-side rendering for optimal performance and SEO. Redux Toolkit for state management across complex user workflows. Django REST Framework backend for content management and user data. Firebase for real-time authentication. AWS S3 for scalable media storage. Component-driven architecture with reusable UI patterns.",
     technicalDecisions: [
       "Chose Next.js for server-side rendering to improve initial page load and enable dynamic meta tags for better SEO discoverability",
       "Implemented Redux Toolkit to manage complex state (user auth, watch history, recommendations, filters) across multiple pages",
-      "Used Firebase for real-time user data and Lucia for robust authentication with session management",
-      "Leveraged Cloudinary for image optimization to reduce bandwidth and improve loading times on slower connections",
+      "Used Django REST Framework for robust API backend with content management and user data persistence",
+      "Integrated AWS S3 for scalable, cost-effective media storage and CDN delivery of film content",
+      "Used Firebase for real-time authentication and session management",
       "Implemented React Query for efficient server state synchronization and caching of content queries",
     ],
     testing: "End-to-end testing with Cypress covering critical user journeys (sign-up, browsing, streaming). Manual cross-browser testing on desktop and mobile. Performance testing to ensure streaming quality on various connection speeds.",
@@ -90,7 +91,7 @@ export const projectCaseStudies: CaseStudy[] = [
         description: "Save films to watchlist, share recommendations with social links, and track upcoming releases in your genres of interest."
       }
     ],
-    technologies: ["Next.js", "React (v19)", "Redux Toolkit", "Firebase", "Cloudinary", "Tailwind CSS", "Lucia Auth", "React Query", "Axios"],
+    technologies: ["Next.js", "React (v19)", "Redux Toolkit", "Django REST Framework", "Firebase", "AWS S3", "Tailwind CSS", "React Query", "Axios"],
     timeline: "6 months (design, development, testing, deployment)",
     screenshots: [
       { title: "Homepage with featured content", url: homeImg },
@@ -205,60 +206,7 @@ export const projectCaseStudies: CaseStudy[] = [
     ],
     featured: true
   },
-  {
-    id: 4,
-    title: "Personal Portfolio",
-    tagline: "Professional Showcase & Digital Resume",
-    description: "A personal portfolio showcasing my background, experience, projects, and professional journey—built with clean design and performance optimization.",
-    liveUrl: "https://www.kofiagye.com/",
-    repositoryUrl: "https://github.com/Qofy/Portfolio", // To be added
-    problem: "As a frontend developer seeking opportunities, I needed a platform that goes beyond a traditional resume. A portfolio that demonstrates technical skills, design thinking, project work, and professional narrative all in one place.",
-    kofiRole: "Designed and built the entire portfolio from concept to deployment. Created the information architecture, implemented responsive design system, built custom components, optimized performance, and managed continuous deployment.",
-    architecture: "React with React Router for navigation. SCSS for responsive and maintainable styling. Vite for fast development and optimized builds. Semantic HTML for accessibility. Mobile-first responsive design approach.",
-    technicalDecisions: [
-      "Used React Router for smooth client-side navigation without page reloads",
-      "Implemented SCSS modules for scoped styling and maintainability",
-      "Chose Vite over Create React App for significantly faster build times and smaller bundle sizes",
-      "Built with semantic HTML for better SEO and accessibility (WCAG compliance)",
-      "Implemented smooth scroll behavior for navigation links",
-      "Optimized images with proper formats and lazy loading"
-    ],
-    testing: "Tested responsive design across all major breakpoints. Accessibility testing with screen readers. Cross-browser compatibility testing. Performance testing with Lighthouse.",
-    deployment: "Deployed on Vercel with automatic deployments on commits. Custom domain setup (kofiagye.com). CDN caching for optimal performance globally.",
-    outcome: "Live portfolio receiving 50+ visitors monthly from job applications, networking, and referrals. Serves as primary recruitment tool and technical demonstration platform.",
-    keyFeatures: [
-      {
-        title: "Professional Introduction",
-        description: "Compelling hero section with quick overview of skills and accomplishments with call-to-action buttons."
-      },
-      {
-        title: "Experience Timeline",
-        description: "Detailed professional background showing career progression from Ghana to Germany with company highlights."
-      },
-      {
-        title: "Detailed Case Studies",
-        description: "In-depth project documentation including problem statements, solutions, technical decisions, and outcomes."
-      },
-      {
-        title: "Skills Showcase",
-        description: "Categorized technical skills organized by proficiency and relevance (Frontend, Backend, Tools, AI/ML)."
-      },
-      {
-        title: "Contact & Social",
-        description: "Multiple ways to connect (email, GitHub, LinkedIn) with integrated contact form and social profiles."
-      }
-    ],
-    technologies: ["React", "TypeScript", "React Router", "SCSS", "Vite", "Lucide Icons", "Tailwind CSS"],
-    timeline: "8 weeks (design, development, refinement, deployment)",
-    screenshots: [
-      { title: "Hero section and introduction" },
-      { title: "Experience and background section" },
-      { title: "Projects showcase" },
-      { title: "Skills and technical capabilities" }
-    ],
-    featured: true
-  },
-  {
+   {
   id: 4,
   title: "HexaShop",
   tagline: "Full-Stack E-Commerce Platform for Fashion",
@@ -324,6 +272,60 @@ export const projectCaseStudies: CaseStudy[] = [
     { title: "Order tracking and delivery status", url: trackingImg }
   ],
   featured: true
-}
+},
+  {
+    id: 4,
+    title: "Personal Portfolio",
+    tagline: "Professional Showcase & Digital Resume",
+    description: "A personal portfolio showcasing my background, experience, projects, and professional journey—built with clean design and performance optimization.",
+    liveUrl: "https://www.kofiagye.com/",
+    repositoryUrl: "https://github.com/Qofy/Portfolio", // To be added
+    problem: "As a frontend developer seeking opportunities, I needed a platform that goes beyond a traditional resume. A portfolio that demonstrates technical skills, design thinking, project work, and professional narrative all in one place.",
+    kofiRole: "Designed and built the entire portfolio from concept to deployment. Created the information architecture, implemented responsive design system, built custom components, optimized performance, and managed continuous deployment.",
+    architecture: "React with React Router for navigation. SCSS for responsive and maintainable styling. Vite for fast development and optimized builds. Semantic HTML for accessibility. Mobile-first responsive design approach.",
+    technicalDecisions: [
+      "Used React Router for smooth client-side navigation without page reloads",
+      "Implemented SCSS modules for scoped styling and maintainability",
+      "Chose Vite over Create React App for significantly faster build times and smaller bundle sizes",
+      "Built with semantic HTML for better SEO and accessibility (WCAG compliance)",
+      "Implemented smooth scroll behavior for navigation links",
+      "Optimized images with proper formats and lazy loading"
+    ],
+    testing: "Tested responsive design across all major breakpoints. Accessibility testing with screen readers. Cross-browser compatibility testing. Performance testing with Lighthouse.",
+    deployment: "Deployed on Vercel with automatic deployments on commits. Custom domain setup (kofiagye.com). CDN caching for optimal performance globally.",
+    outcome: "Live portfolio receiving 50+ visitors monthly from job applications, networking, and referrals. Serves as primary recruitment tool and technical demonstration platform.",
+    keyFeatures: [
+      {
+        title: "Professional Introduction",
+        description: "Compelling hero section with quick overview of skills and accomplishments with call-to-action buttons."
+      },
+      {
+        title: "Experience Timeline",
+        description: "Detailed professional background showing career progression from Ghana to Germany with company highlights."
+      },
+      {
+        title: "Detailed Case Studies",
+        description: "In-depth project documentation including problem statements, solutions, technical decisions, and outcomes."
+      },
+      {
+        title: "Skills Showcase",
+        description: "Categorized technical skills organized by proficiency and relevance (Frontend, Backend, Tools, AI/ML)."
+      },
+      {
+        title: "Contact & Social",
+        description: "Multiple ways to connect (email, GitHub, LinkedIn) with integrated contact form and social profiles."
+      }
+    ],
+    technologies: ["React", "TypeScript", "React Router", "SCSS", "Vite", "Lucide Icons", "Tailwind CSS"],
+    timeline: "8 weeks (design, development, refinement, deployment)",
+    screenshots: [
+      { title: "Hero section and introduction" },
+      { title: "Experience and background section" },
+      { title: "Projects showcase" },
+      { title: "Skills and technical capabilities" }
+    ],
+    featured: true
+  },
+ 
 
 ];

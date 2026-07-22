@@ -12,24 +12,30 @@ export const skillsData = {
     {
       name: "Frontend Development",
       items: [
-        "React",
-        "Next.js",
+        "React (Hooks, Components, State Management)",
+        "Context API",
+        "State Management Patterns",
+        "Next.js (SSR, SSG, API Routes, Routing)",
         "Redux / Redux Toolkit",
         "Tailwind CSS",
         "SCSS",
         "HTML / CSS",
       ],
     },
-    // {
-    //   name: "Backend Development",
-    //   items: [
-    //     "Django REST Framework",
-    //     "NestJS",
-    //     "REST API Development",
-    //     "Firebase",
-    //     "Cloudinary",
-    //   ],
-    // },
+    {
+      name: "Backend Development",
+      items: [
+        "Node.js",
+        "Express.js (Middleware, Routing, Controllers, Error Handling)",
+        "Prisma",
+        "JWT Authentication",
+        "Django REST Framework (Serializers, Viewsets, Permissions)",
+        "REST API Development",
+        "Firebase",
+        "AWS S3",
+        "Cloudinary",
+      ],
+    },
     {
       name: "Auth & Integrations",
       items: [
