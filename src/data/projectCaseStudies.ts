@@ -99,7 +99,7 @@ export const projectCaseStudies: CaseStudy[] = [
       { title: "Search and filter functionality", url: searchImg },
       { title: "User profile and watch history", url: profileImg }
     ],
-    featured: true
+    featured: false
   },
   {
     id: 2,
