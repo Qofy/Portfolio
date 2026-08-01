@@ -1,12 +1,12 @@
 import '../../styles/components/ProjectsSection.scss';
 import { ArrowUpRight } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
-import Hexashop from '../../assets/images/hexshop-landing.png';
-import fxChecker from '../../assets/images/fx-checker.png';
-import portfolio from '../../assets/images/portfolio.png';
-import browserUI from '../../assets/images/browserUi.png';
-import NutriScan from '../../assets/images/nutriscan.png';
-import Firepup from '../../assets/images/firepup.png';
+import Hexashop from '../../images/hexshop-landing.png';
+import fxChecker from '../../images/fx-checker.png';
+import portfolio from '../../images/portfolio.png';
+import browserUI from '../../images/browserUi.png';
+import NutriScan from '../../images/nutriscan.png';
+import Firepup from '../../images/firepup.png';
 
 
 
@@ -44,7 +44,7 @@ const projects = [
     category: 'Real Project',
     company: 'Personal Project',
     image: browserUI,
-    tags: ['Dashboard', 'Personal Project', 'React']
+    tags: ['Dashboard', 'Personal Project']
   },
   {
     id: 5,
@@ -61,7 +61,7 @@ const projects = [
     category: 'Real Project',
     company: 'Personal Project',
     image: Firepup,
-    tags: ['Next.js']
+    tags: ['Next.js', 'Django REST API', 'Redux Toolkit', 'TypeScript']
   }
 ];
 
