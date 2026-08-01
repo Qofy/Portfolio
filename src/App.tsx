@@ -1,25 +1,18 @@
-import { Nav } from './component/Nav';
-import { About } from './component/About';
-import { Skills } from './component/Skill';
-import { Projects } from './component/Projects';
-import { Contact } from './component/Contact';
-import { AboutBackground } from './component/AboutBackground';
-import { ChatbotButton } from './sub-components/ChatbotButton';
+import './styles/globals.scss';
+import { Navigation, HeroSection, AboutSection, SkillsSection, BackgroundSection, ExperienceSection, ProjectsSection } from './components';
 
-function App() {
+export default function App() {
   return (
     <>
-      <Nav />
+      <Navigation />
       <main>
-        <Contact />
-        <About />
-        <Skills />
-        <Projects />
-        <AboutBackground />
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <BackgroundSection />
+        <ExperienceSection />
+        <ProjectsSection />
       </main>
-      <ChatbotButton />
     </>
   );
 }
-
-export default App;

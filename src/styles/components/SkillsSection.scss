@@ -1,0 +1,276 @@
+.skills {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  padding-top: 70px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.skills-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 4rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: calc(100vh - 70px);
+  justify-content: center;
+}
+
+.skills-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+    letter-spacing: 0.1em;
+  }
+
+  .skills-subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+    font-weight: 500;
+  }
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skill-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+  opacity: 0;
+
+  &.animate-from-left {
+    &.animate {
+      animation: slideInLeft 0.6s ease-out forwards;
+    }
+  }
+
+  &.animate-from-right {
+    &.animate {
+      animation: slideInRight 0.6s ease-out forwards;
+    }
+  }
+
+  &.animate-from-top {
+    &.animate {
+      animation: slideInDown 0.6s ease-out forwards;
+    }
+  }
+
+  &.animate-from-bottom {
+    &.animate {
+      animation: slideInUp 0.6s ease-out forwards;
+    }
+  }
+
+  &:nth-child(1).animate {
+    animation-delay: 0.1s;
+  }
+
+  &:nth-child(2).animate {
+    animation-delay: 0.2s;
+  }
+
+  &:nth-child(3).animate {
+    animation-delay: 0.3s;
+  }
+
+  &:nth-child(4).animate {
+    animation-delay: 0.4s;
+  }
+
+  &:nth-child(5).animate {
+    animation-delay: 0.5s;
+  }
+
+  &:hover {
+    border-color: #e93f5b;
+    background: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.skill-category {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: default;
+
+  &:hover {
+    border-color: #e93f5b;
+    color: #e93f5b;
+    background: #fff5f7;
+    transform: translateY(-2px);
+  }
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.skill-group {
+  animation: slideInLeft 0.6s ease-out forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .skills-container {
+    padding: 3rem 3rem;
+  }
+
+  .skills-header h2 {
+    font-size: 2rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-container {
+    padding: 2rem 1.5rem;
+  }
+
+  .skills-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .skill-group {
+    padding: 1.25rem;
+  }
+
+  .skill-tag {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .skills-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .skills-grid {
+    gap: 1rem;
+  }
+
+  .skill-group {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .skill-category {
+    font-size: 1rem;
+  }
+
+  .skill-tag {
+    font-size: 0.8rem;
+  }
+}
