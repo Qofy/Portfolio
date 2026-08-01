@@ -292,7 +292,7 @@
     grid-template-columns: 1fr;
     gap: 2rem;
     padding: 1.5rem 1.5rem;
-    min-height: auto;
+    height: calc(100vh - 70px);
   }
 
   /* Reorder: Image first, then Name, then Left, then Right */

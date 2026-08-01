@@ -182,11 +182,14 @@
 
 @media (max-width: 768px) {
   .about {
-    padding: 3rem 0;
+    height: auto;
+    min-height: 100vh;
+    padding-top: 70px;
   }
 
   .about-container {
-    padding: 0 1.5rem;
+    padding: 2rem 1.5rem;
+    height: auto;
   }
 
   .about-header {

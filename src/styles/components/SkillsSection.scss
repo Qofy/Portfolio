@@ -225,8 +225,15 @@
 }
 
 @media (max-width: 768px) {
+  .skills {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 70px;
+  }
+
   .skills-container {
     padding: 2rem 1.5rem;
+    height: auto;
   }
 
   .skills-header h2 {

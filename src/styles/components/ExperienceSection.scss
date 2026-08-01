@@ -139,8 +139,15 @@
 }
 
 @media (max-width: 768px) {
+  .experience {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 70px;
+  }
+
   .experience-container {
-    padding: 0 1.5rem;
+    padding: 2rem 1.5rem;
+    height: auto;
   }
 
   .experience-header {

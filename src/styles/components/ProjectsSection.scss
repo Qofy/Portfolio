@@ -248,8 +248,15 @@
 }
 
 @media (max-width: 768px) {
+  .projects {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 70px;
+  }
+
   .projects-container {
     padding: 2rem 1.5rem;
+    height: auto;
   }
 
   .projects-controls {
