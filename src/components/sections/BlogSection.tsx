@@ -25,6 +25,8 @@ const DEFAULT_CATEGORIES = [
   'Tutorial'
 ];
 
+const ADMIN_PASSWORD = import.meta.env.VITE_BLOG_ADMIN_PASSWORD || 'default-password';
+
 export function BlogSection() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>([]);
@@ -33,6 +35,7 @@ export function BlogSection() {
   const [showForm, setShowForm] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [viewingPostId, setViewingPostId] = useState<string | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [formData, setFormData] = useState({
     title: '',
     content: '',
@@ -41,6 +44,14 @@ export function BlogSection() {
     readingTime: 5
   });
   const sectionRef = useRef<HTMLElement>(null);
+
+  // Check admin status on mount
+  useEffect(() => {
+    const savedAdmin = localStorage.getItem('portfolioAdmin');
+    if (savedAdmin === 'true') {
+      setIsAdmin(true);
+    }
+  }, []);
 
   // Load posts from localStorage on mount
   useEffect(() => {
@@ -55,6 +66,22 @@ export function BlogSection() {
       }
     }
   }, []);
+
+  const handleAdminUnlock = () => {
+    const password = prompt('Enter admin password:');
+    if (password === ADMIN_PASSWORD) {
+      setIsAdmin(true);
+      localStorage.setItem('portfolioAdmin', 'true');
+      alert('Admin mode unlocked!');
+    } else if (password !== null) {
+      alert('Incorrect password');
+    }
+  };
+
+  const handleAdminLogout = () => {
+    setIsAdmin(false);
+    localStorage.removeItem('portfolioAdmin');
+  };
 
   // Filter posts based on search and category
   useEffect(() => {
@@ -195,12 +222,33 @@ export function BlogSection() {
             />
           </div>
 
-          <button
-            className="new-post-btn"
-            onClick={() => setShowForm(true)}
-          >
-            + New Post
-          </button>
+          <div className="blog-controls-actions">
+            {isAdmin ? (
+              <>
+                <button
+                  className="new-post-btn"
+                  onClick={() => setShowForm(true)}
+                >
+                  + New Post
+                </button>
+                <button
+                  className="admin-btn logout"
+                  onClick={handleAdminLogout}
+                  title="Logout from admin mode"
+                >
+                  🔒 Logout
+                </button>
+              </>
+            ) : (
+              <button
+                className="admin-btn unlock"
+                onClick={handleAdminUnlock}
+                title="Unlock admin mode"
+              >
+                🔓 Admin
+              </button>
+            )}
+          </div>
         </div>
 
         <div className="filter-tags">
@@ -339,20 +387,24 @@ export function BlogSection() {
                       >
                         <ArrowUpRight size={16} />
                       </button>
-                      <button
-                        className="action-btn edit"
-                        onClick={() => handleEditPost(post)}
-                        title="Edit"
-                      >
-                        <Edit2 size={16} />
-                      </button>
-                      <button
-                        className="action-btn delete"
-                        onClick={() => handleDeletePost(post.id)}
-                        title="Delete"
-                      >
-                        <Trash2 size={16} />
-                      </button>
+                      {isAdmin && (
+                        <>
+                          <button
+                            className="action-btn edit"
+                            onClick={() => handleEditPost(post)}
+                            title="Edit"
+                          >
+                            <Edit2 size={16} />
+                          </button>
+                          <button
+                            className="action-btn delete"
+                            onClick={() => handleDeletePost(post.id)}
+                            title="Delete"
+                          >
+                            <Trash2 size={16} />
+                          </button>
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>
