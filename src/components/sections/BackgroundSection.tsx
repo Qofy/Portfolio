@@ -106,7 +106,7 @@ export function BackgroundSection() {
                         <ExternalLink size={16} />
                       </a>
                     )}
-                    {item.certificateLink && (
+                    {/* {item.certificateLink && (
                       <a
                         href={item.certificateLink}
                         download
@@ -115,7 +115,7 @@ export function BackgroundSection() {
                         Download PDF
                         <ExternalLink size={16} />
                       </a>
-                    )}
+                    )} */}
                   </div>
                 )}
               </div>

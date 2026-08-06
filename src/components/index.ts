@@ -8,3 +8,4 @@ export { SkillsSection } from './sections/SkillsSection';
 export { BackgroundSection } from './sections/BackgroundSection';
 export { ExperienceSection } from './sections/ExperienceSection';
 export { ProjectsSection } from './sections/ProjectsSection';
+export { BlogSection } from './sections/BlogSection';
