@@ -26,7 +26,7 @@ const DEFAULT_CATEGORIES = [
   'Docker'
 ];
 
-const ADMIN_PASSWORD = import.meta.env.VITE_BLOG_ADMIN_PASSWORD || 'default-password';
+const ADMIN_PASSWORD = import.meta.env.VITE_BLOG || 'default-password';
 
 export function BlogSection() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
