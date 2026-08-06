@@ -102,7 +102,7 @@ export function BlogSection() {
     setFilteredPosts(filtered);
   }, [posts, searchTerm, selectedCategory]);
 
-  // Add/Update scroll animation
+  // Add/Update scroll animation on initial load
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -129,6 +129,20 @@ export function BlogSection() {
       }
     };
   }, []);
+
+  // Re-animate cards when filtered posts change
+  useEffect(() => {
+    const cards = sectionRef.current?.querySelectorAll('.blog-card');
+    cards?.forEach((card) => {
+      card.classList.remove('animate');
+    });
+
+    setTimeout(() => {
+      cards?.forEach((card) => {
+        card.classList.add('animate');
+      });
+    }, 0);
+  }, [filteredPosts]);
 
   const handleSavePost = () => {
     if (!formData.title || !formData.content) {
