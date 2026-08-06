@@ -22,7 +22,8 @@ const DEFAULT_CATEGORIES = [
   'CSS',
   'Web Development',
   'Performance',
-  'Tutorial'
+  'Tutorial',
+  'Docker'
 ];
 
 const ADMIN_PASSWORD = import.meta.env.VITE_BLOG_ADMIN_PASSWORD || 'default-password';
