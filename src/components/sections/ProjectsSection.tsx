@@ -36,7 +36,7 @@ const projects = [
     category: 'Real Project',
     company: 'Personal Project',
     image: portfolio,
-    tags: ['React', 'React Router','Scss']
+    tags: ['React', 'React Router','Scss','Firebase(Firestore)']
   },
   {
     id: 4,
