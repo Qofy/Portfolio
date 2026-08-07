@@ -11,7 +11,6 @@ import {
   onSnapshot,
   query,
   orderBy,
-  Timestamp,
 } from 'firebase/firestore';
 
 export interface BlogPost {
@@ -49,7 +48,6 @@ export function BlogSection() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [viewingPostId, setViewingPostId] = useState<string | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
     title: '',
     content: '',
@@ -90,11 +88,9 @@ export function BlogSection() {
         });
         setPosts(loadedPosts);
         setFilteredPosts(loadedPosts);
-        setLoading(false);
       },
       (error) => {
         console.error('Error loading posts:', error);
-        setLoading(false);
       }
     );
 
