@@ -1,6 +1,18 @@
 import '../../styles/components/BlogSection.scss';
 import { ArrowUpRight, X, Edit2, Trash2, Search } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
+import { db } from '../../config/firebase';
+import {
+  collection,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,
+  onSnapshot,
+  query,
+  orderBy,
+  Timestamp,
+} from 'firebase/firestore';
 
 export interface BlogPost {
   id: string;
@@ -26,7 +38,7 @@ const DEFAULT_CATEGORIES = [
   'Docker'
 ];
 
-const ADMIN_PASSWORD = import.meta.env.VITE_BLOG || 'default-password';
+const ADMIN_PASSWORD = import.meta.env.VITE_BLOG_ADMIN_PASSWORD || 'default-password';
 
 export function BlogSection() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -37,6 +49,7 @@ export function BlogSection() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [viewingPostId, setViewingPostId] = useState<string | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
     title: '',
     content: '',
@@ -54,18 +67,38 @@ export function BlogSection() {
     }
   }, []);
 
-  // Load posts from localStorage on mount
+  // Load posts from Firestore in real-time
   useEffect(() => {
-    const savedPosts = localStorage.getItem('blogPosts');
-    if (savedPosts) {
-      try {
-        const parsedPosts = JSON.parse(savedPosts);
-        setPosts(parsedPosts);
-        setFilteredPosts(parsedPosts);
-      } catch (e) {
-        console.error('Error loading posts:', e);
+    const postsRef = collection(db, 'blogPosts');
+    const postsQuery = query(postsRef, orderBy('date', 'desc'));
+
+    const unsubscribe = onSnapshot(
+      postsQuery,
+      (snapshot) => {
+        const loadedPosts: BlogPost[] = [];
+        snapshot.forEach((doc) => {
+          const data = doc.data();
+          loadedPosts.push({
+            id: doc.id,
+            title: data.title,
+            content: data.content,
+            category: data.category,
+            date: data.date,
+            readingTime: data.readingTime,
+            image: data.image,
+          });
+        });
+        setPosts(loadedPosts);
+        setFilteredPosts(loadedPosts);
+        setLoading(false);
+      },
+      (error) => {
+        console.error('Error loading posts:', error);
+        setLoading(false);
       }
-    }
+    );
+
+    return () => unsubscribe();
   }, []);
 
   const handleAdminUnlock = () => {
@@ -145,50 +178,53 @@ export function BlogSection() {
     }, 0);
   }, [filteredPosts]);
 
-  const handleSavePost = () => {
+  const handleSavePost = async () => {
     if (!formData.title || !formData.content) {
       alert('Please fill in title and content');
       return;
     }
 
-    let updatedPosts: BlogPost[];
+    try {
+      const postsRef = collection(db, 'blogPosts');
 
-    if (editingId) {
-      updatedPosts = posts.map(post =>
-        post.id === editingId
-          ? {
-              ...post,
-              title: formData.title,
-              content: formData.content,
-              category: formData.category,
-              image: formData.image,
-              readingTime: formData.readingTime
-            }
-          : post
-      );
-    } else {
-      const newPost: BlogPost = {
-        id: Date.now().toString(),
-        title: formData.title,
-        content: formData.content,
-        category: formData.category,
-        date: new Date().toISOString().split('T')[0],
-        readingTime: formData.readingTime,
-        image: formData.image
-      };
-      updatedPosts = [newPost, ...posts];
+      if (editingId) {
+        const postDoc = doc(db, 'blogPosts', editingId);
+        await updateDoc(postDoc, {
+          title: formData.title,
+          content: formData.content,
+          category: formData.category,
+          image: formData.image,
+          readingTime: formData.readingTime,
+        });
+      } else {
+        await addDoc(postsRef, {
+          title: formData.title,
+          content: formData.content,
+          category: formData.category,
+          date: new Date().toISOString().split('T')[0],
+          readingTime: formData.readingTime,
+          image: formData.image,
+        });
+      }
+
+      resetForm();
+      alert(editingId ? 'Post updated!' : 'Post published!');
+    } catch (error) {
+      console.error('Error saving post:', error);
+      alert('Error saving post. Please try again.');
     }
-
-    setPosts(updatedPosts);
-    localStorage.setItem('blogPosts', JSON.stringify(updatedPosts));
-    resetForm();
   };
 
-  const handleDeletePost = (id: string) => {
+  const handleDeletePost = async (id: string) => {
     if (confirm('Are you sure you want to delete this post?')) {
-      const updatedPosts = posts.filter(post => post.id !== id);
-      setPosts(updatedPosts);
-      localStorage.setItem('blogPosts', JSON.stringify(updatedPosts));
+      try {
+        const postDoc = doc(db, 'blogPosts', id);
+        await deleteDoc(postDoc);
+        alert('Post deleted!');
+      } catch (error) {
+        console.error('Error deleting post:', error);
+        alert('Error deleting post. Please try again.');
+      }
     }
   };
 
