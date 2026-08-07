@@ -34,7 +34,9 @@ const DEFAULT_CATEGORIES = [
   'Web Development',
   'Performance',
   'Tutorial',
-  'Docker'
+  'Docker',
+  'Cypress',
+  'Deutsch Kurs'
 ];
 
 const ADMIN_PASSWORD = import.meta.env.VITE_BLOG_ADMIN_PASSWORD || 'default-password';
