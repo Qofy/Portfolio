@@ -39,7 +39,7 @@ export function AboutSection() {
   }, []);
 
   return (
-    <section className="about" ref={sectionRef}>
+    <section className="about" data-section="about" ref={sectionRef}>
       <div className="about-container">
         <div className="about-header">
           <h2>About Me</h2>

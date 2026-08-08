@@ -3,6 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const navLinks = [
+  { label: 'About', href: '#about' },
   { label: 'Work', href: '#projects' },
   { label: 'Stacks', href: '#skills' },
   { label: 'Experience', href: '#experience' },
@@ -12,7 +13,14 @@ const navLinks = [
 ];
 
 export function Navigation() {
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState('hero');
+
+  // Set hero as default section on mount
+  useEffect(() => {
+    if (!window.location.hash) {
+      window.history.replaceState(null, '', '#hero');
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,10 +35,31 @@ export function Navigation() {
       });
 
       setActiveSection(current);
+
+      // Update URL hash when scrolling
+      if (current && current !== window.location.hash.replace('#', '')) {
+        window.history.replaceState(null, '', `#${current}`);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Handle browser back/forward buttons
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash) {
+        const element = document.querySelector(`[data-section="${hash}"]`);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
   const handleSmoothScroll = (href: string) => {
@@ -38,6 +67,8 @@ export function Navigation() {
     const element = document.querySelector(`[data-section="${id}"]`);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+      // Update URL hash when clicking navigation
+      window.history.pushState(null, '', href);
     }
   };
 
