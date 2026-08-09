@@ -32,6 +32,7 @@ const DEFAULT_CATEGORIES = [
   'Firebase',
   'CSS',
   'Web Development',
+  'React Query',
   'Performance',
   'Tutorial',
   'Docker',
