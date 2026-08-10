@@ -16,11 +16,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   );
 
   try {
+    const OLLAMA_API_KEY = process.env.OLLAMA_API;
+
+    if (!OLLAMA_API_KEY) {
+      return res.status(500).json({ error: 'OLLAMA_API_KEY not configured in environment' });
+    }
+
     const response = await fetch('https://ollama.com/api/chat', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer 0369aef6d541433ba83977a5911812b9.BxWRKU7oXd34DDpHgNdVPH1H'
+        'Authorization': `Bearer ${OLLAMA_API_KEY}`
       },
       body: JSON.stringify(req.body)
     });
