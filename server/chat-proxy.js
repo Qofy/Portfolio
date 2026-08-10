@@ -1,20 +1,53 @@
 import express from 'express';
 import cors from 'cors';
+import 'dotenv/config';
 
 const app = express();
 const PORT = 3001;
+const OLLAMA_URL = process.env.OLLAMA_API_URL || 'https://ollama.com/api/chat';
+const OLLAMA_API_KEY = process.env.OLLAMA_API;
 
-app.use(cors());
+// Enable CORS for all routes
+app.use(cors({
+  origin: ['http://localhost:5173', 'http://localhost:3000', 'http://localhost:5174'],
+  methods: ['GET', 'POST', 'OPTIONS'],
+  credentials: true
+}));
+
 app.use(express.json());
+
+// Handle preflight requests
+app.options('*', cors());
+
+// Health check
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', message: 'Chat proxy is running', routes: ['/health', '/api/chat'] });
+});
+
+// Debug route info
+app.get('/debug', (req, res) => {
+  res.json({
+    status: 'ok',
+    server: 'running',
+    port: PORT,
+    ollama_url: OLLAMA_URL,
+    routes: ['GET /health', 'POST /api/chat']
+  });
+});
 
 app.post('/api/chat', async (req, res) => {
   try {
-    const response = await fetch('https://ollama.com/api/chat', {
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+
+    if (OLLAMA_API_KEY) {
+      headers['Authorization'] = `Bearer ${OLLAMA_API_KEY}`;
+    }
+
+    const response = await fetch(OLLAMA_URL, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer 0369aef6d541433ba83977a5911812b9.BxWRKU7oXd34DDpHgNdVPH1H'
-      },
+      headers,
       body: JSON.stringify(req.body)
     });
 

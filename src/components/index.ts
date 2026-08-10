@@ -1,5 +1,6 @@
 // Common Components
 export { Navigation } from './common/Navigation';
+export { ChatBox } from './common/ChatBox';
 
 // Section Components
 export { HeroSection } from './sections/HeroSection';

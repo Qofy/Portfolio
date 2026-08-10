@@ -1,6 +1,7 @@
 import '../../styles/components/BackgroundSection.scss';
 import { Briefcase, BookOpen, ExternalLink } from 'lucide-react';
 import djangset from '../../certificates/django-set.pdf';
+import uebsCertificate from '../../certificates/UE – Online Campus-prove2.pdf';
 import { useEffect, useRef } from 'react';
 
 const backgroundData = [
@@ -9,7 +10,8 @@ const backgroundData = [
     title: 'Bachelor in Software Engineering',
     institution: 'University Of Europe For Apllied Science',
     period: 'Completed',
-    description: 'Studied Software Enginerring with focus on software engineering and web development.'
+    description: 'Studied Software Enginerring with focus on software engineering and web development.',
+    certificateImage: uebsCertificate
   },
   // {
   //   type: 'education',
@@ -93,7 +95,7 @@ export function BackgroundSection() {
                 </div>
                 <p className="timeline-description">{item.description}</p>
 
-                {item.type === 'certification' && (item.certificateLink || item.certificateImage) && (
+                {(item.certificateLink || item.certificateImage) && (
                   <div className="certificate-links">
                     {item.certificateImage && (
                       <a

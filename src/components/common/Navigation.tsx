@@ -1,6 +1,7 @@
 import '../../styles/components/Navigation.scss';
 import { ArrowUpRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { ChatBox } from './ChatBox';
 
 const navLinks = [
   { label: 'About', href: '#about' },
@@ -14,6 +15,7 @@ const navLinks = [
 
 export function Navigation() {
   const [activeSection, setActiveSection] = useState('hero');
+  const [chatOpen, setChatOpen] = useState(false);
 
   // Set hero as default section on mount
   useEffect(() => {
@@ -102,11 +104,16 @@ export function Navigation() {
         </div>
 
         <div className="nav-right">
-          <button className="cta-button">
+          <button
+            className="cta-button"
+            onClick={() => setChatOpen(true)}
+          >
             Let's Talk <ArrowUpRight size={18} />
           </button>
         </div>
       </div>
+
+      <ChatBox isOpen={chatOpen} onClose={() => setChatOpen(false)} />
     </nav>
   );
 }
