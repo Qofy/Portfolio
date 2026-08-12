@@ -27,6 +27,7 @@ const DEFAULT_CATEGORIES = [
   'React',
   'Next.js',
   'TypeScript',
+  'Js(Javascript)',
   'Node.js',
   'Django',
   'Firebase',
