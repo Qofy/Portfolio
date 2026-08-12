@@ -4,26 +4,77 @@ import { useEffect, useRef } from 'react';
 const skillsData = [
   {
     category: 'Frontend',
-    skills: ['React', 'Next.js', 
-      'TypeScript', 'Tailwind CSS', 'SCSS', 
-      'HTML/CSS', 
-      'React Query', 'Axios', 'Redux', 'Formik']
+    skills: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'JavaScript (ES6+)',
+      'Tailwind CSS',
+      'SCSS',
+      'HTML/CSS',
+      'TanStack Query',
+      'React Query',
+      'Redux Toolkit',
+      'Shadcn/UI',
+      'Axios',
+      'Formik'
+    ]
   },
   {
     category: 'Backend',
-    skills: [ 'Django', 'Python', 'Django Fullstack', 'REST APIs']
+    skills: [
+      'Node.js',
+      'Express.js',
+      'Python',
+      'Django',
+      'Django REST Framework',
+      'REST APIs'
+    ]
   },
   {
     category: 'Databases',
-    skills: ['PostgreSQL', 'Firebase', 'Prisma', 'SQL', 'Neon']
+    skills: [
+      'PostgreSQL',
+      'MongoDB',
+      'Firebase',
+      'Prisma',
+      'SQL',
+      'Neon'
+    ]
+  },
+  {
+    category: 'Testing & Quality',
+    skills: [
+      'Cypress',
+      'Jest',
+      'Unit Testing',
+      'Integration Testing'
+    ]
   },
   {
     category: 'Tools & Platforms',
-    skills: ['Git', 'GitHub', 'VS Code', 'AWS', 'Docker', 'Vercel',]
+    skills: [
+      'Git',
+      'GitHub',
+      'GitLab',
+      'VS Code',
+      'Docker',
+      'CI/CD',
+      'Vercel',
+      'Fly.io',
+      'AWS',
+      'AWS S3'
+    ]
   },
   {
     category: 'AI & Productivity',
-    skills: ['Claude', 'GitHub Copilot', 'ChatGPT',]
+    skills: [
+      'Claude',
+      'GitHub Copilot',
+      'ChatGPT',
+      'Ollama',
+      'AI Integration'
+    ]
   }
 ];
 

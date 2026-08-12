@@ -7,6 +7,8 @@ import portfolio from '../../images/portfolio.png';
 import browserUI from '../../images/browserUi.png';
 import NutriScan from '../../images/nutriscan.png';
 import Firepup from '../../images/firepup.png';
+import internTracker from '../../images/internTracker.png';
+
 
 
 
@@ -62,7 +64,15 @@ const projects = [
     company: 'Personal Project',
     image: Firepup,
     tags: ['Next.js', 'Django REST API', 'Redux Toolkit', 'TypeScript']
-  }
+  },
+  {
+    id: 7,
+    title: 'InternTracker - Student Intern Tracker System',
+    category: 'Real Project',
+    company: 'AT Intuivo',
+    image: internTracker,
+    tags: ['Svelte', 'Rust','Tailwind','Playwright Test', 'Chart js', "rxjs", 'Web-Socket', "HTML- Canvas", 'Routify']
+  },
 ];
 
 const filters = ['All', 'Real Project', 'Landing Page'];
