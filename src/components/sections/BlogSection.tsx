@@ -19,6 +19,7 @@ export interface BlogPost {
   content: string;
   category: string;
   date: string;
+  time: string;
   readingTime: number;
   image: string;
 }
@@ -48,6 +49,7 @@ export function BlogSection() {
   const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedDate, setSelectedDate] = useState('All');
   const [showForm, setShowForm] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [viewingPostId, setViewingPostId] = useState<string | null>(null);
@@ -57,7 +59,8 @@ export function BlogSection() {
     content: '',
     category: DEFAULT_CATEGORIES[0],
     image: '',
-    readingTime: 5
+    readingTime: 5,
+    time: new Date().toTimeString().slice(0, 5)
   });
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -86,6 +89,7 @@ export function BlogSection() {
             content: data.content,
             category: data.category,
             date: data.date,
+            time: data.time || '00:00',
             readingTime: data.readingTime,
             image: data.image,
           });
@@ -117,14 +121,21 @@ export function BlogSection() {
     localStorage.removeItem('portfolioAdmin');
   };
 
-  // Filter posts based on search and category
+  // Filter posts based on search, category, and date
   useEffect(() => {
     let filtered = posts;
 
+    // Filter by category
     if (selectedCategory !== 'All') {
       filtered = filtered.filter(post => post.category === selectedCategory);
     }
 
+    // Filter by date
+    if (selectedDate !== 'All') {
+      filtered = filtered.filter(post => post.date === selectedDate);
+    }
+
+    // Filter by search term
     if (searchTerm) {
       filtered = filtered.filter(
         post =>
@@ -133,8 +144,15 @@ export function BlogSection() {
       );
     }
 
+    // Sort by date and time (newest first)
+    filtered.sort((a, b) => {
+      const dateA = new Date(`${a.date}T${a.time}`);
+      const dateB = new Date(`${b.date}T${b.time}`);
+      return dateB.getTime() - dateA.getTime();
+    });
+
     setFilteredPosts(filtered);
-  }, [posts, searchTerm, selectedCategory]);
+  }, [posts, searchTerm, selectedCategory, selectedDate]);
 
   // Add/Update scroll animation on initial load
   useEffect(() => {
@@ -195,6 +213,7 @@ export function BlogSection() {
           category: formData.category,
           image: formData.image,
           readingTime: formData.readingTime,
+          time: formData.time,
         });
       } else {
         await addDoc(postsRef, {
@@ -202,6 +221,7 @@ export function BlogSection() {
           content: formData.content,
           category: formData.category,
           date: new Date().toISOString().split('T')[0],
+          time: formData.time,
           readingTime: formData.readingTime,
           image: formData.image,
         });
@@ -234,7 +254,8 @@ export function BlogSection() {
       content: post.content,
       category: post.category,
       image: post.image,
-      readingTime: post.readingTime
+      readingTime: post.readingTime,
+      time: post.time
     });
     setEditingId(post.id);
     setShowForm(true);
@@ -246,7 +267,8 @@ export function BlogSection() {
       content: '',
       category: DEFAULT_CATEGORIES[0],
       image: '',
-      readingTime: 5
+      readingTime: 5,
+      time: new Date().toTimeString().slice(0, 5)
     });
     setEditingId(null);
     setShowForm(false);
@@ -302,16 +324,46 @@ export function BlogSection() {
           </div>
         </div>
 
-        <div className="filter-tags">
-          {categories.map(cat => (
-            <button
-              key={cat}
-              className={`tag ${selectedCategory === cat ? 'active' : ''}`}
-              onClick={() => setSelectedCategory(cat)}
-            >
-              {cat}
-            </button>
-          ))}
+        <div className="blog-filters">
+          <div className="filter-section">
+            <h4>Topics</h4>
+            <div className="filter-tags">
+              {categories.map(cat => (
+                <button
+                  key={cat}
+                  className={`tag ${selectedCategory === cat ? 'active' : ''}`}
+                  onClick={() => setSelectedCategory(cat)}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="filter-section">
+            <h4>Date</h4>
+            <div className="filter-tags">
+              <button
+                className={`tag ${selectedDate === 'All' ? 'active' : ''}`}
+                onClick={() => setSelectedDate('All')}
+              >
+                All Dates
+              </button>
+              {[...new Set(posts.map(p => p.date))].sort().reverse().map(date => (
+                <button
+                  key={date}
+                  className={`tag ${selectedDate === date ? 'active' : ''}`}
+                  onClick={() => setSelectedDate(date)}
+                >
+                  {new Date(date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                  })}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
 
         {showForm && (
@@ -369,6 +421,14 @@ export function BlogSection() {
                 />
               </div>
 
+              <input
+                type="time"
+                value={formData.time}
+                onChange={(e) => setFormData({ ...formData, time: e.target.value })}
+                className="form-input"
+                placeholder="Time"
+              />
+
               <button className="save-btn" onClick={handleSavePost}>
                 {editingId ? 'Update Post' : 'Publish Post'}
               </button>
@@ -395,7 +455,7 @@ export function BlogSection() {
               <div className="reader-meta">
                 <span className="category-tag">{posts.find(p => p.id === viewingPostId)?.category}</span>
                 <span className="reading-time">📖 {posts.find(p => p.id === viewingPostId)?.readingTime} min read</span>
-                <span className="reader-date">{posts.find(p => p.id === viewingPostId)?.date}</span>
+                <span className="reader-date">{posts.find(p => p.id === viewingPostId)?.date} • {posts.find(p => p.id === viewingPostId)?.time}</span>
               </div>
 
               <div className="reader-content">
@@ -429,7 +489,7 @@ export function BlogSection() {
                   </p>
 
                   <div className="blog-footer">
-                    <span className="blog-date">{post.date}</span>
+                    <span className="blog-date">{post.date} • {post.time}</span>
                     <div className="blog-actions">
                       <button
                         className="action-btn read"
