@@ -263,6 +263,302 @@
   }
 }
 
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #e93f5b;
+  }
+
+  label {
+    flex: 1;
+    cursor: pointer;
+    font-weight: 500;
+    margin: 0;
+  }
+}
+
+.quill-editor-wrapper {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+
+  .ql-toolbar {
+    background: #f9f9f9;
+    border-bottom: 1px solid #e0e0e0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+    .ql-formats {
+      margin-right: 0.5rem;
+    }
+
+    button:hover,
+    button.ql-active,
+    button:focus {
+      color: #e93f5b;
+    }
+
+    .ql-stroke {
+      stroke: #666;
+    }
+
+    .ql-fill {
+      fill: #666;
+    }
+
+    .ql-picker-label {
+      color: #666;
+    }
+  }
+
+  .ql-container {
+    border: none;
+    font-size: 1rem;
+    font-family: inherit;
+    min-height: 300px;
+
+    .ql-editor {
+      padding: 1.5rem;
+      color: #333;
+      line-height: 1.8;
+
+      &.ql-blank::before {
+        color: #999;
+        font-style: italic;
+      }
+
+      h1, h2, h3 {
+        color: #1a1a1a;
+        font-weight: 600;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+
+      blockquote {
+        border-left: 4px solid #e93f5b;
+        padding-left: 1rem;
+        color: #666;
+      }
+
+      pre {
+        background: #f5f5f5;
+        border-radius: 4px;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      code {
+        background: #f5f5f5;
+        padding: 0.2rem 0.4rem;
+        border-radius: 3px;
+        font-size: 0.9rem;
+      }
+
+      a {
+        color: #e93f5b;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      ol, ul {
+        padding-left: 1.5rem;
+        margin: 0.75rem 0;
+      }
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+.tiptap-editor-wrapper {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+
+  .editor-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    background: #f9f9f9;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0.75rem;
+    align-items: center;
+
+    .toolbar-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border: 1px solid #e0e0e0;
+      background: white;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #666;
+      font-size: 0.875rem;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: #f0f0f0;
+        color: #e93f5b;
+      }
+
+      &.active {
+        background: #e93f5b;
+        color: white;
+        border-color: #e93f5b;
+      }
+
+      svg {
+        stroke-width: 2;
+      }
+    }
+
+    .toolbar-divider {
+      width: 1px;
+      height: 24px;
+      background: #e0e0e0;
+    }
+  }
+
+  .editor-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0;
+
+    .ProseMirror {
+      padding: 1.5rem;
+      outline: none;
+      min-height: 300px;
+      color: #333;
+      line-height: 1.8;
+      font-size: 1rem;
+      font-family: inherit;
+
+      h1, h2, h3, h4, h5, h6 {
+        color: #1a1a1a;
+        font-weight: 600;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        line-height: 1.4;
+      }
+
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
+      h3 { font-size: 1.25rem; }
+      h4 { font-size: 1.1rem; }
+
+      strong {
+        font-weight: 600;
+      }
+
+      em {
+        font-style: italic;
+      }
+
+      blockquote {
+        border-left: 4px solid #e93f5b;
+        padding-left: 1rem;
+        color: #666;
+        margin: 1rem 0;
+        background: #f9f9f9;
+        padding: 1rem;
+        padding-left: 1rem;
+        border-radius: 4px;
+      }
+
+      code {
+        background: #f0f0f0;
+        padding: 0.2rem 0.4rem;
+        border-radius: 3px;
+        font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+        font-size: 0.9em;
+        color: #c7254e;
+      }
+
+      pre {
+        background: #1e1e1e;
+        color: #e0e0e0;
+        padding: 1rem;
+        border-radius: 4px;
+        overflow-x: auto;
+        font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+        margin: 1rem 0;
+        line-height: 1.5;
+
+        code {
+          background: none;
+          padding: 0;
+          color: #e0e0e0;
+        }
+      }
+
+      ol, ul {
+        padding-left: 1.5rem;
+        margin: 0.75rem 0;
+
+        li {
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      ul {
+        list-style-type: disc;
+      }
+
+      ol {
+        list-style-type: decimal;
+      }
+
+      a {
+        color: #e93f5b;
+        text-decoration: underline;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin: 1rem 0;
+      }
+
+      p {
+        margin: 0.75rem 0;
+      }
+
+      &.ProseMirror-focused::placeholder {
+        color: #999;
+      }
+    }
+  }
+}
+
 .form-textarea {
   min-height: 200px;
   resize: vertical;
@@ -302,11 +598,13 @@
   gap: 1rem;
   border-radius: 12px;
   overflow: hidden;
-  background: #f9f9f9;
-  border: 1px solid #f0f0f0;
+  background: white;
+  border: 1px solid #e0e0e0;
   transition: all 0.3s ease;
   opacity: 0;
   transform: translateY(30px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
 
   &.animate {
     animation: slideInUp 0.6s ease-out forwards;
@@ -330,9 +628,28 @@
 
   &:hover {
     border-color: #e93f5b;
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   }
+
+  &.featured {
+    border: 2px solid #e93f5b;
+    background: linear-gradient(135deg, rgba(233, 63, 91, 0.02) 0%, rgba(233, 63, 91, 0.05) 100%);
+  }
+}
+
+.featured-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #e93f5b;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(233, 63, 91, 0.3);
 }
 
 @keyframes slideInUp {
@@ -374,6 +691,43 @@
   display: flex;
   gap: 0.75rem;
   align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+
+.word-count {
+  color: #999;
+  font-weight: 500;
+}
+
+.blog-author {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+  margin: 0;
+}
+
+.blog-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0.5rem 0;
+}
+
+.blog-tag {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  background: #f0f0f0;
+  color: #666;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #e93f5b;
+    color: white;
+  }
 }
 
 .category-tag {
@@ -515,6 +869,29 @@
   }
 }
 
+.reader-author {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-size: 0.95rem;
+  color: #666;
+  background: #fafafa;
+  border-bottom: 1px solid #e0e0e0;
+  font-weight: 500;
+
+  span {
+    &:nth-child(2) {
+      color: #ddd;
+    }
+  }
+
+  .reader-date {
+    margin-left: auto;
+    color: #999;
+  }
+}
+
 .reader-meta {
   display: flex;
   gap: 1rem;
@@ -539,10 +916,41 @@
     font-weight: 500;
   }
 
+  .word-count {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+  }
+
   .reader-date {
     font-size: 0.9rem;
     color: #999;
     margin-left: auto;
+  }
+}
+
+.reader-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  background: #fafafa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.reader-tag {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  background: #f0f0f0;
+  color: #666;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #e93f5b;
+    color: white;
   }
 }
 
@@ -559,6 +967,127 @@
 
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #1a1a1a;
+    font-weight: 600;
+    margin: 2rem 0 1rem 0;
+    line-height: 1.3;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  strong, b {
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+
+  em, i {
+    font-style: italic;
+  }
+
+  u {
+    text-decoration: underline;
+  }
+
+  a {
+    color: #e93f5b;
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul, ol {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+
+    li {
+      margin-bottom: 0.75rem;
+      line-height: 1.8;
+    }
+  }
+
+  blockquote {
+    border-left: 4px solid #e93f5b;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    background: #f9f9f9;
+    color: #666;
+    font-style: italic;
+    border-radius: 4px;
+  }
+
+  code {
+    background: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    color: #e93f5b;
+    font-size: 0.9rem;
+  }
+
+  pre {
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    border-left: 4px solid #e93f5b;
+
+    code {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      color: #333;
+      font-size: 0.9rem;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+
+    th, td {
+      padding: 0.75rem;
+      border: 1px solid #e0e0e0;
+      text-align: left;
+    }
+
+    th {
+      background: #f5f5f5;
+      font-weight: 600;
+    }
+
+    tr:hover {
+      background: #f9f9f9;
     }
   }
 }

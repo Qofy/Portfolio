@@ -17,20 +17,19 @@ import internTracker from '../../images/internTracker.png';
 const projects = [
   {
     id: 1,
-    title: 'Hexashop - Online Fashio shopping e-commerce',
+    title: 'Hexashop - Online Fashion Shopping E-commerce',
     category: 'Landing Page',
     company: 'K#2',
     image: Hexashop,
-    tags: ['Next.js & Next.js Api',
-      'Redux & Tolkit','React Query', 'Github Repo','Zod','Formik']
+    tags: ['Next.js', 'React', 'TypeScript', 'React Query', 'Redux Toolkit', 'Zod', 'Formik', 'Web Development']
   },
   {
     id: 2,
-    title: 'FX-Chcker - For checking Foreign currency Exchange rate',
+    title: 'FX-Checker - Foreign Currency Exchange Rate Checker',
     category: 'Landing Page',
     company: 'Self Build',
     image: fxChecker,
-    tags: ['React','Axios', 'GitHub Repo']
+    tags: ['React', 'Js(Javascript)', 'Axios', 'Web Development']
   },
   {
     id: 3,
@@ -38,7 +37,7 @@ const projects = [
     category: 'Real Project',
     company: 'Personal Project',
     image: portfolio,
-    tags: ['React', 'React Router','Scss','Firebase(Firestore)','Docker']
+    tags: ['React', 'Next.js', 'TypeScript', 'Firebase', 'CSS', 'Docker', 'Web Development']
   },
   {
     id: 4,
@@ -46,7 +45,7 @@ const projects = [
     category: 'Real Project',
     company: 'Personal Project',
     image: browserUI,
-    tags: ['Dashboard', 'Personal Project']
+    tags: ['React', 'TypeScript', 'Web Development', 'CSS']
   },
   {
     id: 5,
@@ -54,8 +53,7 @@ const projects = [
     category: 'Real Project',
     company: 'Personal Project',
     image: NutriScan,
-    tags: ['Next.js', 'Redux Toolkit', 'Axios',
-      'Django REST API', 'Canvas API', 'TypeScript']
+    tags: ['Next.js', 'React', 'TypeScript', 'Django', 'Redux Toolkit', 'Axios', 'Web Development', 'Performance']
   },
   {
     id: 6,
@@ -63,7 +61,7 @@ const projects = [
     category: 'Real Project',
     company: 'Personal Project',
     image: Firepup,
-    tags: ['Next.js', 'Django REST API', 'Redux Toolkit', 'TypeScript']
+    tags: ['Next.js', 'React', 'TypeScript', 'Django', 'Redux Toolkit', 'Web Development']
   },
   {
     id: 7,
@@ -71,7 +69,7 @@ const projects = [
     category: 'Real Project',
     company: 'AT Intuivo',
     image: internTracker,
-    tags: ['Svelte', 'Rust','Tailwind','Playwright Test', 'Chart js', "rxjs", 'Web-Socket', "HTML- Canvas", 'Routify']
+    tags: ['Svelte', 'TypeScript', 'CSS', 'Web Development', 'Performance', 'Cypress']
   },
 ];
 

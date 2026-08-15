@@ -10,5 +10,15 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
+console.log('Firebase Config Loaded:', {
+  projectId: firebaseConfig.projectId,
+  authDomain: firebaseConfig.authDomain,
+  hasMissing: !firebaseConfig.projectId || !firebaseConfig.apiKey,
+});
+
+if (!firebaseConfig.projectId || !firebaseConfig.apiKey) {
+  console.error('❌ Firebase env variables not loaded! Check .env file');
+}
+
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
