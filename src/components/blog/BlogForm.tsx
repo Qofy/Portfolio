@@ -4,6 +4,10 @@ import StarterKit from '@tiptap/starter-kit';
 import TextAlign from '@tiptap/extension-text-align';
 import LinkExtension from '@tiptap/extension-link';
 import ImageExtension from '@tiptap/extension-image';
+import { Table as TableExtension } from '@tiptap/extension-table';
+import { TableRow } from '@tiptap/extension-table-row';
+import { TableHeader } from '@tiptap/extension-table-header';
+import { TableCell } from '@tiptap/extension-table-cell';
 import { EditorToolbar } from './EditorToolbar';
 import { BlogPost, FormData, DEFAULT_CATEGORIES } from '../../types/blog';
 
@@ -35,6 +39,12 @@ export function BlogForm({
       ImageExtension.configure({
         allowBase64: true,
       }),
+      TableExtension.configure({
+        resizable: true,
+      }),
+      TableRow,
+      TableHeader,
+      TableCell,
     ],
     content: formData.content,
     onUpdate: ({ editor }) => {

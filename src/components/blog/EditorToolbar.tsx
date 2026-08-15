@@ -1,4 +1,4 @@
-import { Bold, Italic, Heading2, List, ListOrdered, Quote, Code2, AlignLeft, AlignCenter, AlignRight, AlignJustify, Link, Image as ImageIcon } from 'lucide-react';
+import { Bold, Italic, Heading2, List, ListOrdered, Quote, Code2, AlignLeft, AlignCenter, AlignRight, AlignJustify, Link, Image as ImageIcon, Grid3x3 } from 'lucide-react';
 import { Editor } from '@tiptap/react';
 
 interface EditorToolbarProps {
@@ -92,6 +92,14 @@ export function EditorToolbar({ editor }: EditorToolbarProps) {
         title="Add Image"
       >
         <ImageIcon size={16} />
+      </button>
+      <button
+        type="button"
+        onClick={() => editor.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run()}
+        className="toolbar-btn"
+        title="Insert Table"
+      >
+        <Grid3x3 size={16} />
       </button>
       <div className="toolbar-divider" />
       <button
