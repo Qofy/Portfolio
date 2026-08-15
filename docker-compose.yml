@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  portfolio:
+    build: .
+    container_name: kofi-portfolio
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - VITE_BLOG_ADMIN_PASSWORD=${VITE_BLOG_ADMIN_PASSWORD}
+      - VITE_FIREBASE_API_KEY=${VITE_FIREBASE_API_KEY}
+      - VITE_FIREBASE_AUTH_DOMAIN=${VITE_FIREBASE_AUTH_DOMAIN}
+      - VITE_FIREBASE_PROJECT_ID=${VITE_FIREBASE_PROJECT_ID}
+      - VITE_FIREBASE_STORAGE_BUCKET=${VITE_FIREBASE_STORAGE_BUCKET}
+      - VITE_FIREBASE_MESSAGING_SENDER_ID=${VITE_FIREBASE_MESSAGING_SENDER_ID}
+      - VITE_FIREBASE_APP_ID=${VITE_FIREBASE_APP_ID}
+      - OLLAMA_API=${OLLAMA_API}
+    restart: unless-stopped
+    networks:
+      - portfolio-network
+
+networks:
+  portfolio-network:
+    driver: bridge
