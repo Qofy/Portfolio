@@ -95,9 +95,15 @@ export function EditorToolbar({ editor }: EditorToolbarProps) {
       </button>
       <button
         type="button"
-        onClick={() => editor.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run()}
+        onClick={() => {
+          editor
+            .chain()
+            .focus()
+            .insertTable({ rows: 3, cols: 3, withHeaderRow: true })
+            .run();
+        }}
         className="toolbar-btn"
-        title="Insert Table"
+        title="Insert Table (3x3)"
       >
         <Grid3x3 size={16} />
       </button>
