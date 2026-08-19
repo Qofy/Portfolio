@@ -1,6 +1,6 @@
 import '../../styles/components/HeroSection.scss';
 import { ArrowUpRight, Github, Linkedin, Mail, Contact } from 'lucide-react';
-import profileImg from '../../images/profile2.png';
+import profileImg from '../../images/profile2.jpeg';
 import { useEffect, useRef } from 'react';
 
 const socialLinks = [
