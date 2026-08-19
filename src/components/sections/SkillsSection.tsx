@@ -66,7 +66,8 @@ const skillsData = [
       'AWS S3',
       'npm',
       'pnpm',
-      'bun'
+      'bun',
+      'Jira'
     ]
   },
   {
