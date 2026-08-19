@@ -70,17 +70,22 @@ export function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Handle browser back/forward buttons
+  // Handle browser back/forward buttons and initial hash load
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '');
       if (hash) {
         const element = document.querySelector(`[data-section="${hash}"]`);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }, 50);
         }
       }
     };
+
+    // Handle initial page load with hash
+    handleHashChange();
 
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
