@@ -19,7 +19,29 @@ export function Navigation() {
 
   // Set hero as default section on mount
   useEffect(() => {
-    if (!window.location.hash) {
+    const hash = window.location.hash.replace('#', '');
+    const pathname = window.location.pathname.split('/').filter(Boolean)[0];
+
+    if (hash) {
+      // Hash exists, use it
+      const element = document.querySelector(`[data-section="${hash}"]`);
+      if (element) {
+        setTimeout(() => element.scrollIntoView({ behavior: 'smooth' }), 100);
+      }
+    } else if (pathname) {
+      // No hash but pathname exists (e.g., /projects)
+      const mappedSection = pathname === 'projects' ? 'projects' : pathname;
+      const element = document.querySelector(`[data-section="${mappedSection}"]`);
+      if (element) {
+        // Update URL to use hash
+        window.history.replaceState(null, '', `#${mappedSection}`);
+        setTimeout(() => element.scrollIntoView({ behavior: 'smooth' }), 100);
+      } else {
+        // Section not found, default to hero
+        window.history.replaceState(null, '', '#hero');
+      }
+    } else {
+      // No hash and no pathname, default to hero
       window.history.replaceState(null, '', '#hero');
     }
   }, []);
