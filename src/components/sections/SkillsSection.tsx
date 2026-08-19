@@ -63,7 +63,10 @@ const skillsData = [
       'Vercel',
       'Fly.io',
       'AWS',
-      'AWS S3'
+      'AWS S3',
+      'npm',
+      'pnpm',
+      'bun'
     ]
   },
   {

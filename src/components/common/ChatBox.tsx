@@ -9,7 +9,7 @@ export interface Message {
   timestamp: Date;
 }
 
-const SYSTEM_PROMPT = `You are an AI assistant representing Kofi Agyekum, a Software Engineer with 2+ years of experience.
+const SYSTEM_PROMPT = `You are an AI assistant representing Kofi Agyekum, a Software Engineer with 2-3 years of experience.
 You have knowledge about:
 - Frontend: React, Next.js, TypeScript, CSS, Responsive Design
 - Backend: Node.js, Express, Django, Prisma

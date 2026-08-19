@@ -49,7 +49,7 @@ export function AboutSection() {
         <div className="about-content">
           <div className="about-text">
             <p>
-              I'm a Software Engineer with 2+ years of hands-on experience building web applications people actually use. React, Next.js, TypeScript, and Node.js are my everyday tools — I take ownership from first component to production deployment, use Claude and Copilot to ship faster, and never cut corners on quality.
+              I'm a Software Engineer with 2-3 years of hands-on experience building web applications people actually use. React, Next.js, TypeScript, and Node.js are my everyday tools — I take ownership from first component to production deployment, use Claude and Copilot to ship faster, and never cut corners on quality.
             </p>
 
             <p>
@@ -74,7 +74,7 @@ export function AboutSection() {
 
           <div className="about-stats">
             <div className="stat">
-              <div className="stat-number">2+</div>
+              <div className="stat-number">2-3</div>
               <div className="stat-label">Years of Experience</div>
             </div>
             <div className="stat">

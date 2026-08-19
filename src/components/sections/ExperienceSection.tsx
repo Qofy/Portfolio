@@ -57,7 +57,7 @@ export function ExperienceSection() {
       <div className="experience-container">
         <div className="experience-header">
           <h2>/EXPERIENCE</h2>
-          <span className="experience-badge">2+ years</span>
+          <span className="experience-badge">2-3 years</span>
         </div>
 
         <div className="experience-list">
