@@ -30,7 +30,9 @@ export const DEFAULT_CATEGORIES = [
   'Tutorial',
   'Docker',
   'Cypress',
-  'Deutsch Kurs'
+  'Deutsch Kurs',
+  'Scenario in Deutch',
+  'AWS'
 ];
 
 export const ADMIN_PASSWORD = import.meta.env.VITE_BLOG_ADMIN_PASSWORD || 'default-password';
