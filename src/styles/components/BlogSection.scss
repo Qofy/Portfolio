@@ -146,6 +146,123 @@
   }
 }
 
+.blog-filter-icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter-dropdown {
+  position: relative;
+}
+
+.filter-icon-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+
+  svg {
+    color: #999;
+  }
+
+  &:hover {
+    border-color: #e93f5b;
+    color: #e93f5b;
+
+    svg {
+      color: #e93f5b;
+    }
+  }
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+  min-width: 250px;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 0.5rem;
+
+  .dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    background: white;
+
+    h4 {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #999;
+      transition: color 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        color: #e93f5b;
+      }
+    }
+  }
+}
+
+.dropdown-options {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.dropdown-option {
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  color: #666;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+
+  &:hover {
+    background: #f5f5f5;
+    color: #e93f5b;
+  }
+
+  &.active {
+    background: #e93f5b;
+    color: white;
+    font-weight: 600;
+  }
+}
+
 .blog-filters {
   display: flex;
   flex-direction: column;
