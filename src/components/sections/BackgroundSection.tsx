@@ -2,6 +2,7 @@ import '../../styles/components/BackgroundSection.scss';
 import { Briefcase, BookOpen, ExternalLink } from 'lucide-react';
 import djangset from '../../certificates/django-set.pdf';
 import uebsCertificate from '../../certificates/UE – Online Campus-prove2.pdf';
+import reactCertificate from '../../certificates/React Certificate.pdf';
 import { useEffect, useRef } from 'react';
 
 const backgroundData = [
@@ -28,6 +29,15 @@ const backgroundData = [
     description: 'Comprehensive certification in full-stack web development using Django framework.',
     certificateLink: 'https://www.udemy.com/certificate/UC-0e89851d-1f43-4734-9f7c-706ee74767d5/',
     certificateImage: djangset
+  },
+  {
+    type: 'certification',
+    title: 'The Ultimate React Course',
+    institution: 'Udemy',
+    period: '2025',
+    description: 'Advanced React course covering React, Next.js, Redux and modern web development practices.',
+    certificateLink: 'https://www.udemy.com/certificate/UC-418bbf38-bb8b-4f7e-922f-104a1271700b/',
+    certificateImage: reactCertificate
   }
 ];
 
