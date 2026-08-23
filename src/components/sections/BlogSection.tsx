@@ -1,8 +1,9 @@
 import '../../styles/components/BlogSection.scss';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { collection, addDoc, updateDoc, deleteDoc, doc, onSnapshot, query, orderBy } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { BlogPost, FormData, ADMIN_PASSWORD, INITIAL_FORM_DATA } from '../../types/blog';
+import { useScrollAnimation, useReAnimate } from '../../hooks';
 import { BlogFilters } from '../blog/BlogFilters';
 import { BlogPostList } from '../blog/BlogPostList';
 import { BlogForm } from '../blog/BlogForm';
@@ -28,7 +29,9 @@ export function BlogSection() {
   const [formData, setFormData] = useState<FormData>(INITIAL_FORM_DATA);
   const [editingId, setEditingId] = useState<string | null>(null);
 
-  const sectionRef = useRef<HTMLElement>(null);
+  // Animation hooks
+  const sectionRef = useScrollAnimation({ selector: '.blog-card', threshold: 0.2, onlyOnce: true });
+  useReAnimate(filteredPosts, { selector: '.blog-card', delay: 0 });
 
   // Check admin status on mount
   useEffect(() => {
@@ -104,48 +107,6 @@ export function BlogSection() {
 
     setFilteredPosts(filtered);
   }, [posts, searchTerm, selectedCategory, selectedDate]);
-
-  // Scroll animation
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const cards = sectionRef.current?.querySelectorAll('.blog-card');
-            cards?.forEach((card) => {
-              card.classList.add('animate');
-            });
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    const current = sectionRef.current;
-    if (current) {
-      observer.observe(current);
-    }
-
-    return () => {
-      if (current) {
-        observer.unobserve(current);
-      }
-    };
-  }, []);
-
-  // Re-animate cards when filtered posts change
-  useEffect(() => {
-    const cards = sectionRef.current?.querySelectorAll('.blog-card');
-    cards?.forEach((card) => {
-      card.classList.remove('animate');
-    });
-
-    setTimeout(() => {
-      cards?.forEach((card) => {
-        card.classList.add('animate');
-      });
-    }, 0);
-  }, [filteredPosts]);
 
   // Firebase operations
   const handleSavePost = async (data: FormData) => {
