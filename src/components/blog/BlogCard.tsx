@@ -17,6 +17,14 @@ export function BlogCard({ post, isAdmin, onView, onEdit, onDelete }: BlogCardPr
   const [showCommentPopup, setShowCommentPopup] = useState(false);
   const commentCount = useCommentCount(post.id);
 
+  const stripHtml = (html: string) => {
+    const div = document.createElement('div');
+    div.innerHTML = html;
+    return div.textContent || div.innerText || '';
+  };
+
+  const displayExcerpt = post.excerpt ? stripHtml(post.excerpt) : '';
+
   return (
     <>
       <div className={`blog-card ${post.isFeatured ? 'featured' : ''} animate`}>
@@ -31,7 +39,7 @@ export function BlogCard({ post, isAdmin, onView, onEdit, onDelete }: BlogCardPr
         <div className="blog-content">
           <h3 className="blog-title">{post.title}</h3>
 
-          {post.excerpt && <p className="blog-excerpt">{post.excerpt}</p>}
+          {displayExcerpt && <p className="blog-excerpt">{displayExcerpt}</p>}
 
           <div className="blog-meta">
             <span className="category-tag">{post.category}</span>
