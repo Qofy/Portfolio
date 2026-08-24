@@ -1,5 +1,5 @@
 import '../../styles/components/Navigation.scss';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { ChatBox } from './ChatBox';
 
@@ -16,6 +16,7 @@ const navLinks = [
 export function Navigation() {
   const [activeSection, setActiveSection] = useState('hero');
   const [chatOpen, setChatOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Set hero as default section on mount
   useEffect(() => {
@@ -98,6 +99,8 @@ export function Navigation() {
       element.scrollIntoView({ behavior: 'smooth' });
       // Update URL hash when clicking navigation
       window.history.pushState(null, '', href);
+      // Close mobile menu after navigation
+      setMobileMenuOpen(false);
     }
   };
 
@@ -137,8 +140,39 @@ export function Navigation() {
           >
             Let's Talk <ArrowUpRight size={18} />
           </button>
+
+          {/* Mobile menu button */}
+          <button
+            className="mobile-menu-btn"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            title="Toggle menu"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile menu dropdown */}
+      {mobileMenuOpen && (
+        <div className="mobile-menu">
+          <ul className="mobile-nav-menu">
+            {navLinks.map((link) => (
+              <li key={link.label}>
+                <a
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSmoothScroll(link.href);
+                  }}
+                  className={activeSection === link.href.replace('#', '') ? 'active' : ''}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       <ChatBox isOpen={chatOpen} onClose={() => setChatOpen(false)} />
     </nav>

@@ -13,6 +13,8 @@ export interface BlogPost {
   wordCount?: number;
   isFeatured?: boolean;
   updatedDate?: string;
+  likes?: number;
+  dislikes?: number;
 }
 
 export const DEFAULT_CATEGORIES = [
