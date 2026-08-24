@@ -1487,13 +1487,14 @@
   background: none;
   border: 1px solid #e0e0e0;
   border-radius: 6px;
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem;
   cursor: pointer;
   color: #666;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.4rem;
 
   &:hover {
     border-color: #e93f5b;
@@ -1503,6 +1504,11 @@
   svg {
     width: 16px;
     height: 16px;
+  }
+
+  span {
+    font-size: 0.85rem;
+    font-weight: 500;
   }
 }
 

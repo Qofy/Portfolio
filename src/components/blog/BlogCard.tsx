@@ -3,6 +3,7 @@ import { Edit2, Trash2, MessageCircle } from 'lucide-react';
 import { BlogPost } from '../../types/blog';
 import { BlogLikesDislikes } from './BlogLikesDislikes';
 import { CommentPopup } from './CommentPopup';
+import { useCommentCount } from '../../hooks/useCommentCount';
 
 interface BlogCardProps {
   post: BlogPost;
@@ -14,6 +15,7 @@ interface BlogCardProps {
 
 export function BlogCard({ post, isAdmin, onView, onEdit, onDelete }: BlogCardProps) {
   const [showCommentPopup, setShowCommentPopup] = useState(false);
+  const commentCount = useCommentCount(post.id);
 
   return (
     <>
@@ -87,6 +89,7 @@ export function BlogCard({ post, isAdmin, onView, onEdit, onDelete }: BlogCardPr
                 title="Comments"
               >
                 <MessageCircle size={16} />
+                <span>{commentCount}</span>
               </button>
 
               <BlogLikesDislikes postId={post.id} />
