@@ -89,11 +89,7 @@ export function BlogCard({ post, isAdmin, onView, onEdit, onDelete }: BlogCardPr
                 <MessageCircle size={16} />
               </button>
 
-              <BlogLikesDislikes
-                postId={post.id}
-                initialLikes={post.likes || 0}
-                initialDislikes={post.dislikes || 0}
-              />
+              <BlogLikesDislikes postId={post.id} />
             </div>
           </div>
         </div>

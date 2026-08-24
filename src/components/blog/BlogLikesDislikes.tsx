@@ -3,21 +3,11 @@ import { useLikesDislikes } from '../../hooks/useLikesDisikes';
 
 interface BlogLikesDislikesProps {
   postId: string;
-  initialLikes: number;
-  initialDislikes: number;
 }
 
-export function BlogLikesDislikes({
-  postId,
-  initialLikes,
-  initialDislikes,
-}: BlogLikesDislikesProps) {
+export function BlogLikesDislikes({ postId }: BlogLikesDislikesProps) {
   const { likes, dislikes, userReaction, handleLike, handleDislike } =
-    useLikesDislikes({
-      postId,
-      initialLikes,
-      initialDislikes,
-    });
+    useLikesDislikes({ postId });
 
   return (
     <div className="blog-likes-dislikes">
