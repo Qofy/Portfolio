@@ -34,7 +34,15 @@ export const DEFAULT_CATEGORIES = [
   'Cypress',
   'Deutsch Kurs',
   'Scenario in Deutch',
-  'AWS'
+  'AWS',
+  'Electronics foundations',
+  'Microcontrollers + embedded programming',
+  'Motors, sensors and real robotics hardware',
+  'Control engineering',
+  'Graduate from ESP32 to STM32',
+  'Design your own PCB',
+  'Linux + ROS 2',
+  'Computer vision + autonomous robotics'
 ];
 
 export const ADMIN_PASSWORD = import.meta.env.VITE_BLOG_ADMIN_PASSWORD || 'default-password';
