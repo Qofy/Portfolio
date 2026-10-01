@@ -38,6 +38,14 @@ const backgroundData = [
     description: 'Advanced React course covering React, Next.js, Redux and modern web development practices.',
     certificateLink: 'https://www.udemy.com/certificate/UC-418bbf38-bb8b-4f7e-922f-104a1271700b/',
     certificateImage: reactCertificate
+  },
+  {
+    type: 'certification',
+    title: 'Next.js & React - The Complete Guide',
+    institution: 'Udemy',
+    period: '2026',
+    description: 'Complete guide to Next.js and React by Maximilian Schwarzmüller covering modern full-stack development.',
+    certificateLink: 'https://www.udemy.com/certificate/UC-5a06613f-fc93-4b5a-b842-0c3e204d3b71/'
   }
 ];
 
