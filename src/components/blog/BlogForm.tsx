@@ -8,6 +8,8 @@ import { Table as TableExtension } from '@tiptap/extension-table';
 import { TableRow } from '@tiptap/extension-table-row';
 import { TableHeader } from '@tiptap/extension-table-header';
 import { TableCell } from '@tiptap/extension-table-cell';
+import { Extension } from '@tiptap/core';
+import HardBreak from '@tiptap/extension-hard-break';
 import { EditorToolbar } from './EditorToolbar';
 import { BlogPost, FormData, DEFAULT_CATEGORIES } from '../../types/blog';
 
@@ -20,6 +22,16 @@ interface BlogFormProps {
   setFormData: (data: FormData) => void;
 }
 
+const PasteHandler = Extension.create({
+  name: 'pasteHandler',
+
+  addOptions() {
+    return {
+      HTMLAttributes: {},
+    };
+  },
+});
+
 export function BlogForm({
   onClose,
   onSave,
@@ -29,15 +41,25 @@ export function BlogForm({
 }: BlogFormProps) {
   const editor = useEditor({
     extensions: [
-      StarterKit,
+      StarterKit.configure({
+        heading: {
+          levels: [1, 2, 3, 4, 5, 6],
+        },
+        codeBlock: false,
+      }),
+      HardBreak.configure({
+        keepMarks: true,
+      }),
       TextAlign.configure({
         types: ['heading', 'paragraph'],
       }),
       LinkExtension.configure({
         openOnClick: false,
+        autolink: true,
       }),
       ImageExtension.configure({
         allowBase64: true,
+        inline: false,
       }),
       TableExtension.configure({
         resizable: true,
@@ -45,10 +67,19 @@ export function BlogForm({
       TableRow,
       TableHeader,
       TableCell,
+      PasteHandler,
     ],
     content: formData.content,
     onUpdate: ({ editor }) => {
       setFormData({ ...formData, content: editor.getHTML() });
+    },
+    editorProps: {
+      attributes: {
+        class: 'prose prose-sm focus:outline-none',
+      },
+      clipboardTextSerializer: () => {
+        return '';
+      },
     },
   });
 
