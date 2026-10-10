@@ -13,6 +13,28 @@ import HardBreak from '@tiptap/extension-hard-break';
 import { EditorToolbar } from './EditorToolbar';
 import { BlogPost, FormData, DEFAULT_CATEGORIES } from '../../types/blog';
 
+const SVGNode = Extension.create({
+  name: 'svgNode',
+
+  addGlobalAttributes() {
+    return [
+      {
+        types: ['paragraph', 'heading'],
+        attributes: {
+          style: {
+            default: null,
+            parseHTML: element => element.getAttribute('style'),
+            renderHTML: attributes => {
+              if (!attributes.style) return {};
+              return { style: attributes.style };
+            },
+          },
+        },
+      },
+    ];
+  },
+});
+
 interface BlogFormProps {
   onClose: () => void;
   onSave: (formData: FormData) => Promise<void>;
@@ -22,13 +44,36 @@ interface BlogFormProps {
   setFormData: (data: FormData) => void;
 }
 
-const PasteHandler = Extension.create({
-  name: 'pasteHandler',
+const PreserveFormatting = Extension.create({
+  name: 'preserveFormatting',
 
-  addOptions() {
-    return {
-      HTMLAttributes: {},
-    };
+  addProseMirrorPlugins() {
+    const { Plugin, PluginKey } = require('@tiptap/pm/state');
+    const { Slice, DOMParser: PMDOMParser } = require('@tiptap/pm/model');
+
+    return [
+      new Plugin({
+        key: new PluginKey('preserveFormatting'),
+        props: {
+          handlePaste: (view: any, event: ClipboardEvent) => {
+            const html = event.clipboardData?.getData('text/html');
+            if (!html) return false;
+
+            try {
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(html, 'text/html');
+
+              const { schema } = view.state;
+              const slice = Slice.maxOpen(PMDOMParser.fromSchema(schema).parse(doc));
+              view.dispatch(view.state.tr.replaceSelection(slice));
+              return true;
+            } catch (err) {
+              return false;
+            }
+          },
+        },
+      }),
+    ];
   },
 });
 
@@ -46,6 +91,11 @@ export function BlogForm({
           levels: [1, 2, 3, 4, 5, 6],
         },
         codeBlock: false,
+        paragraph: {
+          HTMLAttributes: {
+            class: 'paragraph',
+          },
+        },
       }),
       HardBreak.configure({
         keepMarks: true,
@@ -67,7 +117,8 @@ export function BlogForm({
       TableRow,
       TableHeader,
       TableCell,
-      PasteHandler,
+      SVGNode,
+      PreserveFormatting,
     ],
     content: formData.content,
     onUpdate: ({ editor }) => {
@@ -76,9 +127,6 @@ export function BlogForm({
     editorProps: {
       attributes: {
         class: 'prose prose-sm focus:outline-none',
-      },
-      clipboardTextSerializer: () => {
-        return '';
       },
     },
   });
