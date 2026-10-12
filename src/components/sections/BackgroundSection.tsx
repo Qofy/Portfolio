@@ -1,7 +1,7 @@
 import '../../styles/components/BackgroundSection.scss';
 import { Briefcase, BookOpen, ExternalLink } from 'lucide-react';
 import djangset from '../../certificates/django-set.pdf';
-import uebsCertificate from '../../certificates/UE – Online Campus-prove2.pdf';
+import degreeCertificate from '../../certificates/degree.pdf';
 import reactCertificate from '../../certificates/React Certificate.pdf';
 import { useEffect, useRef } from 'react';
 
@@ -12,7 +12,7 @@ const backgroundData = [
     institution: 'University Of Europe For Apllied Science',
     period: 'Completed',
     description: 'Studied Software Enginerring with focus on software engineering and web development.',
-    certificateImage: uebsCertificate
+    certificateImage: degreeCertificate
   },
   // {
   //   type: 'education',
