@@ -21,25 +21,14 @@ const skillsData = [
     ]
   },
   {
-    category: 'Backend',
+    category: 'Data & APIs',
     skills: [
-      'Node.js',
-      'Express.js',
-      'Python',
-      'Django',
-      'Django REST Framework',
-      'REST APIs'
-    ]
-  },
-  {
-    category: 'Databases',
-    skills: [
-      'PostgreSQL',
-      'MongoDB',
+      'REST APIs',
+      'GraphQL',
       'Firebase',
-      'Prisma',
-      'SQL',
-      'Neon'
+      'Firestore',
+      'Real-time Databases',
+      'Data Fetching & Caching'
     ]
   },
   {

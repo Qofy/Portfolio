@@ -65,12 +65,12 @@ export function HeroSection() {
         </div>
 
         <div className="hero-left">
-          <h2 className="hero-title">Software Engineer</h2>
+          <h2 className="hero-title">Frontend Engineer</h2>
           <p className="hero-bio">
-            I'm Kofi Safo Agyekum — a Software Engineer specializing in React, Next.js, 
-            and modern web development. I build production-ready 
-            web applications with clean architectures, 
-            maintainable code, and user-first design, django fullstack and Express.
+            I'm Kofi Safo Agyekum — a Frontend Engineer specializing in React, Next.js,
+            and modern web development. I build responsive,
+            user-focused web applications with clean code,
+            scalable architectures, and exceptional user experiences.
           </p>
           <button className="hero-cta">
             Let's collaborate <ArrowUpRight size={18} />

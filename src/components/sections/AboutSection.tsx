@@ -49,26 +49,26 @@ export function AboutSection() {
         <div className="about-content">
           <div className="about-text">
             <p>
-              I'm a Software Engineer with 2-3 years of hands-on experience building web applications people actually use. React, Next.js, TypeScript, and Node.js are my everyday tools — I take ownership from first component to production deployment, use Claude and Copilot to ship faster, and never cut corners on quality.
+              I'm a Frontend Engineer with 2-3 years of hands-on experience building user-focused web applications. React, Next.js, and TypeScript are my core tools — I own the entire frontend journey from design to production, create responsive interfaces that delight users, and use AI tools to ship faster without compromising quality.
             </p>
 
             <p>
-              I approach every project with a focus on clean architecture, maintainable code, and user-first design. Whether building scalable frontend systems or robust backend services, I'm committed to delivering solutions that work reliably at scale and empower teams to move faster.
+              I approach every project with a focus on clean code, scalable architecture, and exceptional user experiences. My philosophy centers on building performant, accessible interfaces that users love and developers maintain easily. I'm committed to delivering solutions that work reliably across all devices and browsers.
             </p>
 
             <p>
-              Beyond code, I'm driven by continuous learning, collaborative problem-solving, and a genuine passion for building products that matter. I thrive in environments where technical excellence and business impact go hand-in-hand.
+              Beyond code, I'm driven by continuous learning, collaborative problem-solving, and a passion for creating digital products that truly matter. I thrive in environments where technical excellence and user satisfaction go hand-in-hand.
             </p>
 
             <p className="focus-intro">
               My toolkit includes:
             </p>
             <ul className="focus-list">
-              <li>React & Next.js for building scalable frontend applications</li>
-              <li>TypeScript for clean, maintainable code</li>
-              <li>Django for robust backend services</li>
+              <li>React & Next.js for scalable, modern frontend applications</li>
+              <li>TypeScript for robust, type-safe code</li>
+              <li>Responsive design and CSS mastery</li>
+              <li>State management with Redux and Context</li>
               <li>AI-assisted development with Claude and Copilot</li>
-              <li>Production deployment and system architecture</li>
             </ul>
           </div>
 

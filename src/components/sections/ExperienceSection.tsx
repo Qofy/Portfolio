@@ -4,15 +4,15 @@ import { useEffect, useRef } from 'react';
 const experiences = [
   {
     company: 'Intuivo OÜ',
-    role: 'Software Engineer',
+    role: 'Frontend Engineer',
     period: 'Sep 2025 - Mar 2026',
-    description: 'Building innovative digital products with React, Next.js, Svelte, and TypeScript'
+    description: 'Building responsive frontend applications with React, Next.js, Svelte, and TypeScript'
   },
   {
     company: 'theSOFTtribe Ltd',
-    role: 'Software Developer',
+    role: 'Frontend Developer',
     period: 'Mar 2022 - Jul 2023',
-    description: 'Built full-stack applications tailored to client business solutions'
+    description: 'Developed user-focused web applications using modern frontend technologies'
   }
 ];
 
