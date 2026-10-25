@@ -126,16 +126,17 @@ export function BackgroundSection() {
                         <ExternalLink size={16} />
                       </a>
                     )}
-                    {/* {item.certificateLink && (
+                    {item.certificateLink && !item.certificateImage && (
                       <a
                         href={item.certificateLink}
-                        download
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="cert-link"
                       >
-                        Download PDF
+                        View Certificate
                         <ExternalLink size={16} />
                       </a>
-                    )} */}
+                    )}
                   </div>
                 )}
               </div>
