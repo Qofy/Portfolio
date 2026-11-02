@@ -1,5 +1,6 @@
 import '../../styles/components/SkillsSection.scss';
 import { useEffect, useRef } from 'react';
+import FloatingTechKeywords from './FloatingTechKeywords';
 
 const skillsData = [
   {
@@ -108,6 +109,7 @@ export function SkillsSection() {
 
   return (
     <section className="skills" data-section="skills" ref={sectionRef}>
+      <FloatingTechKeywords />
       <div className="skills-container">
         <div className="skills-header">
           <h2>/SKILLS & STACKS</h2>
