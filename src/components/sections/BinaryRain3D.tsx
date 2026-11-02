@@ -87,8 +87,8 @@ export default function BinaryRain3D() {
     // Animation loop
     const animate = () => {
       if (visibilityRef.current && !prefersReducedMotion) {
-        // Clear canvas with subtle trail effect
-        ctx.fillStyle = 'rgba(15, 23, 42, 0.05)';
+        // Clear canvas with white background
+        ctx.fillStyle = 'rgba(255, 255, 255, 1)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         // Draw and update characters
@@ -107,12 +107,16 @@ export default function BinaryRain3D() {
           const scale = project(char.z);
           const size = 28 * scale;
 
-          // Depth-based opacity (closer = brighter)
-          const depthOpacity = 0.2 + (char.z + 100) / 200 * 0.4;
+          // Depth-based opacity and color based on depth
+          const depthOpacity = 0.3 + (char.z + 100) / 200 * 0.5;
+
+          // Color gradient from teal to blue based on z-depth
+          let colorHue = 180 + ((char.z + 100) / 200) * 40; // 180-220 (teal to blue)
+          let colorStr = `hsla(${colorHue}, 70%, 45%, ${depthOpacity})`;
 
           // Draw character
           ctx.font = `bold ${size}px monospace`;
-          ctx.fillStyle = `rgba(16, 185, 129, ${depthOpacity})`;
+          ctx.fillStyle = colorStr;
           ctx.globalAlpha = depthOpacity;
 
           ctx.fillText(char.char, char.x, char.y);
