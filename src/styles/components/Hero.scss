@@ -1,0 +1,353 @@
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f1729 0%, #1a2332 100%);
+
+  // Layer 1: Binary Rain Canvas
+  .binary-rain-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  // Layer 2: Floating Image Container
+  .floating-image-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+
+    .floating-image {
+      width: 600px;
+      height: 600px;
+      object-fit: cover;
+      opacity: 0.8;
+      animation: float 7s ease-in-out infinite;
+      filter: brightness(1.1);
+
+      @media (max-width: 1024px) {
+        width: 450px;
+        height: 450px;
+      }
+
+      @media (max-width: 768px) {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        opacity: 0.15;
+        right: -100px;
+        top: 50%;
+        transform: translateY(-50%);
+        animation: none;
+      }
+
+      @media (max-width: 480px) {
+        width: 300px;
+        height: 300px;
+        right: -80px;
+      }
+    }
+
+    // Dark gradient overlay on top of image
+    .gradient-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to left,
+        rgba(15, 23, 42, 0.3),
+        rgba(15, 23, 42, 0.8)
+      );
+      z-index: 1;
+
+      @media (max-width: 768px) {
+        background: linear-gradient(
+          to left,
+          rgba(15, 23, 42, 0),
+          rgba(15, 23, 42, 0.95)
+        );
+      }
+    }
+  }
+
+  // Layer 3: Text Content
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1600px;
+    padding: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    &.animate-in {
+      .hero-text {
+        animation: slideUpFade 0.8s ease-out 0.2s backwards;
+      }
+
+      .hero-label {
+        animation: slideUpFade 0.8s ease-out 0.3s backwards;
+      }
+
+      .hero-title {
+        animation: slideUpFade 0.8s ease-out 0.4s backwards;
+      }
+
+      .hero-subtitle {
+        animation: slideUpFade 0.8s ease-out 0.5s backwards;
+      }
+
+      .hero-buttons {
+        animation: slideUpFade 0.8s ease-out 0.6s backwards;
+      }
+
+      .hero-socials {
+        animation: slideUpFade 0.8s ease-out 0.7s backwards;
+      }
+    }
+
+    .hero-text {
+      max-width: 650px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 2rem;
+      justify-content: center;
+      text-align: center;
+
+      .hero-text {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+// Typography
+.hero-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #10b981;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.85rem;
+  }
+}
+
+.hero-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  color: #f1f5f9;
+  line-height: 1.2;
+  margin: 1rem 0 1.5rem 0;
+  letter-spacing: -0.02em;
+
+  .title-accent {
+    display: block;
+    background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0.5rem 0 1rem 0;
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+// Buttons
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+
+    &:focus-visible {
+      outline: 2px solid #10b981;
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0.875rem 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    svg {
+      transition: transform 0.3s ease;
+    }
+
+    &:hover svg {
+      transform: translate(4px, -4px);
+    }
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: #f1f5f9;
+    border: 2px solid #10b981;
+
+    &:hover {
+      background: rgba(16, 185, 129, 0.1);
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+// Social Links
+.hero-socials {
+  display: flex;
+  gap: 1.5rem;
+
+  .social-link {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #cbd5e1;
+    background: rgba(16, 185, 129, 0.1);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+
+    &:hover,
+    &:focus-visible {
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.2);
+      border-color: #10b981;
+      transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    gap: 1rem;
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+// Animations
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Respect prefers-reduced-motion
+@media (prefers-reduced-motion: reduce) {
+  .hero-section {
+    .floating-image {
+      animation: none !important;
+    }
+
+    .binary-rain-canvas {
+      // Canvas will handle this internally
+    }
+
+    .hero-content {
+      &.animate-in {
+        animation: none !important;
+
+        .hero-label,
+        .hero-title,
+        .hero-subtitle,
+        .hero-buttons,
+        .hero-socials {
+          animation: none !important;
+          opacity: 1;
+          transform: none;
+        }
+      }
+    }
+  }
+}
