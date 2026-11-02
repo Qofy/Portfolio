@@ -3,7 +3,7 @@ export { Navigation } from './common/Navigation';
 export { ChatBox } from './common/ChatBox';
 
 // Section Components
-export { HeroSection } from './sections/Hero';
+export { HeroSection } from './sections/HeroSection';
 export { AboutSection } from './sections/AboutSection';
 export { SkillsSection } from './sections/SkillsSection';
 export { BackgroundSection } from './sections/BackgroundSection';
