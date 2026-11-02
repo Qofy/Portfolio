@@ -52,14 +52,14 @@ export default function BinaryRain3D() {
       canvas.style.display = 'block';
     };
 
-    // Wait a tick for parent to be fully sized
-    setTimeout(resizeCanvas, 0);
+    // Resize immediately and initialize characters
+    resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
     // Initialize 3D binary characters
     const initChars = () => {
       charsRef.current = [];
-      const count = 40; // Number of floating characters
+      const count = 150; // Many more characters distributed across
 
       for (let i = 0; i < count; i++) {
         const char: Binary3DChar = {
@@ -67,9 +67,9 @@ export default function BinaryRain3D() {
           y: Math.random() * canvas.height,
           z: Math.random() * 200 - 100,
           char: Math.random() > 0.5 ? '0' : '1',
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.3,
-          vz: (Math.random() - 0.5) * 1,
+          vx: (Math.random() - 0.5) * 0.8,
+          vy: (Math.random() - 0.5) * 0.5,
+          vz: (Math.random() - 0.5) * 1.5,
           brightness: Math.random() * 0.3 + 0.2,
         };
         charsRef.current.push(char);
