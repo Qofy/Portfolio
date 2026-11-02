@@ -1,4 +1,4 @@
-import '../../styles/components/HeroSection.scss';
+import '../../styles/components/Hero.scss';
 import { ArrowUpRight, Github, Linkedin, Mail } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import BinaryRain from './BinaryRain';
