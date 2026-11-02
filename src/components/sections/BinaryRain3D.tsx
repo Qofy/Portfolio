@@ -105,7 +105,7 @@ export default function BinaryRain3D() {
 
           // Perspective scaling
           const scale = project(char.z);
-          const size = 16 * scale;
+          const size = 28 * scale;
 
           // Depth-based opacity (closer = brighter)
           const depthOpacity = 0.2 + (char.z + 100) / 200 * 0.4;
