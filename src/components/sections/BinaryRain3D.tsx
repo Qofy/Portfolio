@@ -36,17 +36,24 @@ export default function BinaryRain3D() {
     // Set canvas size with high-DPI support
     const resizeCanvas = () => {
       const dpr = window.devicePixelRatio || 1;
-      const rect = canvas.getBoundingClientRect();
+      const parent = canvas.parentElement;
 
-      canvas.width = rect.width * dpr;
-      canvas.height = rect.height * dpr;
+      if (!parent) return;
+
+      const width = parent.clientWidth || window.innerWidth;
+      const height = parent.clientHeight || window.innerHeight;
+
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
 
       ctx.scale(dpr, dpr);
-      canvas.style.width = `${rect.width}px`;
-      canvas.style.height = `${rect.height}px`;
+      canvas.style.width = '100%';
+      canvas.style.height = '100%';
+      canvas.style.display = 'block';
     };
 
-    resizeCanvas();
+    // Wait a tick for parent to be fully sized
+    setTimeout(resizeCanvas, 0);
     window.addEventListener('resize', resizeCanvas);
 
     // Initialize 3D binary characters
