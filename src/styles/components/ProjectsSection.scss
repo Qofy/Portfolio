@@ -149,6 +149,10 @@
   transition: all 0.3s ease;
   opacity: 0;
   transform: perspective(600px) rotateY(90deg) rotateX(-20deg) translateZ(0);
+  border: none;
+  background: transparent;
+  padding: 0;
+  text-align: left;
 
   &.animate {
     animation: cardFlipIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
