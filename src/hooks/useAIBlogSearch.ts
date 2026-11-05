@@ -94,62 +94,82 @@ export const useAIBlogSearch = () => {
           keywords = aiKeywords.length > 0 ? aiKeywords : [searchTerm];
         }
 
-        // Score each post
+        // Score each post with improved ranking
         const scoredResults: SearchResult[] = posts
           .map((post) => {
             let totalScore = 0;
+            let hasExactMatch = false;
 
-            // Search in title (higher weight)
+            // Search in title (HIGHEST weight - most relevant)
             keywords.forEach((keyword) => {
-              const titleSimilarity = calculateSimilarity(keyword, post.title);
-              totalScore += titleSimilarity * 3;
+              const titleLower = post.title.toLowerCase();
+              const keywordLower = keyword.toLowerCase();
 
-              // Bonus for exact word matches in title
-              if (post.title.toLowerCase().includes(keyword.toLowerCase())) {
-                totalScore += 2;
+              // Exact phrase match in title (top priority)
+              if (titleLower.includes(keywordLower)) {
+                totalScore += 100;
+                hasExactMatch = true;
+              } else {
+                // Fuzzy match in title
+                const titleSimilarity = calculateSimilarity(keyword, post.title);
+                if (titleSimilarity > 0.6) {
+                  totalScore += 50 * titleSimilarity;
+                }
+              }
+
+              // Exact word match bonus
+              const titleWords = titleLower.split(/\s+/);
+              if (titleWords.some(word => word === keywordLower)) {
+                totalScore += 75;
               }
             });
 
-            // Search in content (medium weight)
+            // Search in excerpt (medium-high weight)
             keywords.forEach((keyword) => {
-              const words = post.content.split(/\s+/);
-              const matchCount = words.filter(
-                (word) => calculateSimilarity(keyword, word) > 0.7
-              ).length;
-              totalScore += matchCount * 0.5;
+              const excerptLower = post.excerpt?.toLowerCase() || '';
+              const keywordLower = keyword.toLowerCase();
 
-              // Bonus for exact phrase match
-              if (post.content.toLowerCase().includes(keyword.toLowerCase())) {
-                totalScore += 1;
+              if (excerptLower.includes(keywordLower)) {
+                totalScore += 40;
               }
             });
 
-            // Search in excerpt
+            // Search in tags (high weight - very relevant)
             keywords.forEach((keyword) => {
-              if (post.excerpt?.toLowerCase().includes(keyword.toLowerCase())) {
-                totalScore += 1.5;
-              }
-            });
-
-            // Search in tags
-            keywords.forEach((keyword) => {
-              const tagMatches = post.tags?.filter(
-                (tag) => tag.toLowerCase().includes(keyword.toLowerCase())
+              const tagMatches = post.tags?.filter((tag) =>
+                tag.toLowerCase().includes(keyword.toLowerCase())
               ).length || 0;
-              totalScore += tagMatches * 2;
+              if (tagMatches > 0) {
+                totalScore += 35 * tagMatches;
+              }
             });
 
-            // Search in category
+            // Search in category (medium weight)
             keywords.forEach((keyword) => {
               if (post.category.toLowerCase().includes(keyword.toLowerCase())) {
-                totalScore += 1.5;
+                totalScore += 30;
               }
             });
 
-            return { post, score: totalScore };
+            // Search in content (lower weight - less relevant than title/tags)
+            keywords.forEach((keyword) => {
+              const contentLower = post.content.toLowerCase();
+              const keywordLower = keyword.toLowerCase();
+
+              // Count occurrences in content
+              const occurrences = (contentLower.match(new RegExp(keywordLower, 'g')) || []).length;
+              totalScore += Math.min(occurrences * 2, 20); // Cap at 20 points
+            });
+
+            return { post, score: totalScore, hasExactMatch };
           })
           .filter((result) => result.score > 0)
-          .sort((a, b) => b.score - a.score);
+          .sort((a, b) => {
+            // Sort by exact match first, then by score
+            if (a.hasExactMatch && !b.hasExactMatch) return -1;
+            if (!a.hasExactMatch && b.hasExactMatch) return 1;
+            return b.score - a.score;
+          });
 
         setIsSearching(false);
         return scoredResults.map((r) => r.post);
