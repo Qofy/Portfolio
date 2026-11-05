@@ -27,7 +27,7 @@ const projects = [
     fullDescription: 'Hexashop is a full-featured e-commerce platform designed for online fashion retail. The project showcases advanced React patterns, state management with Redux Toolkit, form validation with Zod and Formik, and efficient data fetching with React Query. The platform includes responsive design, product filtering, cart persistence, and a seamless checkout experience.',
     tags: ['Next.js', 'React', 'TypeScript', 'React Query', 'Redux Toolkit', 'Zod', 'Formik', 'Web Development'],
     demoUrl: '#',
-    githubUrl: '#'
+    githubUrl: 'https://github.com/Qofy/hexashop'
   },
   {
     id: 2,
@@ -40,7 +40,7 @@ const projects = [
     fullDescription: 'FX-Checker is a utility application for checking real-time foreign exchange rates. Built with React and vanilla JavaScript, it fetches live currency data using Axios and displays real-time exchange rates. The app features a clean UI, currency comparison tools, and historical rate tracking capabilities.',
     tags: ['React', 'JavaScript', 'Axios', 'Web Development'],
     demoUrl: '#',
-    githubUrl: '#'
+    githubUrl: 'https://github.com/Qofy/foreign-exchange-checker'
   },
   {
     id: 3,
@@ -53,7 +53,7 @@ const projects = [
     fullDescription: 'A comprehensive portfolio website built with React, Next.js, and TypeScript. Features include a blog system with Firebase backend, 3D animated backgrounds, AI-powered search, project showcase, skills display, and real-time comments/interactions. Includes Docker containerization and CI/CD pipeline.',
     tags: ['React', 'Next.js', 'TypeScript', 'Firebase', 'CSS', 'Docker', 'Web Development'],
     demoUrl: 'https://kofiagye.com',
-    githubUrl: '#'
+    githubUrl: 'https://github.com/Qofy/Portfolio'
   },
   {
     id: 4,
@@ -66,7 +66,7 @@ const projects = [
     fullDescription: 'BrowserUI is a browser extension manager dashboard that helps users organize, enable/disable, and manage their installed extensions. Built with React and TypeScript, featuring a clean component architecture and responsive design. The project demonstrates advanced state management and real-time updates.',
     tags: ['React', 'TypeScript', 'Web Development', 'CSS'],
     demoUrl: '#',
-    githubUrl: '#'
+    githubUrl: 'https://github.com/Qofy/browser-gui'
   },
   {
     id: 5,
@@ -79,7 +79,7 @@ const projects = [
     fullDescription: 'NutriScan is a full-stack application combining Next.js frontend with Django backend for comprehensive nutrition tracking. Features include meal logging, nutritional analysis, personalized recommendations, and health metrics dashboard. The frontend uses Redux Toolkit for state management and Axios for API communication.',
     tags: ['Next.js', 'React', 'TypeScript', 'Django', 'Redux Toolkit', 'Axios', 'Web Development', 'Performance'],
     demoUrl: '#',
-    githubUrl: '#'
+    githubUrl: 'https://github.com/Qofy/NutriScan'
   },
   {
     id: 6,
@@ -92,7 +92,7 @@ const projects = [
     fullDescription: 'Firepup is a social network for food and recipe sharing. Built with Next.js and Django backend, featuring user authentication, recipe publishing, social interactions (likes, comments, shares), user profiles, and recipe discovery algorithms. Includes real-time notifications and community features.',
     tags: ['Next.js', 'React', 'TypeScript', 'Django', 'Redux Toolkit', 'Web Development'],
     demoUrl: '#',
-    githubUrl: '#'
+    githubUrl: 'https://github.com/Qofy/foodies-project'
   },
   {
     id: 7,
@@ -105,7 +105,7 @@ const projects = [
     fullDescription: 'InternTracker is an enterprise application built with Svelte for tracking student internships. Features include intern profile management, progress tracking, mentor assignments, reporting dashboards, and performance analytics. The project showcases advanced Svelte patterns, TypeScript for type safety, and Cypress for comprehensive end-to-end testing.',
     tags: ['Svelte', 'TypeScript', 'CSS', 'Web Development', 'Performance', 'Cypress'],
     demoUrl: '#',
-    githubUrl: '#'
+    githubUrl: 'https://github.com/Qofy/20251209_intern_tracker_kofi_only_template'
   },
 ];
 
