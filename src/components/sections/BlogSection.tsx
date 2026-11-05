@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { collection, addDoc, updateDoc, deleteDoc, doc, onSnapshot, query, orderBy } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { BlogPost, FormData, ADMIN_PASSWORD, INITIAL_FORM_DATA } from '../../types/blog';
-import { useScrollAnimation, useReAnimate } from '../../hooks';
+import { useScrollAnimation, useReAnimate, useAIBlogSearch } from '../../hooks';
 import { BlogFilters } from '../blog/BlogFilters';
 import { BlogPostList } from '../blog/BlogPostList';
 import { BlogForm } from '../blog/BlogForm';
@@ -32,6 +32,10 @@ export function BlogSection() {
   // Animation hooks
   const sectionRef = useScrollAnimation({ selector: '.blog-card', threshold: 0.2, onlyOnce: true });
   useReAnimate(filteredPosts, { selector: '.blog-card', delay: 0 });
+
+  // AI Search hook
+  const { searchPosts, isSearching: isAISearching } = useAIBlogSearch();
+  const [useAISearch, setUseAISearch] = useState(false);
 
   // Check admin status on mount
   useEffect(() => {
@@ -79,34 +83,38 @@ export function BlogSection() {
     return () => unsubscribe();
   }, []);
 
-  // Filter posts based on search, category, and date
+  // Filter posts based on search, category, and date with AI-powered search
   useEffect(() => {
-    let filtered = posts;
+    const applyFilters = async () => {
+      let filtered = posts;
 
-    if (selectedCategory !== 'All') {
-      filtered = filtered.filter(post => post.category === selectedCategory);
-    }
+      // Apply category filter
+      if (selectedCategory !== 'All') {
+        filtered = filtered.filter(post => post.category === selectedCategory);
+      }
 
-    if (selectedDate !== 'All') {
-      filtered = filtered.filter(post => post.date === selectedDate);
-    }
+      // Apply date filter
+      if (selectedDate !== 'All') {
+        filtered = filtered.filter(post => post.date === selectedDate);
+      }
 
-    if (searchTerm) {
-      filtered = filtered.filter(
-        post =>
-          post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          post.content.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    }
+      // Apply search (with AI enhancement if enabled)
+      if (searchTerm) {
+        filtered = await searchPosts(filtered, searchTerm, useAISearch);
+      }
 
-    filtered.sort((a, b) => {
-      const dateA = new Date(`${a.date}T${a.time}`);
-      const dateB = new Date(`${b.date}T${b.time}`);
-      return dateB.getTime() - dateA.getTime();
-    });
+      // Sort by date
+      filtered.sort((a, b) => {
+        const dateA = new Date(`${a.date}T${a.time}`);
+        const dateB = new Date(`${b.date}T${b.time}`);
+        return dateB.getTime() - dateA.getTime();
+      });
 
-    setFilteredPosts(filtered);
-  }, [posts, searchTerm, selectedCategory, selectedDate]);
+      setFilteredPosts(filtered);
+    };
+
+    applyFilters();
+  }, [posts, searchTerm, selectedCategory, selectedDate, searchPosts, useAISearch]);
 
   // Firebase operations
   const handleSavePost = async (data: FormData) => {
@@ -230,6 +238,9 @@ export function BlogSection() {
           setSelectedCategory={setSelectedCategory}
           selectedDate={selectedDate}
           setSelectedDate={setSelectedDate}
+          useAISearch={useAISearch}
+          setUseAISearch={setUseAISearch}
+          isAISearching={isAISearching}
         />
 
         <BlogPostList

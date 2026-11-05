@@ -1,4 +1,4 @@
-import { Search, Tag, Calendar, X } from 'lucide-react';
+import { Search, Tag, Calendar, X, Zap } from 'lucide-react';
 import { useState } from 'react';
 import { BlogPost, DEFAULT_CATEGORIES } from '../../types/blog';
 
@@ -10,6 +10,9 @@ interface BlogFiltersProps {
   setSelectedCategory: (category: string) => void;
   selectedDate: string;
   setSelectedDate: (date: string) => void;
+  useAISearch?: boolean;
+  setUseAISearch?: (use: boolean) => void;
+  isAISearching?: boolean;
 }
 
 export function BlogFilters({
@@ -20,6 +23,9 @@ export function BlogFilters({
   setSelectedCategory,
   selectedDate,
   setSelectedDate,
+  useAISearch = false,
+  setUseAISearch,
+  isAISearching = false,
 }: BlogFiltersProps) {
   const [showCategories, setShowCategories] = useState(false);
   const [showDates, setShowDates] = useState(false);
@@ -50,6 +56,16 @@ export function BlogFilters({
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
+        {setUseAISearch && (
+          <button
+            className={`ai-search-toggle ${useAISearch ? 'active' : ''} ${isAISearching ? 'loading' : ''}`}
+            onClick={() => setUseAISearch(!useAISearch)}
+            title={useAISearch ? 'AI Search Enabled' : 'Enable AI Search'}
+            disabled={isAISearching}
+          >
+            <Zap size={16} />
+          </button>
+        )}
       </div>
 
       <div className="blog-filter-icons">
