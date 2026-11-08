@@ -18,80 +18,41 @@ export const useHeroScrollSequence = () => {
       window.getComputedStyle(heroName).fontSize
     );
 
-    // Position about section below hero initially
-    gsap.set(aboutSection, { y: window.innerHeight });
+    // Simple: just pin hero long enough for animation to complete
+    // About scrolls naturally after, fully visible
+    const pinDuration = window.innerHeight * 5;
 
-    // Extended pin: hero animation + About takes full control
-    // Keep pinned long enough so About is fully visible before Skills appears
-    const heroAnimDistance = window.innerHeight * 6.5;
-
-    // Create the sequence timeline
-    // Pin for hero animation AND to let About take full viewport control
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: heroSection,
         start: 'top top',
-        end: `+=${heroAnimDistance}`,
-        pin: true, // Pin throughout - hero anim + About visible
-        scrub: 1, // Smooth scrubbing
+        end: `+=${pinDuration}`,
+        pin: true,
+        scrub: 1,
         markers: false,
       },
     });
 
-    // Phase 1: Grow the name text quickly (0-20% of timeline)
-    tl.to(
-      heroName,
-      {
-        fontSize: initialFontSize * 3,
-        textShadow: '0 10px 40px rgba(0,0,0,0.1)',
-        duration: 0.6,
-      },
-      0
-    );
-
-    // Phase 2: Continue growing name to max (20-35% of timeline)
+    // Phase 1: Scale name up
     tl.to(
       heroName,
       {
         fontSize: initialFontSize * 5,
-        opacity: 0.1,
-        duration: 0.5,
+        textShadow: '0 10px 40px rgba(0,0,0,0.1)',
+        duration: 1,
       },
-      0.2
+      0
     );
 
-    // Phase 3: Slide About section up (25-40% of timeline)
-    tl.to(
-      aboutSection,
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.6,
-      },
-      0.3
-    );
-
-    // Phase 4: Fade out hero (40-50% of timeline)
+    // Phase 2: Fade hero out
     tl.to(
       '.hero-container',
       {
         opacity: 0,
         pointerEvents: 'none',
-        duration: 0.4,
+        duration: 0.8,
       },
-      0.55
-    );
-
-    // Phase 5: About takes FULL CONTROL (50% to 100% of timeline)
-    // Keep About pinned and fully visible on viewport
-    // This ensures Skills doesn't appear until user has scrolled well past About
-    tl.set(
-      aboutSection,
-      {
-        opacity: 1,
-        y: 0,
-      },
-      0.65
+      0.2
     );
 
     return () => {
