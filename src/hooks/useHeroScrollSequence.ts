@@ -27,9 +27,9 @@ export const useHeroScrollSequence = () => {
     );
 
     // Calculate scroll distance: hero animation + About progressive reveals
-    // Each content element gets ~1.5x screen height for staggered reveal
-    const revealDistance = Math.max(aboutContentElements.length * window.innerHeight * 0.8, window.innerHeight * 2);
-    const totalDistance = window.innerHeight * 4 + revealDistance;
+    // Each element needs scroll space for staggered reveal (0.4s per element with scrub: 1)
+    const revealDistance = aboutContentElements.length * window.innerHeight * 0.5;
+    const totalDistance = window.innerHeight * 5 + revealDistance;
 
     // Create the sequence timeline
     // This SINGLE timeline handles: hero animation + About taking full control + progressive reveals
@@ -96,9 +96,9 @@ export const useHeroScrollSequence = () => {
         {
           opacity: 0,
           y: 20,
-          duration: 0.8,
+          duration: 0.6,
         },
-        0.7 + index * 0.4 // Start at 70% of timeline, stagger each element
+        0.65 + index * 0.5 // Start earlier, more stagger per element
       );
     });
 
