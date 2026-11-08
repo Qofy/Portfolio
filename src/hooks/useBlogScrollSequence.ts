@@ -18,9 +18,12 @@ export const useBlogScrollSequence = () => {
       window.getComputedStyle(blogHeader).fontSize
     );
 
-    // For Blog (last section): slide in animation only, then scroll freely
-    // Calculate duration just enough for slide-in animation
-    const slideDuration = window.innerHeight * 1.5;
+    // For Blog (last section): extended pin so you can scroll through ALL blog posts
+    // Get number of blog cards to calculate proper scroll distance
+    const blogCards = blogSection.querySelectorAll('.blog-card').length;
+    const scrollPerCard = window.innerHeight * 0.8; // Each card needs scroll space
+    const contentScrollDistance = Math.max(blogCards * scrollPerCard, window.innerHeight * 5);
+    const slideDuration = window.innerHeight * 2 + contentScrollDistance;
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -55,15 +58,24 @@ export const useBlogScrollSequence = () => {
       0.1
     );
 
-    // Phase 3: Fade in blog content
+    // Phase 3: Fade in blog content and keep visible while scrolling through posts
     tl.to(
       '.blog-grid',
       {
         opacity: 1,
         y: 0,
-        duration: 0.8,
+        duration: 1,
       },
       0.3
+    );
+
+    // Phase 4: Keep blog content visible and scrollable for viewing all posts
+    tl.set(
+      '.blog-grid',
+      {
+        opacity: 1,
+      },
+      0.5
     );
 
     return () => {
