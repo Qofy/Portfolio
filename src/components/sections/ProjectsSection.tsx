@@ -1,6 +1,7 @@
 import '../../styles/components/ProjectsSection.scss';
 import { ArrowUpRight } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
+import { useScrollTrigger } from '../../hooks';
 import Hexashop from '../../images/hexshop-landing.png';
 import fxChecker from '../../images/fx-checker.png';
 import portfolio from '../../images/portfolio.png';
@@ -115,12 +116,16 @@ export function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState('All');
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
+  const { createStaggerReveal } = useScrollTrigger();
 
   const filteredProjects = activeFilter === 'All'
     ? projects
     : projects.filter(p => p.category === activeFilter);
 
   useEffect(() => {
+    // Stagger reveal for project cards
+    createStaggerReveal('.project-card', 0.7, 0.12);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -150,7 +155,7 @@ export function ProjectsSection() {
         observer.unobserve(current);
       }
     };
-  }, [activeFilter]);
+  }, [activeFilter, createStaggerReveal]);
 
   return (
     <section className="projects" data-section="projects" ref={sectionRef}>

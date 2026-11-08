@@ -3,6 +3,7 @@ import { ArrowUpRight, Github, Linkedin, Mail, Contact } from 'lucide-react';
 import profileImg from '../../images/profile2.png';
 import { useEffect, useRef } from 'react';
 import BinaryRain3D from './BinaryRain3D';
+import { useScrollTrigger } from '../../hooks';
 
 const socialLinks = [
   { icon: Github, label: 'GitHub', href: 'https://github.com/Qofy' },
@@ -13,8 +14,21 @@ const socialLinks = [
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const { createParallax, createStaggerReveal } = useScrollTrigger();
 
   useEffect(() => {
+    // Parallax effect on hero image
+    const heroImage = sectionRef.current?.querySelector('.hero-image') as HTMLElement;
+    if (heroImage) {
+      createParallax(heroImage, 80);
+    }
+
+    // Parallax effect on hero content
+    const heroLeft = sectionRef.current?.querySelector('.hero-left') as HTMLElement;
+    if (heroLeft) {
+      createParallax(heroLeft, -40);
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -54,7 +68,7 @@ export function HeroSection() {
         observer.unobserve(current);
       }
     };
-  }, []);
+  }, [createParallax, createStaggerReveal]);
 
   return (
     <section className="hero" data-section="hero" ref={sectionRef}>

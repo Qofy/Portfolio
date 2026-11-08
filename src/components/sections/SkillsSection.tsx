@@ -1,5 +1,6 @@
 import '../../styles/components/SkillsSection.scss';
 import { useEffect, useRef } from 'react';
+import { useScrollTrigger } from '../../hooks';
 import FloatingTechKeywords from './FloatingTechKeywords';
 
 const skillsData = [
@@ -74,8 +75,12 @@ const skillsData = [
 
 export function SkillsSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const { createStaggerReveal } = useScrollTrigger();
 
   useEffect(() => {
+    // Stagger reveal for skill groups
+    createStaggerReveal('.skill-group', 0.6, 0.15);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -105,7 +110,7 @@ export function SkillsSection() {
         observer.unobserve(current);
       }
     };
-  }, []);
+  }, [createStaggerReveal]);
 
   return (
     <section className="skills" data-section="skills" ref={sectionRef}>
