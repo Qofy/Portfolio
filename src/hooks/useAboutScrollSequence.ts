@@ -16,11 +16,12 @@ export const useAboutScrollSequence = () => {
       window.getComputedStyle(aboutHeader).fontSize
     );
 
-    // Pin About section for duration that shows FULL CONTENT
-    // Get actual content height and add scroll space
+    // Pin About section to show FULL CONTENT - be generous with scroll space
+    // Get actual content height
     const aboutContent = aboutSection.querySelector('.about-content') as HTMLElement;
     const contentHeight = aboutContent?.offsetHeight || window.innerHeight;
-    const pinDuration = window.innerHeight + contentHeight + (window.innerHeight * 2);
+    // Minimum 10 screen heights OR 2x content height - whichever is larger
+    const pinDuration = Math.max(window.innerHeight * 10, contentHeight * 2);
 
     const tl = gsap.timeline({
       scrollTrigger: {
