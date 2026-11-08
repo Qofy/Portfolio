@@ -89,13 +89,13 @@ export const useHeroScrollSequence = () => {
     );
 
     // Phase 5: About takes FULL CONTROL - Progressive reveal of all content (50% to 100%)
-    // Stagger reveal each About content element
+    // Stagger reveal each About content element (animate FROM 0 TO 1)
     aboutContentElements.forEach((element, index) => {
-      tl.from(
+      tl.to(
         element,
         {
-          opacity: 0,
-          y: 20,
+          opacity: 1,
+          y: 0,
           duration: 0.6,
         },
         0.65 + index * 0.5 // Start earlier, more stagger per element
