@@ -18,7 +18,10 @@ export const useProjectsScrollSequence = () => {
       window.getComputedStyle(projectsHeader).fontSize
     );
 
-    const pinDuration = window.innerHeight * 5;
+    // Pin Projects section to show FULL CONTENT
+    const projContent = projectsSection.querySelector('.projects-grid') as HTMLElement;
+    const projContentHeight = projContent?.offsetHeight || window.innerHeight;
+    const pinDuration = window.innerHeight + projContentHeight + (window.innerHeight * 2);
 
     const tl = gsap.timeline({
       scrollTrigger: {

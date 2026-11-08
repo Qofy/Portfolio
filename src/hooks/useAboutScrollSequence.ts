@@ -16,9 +16,11 @@ export const useAboutScrollSequence = () => {
       window.getComputedStyle(aboutHeader).fontSize
     );
 
-    // Pin About section for ~5 screen heights to take full control
-    // Skills won't appear until After this duration
-    const pinDuration = window.innerHeight * 5;
+    // Pin About section for duration that shows FULL CONTENT
+    // Get actual content height and add scroll space
+    const aboutContent = aboutSection.querySelector('.about-content') as HTMLElement;
+    const contentHeight = aboutContent?.offsetHeight || window.innerHeight;
+    const pinDuration = window.innerHeight + contentHeight + (window.innerHeight * 2);
 
     const tl = gsap.timeline({
       scrollTrigger: {
