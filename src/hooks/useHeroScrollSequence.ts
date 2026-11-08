@@ -21,17 +21,16 @@ export const useHeroScrollSequence = () => {
     // Position about section below hero initially
     gsap.set(aboutSection, { y: window.innerHeight });
 
-    // Calculate About section height for proper scrolling time
-    const aboutHeight = aboutSection.offsetHeight || window.innerHeight;
-
     // Create the sequence timeline
-    // Hero pins while About slides up, then continues so About can be fully scrolled
+    // Hero pins only during animation sequence (name scaling + About slide-in)
+    // Then releases so About can show progressive reveals
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: heroSection,
         start: 'top top',
-        // Give enough scroll distance: hero animation (3vh) + About content scroll time
-        end: `+=${window.innerHeight * 2 + aboutHeight}`,
+        // Pin for 3-4 screen heights (just the hero animation + About slide in)
+        // Then release so About's progressive reveals work
+        end: `+=${window.innerHeight * 3.5}`,
         pin: true, // Pin the hero section
         scrub: 1, // Smooth scrubbing (1 second lag)
         markers: false,
