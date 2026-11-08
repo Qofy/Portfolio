@@ -1,76 +1,30 @@
-# Project Structure
+# Project structure
 
-Professional folder arrangement for the Portfolio project.
+[`src/main.tsx`](src/main.tsx) mounts [`App`](src/App.tsx) inside React Router’s `BrowserRouter`. `App` renders Hero, About, Skills, Background, Experience, Projects, and Blog in order. [`Navigation`](src/components/common/Navigation.tsx) uses section hashes such as `#projects` and matches them to `data-section` attributes.
 
-```
-src/
-├── components/              # React components organized by type
-│   ├── common/             # Reusable UI components
-│   │   └── Navigation.tsx
-│   ├── sections/           # Page section components
-│   │   └── HeroSection.tsx
-│   └── index.ts           # Component exports
-│
-├── styles/                # Global and component styles
-│   ├── globals.scss       # Global resets and base styles
-│   ├── components/        # Component-specific styles
-│   │   ├── Navigation.scss
-│   │   └── HeroSection.scss
-│   └── utils/            # SCSS utilities and variables (future)
-│
-├── data/                 # Static data and constants
-│   ├── background.ts
-│   ├── skillsData.ts
-│   └── projectCaseStudies.ts
-│
-├── assets/              # Static files
-│   ├── images/
-│   ├── icons/
-│   └── fonts/
-│
-├── types/              # TypeScript type definitions
-│   └── index.ts
-│
-├── hooks/              # Custom React hooks (future)
-├── utils/              # Utility functions (future)
-│
-├── App.tsx             # Root component
-├── main.tsx            # React DOM entry point
-└── vite-env.d.ts       # Vite environment types
-```
+## Where to make changes
 
-## Naming Conventions
+| Change | Active source |
+| --- | --- |
+| Hero text and social links | [`HeroSection.tsx`](src/components/sections/HeroSection.tsx) |
+| About copy | [`AboutSection.tsx`](src/components/sections/AboutSection.tsx) |
+| Skills and group labels | [`SkillsSection.tsx`](src/components/sections/SkillsSection.tsx) |
+| Education and certificate links | [`BackgroundSection.tsx`](src/components/sections/BackgroundSection.tsx) |
+| Work history | [`ExperienceSection.tsx`](src/components/sections/ExperienceSection.tsx) |
+| Project entries and filters | [`ProjectsSection.tsx`](src/components/sections/ProjectsSection.tsx) |
+| Project detail overlay | [`ProjectDetail.tsx`](src/components/sections/ProjectDetail.tsx) |
+| Blog categories and editor defaults | [`src/types/blog.ts`](src/types/blog.ts) |
+| Chat assistant instructions | [`ChatBox.tsx`](src/components/common/ChatBox.tsx) |
+| Global styles | [`globals.scss`](src/styles/globals.scss) |
 
-- **Components**: PascalCase (e.g., `Navigation.tsx`)
-- **Styles**: kebab-case matching component name (e.g., `Navigation.scss`)
-- **Types**: PascalCase interfaces, camelCase for variables
-- **Utilities**: camelCase functions
-- **Folders**: kebab-case for multi-word names
+Component styles live in `src/styles/components/`. The section components import their images from `src/images/` and certificates from `src/certificates/`. Vite serves files in `public/` at the site root.
 
-## File Organization
+## Blog data flow
 
-### Components
-- `common/` - Reusable components used across pages
-- `sections/` - Full-width page sections
+[`BlogSection`](src/components/sections/BlogSection.tsx) subscribes to posts in Firestore and manages filtering, editing, and reader state. [`BlogForm`](src/components/blog/BlogForm.tsx) uses Tiptap to save article content as HTML, which [`BlogReader`](src/components/blog/BlogReader.tsx) renders. Comments and reactions are stored in separate collections. See the [Firestore guide](FIRESTORE_RULES.md).
 
-### Styles
-- Global styles in `globals.scss`
-- Component styles co-located with component folder references
-- Utilities and variables in `styles/utils/`
+[`useAIBlogSearch`](src/hooks/useAIBlogSearch.ts) can ask Ollama for keywords, then rank the posts already loaded in the browser. If keyword extraction fails, it searches using the original query. The chat assistant and blog search share the same [Ollama endpoint](OLLAMA_SETUP.md).
 
-### Data
-- Static data separated from components
-- Easy to update without touching component logic
+## Scroll behavior
 
-### Assets
-- Images in `images/`
-- Icons in `icons/`
-- Fonts in `fonts/`
-
-## Best Practices
-
-1. Keep components small and focused
-2. Export components from `components/index.ts`
-3. Use TypeScript types for props and data
-4. Style components with SCSS modules or co-located files
-5. Keep data separate from presentation logic
+`App.tsx` calls the section-specific `use*ScrollSequence` hooks in `src/hooks/`. They use GSAP ScrollTrigger and select elements from the section markup. When changing a section class or `data-section` value, check the corresponding hook and navigation targets. The blog also uses `useScrollAnimation` and `useReAnimate` to reveal and reanimate cards as the list changes.

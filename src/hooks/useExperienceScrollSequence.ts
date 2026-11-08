@@ -11,9 +11,6 @@ export const useExperienceScrollSequence = () => {
 
     if (!experienceSection || !experienceHeader) return;
 
-    // Position Experience below viewport initially
-    gsap.set(experienceSection, { y: window.innerHeight });
-
     const initialFontSize = parseFloat(
       window.getComputedStyle(experienceHeader).fontSize
     );
@@ -35,18 +32,7 @@ export const useExperienceScrollSequence = () => {
       },
     });
 
-    // Phase 1: Slide Experience section up into viewport
-    tl.to(
-      experienceSection,
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-      },
-      0
-    );
-
-    // Phase 2: Scale experience title up
+    // Scale the title once Experience scrolls into place.
     tl.to(
       experienceHeader,
       {
@@ -57,7 +43,7 @@ export const useExperienceScrollSequence = () => {
       0.1
     );
 
-    // Phase 3: Fade in experience content
+    // Fade in the experience content.
     tl.to(
       '.experience-timeline',
       {

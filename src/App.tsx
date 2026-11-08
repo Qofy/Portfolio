@@ -1,4 +1,5 @@
 import './styles/globals.scss';
+import { useSectionSlideHandoffs } from './hooks/useSectionSlideHandoffs';
 import { Navigation, ScrollProgressBar, HeroSection, AboutSection, SkillsSection, BackgroundSection, ExperienceSection, ProjectsSection, BlogSection } from './components';
 import {
   useHeroScrollSequence,
@@ -19,6 +20,7 @@ export default function App() {
   useExperienceScrollSequence();
   useProjectsScrollSequence();
   useBlogScrollSequence();
+  useSectionSlideHandoffs();
 
   return (
     <>

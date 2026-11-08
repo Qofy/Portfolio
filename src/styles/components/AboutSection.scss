@@ -137,7 +137,7 @@
   padding: 1.5rem;
   border: 2px solid #f0f0f0;
   border-radius: 12px;
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
   opacity: 1;
 
   &:hover {

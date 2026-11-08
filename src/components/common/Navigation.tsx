@@ -2,6 +2,7 @@ import '../../styles/components/Navigation.scss';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { ChatBox } from './ChatBox';
+import { getSectionAnchor } from '../../utils/sectionAnchor';
 
 const navLinks = [
   { label: 'About', href: '#about' },
@@ -13,49 +14,37 @@ const navLinks = [
   { label: 'Contact', href: '#hero' },
 ];
 
+function findSection(id: string) {
+  return document.querySelector<HTMLElement>(`section[data-section="${CSS.escape(id)}"]`);
+}
+
 export function Navigation() {
   const [activeSection, setActiveSection] = useState('hero');
   const [chatOpen, setChatOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Set hero as default section on mount
+  // Resolve deep links after ScrollTrigger has wrapped the pinned sections.
   useEffect(() => {
-    const hash = window.location.hash.replace('#', '');
-    const pathname = window.location.pathname.split('/').filter(Boolean)[0];
+    const hash = window.location.hash.slice(1);
+    const pathname = window.location.pathname.split('/').filter(Boolean)[0] || '';
+    const section = findSection(hash || pathname);
+    if (!hash) window.history.replaceState(null, '', `#${section ? pathname : 'hero'}`);
+    if (!section) return;
 
-    if (hash) {
-      // Hash exists, use it
-      const element = document.querySelector(`[data-section="${hash}"]`);
-      if (element) {
-        setTimeout(() => element.scrollIntoView({ behavior: 'smooth' }), 100);
-      }
-    } else if (pathname) {
-      // No hash but pathname exists (e.g., /projects)
-      const mappedSection = pathname === 'projects' ? 'projects' : pathname;
-      const element = document.querySelector(`[data-section="${mappedSection}"]`);
-      if (element) {
-        // Update URL to use hash
-        window.history.replaceState(null, '', `#${mappedSection}`);
-        setTimeout(() => element.scrollIntoView({ behavior: 'smooth' }), 100);
-      } else {
-        // Section not found, default to hero
-        window.history.replaceState(null, '', '#hero');
-      }
-    } else {
-      // No hash and no pathname, default to hero
-      window.history.replaceState(null, '', '#hero');
-    }
+    const initialScroll = window.requestAnimationFrame(() => {
+      getSectionAnchor(section).scrollIntoView({ behavior: 'instant' });
+    });
+    return () => window.cancelAnimationFrame(initialScroll);
   }, []);
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = document.querySelectorAll('section');
+      const sections = document.querySelectorAll<HTMLElement>('section[data-section]');
       let current = '';
 
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        if (window.scrollY >= sectionTop - 200) {
-          current = section.getAttribute('data-section') || '';
+        if (getSectionAnchor(section).getBoundingClientRect().top <= 200) {
+          current = section.dataset.section || '';
         }
       });
 
@@ -71,32 +60,21 @@ export function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Handle browser back/forward buttons and initial hash load
+  // Handle browser back and forward.
   useEffect(() => {
     const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '');
-      if (hash) {
-        const element = document.querySelector(`[data-section="${hash}"]`);
-        if (element) {
-          setTimeout(() => {
-            element.scrollIntoView({ behavior: 'smooth' });
-          }, 50);
-        }
-      }
+      const section = findSection(window.location.hash.slice(1));
+      if (section) getSectionAnchor(section).scrollIntoView({ behavior: 'smooth' });
     };
-
-    // Handle initial page load with hash
-    handleHashChange();
 
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
   const handleSmoothScroll = (href: string) => {
-    const id = href.replace('#', '');
-    const element = document.querySelector(`[data-section="${id}"]`);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    const section = findSection(href.slice(1));
+    if (section) {
+      getSectionAnchor(section).scrollIntoView({ behavior: 'smooth' });
       // Update URL hash when clicking navigation
       window.history.pushState(null, '', href);
       // Close mobile menu after navigation

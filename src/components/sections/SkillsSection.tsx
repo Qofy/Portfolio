@@ -1,6 +1,4 @@
 import '../../styles/components/SkillsSection.scss';
-import { useEffect, useRef } from 'react';
-import { useScrollTrigger } from '../../hooks';
 
 const skillsData = [
   {
@@ -73,46 +71,8 @@ const skillsData = [
 ];
 
 export function SkillsSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const { createStaggerReveal } = useScrollTrigger();
-
-  useEffect(() => {
-    // Stagger reveal for skill groups
-    createStaggerReveal('.skill-group', 0.6, 0.15);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const groups = sectionRef.current?.querySelectorAll('.skill-group');
-            groups?.forEach((group) => {
-              group.classList.add('animate');
-            });
-          } else {
-            const groups = sectionRef.current?.querySelectorAll('.skill-group');
-            groups?.forEach((group) => {
-              group.classList.remove('animate');
-            });
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    const current = sectionRef.current;
-    if (current) {
-      observer.observe(current);
-    }
-
-    return () => {
-      if (current) {
-        observer.unobserve(current);
-      }
-    };
-  }, [createStaggerReveal]);
-
   return (
-    <section className="skills" data-section="skills" ref={sectionRef}>
+    <section className="skills" data-section="skills">
       <div className="skills-container">
         <div className="skills-header">
           <h2>/SKILLS & STACKS</h2>
@@ -120,24 +80,16 @@ export function SkillsSection() {
         </div>
 
         <div className="skills-grid">
-          {skillsData.map((skillGroup, index) => {
-            let animationClass = '';
-            if (index % 4 === 0) animationClass = 'animate-from-left';
-            else if (index % 4 === 1) animationClass = 'animate-from-top';
-            else if (index % 4 === 2) animationClass = 'animate-from-right';
-            else animationClass = 'animate-from-bottom';
-
-            return (
-              <div key={index} className={`skill-group ${animationClass}`}>
-                <h3 className="skill-category">{skillGroup.category}</h3>
-                <div className="skill-list">
-                  {skillGroup.skills.map((skill, idx) => (
-                    <span key={idx} className="skill-tag">{skill}</span>
-                  ))}
-                </div>
+          {skillsData.map((skillGroup) => (
+            <div key={skillGroup.category} className="skill-group">
+              <h3 className="skill-category">{skillGroup.category}</h3>
+              <div className="skill-list">
+                {skillGroup.skills.map((skill) => (
+                  <span key={skill} className="skill-tag">{skill}</span>
+                ))}
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>

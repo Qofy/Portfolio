@@ -11,9 +11,6 @@ export const useBackgroundScrollSequence = () => {
 
     if (!backgroundSection || !backgroundHeader) return;
 
-    // Position Background below viewport initially
-    gsap.set(backgroundSection, { y: window.innerHeight });
-
     const initialFontSize = parseFloat(
       window.getComputedStyle(backgroundHeader).fontSize
     );
@@ -35,18 +32,7 @@ export const useBackgroundScrollSequence = () => {
       },
     });
 
-    // Phase 1: Slide Background section up into viewport
-    tl.to(
-      backgroundSection,
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-      },
-      0
-    );
-
-    // Phase 2: Scale background title up
+    // Scale the title once Background scrolls into place.
     tl.to(
       backgroundHeader,
       {
@@ -57,7 +43,7 @@ export const useBackgroundScrollSequence = () => {
       0.1
     );
 
-    // Phase 3: Fade in background content
+    // Fade in the background content.
     tl.to(
       '.background-timeline',
       {
