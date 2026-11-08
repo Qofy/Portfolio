@@ -21,23 +21,30 @@ export const useHeroScrollSequence = () => {
     // Position about section below hero initially
     gsap.set(aboutSection, { y: window.innerHeight });
 
+    // Get About content elements for progressive reveal
+    const aboutContentElements = aboutSection.querySelectorAll(
+      '.about-text p, .about-text li, .about-stats .stat'
+    );
+
+    // Calculate scroll distance: hero animation + About progressive reveals
+    // Each content element gets ~1.5x screen height for staggered reveal
+    const revealDistance = Math.max(aboutContentElements.length * window.innerHeight * 0.8, window.innerHeight * 2);
+    const totalDistance = window.innerHeight * 4 + revealDistance;
+
     // Create the sequence timeline
-    // Hero pins only during animation sequence (name scaling + About slide-in)
-    // Then releases so About can show progressive reveals
+    // This SINGLE timeline handles: hero animation + About taking full control + progressive reveals
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: heroSection,
         start: 'top top',
-        // Pin for 3-4 screen heights (just the hero animation + About slide in)
-        // Then release so About's progressive reveals work
-        end: `+=${window.innerHeight * 3.5}`,
-        pin: true, // Pin the hero section
-        scrub: 1, // Smooth scrubbing (1 second lag)
+        end: `+=${totalDistance}`,
+        pin: true, // Pin throughout hero animation AND About reveals
+        scrub: 1, // Smooth scrubbing
         markers: false,
       },
     });
 
-    // Phase 1: Grow the name text quickly (first 20% of scroll)
+    // Phase 1: Grow the name text quickly (0-20% of timeline)
     tl.to(
       heroName,
       {
@@ -48,7 +55,7 @@ export const useHeroScrollSequence = () => {
       0
     );
 
-    // Phase 2: Continue growing name to max (20% to 35% of scroll)
+    // Phase 2: Continue growing name to max (20-35% of timeline)
     tl.to(
       heroName,
       {
@@ -59,7 +66,7 @@ export const useHeroScrollSequence = () => {
       0.2
     );
 
-    // Phase 3: Slide About section up quickly (25% to 40% of scroll)
+    // Phase 3: Slide About section up (25-40% of timeline)
     tl.to(
       aboutSection,
       {
@@ -70,7 +77,7 @@ export const useHeroScrollSequence = () => {
       0.3
     );
 
-    // Phase 4: Fade out hero (40% to 50% of scroll)
+    // Phase 4: Fade out hero (40-50% of timeline)
     tl.to(
       '.hero-container',
       {
@@ -81,16 +88,19 @@ export const useHeroScrollSequence = () => {
       0.55
     );
 
-    // Phase 5: Keep About visible for entire remaining scroll (50% to 100%)
-    // About stays fully visible while user scrolls and reads
-    // Just complete the timeline - About remains at full opacity
-    tl.set(
-      aboutSection,
-      {
-        opacity: 1, // Keep at full opacity
-      },
-      0.7
-    );
+    // Phase 5: About takes FULL CONTROL - Progressive reveal of all content (50% to 100%)
+    // Stagger reveal each About content element
+    aboutContentElements.forEach((element, index) => {
+      tl.from(
+        element,
+        {
+          opacity: 0,
+          y: 20,
+          duration: 0.8,
+        },
+        0.7 + index * 0.4 // Start at 70% of timeline, stagger each element
+      );
+    });
 
     return () => {
       tl.kill();

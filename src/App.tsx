@@ -1,13 +1,10 @@
 import './styles/globals.scss';
 import { Navigation, ScrollProgressBar, HeroSection, AboutSection, SkillsSection, BackgroundSection, ExperienceSection, ProjectsSection, BlogSection } from './components';
-import { useHeroScrollSequence, useSectionScrollReveal } from './hooks';
+import { useHeroScrollSequence } from './hooks';
 
 export default function App() {
-  // Hero scroll sequence: name scales up, About slides in
+  // Hero scroll sequence: name scales up, About slides in + progressive reveals
   useHeroScrollSequence();
-
-  // Progressive content reveal for all sections
-  useSectionScrollReveal();
 
   return (
     <>
