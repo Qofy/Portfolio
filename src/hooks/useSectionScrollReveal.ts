@@ -14,7 +14,7 @@ export const useSectionScrollReveal = () => {
 
       // Get all content that should reveal progressively
       const contentElements = sectionElement.querySelectorAll(
-        '.about-text p, .skill-group, .background-timeline, .experience-timeline, .project-card, .blog-card'
+        '.about-text p, .about-text li, .skill-group, .background-timeline, .experience-timeline, .project-card, .blog-card'
       );
 
       if (contentElements.length === 0) return;
