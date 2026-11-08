@@ -1,6 +1,7 @@
 // Common Components
 export { Navigation } from './common/Navigation';
 export { ChatBox } from './common/ChatBox';
+export { ScrollProgressBar } from './common/ScrollProgressBar';
 
 // Section Components
 export { HeroSection } from './sections/HeroSection';
