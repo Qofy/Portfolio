@@ -4,7 +4,7 @@ import { getSectionAnchor } from '../utils/sectionAnchor';
 
 export function useSectionSlideHandoffs() {
   useEffect(() => {
-    const [, ...sections] = document.querySelectorAll<HTMLElement>('main > section[data-section], main > .pin-spacer > section[data-section]');
+    const sections = [...document.querySelectorAll<HTMLElement>('main section[data-section]:not([data-section="hero"])')];
     const handoffs = sections.slice(0, -1).map((outgoing, index) => ({
       outgoing,
       incoming: sections[index + 1],

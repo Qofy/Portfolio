@@ -77,12 +77,7 @@ export const useBlogScrollSequence = () => {
     );
 
     return () => {
-      tl.kill();
-      ScrollTrigger.getAll().forEach((trigger) => {
-        if (trigger.vars.trigger === blogSection) {
-          trigger.kill();
-        }
-      });
+      tl.revert();
     };
   }, []);
 };

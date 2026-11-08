@@ -12,7 +12,7 @@ export const useSteppedScrollSequence = (
   sectionSelector: string,
   containerSelector: string,
   stepSelector: string,
-  { slideToNext = false } = {},
+  { slideToNext = false, introSelector = '' } = {},
 ) => {
   useEffect(() => {
     const section = document.querySelector<HTMLElement>(sectionSelector);
@@ -21,10 +21,13 @@ export const useSteppedScrollSequence = (
 
     const steps = container.querySelectorAll(stepSelector);
     if (!steps.length) return;
+    const smoothReveal = !!introSelector && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const holdDuration = smoothReveal ? 0.15 : 1;
+    const timelineDuration = steps.length + holdDuration;
 
     const context = gsap.context(() => {
       gsap.set(section, { height: '100dvh', minHeight: 0, alignItems: 'flex-start' });
-      gsap.set(steps, { opacity: 0 });
+      gsap.set(steps, smoothReveal ? { opacity: 0, y: 14 } : { opacity: 0 });
 
       let touchHandled = false;
       const touch = ScrollTrigger.observe({
@@ -40,9 +43,9 @@ export const useSteppedScrollSequence = (
         scrollTrigger: {
           trigger: section,
           start: 'top top',
-          end: () => `+=${section.clientHeight * (steps.length + 1) * 0.3}`,
+          end: () => `+=${section.clientHeight * timelineDuration * 0.3}`,
           pin: true,
-          scrub: true,
+          scrub: smoothReveal ? 2.8 : true,
           invalidateOnRefresh: true,
           onToggle: ({ isActive }) => {
             if (isActive) touch.enable();
@@ -52,23 +55,49 @@ export const useSteppedScrollSequence = (
       });
 
       steps.forEach((step, index) => {
+        const start = index + (smoothReveal ? 0.04 : 0.25);
+        const duration = smoothReveal ? 0.96 : 0.75;
         // Bring each new item into view on screens where the content is taller than the pin.
         timeline.to(container, {
           y: () => {
             const bottom = step.getBoundingClientRect().bottom - container.getBoundingClientRect().top;
-            return -Math.max(0, container.offsetTop + bottom + 24 - section.clientHeight);
+            const revealOffset = smoothReveal ? Number(gsap.getProperty(step, 'y')) : 0;
+            return -Math.max(0, container.offsetTop + bottom - revealOffset + 24 - section.clientHeight);
           },
-          duration: 0.75,
+          duration,
           ease: 'none',
-        }, index + 0.25);
-        timeline.to(step, { opacity: 1, duration: 0.45 }, index + 0.25);
+        }, start);
+        timeline.to(step, smoothReveal
+          ? { opacity: 1, y: 0, duration, ease: 'power1.inOut' }
+          : { opacity: 1, duration: 0.45 },
+        start);
       });
 
-      // Leave the last item visible for one more scroll step before releasing the pin.
-      timeline.to({}, { duration: 1 });
+      // Keep the last item visible at the end of the pin.
+      timeline.to({}, { duration: holdDuration });
 
       const pin = timeline.scrollTrigger!;
       steppedPins.set(pin, slideToNext);
+
+      if (smoothReveal) {
+        const scrubTween = pin.getTween();
+        if (scrubTween) {
+          // ScrollTrigger's default scrub ease makes most of the reveal happen up front.
+          scrubTween.vars.ease = 'none';
+          scrubTween.invalidate();
+        }
+        gsap.from(container.querySelectorAll(introSelector), {
+          opacity: 0,
+          y: 14,
+          duration: 2.4,
+          ease: 'power1.out',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 75%',
+            toggleActions: 'play none none reverse',
+          },
+        });
+      }
 
       const jumpTo = (top: number) => {
         window.scrollTo({ top, behavior: 'instant' });
@@ -101,14 +130,14 @@ export const useSteppedScrollSequence = (
           if (position < pin.start && destination >= pin.start) {
             jumpTo(pin.start + 1);
           } else if (position > pin.end && destination <= pin.end) {
-            jumpTo(slideToNext ? pin.end - 1 : pin.start + (pin.end - pin.start) * steps.length / (steps.length + 1));
+            jumpTo(slideToNext ? pin.end - 1 : pin.start + (pin.end - pin.start) * steps.length / timelineDuration);
           } else {
             return false;
           }
           return true;
         }
 
-        const stepSize = (pin.end - pin.start) / (steps.length + 1);
+        const stepSize = (pin.end - pin.start) / timelineDuration;
         const currentStep = Math.min(steps.length, Math.floor((position - pin.start + 2) / stepSize));
         const nextStep = currentStep + direction;
         if (nextStep < 0) {
@@ -179,5 +208,5 @@ export const useSteppedScrollSequence = (
     });
 
     return () => context.revert();
-  }, [sectionSelector, containerSelector, stepSelector, slideToNext]);
+  }, [sectionSelector, containerSelector, stepSelector, slideToNext, introSelector]);
 };

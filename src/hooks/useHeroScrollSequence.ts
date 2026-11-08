@@ -56,12 +56,7 @@ export const useHeroScrollSequence = () => {
     );
 
     return () => {
-      tl.kill();
-      ScrollTrigger.getAll().forEach((trigger) => {
-        if (trigger.vars.trigger === heroSection) {
-          trigger.kill();
-        }
-      });
+      tl.revert();
     };
   }, []);
 };

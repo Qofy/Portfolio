@@ -55,12 +55,7 @@ export const useExperienceScrollSequence = () => {
     );
 
     return () => {
-      tl.kill();
-      ScrollTrigger.getAll().forEach((trigger) => {
-        if (trigger.vars.trigger === experienceSection) {
-          trigger.kill();
-        }
-      });
+      tl.revert();
     };
   }, []);
 };

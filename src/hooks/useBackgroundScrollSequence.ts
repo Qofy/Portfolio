@@ -55,12 +55,7 @@ export const useBackgroundScrollSequence = () => {
     );
 
     return () => {
-      tl.kill();
-      ScrollTrigger.getAll().forEach((trigger) => {
-        if (trigger.vars.trigger === backgroundSection) {
-          trigger.kill();
-        }
-      });
+      tl.revert();
     };
   }, []);
 };

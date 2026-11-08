@@ -55,12 +55,7 @@ export const useProjectsScrollSequence = () => {
     );
 
     return () => {
-      tl.kill();
-      ScrollTrigger.getAll().forEach((trigger) => {
-        if (trigger.vars.trigger === projectsSection) {
-          trigger.kill();
-        }
-      });
+      tl.revert();
     };
   }, []);
 };
