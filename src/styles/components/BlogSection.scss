@@ -49,12 +49,7 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
-  position: sticky;
-  top: 70px;
-  background: #ffffff;
-  padding: 1rem 0;
-  z-index: 100;
-  border-bottom: 1px solid #f0f0f0;
+  opacity: 0;
 
   @media (max-width: 768px) {
     flex-direction: column;

@@ -8,11 +8,9 @@ export const useBlogScrollSequence = () => {
   useEffect(() => {
     const blogSection = document.querySelector('.blog') as HTMLElement;
     const blogHeader = document.querySelector('.blog-header h2') as HTMLElement;
+    const blogContainer = document.querySelector('.blog-container') as HTMLElement;
 
-    if (!blogSection || !blogHeader) return;
-
-    // Position Blog below viewport initially
-    gsap.set(blogSection, { y: window.innerHeight });
+    if (!blogSection || !blogHeader || !blogContainer) return;
 
     const initialFontSize = parseFloat(
       window.getComputedStyle(blogHeader).fontSize
@@ -20,7 +18,7 @@ export const useBlogScrollSequence = () => {
 
     // For Blog (last section): extended pin so you can scroll through ALL blog posts
     // Get blog section height and give generous scroll space
-    const blogHeight = blogSection.offsetHeight;
+    const blogHeight = blogContainer.offsetHeight;
     // Ensure minimum 8 screen heights, or 2x the blog height, whichever is larger
     const minScrollSpace = Math.max(window.innerHeight * 8, blogHeight * 1.5);
     const slideDuration = minScrollSpace;
@@ -36,24 +34,24 @@ export const useBlogScrollSequence = () => {
       },
     });
 
-    // Phase 1: Slide Blog section up into viewport
-    tl.to(
-      blogSection,
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-      },
-      0
-    );
-
-    // Phase 2: Scale blog title up
+    // Phase 1: Scale blog title up
     tl.to(
       blogHeader,
       {
         fontSize: initialFontSize * 1.5,
         opacity: 1,
         duration: 1,
+      },
+      0
+    );
+
+    // Phase 2: Fade in blog controls
+    tl.to(
+      '.blog-controls',
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
       },
       0.1
     );
@@ -66,7 +64,7 @@ export const useBlogScrollSequence = () => {
         y: 0,
         duration: 1,
       },
-      0.3
+      0.2
     );
 
     // Phase 4: Keep blog content visible and scrollable for viewing all posts
