@@ -1,42 +1,8 @@
 import '../../styles/components/AboutSection.scss';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 export function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const aboutText = sectionRef.current?.querySelector('.about-text');
-            const aboutStats = sectionRef.current?.querySelector('.about-stats');
-
-            aboutText?.classList.add('animate');
-            aboutStats?.classList.add('animate');
-          } else {
-            const aboutText = sectionRef.current?.querySelector('.about-text');
-            const aboutStats = sectionRef.current?.querySelector('.about-stats');
-
-            aboutText?.classList.remove('animate');
-            aboutStats?.classList.remove('animate');
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    const current = sectionRef.current;
-    if (current) {
-      observer.observe(current);
-    }
-
-    return () => {
-      if (current) {
-        observer.unobserve(current);
-      }
-    };
-  }, []);
 
   return (
     <section className="about" data-section="about" ref={sectionRef}>
