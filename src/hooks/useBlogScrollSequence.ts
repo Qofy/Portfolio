@@ -18,13 +18,15 @@ export const useBlogScrollSequence = () => {
       window.getComputedStyle(blogHeader).fontSize
     );
 
-    const pinDuration = window.innerHeight * 5;
+    // For Blog (last section): slide in animation only, then scroll freely
+    // Calculate duration just enough for slide-in animation
+    const slideDuration = window.innerHeight * 1.5;
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: blogSection,
         start: 'top top',
-        end: `+=${pinDuration}`,
+        end: `+=${slideDuration}`,
         pin: true,
         scrub: 1,
         markers: false,
