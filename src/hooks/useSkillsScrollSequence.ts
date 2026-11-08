@@ -11,12 +11,15 @@ export const useSkillsScrollSequence = () => {
 
     if (!skillsSection || !skillsHeader) return;
 
+    // Position Skills below viewport initially (like About does)
+    gsap.set(skillsSection, { y: window.innerHeight });
+
     // Get initial font size of skills header
     const initialFontSize = parseFloat(
       window.getComputedStyle(skillsHeader).fontSize
     );
 
-    // Pin Skills section for ~5 screen heights while title animates
+    // Pin Skills section for ~5 screen heights while it slides in
     const pinDuration = window.innerHeight * 5;
 
     const tl = gsap.timeline({
@@ -30,7 +33,18 @@ export const useSkillsScrollSequence = () => {
       },
     });
 
-    // Phase 1: Scale skills title up
+    // Phase 1: Slide Skills section up into viewport
+    tl.to(
+      skillsSection,
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+      },
+      0
+    );
+
+    // Phase 2: Scale skills title up
     tl.to(
       skillsHeader,
       {
@@ -38,10 +52,10 @@ export const useSkillsScrollSequence = () => {
         opacity: 1,
         duration: 1,
       },
-      0
+      0.1
     );
 
-    // Phase 2: Fade in skills content
+    // Phase 3: Fade in skills content
     tl.to(
       '.skills-grid',
       {
@@ -49,7 +63,7 @@ export const useSkillsScrollSequence = () => {
         y: 0,
         duration: 0.8,
       },
-      0.2
+      0.3
     );
 
     return () => {

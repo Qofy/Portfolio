@@ -11,6 +11,9 @@ export const useProjectsScrollSequence = () => {
 
     if (!projectsSection || !projectsHeader) return;
 
+    // Position Projects below viewport initially
+    gsap.set(projectsSection, { y: window.innerHeight });
+
     const initialFontSize = parseFloat(
       window.getComputedStyle(projectsHeader).fontSize
     );
@@ -28,6 +31,18 @@ export const useProjectsScrollSequence = () => {
       },
     });
 
+    // Phase 1: Slide Projects section up into viewport
+    tl.to(
+      projectsSection,
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+      },
+      0
+    );
+
+    // Phase 2: Scale projects title up
     tl.to(
       projectsHeader,
       {
@@ -35,9 +50,10 @@ export const useProjectsScrollSequence = () => {
         opacity: 1,
         duration: 1,
       },
-      0
+      0.1
     );
 
+    // Phase 3: Fade in projects content
     tl.to(
       '.projects-grid',
       {
@@ -45,7 +61,7 @@ export const useProjectsScrollSequence = () => {
         y: 0,
         duration: 0.8,
       },
-      0.2
+      0.3
     );
 
     return () => {
