@@ -18,11 +18,11 @@ export const useBackgroundScrollSequence = () => {
       window.getComputedStyle(backgroundHeader).fontSize
     );
 
-    // Pin Background section to show FULL CONTENT - be generous with scroll space
+    // Pin Background section to show FULL CONTENT - like About section
     const bgContent = backgroundSection.querySelector('.background-timeline') as HTMLElement;
     const bgContentHeight = bgContent?.offsetHeight || window.innerHeight;
-    // Minimum 10 screen heights OR 2x content height - whichever is larger
-    const pinDuration = Math.max(window.innerHeight * 10, bgContentHeight * 2);
+    // Minimum 12 screen heights OR 2x content height - whichever is larger
+    const pinDuration = Math.max(window.innerHeight * 12, bgContentHeight * 2);
 
     const tl = gsap.timeline({
       scrollTrigger: {

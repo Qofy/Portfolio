@@ -17,10 +17,10 @@ export const useBlogScrollSequence = () => {
     );
 
     // For Blog (last section): extended pin so you can scroll through ALL blog posts
-    // Get blog section height and give generous scroll space
+    // Get blog section height and give generous scroll space - like other sections
     const blogHeight = blogContainer.offsetHeight;
-    // Ensure minimum 8 screen heights, or 2x the blog height, whichever is larger
-    const minScrollSpace = Math.max(window.innerHeight * 8, blogHeight * 1.5);
+    // Ensure minimum 12 screen heights, or 2x the blog height, whichever is larger
+    const minScrollSpace = Math.max(window.innerHeight * 12, blogHeight * 2);
     const slideDuration = minScrollSpace;
 
     const tl = gsap.timeline({

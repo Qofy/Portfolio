@@ -20,8 +20,8 @@ export const useAboutScrollSequence = () => {
     // Get actual content height
     const aboutContent = aboutSection.querySelector('.about-content') as HTMLElement;
     const contentHeight = aboutContent?.offsetHeight || window.innerHeight;
-    // Minimum 10 screen heights OR 2x content height - whichever is larger
-    const pinDuration = Math.max(window.innerHeight * 10, contentHeight * 2);
+    // Minimum 12 screen heights OR 2x content height - whichever is larger
+    const pinDuration = Math.max(window.innerHeight * 12, contentHeight * 2);
 
     const tl = gsap.timeline({
       scrollTrigger: {

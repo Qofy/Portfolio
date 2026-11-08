@@ -18,11 +18,11 @@ export const useProjectsScrollSequence = () => {
       window.getComputedStyle(projectsHeader).fontSize
     );
 
-    // Pin Projects section to show FULL CONTENT - be generous with scroll space
+    // Pin Projects section to show FULL CONTENT - like About section
     const projContent = projectsSection.querySelector('.projects-grid') as HTMLElement;
     const projContentHeight = projContent?.offsetHeight || window.innerHeight;
-    // Minimum 10 screen heights OR 2x content height - whichever is larger
-    const pinDuration = Math.max(window.innerHeight * 10, projContentHeight * 2);
+    // Minimum 12 screen heights OR 2x content height - whichever is larger
+    const pinDuration = Math.max(window.innerHeight * 12, projContentHeight * 2);
 
     const tl = gsap.timeline({
       scrollTrigger: {

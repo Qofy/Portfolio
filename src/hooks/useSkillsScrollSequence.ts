@@ -19,11 +19,11 @@ export const useSkillsScrollSequence = () => {
       window.getComputedStyle(skillsHeader).fontSize
     );
 
-    // Pin Skills section to show FULL CONTENT - be generous with scroll space
+    // Pin Skills section to show FULL CONTENT - like About section
     const skillsContent = skillsSection.querySelector('.skills-grid') as HTMLElement;
     const skillsContentHeight = skillsContent?.offsetHeight || window.innerHeight;
-    // Minimum 10 screen heights OR 2x content height - whichever is larger
-    const pinDuration = Math.max(window.innerHeight * 10, skillsContentHeight * 2);
+    // Minimum 12 screen heights OR 2x content height - whichever is larger
+    const pinDuration = Math.max(window.innerHeight * 12, skillsContentHeight * 2);
 
     const tl = gsap.timeline({
       scrollTrigger: {

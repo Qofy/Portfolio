@@ -18,11 +18,11 @@ export const useExperienceScrollSequence = () => {
       window.getComputedStyle(experienceHeader).fontSize
     );
 
-    // Pin Experience section to show FULL CONTENT - be generous with scroll space
+    // Pin Experience section to show FULL CONTENT - like About section
     const expContent = experienceSection.querySelector('.experience-timeline') as HTMLElement;
     const expContentHeight = expContent?.offsetHeight || window.innerHeight;
-    // Minimum 10 screen heights OR 2x content height - whichever is larger
-    const pinDuration = Math.max(window.innerHeight * 10, expContentHeight * 2);
+    // Minimum 12 screen heights OR 2x content height - whichever is larger
+    const pinDuration = Math.max(window.innerHeight * 12, expContentHeight * 2);
 
     const tl = gsap.timeline({
       scrollTrigger: {
