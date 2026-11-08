@@ -21,18 +21,18 @@ export const useHeroScrollSequence = () => {
     // Position about section below hero initially
     gsap.set(aboutSection, { y: window.innerHeight });
 
-    // Hero animation only - pin just long enough for name scale + About slide
-    // About scrolls naturally after, so all content is visible on screen
-    const heroAnimDistance = window.innerHeight * 3.5;
+    // Extended pin: hero animation + About takes full control
+    // Keep pinned long enough so About is fully visible before Skills appears
+    const heroAnimDistance = window.innerHeight * 6.5;
 
-    // Create the sequence timeline for HERO ONLY
-    // After this completes, About scrolls naturally with all content visible
+    // Create the sequence timeline
+    // Pin for hero animation AND to let About take full viewport control
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: heroSection,
         start: 'top top',
         end: `+=${heroAnimDistance}`,
-        pin: true, // Pin only during hero animation
+        pin: true, // Pin throughout - hero anim + About visible
         scrub: 1, // Smooth scrubbing
         markers: false,
       },
@@ -82,8 +82,17 @@ export const useHeroScrollSequence = () => {
       0.55
     );
 
-    // After hero animation completes, About section scrolls naturally
-    // with ALL content visible on screen. Next section appears after About is fully scrolled.
+    // Phase 5: About takes FULL CONTROL (50% to 100% of timeline)
+    // Keep About pinned and fully visible on viewport
+    // This ensures Skills doesn't appear until user has scrolled well past About
+    tl.set(
+      aboutSection,
+      {
+        opacity: 1,
+        y: 0,
+      },
+      0.65
+    );
 
     return () => {
       tl.kill();
