@@ -56,24 +56,14 @@ export const useBlogScrollSequence = () => {
       0.1
     );
 
-    // Phase 3: Fade in blog content and keep visible while scrolling through posts
-    tl.to(
-      '.blog-grid',
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-      },
-      0.2
-    );
-
-    // Phase 4: Keep blog content visible and scrollable for viewing all posts
+    // Phase 3: Keep blog content visible while scrolling through posts
+    // Blog cards handle their own fade-in animations
     tl.set(
       '.blog-grid',
       {
         opacity: 1,
       },
-      0.5
+      0.2
     );
 
     return () => {
