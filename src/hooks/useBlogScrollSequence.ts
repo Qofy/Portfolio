@@ -19,11 +19,11 @@ export const useBlogScrollSequence = () => {
     );
 
     // For Blog (last section): extended pin so you can scroll through ALL blog posts
-    // Get number of blog cards to calculate proper scroll distance
-    const blogCards = blogSection.querySelectorAll('.blog-card').length;
-    const scrollPerCard = window.innerHeight * 0.8; // Each card needs scroll space
-    const contentScrollDistance = Math.max(blogCards * scrollPerCard, window.innerHeight * 5);
-    const slideDuration = window.innerHeight * 2 + contentScrollDistance;
+    // Get blog section height and give generous scroll space
+    const blogHeight = blogSection.offsetHeight;
+    // Ensure minimum 8 screen heights, or 2x the blog height, whichever is larger
+    const minScrollSpace = Math.max(window.innerHeight * 8, blogHeight * 1.5);
+    const slideDuration = minScrollSpace;
 
     const tl = gsap.timeline({
       scrollTrigger: {
