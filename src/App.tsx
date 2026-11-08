@@ -1,16 +1,24 @@
 import './styles/globals.scss';
 import { Navigation, ScrollProgressBar, HeroSection, AboutSection, SkillsSection, BackgroundSection, ExperienceSection, ProjectsSection, BlogSection } from './components';
-import { useHeroScrollSequence, useAboutScrollSequence, useSkillsScrollSequence } from './hooks';
+import {
+  useHeroScrollSequence,
+  useAboutScrollSequence,
+  useSkillsScrollSequence,
+  useBackgroundScrollSequence,
+  useExperienceScrollSequence,
+  useProjectsScrollSequence,
+  useBlogScrollSequence,
+} from './hooks';
 
 export default function App() {
-  // Hero scroll sequence: name scales up as you scroll
+  // Cinematic scroll sequences for all sections
   useHeroScrollSequence();
-
-  // About scroll sequence: pins and takes control before Skills appears
   useAboutScrollSequence();
-
-  // Skills scroll sequence: pins and takes control after About is done
   useSkillsScrollSequence();
+  useBackgroundScrollSequence();
+  useExperienceScrollSequence();
+  useProjectsScrollSequence();
+  useBlogScrollSequence();
 
   return (
     <>

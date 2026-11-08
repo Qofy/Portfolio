@@ -7,4 +7,8 @@ export { useScrollTrigger } from './useScrollTrigger';
 export { useHeroScrollSequence } from './useHeroScrollSequence';
 export { useAboutScrollSequence } from './useAboutScrollSequence';
 export { useSkillsScrollSequence } from './useSkillsScrollSequence';
+export { useBackgroundScrollSequence } from './useBackgroundScrollSequence';
+export { useExperienceScrollSequence } from './useExperienceScrollSequence';
+export { useProjectsScrollSequence } from './useProjectsScrollSequence';
+export { useBlogScrollSequence } from './useBlogScrollSequence';
 export { useSectionScrollReveal } from './useSectionScrollReveal';
