@@ -6,4 +6,3 @@ export { useAIBlogSearch } from './useAIBlogSearch';
 export { useScrollTrigger } from './useScrollTrigger';
 export { useHeroScrollSequence } from './useHeroScrollSequence';
 export { useSectionScrollReveal } from './useSectionScrollReveal';
-export { useLenisScroll } from './useLenisScroll';

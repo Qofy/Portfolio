@@ -1,11 +1,8 @@
 import './styles/globals.scss';
 import { Navigation, ScrollProgressBar, HeroSection, AboutSection, SkillsSection, BackgroundSection, ExperienceSection, ProjectsSection, BlogSection } from './components';
-import { useHeroScrollSequence, useSectionScrollReveal, useLenisScroll } from './hooks';
+import { useHeroScrollSequence, useSectionScrollReveal } from './hooks';
 
 export default function App() {
-  // Initialize smooth scrolling with Lenis
-  useLenisScroll();
-
   // Initialize hero scroll sequence animation
   useHeroScrollSequence();
 
