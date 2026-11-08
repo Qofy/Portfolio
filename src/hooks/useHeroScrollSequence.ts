@@ -22,40 +22,41 @@ export const useHeroScrollSequence = () => {
     gsap.set(aboutSection, { y: window.innerHeight });
 
     // Create the sequence timeline
+    // Extended to give time for About section to be readable
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: heroSection,
         start: 'top top',
-        end: `+=${window.innerHeight * 3}`, // Scroll distance for the animation
+        end: `+=${window.innerHeight * 5}`, // Extended scroll distance for About readability
         pin: true, // Pin the hero section
         scrub: 1, // Smooth scrubbing (1 second lag)
         markers: false,
       },
     });
 
-    // Phase 1: Grow the name text significantly (0 to 50% of scroll)
+    // Phase 1: Grow the name text (0 to 30% of scroll)
     tl.to(
       heroName,
       {
         fontSize: initialFontSize * 3, // Grow to 3x original size
         textShadow: '0 10px 40px rgba(0,0,0,0.1)',
-        duration: 1,
+        duration: 0.8,
       },
       0
     );
 
-    // Phase 2: Continue growing name and start sliding up About (50% to 100%)
+    // Phase 2: Continue growing name (20% to 50% of scroll)
     tl.to(
       heroName,
       {
         fontSize: initialFontSize * 5, // Grow to 5x original size
         opacity: 0.2, // Fade as it grows
-        duration: 1,
+        duration: 1.2,
       },
-      0.5
+      0.3
     );
 
-    // Slide About section up from bottom
+    // Phase 3: Slide About section up (40% to 60% of scroll)
     tl.to(
       aboutSection,
       {
@@ -66,16 +67,19 @@ export const useHeroScrollSequence = () => {
       0.5
     );
 
-    // Fade out hero elements
+    // Phase 4: Fade out hero elements (60% onwards)
     tl.to(
       '.hero-container',
       {
         opacity: 0,
         pointerEvents: 'none',
-        duration: 0.5,
+        duration: 1,
       },
-      0.75
+      0.8
     );
+
+    // Phase 5: Keep About visible for rest of scroll (no animation after 60%)
+    // About stays in place while user can scroll and read it
 
     return () => {
       tl.kill();
