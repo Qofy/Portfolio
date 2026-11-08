@@ -21,24 +21,18 @@ export const useHeroScrollSequence = () => {
     // Position about section below hero initially
     gsap.set(aboutSection, { y: window.innerHeight });
 
-    // Get About content elements for progressive reveal
-    const aboutContentElements = aboutSection.querySelectorAll(
-      '.about-text p, .about-text li, .about-stats .stat'
-    );
+    // Hero animation only - pin just long enough for name scale + About slide
+    // About scrolls naturally after, so all content is visible on screen
+    const heroAnimDistance = window.innerHeight * 3.5;
 
-    // Calculate scroll distance: hero animation + About progressive reveals
-    // Each element needs scroll space for staggered reveal (0.4s per element with scrub: 1)
-    const revealDistance = aboutContentElements.length * window.innerHeight * 0.5;
-    const totalDistance = window.innerHeight * 5 + revealDistance;
-
-    // Create the sequence timeline
-    // This SINGLE timeline handles: hero animation + About taking full control + progressive reveals
+    // Create the sequence timeline for HERO ONLY
+    // After this completes, About scrolls naturally with all content visible
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: heroSection,
         start: 'top top',
-        end: `+=${totalDistance}`,
-        pin: true, // Pin throughout hero animation AND About reveals
+        end: `+=${heroAnimDistance}`,
+        pin: true, // Pin only during hero animation
         scrub: 1, // Smooth scrubbing
         markers: false,
       },
@@ -88,19 +82,8 @@ export const useHeroScrollSequence = () => {
       0.55
     );
 
-    // Phase 5: About takes FULL CONTROL - Progressive reveal of all content (50% to 100%)
-    // Stagger reveal each About content element (animate FROM 0 TO 1)
-    aboutContentElements.forEach((element, index) => {
-      tl.to(
-        element,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-        },
-        0.65 + index * 0.5 // Start earlier, more stagger per element
-      );
-    });
+    // After hero animation completes, About section scrolls naturally
+    // with ALL content visible on screen. Next section appears after About is fully scrolled.
 
     return () => {
       tl.kill();
