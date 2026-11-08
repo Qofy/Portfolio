@@ -5,4 +5,5 @@ export { useCommentCount } from './useCommentCount';
 export { useAIBlogSearch } from './useAIBlogSearch';
 export { useScrollTrigger } from './useScrollTrigger';
 export { useHeroScrollSequence } from './useHeroScrollSequence';
+export { useSkillsScrollSequence } from './useSkillsScrollSequence';
 export { useSectionScrollReveal } from './useSectionScrollReveal';
