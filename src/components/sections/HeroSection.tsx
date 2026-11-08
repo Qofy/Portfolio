@@ -2,7 +2,6 @@ import '../../styles/components/HeroSection.scss';
 import { ArrowUpRight, Github, Linkedin, Mail, Contact } from 'lucide-react';
 import profileImg from '../../images/profile2.png';
 import { useEffect, useRef } from 'react';
-import BinaryRain3D from './BinaryRain3D';
 import { useScrollTrigger } from '../../hooks';
 
 const socialLinks = [
@@ -72,7 +71,6 @@ export function HeroSection() {
 
   return (
     <section className="hero" data-section="hero" ref={sectionRef}>
-      <BinaryRain3D />
       <div className="hero-container">
         <div className="hero-name-bg">
           <h1 className="hero-name">

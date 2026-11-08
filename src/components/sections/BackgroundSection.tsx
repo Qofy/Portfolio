@@ -4,7 +4,6 @@ import djangset from '../../certificates/django-set.pdf';
 import degreeCertificate from '../../certificates/degree.pdf';
 import reactCertificate from '../../certificates/React Certificate.pdf';
 import { useEffect, useRef } from 'react';
-import FloatingAchievements from './FloatingAchievements';
 
 const backgroundData = [
   {
@@ -87,7 +86,6 @@ export function BackgroundSection() {
 
   return (
     <section className="background" data-section="background" ref={sectionRef}>
-      <FloatingAchievements />
       <div className="background-container">
         <div className="background-header">
           <h2>/BACKGROUND</h2>
