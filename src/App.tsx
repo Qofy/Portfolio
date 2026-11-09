@@ -7,7 +7,6 @@ import {
   useSkillsScrollSequence,
   useBackgroundScrollSequence,
   useExperienceScrollSequence,
-  useProjectsScrollSequence,
   useBlogScrollSequence,
 } from './hooks';
 
@@ -18,7 +17,6 @@ export default function App() {
   useSkillsScrollSequence();
   useBackgroundScrollSequence();
   useExperienceScrollSequence();
-  useProjectsScrollSequence();
   useBlogScrollSequence();
   useSectionSlideHandoffs();
 

@@ -1,7 +1,7 @@
 import '../../styles/components/ProjectsSection.scss';
 import { ArrowUpRight } from 'lucide-react';
-import { useState, useEffect, useRef } from 'react';
-import { useScrollTrigger } from '../../hooks';
+import { useState, useRef } from 'react';
+import { useProjectsScrollSequence } from '../../hooks';
 import Hexashop from '../../images/hexshop-landing.png';
 import fxChecker from '../../images/fx-checker.png';
 import portfolio from '../../images/portfolio.png';
@@ -115,50 +115,15 @@ const filters = ['All', 'Real Project', 'Landing Page'];
 export function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState('All');
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
-  const sectionRef = useRef<HTMLElement>(null);
-  const { createStaggerReveal } = useScrollTrigger();
+  const gridRef = useRef<HTMLDivElement>(null);
+  useProjectsScrollSequence(gridRef, activeFilter);
 
   const filteredProjects = activeFilter === 'All'
     ? projects
     : projects.filter(p => p.category === activeFilter);
 
-  useEffect(() => {
-    // Stagger reveal for project cards
-    createStaggerReveal('.project-card', 0.7, 0.12);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const cards = sectionRef.current?.querySelectorAll('.project-card');
-            cards?.forEach((card) => {
-              card.classList.add('animate');
-            });
-          } else {
-            const cards = sectionRef.current?.querySelectorAll('.project-card');
-            cards?.forEach((card) => {
-              card.classList.remove('animate');
-            });
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    const current = sectionRef.current;
-    if (current) {
-      observer.observe(current);
-    }
-
-    return () => {
-      if (current) {
-        observer.unobserve(current);
-      }
-    };
-  }, [activeFilter, createStaggerReveal]);
-
   return (
-    <section className="projects" data-section="projects" ref={sectionRef}>
+    <section className="projects" data-section="projects">
       <div className="projects-container">
         <div className="projects-header">
           <h2>/SELECTED WORK</h2>
@@ -186,7 +151,7 @@ export function ProjectsSection() {
           </a>
         </div>
 
-        <div className="projects-grid">
+        <div className="projects-grid" ref={gridRef}>
           {filteredProjects.map(project => (
             <button
               key={project.id}

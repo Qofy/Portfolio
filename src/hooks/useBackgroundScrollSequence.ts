@@ -6,56 +6,47 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const useBackgroundScrollSequence = () => {
   useEffect(() => {
-    const backgroundSection = document.querySelector('.background') as HTMLElement;
-    const backgroundHeader = document.querySelector('.background-header h2') as HTMLElement;
+    const section = document.querySelector<HTMLElement>('.background');
+    const container = section?.querySelector<HTMLElement>('.background-container');
+    const roll = container?.querySelector<HTMLElement>('.background-roll');
+    if (!section || !container || !roll) return;
 
-    if (!backgroundSection || !backgroundHeader) return;
+    const media = gsap.matchMedia();
+    media.add('(prefers-reduced-motion: no-preference)', () => {
+      gsap.set(section, { height: '100dvh', minHeight: 0, alignItems: 'flex-start' });
+      gsap.set(container, { y: 0 });
+      const panContainer = gsap.quickSetter(container, 'y', 'px');
 
-    const initialFontSize = parseFloat(
-      window.getComputedStyle(backgroundHeader).fontSize
-    );
+      let rollHeight = 0;
+      let availableHeight = 0;
+      const renderRoll = ({ progress }: ScrollTrigger) => {
+        const revealed = Math.min(progress / 0.88, 1);
+        const depth = rollHeight * revealed;
+        roll.style.setProperty('--roll-depth', `${depth}px`);
+        roll.style.setProperty('--roll-edge', String(Math.min(1, (1 - revealed) * 12)));
+        // Follow the roll on short screens once its edge reaches the viewport bottom.
+        panContainer(-Math.max(0, depth - availableHeight));
+      };
 
-    // Pin Background section to show FULL CONTENT - like About section
-    const bgContent = backgroundSection.querySelector('.background-timeline') as HTMLElement;
-    const bgContentHeight = bgContent?.offsetHeight || window.innerHeight;
-    // Minimum 12 screen heights OR 2x content height - whichever is larger
-    const pinDuration = Math.max(window.innerHeight * 12, bgContentHeight * 2);
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: backgroundSection,
+      ScrollTrigger.create({
+        trigger: section,
         start: 'top top',
-        end: `+=${pinDuration}`,
+        end: () => `+=${Math.max(section.clientHeight, roll.offsetHeight) * 1.5}`,
         pin: true,
-        scrub: 1,
-        markers: false,
-      },
+        onRefresh: (trigger) => {
+          rollHeight = roll.offsetHeight;
+          availableHeight = section.clientHeight - container.offsetTop - roll.offsetTop - 24;
+          renderRoll(trigger);
+        },
+        onUpdate: renderRoll,
+      });
+
+      return () => {
+        roll.style.removeProperty('--roll-depth');
+        roll.style.removeProperty('--roll-edge');
+      };
     });
 
-    // Scale the title once Background scrolls into place.
-    tl.to(
-      backgroundHeader,
-      {
-        fontSize: initialFontSize * 1.5,
-        opacity: 1,
-        duration: 1,
-      },
-      0.1
-    );
-
-    // Fade in the background content.
-    tl.to(
-      '.background-timeline',
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-      },
-      0.3
-    );
-
-    return () => {
-      tl.revert();
-    };
+    return () => media.revert();
   }, []);
 };

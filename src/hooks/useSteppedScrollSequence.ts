@@ -12,22 +12,34 @@ export const useSteppedScrollSequence = (
   sectionSelector: string,
   containerSelector: string,
   stepSelector: string,
-  { slideToNext = false, introSelector = '', speed = 1 } = {},
+  { slideToNext = false, introSelector = '', speed = 1, rollIn = false } = {},
 ) => {
   useEffect(() => {
     const section = document.querySelector<HTMLElement>(sectionSelector);
     const container = section?.querySelector<HTMLElement>(containerSelector);
     if (!section || !container) return;
 
-    const steps = container.querySelectorAll(stepSelector);
+    const steps = container.querySelectorAll<HTMLElement>(stepSelector);
     if (!steps.length) return;
-    const smoothReveal = !!introSelector && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const holdDuration = (smoothReveal ? 0.15 : 1) / speed;
+    const allowMotion = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const smoothReveal = !!introSelector && allowMotion;
+    const rollReveal = rollIn && allowMotion;
+    const animateSteps = smoothReveal || rollReveal;
+    const holdDuration = (animateSteps ? 0.15 : 1) / speed;
     const timelineDuration = steps.length + holdDuration;
 
     const context = gsap.context(() => {
       gsap.set(section, { height: '100dvh', minHeight: 0, alignItems: 'flex-start' });
-      gsap.set(steps, smoothReveal ? { opacity: 0, y: 14 } : { opacity: 0 });
+      gsap.set(steps, { opacity: 0 });
+      if (rollReveal) {
+        gsap.set(steps, {
+          rotationX: -72,
+          transformPerspective: 900,
+          transformOrigin: '50% 100%',
+        });
+      } else if (smoothReveal) {
+        gsap.set(steps, { y: 14 });
+      }
 
       let touchHandled = false;
       const touch = ScrollTrigger.observe({
@@ -45,7 +57,7 @@ export const useSteppedScrollSequence = (
           start: 'top top',
           end: () => `+=${section.clientHeight * timelineDuration * 0.3}`,
           pin: true,
-          scrub: smoothReveal ? 2.8 : true,
+          scrub: rollReveal ? 0.95 : smoothReveal ? 2.8 : true,
           invalidateOnRefresh: true,
           onToggle: ({ isActive }) => {
             if (isActive) touch.enable();
@@ -55,11 +67,15 @@ export const useSteppedScrollSequence = (
       });
 
       steps.forEach((step, index) => {
-        const start = index + (smoothReveal ? 0.04 : 0.25);
-        const duration = smoothReveal ? 0.96 : 0.75;
+        const start = index + (animateSteps ? 0.04 : 0.25);
+        const duration = animateSteps ? 0.96 : 0.75;
         // Bring each new item into view on screens where the content is taller than the pin.
         timeline.to(container, {
           y: () => {
+            if (rollReveal) {
+              const bottom = step.offsetTop + step.offsetHeight;
+              return -Math.max(0, container.offsetTop + bottom + 24 - section.clientHeight);
+            }
             const bottom = step.getBoundingClientRect().bottom - container.getBoundingClientRect().top;
             const revealOffset = smoothReveal ? Number(gsap.getProperty(step, 'y')) : 0;
             return -Math.max(0, container.offsetTop + bottom - revealOffset + 24 - section.clientHeight);
@@ -67,10 +83,12 @@ export const useSteppedScrollSequence = (
           duration,
           ease: 'none',
         }, start);
-        timeline.to(step, smoothReveal
-          ? { opacity: 1, y: 0, duration, ease: 'power1.inOut' }
-          : { opacity: 1, duration: 0.45 },
-        start);
+        timeline.to(step, {
+          opacity: 1,
+          duration: animateSteps ? duration : 0.45,
+          ...(rollReveal ? { rotationX: 0, ease: 'power2.inOut' } : {}),
+          ...(smoothReveal ? { y: 0, ease: 'power1.inOut' } : {}),
+        }, start);
       });
 
       // Keep the last item visible at the end of the pin.
@@ -79,13 +97,15 @@ export const useSteppedScrollSequence = (
       const pin = timeline.scrollTrigger!;
       steppedPins.set(pin, slideToNext);
 
-      if (smoothReveal) {
+      if (animateSteps) {
         const scrubTween = pin.getTween();
         if (scrubTween) {
           // ScrollTrigger's default scrub ease makes most of the reveal happen up front.
           scrubTween.vars.ease = 'none';
           scrubTween.invalidate();
         }
+      }
+      if (smoothReveal) {
         gsap.from(container.querySelectorAll(introSelector), {
           opacity: 0,
           y: 14,
@@ -208,5 +228,5 @@ export const useSteppedScrollSequence = (
     });
 
     return () => context.revert();
-  }, [sectionSelector, containerSelector, stepSelector, slideToNext, introSelector, speed]);
+  }, [sectionSelector, containerSelector, stepSelector, slideToNext, introSelector, speed, rollIn]);
 };

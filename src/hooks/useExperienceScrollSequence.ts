@@ -6,56 +6,32 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const useExperienceScrollSequence = () => {
   useEffect(() => {
-    const experienceSection = document.querySelector('.experience') as HTMLElement;
-    const experienceHeader = document.querySelector('.experience-header h2') as HTMLElement;
+    const section = document.querySelector<HTMLElement>('.experience');
+    const doors = section?.querySelector<HTMLElement>('.experience-doors');
+    if (!section || !doors) return;
 
-    if (!experienceSection || !experienceHeader) return;
+    const media = gsap.matchMedia();
+    media.add('(prefers-reduced-motion: no-preference)', () => {
+      gsap.set(doors, { visibility: 'visible' });
+      const timeline = gsap.timeline({
+        defaults: { ease: 'none' },
+        scrollTrigger: {
+          trigger: section,
+          start: 'top top',
+          end: () => `+=${window.innerHeight * 1.5}`,
+          pin: true,
+          scrub: true,
+        },
+      });
 
-    const initialFontSize = parseFloat(
-      window.getComputedStyle(experienceHeader).fontSize
-    );
-
-    // Pin Experience section to show FULL CONTENT - like About section
-    const expContent = experienceSection.querySelector('.experience-timeline') as HTMLElement;
-    const expContentHeight = expContent?.offsetHeight || window.innerHeight;
-    // Minimum 12 screen heights OR 2x content height - whichever is larger
-    const pinDuration = Math.max(window.innerHeight * 12, expContentHeight * 2);
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: experienceSection,
-        start: 'top top',
-        end: `+=${pinDuration}`,
-        pin: true,
-        scrub: 1,
-        markers: false,
-      },
+      timeline.to(doors.children, {
+        rotationY: (index) => index === 0 ? -105 : 105,
+        duration: 1,
+      }, 0);
+      timeline.to(doors, { opacity: 0, duration: 0.15 }, 0.85);
+      timeline.to({}, { duration: 0.2 });
     });
 
-    // Scale the title once Experience scrolls into place.
-    tl.to(
-      experienceHeader,
-      {
-        fontSize: initialFontSize * 1.5,
-        opacity: 1,
-        duration: 1,
-      },
-      0.1
-    );
-
-    // Fade in the experience content.
-    tl.to(
-      '.experience-timeline',
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-      },
-      0.3
-    );
-
-    return () => {
-      tl.revert();
-    };
+    return () => media.revert();
   }, []);
 };
