@@ -15,38 +15,42 @@ export function BlogReader({ post, onClose }: BlogReaderProps) {
   useEffect(() => {
     if (!readerRef.current) return;
 
-    // Roll in animation
-    gsap.from(readerRef.current, {
-      rotationX: -90,
-      transformPerspective: 1000,
-      transformOrigin: 'top center',
+    // Set initial state - rolled up like carpet
+    gsap.set(readerRef.current, {
+      rotationX: -72,
+      transformPerspective: 900,
+      transformOrigin: '50% 100%',
       opacity: 0,
-      duration: 0.6,
-      ease: 'power2.out',
+    });
+
+    // Roll in animation - unfurl like carpet
+    gsap.to(readerRef.current, {
+      rotationX: 0,
+      opacity: 1,
+      duration: 0.7,
+      ease: 'power2.inOut',
     });
 
     gsap.to(overlayRef.current, {
       opacity: 1,
-      duration: 0.3,
+      duration: 0.4,
       ease: 'power2.out',
     });
   }, []);
 
   const handleClose = () => {
-    // Roll out animation
+    // Roll out animation - roll up like carpet
     gsap.to(readerRef.current, {
-      rotationX: 90,
-      transformPerspective: 1000,
-      transformOrigin: 'top center',
+      rotationX: -72,
       opacity: 0,
-      duration: 0.5,
-      ease: 'power2.in',
+      duration: 0.6,
+      ease: 'power2.inOut',
       onComplete: onClose,
     });
 
     gsap.to(overlayRef.current, {
       opacity: 0,
-      duration: 0.3,
+      duration: 0.4,
       ease: 'power2.in',
     });
   };
