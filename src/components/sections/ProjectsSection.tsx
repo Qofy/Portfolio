@@ -89,6 +89,8 @@ const projects = [
     company: 'Personal Project',
     image: portfolio,
     images: [portfolio],
+    videoUrl: 'https://kofi-portfolio-vc.s3.eu-central-1.amazonaws.com/videos/portfolio-demo.mov',
+    videoAutoplay: true,
     description: 'Your professional portfolio website showcasing projects, skills, and experience as a Frontend Engineer.',
     fullDescription: 'A comprehensive portfolio website built with React, Next.js, and TypeScript. Features include a blog system with Firebase backend, 3D animated backgrounds, AI-powered search, project showcase, skills display, and real-time comments/interactions. Includes Docker containerization and CI/CD pipeline.',
     tags: ['React', 'Next.js', 'TypeScript', 'Firebase', 'CSS', 'Docker', 'AWS', 'Web Development'],
