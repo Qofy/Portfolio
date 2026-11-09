@@ -124,7 +124,7 @@ export function ChatBox({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
     <div className="chatbox-overlay">
       <div className="chatbox-container">
         <div className="chatbox-header">
-          <h3>Chat with Kofi's AI</h3>
+          <h3>Chat with Kofi</h3>
           <button className="close-btn" onClick={onClose}>
             <X size={20} />
           </button>

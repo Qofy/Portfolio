@@ -118,7 +118,7 @@ export function Navigation() {
             className="cta-button"
             onClick={() => setChatOpen(true)}
           >
-            Let's Talk <ArrowUpRight size={18} />
+            Chat with Kofi <ArrowUpRight size={18} />
           </button>
 
           {/* Mobile menu button */}
