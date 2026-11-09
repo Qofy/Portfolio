@@ -9,6 +9,8 @@ interface Project {
   company: string;
   image: string;
   images: string[];
+  videoUrl?: string;
+  videoAutoplay?: boolean;
   description: string;
   fullDescription: string;
   tags: string[];
@@ -71,39 +73,51 @@ export function ProjectDetail({ project, allProjects, onClose }: ProjectDetailPr
         {/* Hero Image Gallery */}
         <div className="project-gallery">
           <div className="gallery-main">
-            <img
-              src={project.images[currentImageIndex]}
-              alt={`${project.title} - Image ${currentImageIndex + 1}`}
-              className="gallery-image"
-            />
-
-            {project.images.length > 1 && (
+            {project.videoUrl && project.videoAutoplay ? (
+              <video
+                src={project.videoUrl}
+                autoPlay
+                muted
+                loop
+                className="gallery-video"
+              />
+            ) : (
               <>
-                <button
-                  className="gallery-nav prev"
-                  onClick={handlePrevImage}
-                  title="Previous image"
-                >
-                  <ChevronLeft size={28} />
-                </button>
-                <button
-                  className="gallery-nav next"
-                  onClick={handleNextImage}
-                  title="Next image"
-                >
-                  <ChevronRight size={28} />
-                </button>
+                <img
+                  src={project.images[currentImageIndex]}
+                  alt={`${project.title} - Image ${currentImageIndex + 1}`}
+                  className="gallery-image"
+                />
 
-                {/* Image Counter */}
-                <div className="image-counter">
-                  {currentImageIndex + 1} / {project.images.length}
-                </div>
+                {project.images.length > 1 && (
+                  <>
+                    <button
+                      className="gallery-nav prev"
+                      onClick={handlePrevImage}
+                      title="Previous image"
+                    >
+                      <ChevronLeft size={28} />
+                    </button>
+                    <button
+                      className="gallery-nav next"
+                      onClick={handleNextImage}
+                      title="Next image"
+                    >
+                      <ChevronRight size={28} />
+                    </button>
+
+                    {/* Image Counter */}
+                    <div className="image-counter">
+                      {currentImageIndex + 1} / {project.images.length}
+                    </div>
+                  </>
+                )}
               </>
             )}
           </div>
 
-          {/* Thumbnails */}
-          {project.images.length > 1 && (
+          {/* Thumbnails - Always show when there are images */}
+          {project.images.length > 0 && (
             <div className="gallery-thumbnails">
               {project.images.map((img, index) => (
                 <button

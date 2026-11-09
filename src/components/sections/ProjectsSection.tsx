@@ -108,6 +108,36 @@ const projects = [
     demoUrl: '#',
     githubUrl: 'https://github.com/Qofy/20251209_intern_tracker_kofi_only_template'
   },
+  {
+    id: 8,
+    title: 'Job Pilot AI - Your Next Chapter',
+    category: 'Real Project',
+    company: 'Personal Project',
+    image: internTracker,
+    images: [internTracker],
+    videoUrl: '/src/images/jobai/JobPilot AI · Your next chapter - Google Chrome 2026-11-06 10-31-17.mp4',
+    videoAutoplay: true,
+    description: 'An AI-powered job recommendation and career guidance platform that helps users navigate their next career chapter.',
+    fullDescription: 'Job Pilot AI is an intelligent career platform that leverages AI to provide personalized job recommendations, career advice, and skill development guidance. The application features a modern, responsive interface built with cutting-edge web technologies, integrating advanced AI algorithms to match users with suitable career opportunities based on their skills, experience, and aspirations.',
+    tags: ['React', 'TypeScript', 'AI/ML', 'Next.js', 'Web Development'],
+    demoUrl: '#',
+    githubUrl: 'https://github.com/Qofy/ai-job-hunter-mvp'
+  },
+  {
+    id: 9,
+    title: 'Kanta - Buy & Sell Online Marketplace',
+    category: 'Real Project',
+    company: 'Personal Project',
+    image: internTracker,
+    images: [internTracker],
+    videoUrl: '/src/images/kanta/Kanta - Buy & Sell Online - Google Chrome 2026-11-09 10-34-08.mp4',
+    videoAutoplay: true,
+    description: 'A comprehensive online marketplace platform for buying and selling products with secure transactions and user-friendly interface.',
+    fullDescription: 'Kanta is a full-featured e-commerce marketplace platform designed to connect buyers and sellers. The platform features user authentication, secure payment processing, product listings, advanced search and filtering, seller dashboards, and real-time notifications. Built with modern web technologies for optimal performance, scalability, and user experience.',
+    tags: ['React', 'TypeScript', 'Next.js', 'Payment Integration', 'E-commerce', 'Web Development'],
+    demoUrl: '#',
+    githubUrl: 'https://github.com/iambadu/kanta'
+  },
 ];
 
 const filters = ['All', 'Real Project', 'Landing Page'];
@@ -160,7 +190,17 @@ export function ProjectsSection() {
               title="View project details"
             >
               <div className="project-image">
-                <img src={project.image} alt={project.title} />
+                {project.videoUrl && project.videoAutoplay ? (
+                  <video
+                    src={project.videoUrl}
+                    autoPlay
+                    muted
+                    loop
+                    className="project-video"
+                  />
+                ) : (
+                  <img src={project.image} alt={project.title} />
+                )}
               </div>
               <div className="project-info">
                 <h3 className="project-title">{project.title}</h3>
