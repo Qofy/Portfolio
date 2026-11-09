@@ -5,6 +5,6 @@ export const useAboutScrollSequence = () => {
     '.about',
     '.about-container',
     '.about-text > p:not(:first-child), .focus-list > li, .about-stats > .stat:not(:first-child)',
-    { slideToNext: true, introSelector: '.about-text > p:first-child, .about-stats > .stat:first-child', speed: 2.5 },
+    { slideToNext: true, introSelector: '.about-text > p:first-child, .about-stats > .stat:first-child', speed: 4 },
   );
 };
