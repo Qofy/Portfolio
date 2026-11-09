@@ -208,5 +208,5 @@ export const useSteppedScrollSequence = (
     });
 
     return () => context.revert();
-  }, [sectionSelector, containerSelector, stepSelector, slideToNext, introSelector]);
+  }, [sectionSelector, containerSelector, stepSelector, slideToNext, introSelector, speed]);
 };
