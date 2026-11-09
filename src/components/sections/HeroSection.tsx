@@ -1,5 +1,5 @@
 import '../../styles/components/HeroSection.scss';
-import { ArrowUpRight, Github, Linkedin, Mail, Contact } from 'lucide-react';
+import { Github, Linkedin, Mail, Contact } from 'lucide-react';
 import profileImg from '../../images/profile2.png';
 import { useEffect, useRef } from 'react';
 import { useScrollTrigger } from '../../hooks';
@@ -86,9 +86,6 @@ export function HeroSection() {
             user-focused web applications with clean code,
             scalable architectures, and exceptional user experiences.
           </p>
-          <button className="hero-cta">
-            Let's collaborate <ArrowUpRight size={18} />
-          </button>
         </div>
 
         <div className="hero-center">
