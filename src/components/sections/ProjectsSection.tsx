@@ -91,7 +91,7 @@ const projects = [
     images: [portfolio],
     description: 'Your professional portfolio website showcasing projects, skills, and experience as a Frontend Engineer.',
     fullDescription: 'A comprehensive portfolio website built with React, Next.js, and TypeScript. Features include a blog system with Firebase backend, 3D animated backgrounds, AI-powered search, project showcase, skills display, and real-time comments/interactions. Includes Docker containerization and CI/CD pipeline.',
-    tags: ['React', 'Next.js', 'TypeScript', 'Firebase', 'CSS', 'Docker', 'Web Development'],
+    tags: ['React', 'Next.js', 'TypeScript', 'Firebase', 'CSS', 'Docker', 'AWS', 'Web Development'],
     demoUrl: 'https://kofiagye.com',
     githubUrl: 'https://github.com/Qofy/Portfolio'
   },
