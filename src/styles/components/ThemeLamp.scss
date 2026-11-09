@@ -1,0 +1,67 @@
+.theme-lamp {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 52px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--theme-text, #25212b);
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid var(--theme-accent-text, #e93f5b);
+    outline-offset: 2px;
+  }
+
+  svg {
+    display: block;
+    width: 40px;
+    height: 49px;
+    overflow: visible;
+  }
+
+  &__stem,
+  &__cord path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+  }
+
+  &__shade {
+    fill: var(--theme-lamp-shade, #f8cb70);
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linejoin: round;
+  }
+
+  &__bulb {
+    fill: var(--theme-lamp-bulb, #ffd982);
+    filter: var(--theme-lamp-glow, drop-shadow(0 3px 5px #f2b94d));
+  }
+
+  &__cord {
+    transition: transform 160ms ease;
+
+    circle {
+      fill: var(--theme-lamp-pull, #c87c18);
+    }
+  }
+
+  &:hover &__cord {
+    transform: translateY(2px);
+  }
+
+  &:active &__cord {
+    transform: translateY(5px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-lamp__cord {
+    transition: none;
+  }
+}

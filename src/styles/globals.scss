@@ -9,14 +9,35 @@ html {
   scroll-behavior: smooth;
 }
 
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --theme-page: #101015;
+  --theme-surface: #18181f;
+  --theme-panel: #1e1e27;
+  --theme-raised: #292933;
+  --theme-border: #393945;
+  --theme-text: #f5f3f7;
+  --theme-copy: #d4d1db;
+  --theme-muted: #aba8b6;
+  --theme-action: #f1edf4;
+  --theme-action-text: #16131c;
+  --theme-accent-text: #ff8ba2;
+  --theme-tint: #35212b;
+  --theme-tint-strong: #482734;
+  --theme-lamp-shade: #292633;
+  --theme-lamp-bulb: #655765;
+  --theme-lamp-glow: none;
+  --theme-lamp-pull: #dbb468;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #ffffff;
-  color: #1a1a1a;
+  background: var(--theme-page, #ffffff);
+  color: var(--theme-text, #1a1a1a);
 }
 
 main {

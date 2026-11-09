@@ -22,7 +22,7 @@
   height: 600px;
   display: flex;
   flex-direction: column;
-  background: white;
+  background: var(--theme-surface, white);
   border-radius: 12px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
   overflow: hidden;
@@ -62,7 +62,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  background: #f9f9f9;
+  background: var(--theme-panel, #f9f9f9);
 
   &::-webkit-scrollbar {
     width: 6px;
@@ -73,7 +73,7 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: #ddd;
+    background: var(--theme-border, #ddd);
     border-radius: 3px;
 
     &:hover {
@@ -99,9 +99,9 @@
     justify-content: flex-start;
 
     .message-content {
-      background: white;
-      color: #333;
-      border: 1px solid #e0e0e0;
+      background: var(--theme-surface, white);
+      color: var(--theme-copy, #333);
+      border: 1px solid var(--theme-border, #e0e0e0);
     }
   }
 }
@@ -168,13 +168,13 @@
   display: flex;
   gap: 0.5rem;
   padding: 1rem;
-  background: white;
-  border-top: 1px solid #e0e0e0;
+  background: var(--theme-surface, white);
+  border-top: 1px solid var(--theme-border, #e0e0e0);
 }
 
 .chatbox-input {
   flex: 1;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--theme-border, #e0e0e0);
   border-radius: 8px;
   padding: 0.75rem;
   font-size: 0.9rem;
@@ -186,7 +186,7 @@
   }
 
   &:disabled {
-    background: #f5f5f5;
+    background: var(--theme-raised, #f5f5f5);
     cursor: not-allowed;
   }
 }
@@ -209,7 +209,7 @@
   }
 
   &:disabled {
-    background: #ccc;
+    background: var(--theme-border, #ccc);
     cursor: not-allowed;
   }
 }

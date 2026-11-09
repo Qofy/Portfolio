@@ -27,7 +27,7 @@ export function BlogCard({ post, isAdmin, onView, onEdit, onDelete }: BlogCardPr
 
   return (
     <>
-      <div className={`blog-card ${post.isFeatured ? 'featured' : ''} animate`}>
+      <div className={`blog-card ${post.isFeatured ? 'featured' : ''}`} data-blog-reveal={`post:${post.id}`}>
         {post.isFeatured && <div className="featured-badge">⭐</div>}
 
         {post.image && (

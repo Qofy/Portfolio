@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { collection, addDoc, updateDoc, deleteDoc, doc, onSnapshot, query, orderBy } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { BlogPost, FormData, ADMIN_PASSWORD, INITIAL_FORM_DATA } from '../../types/blog';
-import { useScrollAnimation, useReAnimate, useAIBlogSearch } from '../../hooks';
+import { useAIBlogSearch, useBlogScrollSequence } from '../../hooks';
 import { BlogFilters } from '../blog/BlogFilters';
 import { BlogPostList } from '../blog/BlogPostList';
 import { BlogForm } from '../blog/BlogForm';
@@ -29,9 +29,7 @@ export function BlogSection() {
   const [formData, setFormData] = useState<FormData>(INITIAL_FORM_DATA);
   const [editingId, setEditingId] = useState<string | null>(null);
 
-  // Animation hooks
-  const sectionRef = useScrollAnimation({ selector: '.blog-card', threshold: 0.2, onlyOnce: true });
-  useReAnimate(filteredPosts, { selector: '.blog-card', delay: 0 });
+  const sectionRef = useBlogScrollSequence(filteredPosts);
 
   // AI Search hook
   const { searchPosts, isSearching: isAISearching } = useAIBlogSearch();
@@ -223,25 +221,27 @@ export function BlogSection() {
   return (
     <section className="blog" data-section="blog" ref={sectionRef}>
       <div className="blog-container">
-        <BlogHeader
-          isAdmin={isAdmin}
-          onNewPost={() => setShowForm(true)}
-          onAdminUnlock={handleAdminUnlock}
-          onAdminLogout={handleAdminLogout}
-        />
+        <div className="blog-intro" data-blog-reveal="intro">
+          <BlogHeader
+            isAdmin={isAdmin}
+            onNewPost={() => setShowForm(true)}
+            onAdminUnlock={handleAdminUnlock}
+            onAdminLogout={handleAdminLogout}
+          />
 
-        <BlogFilters
-          posts={posts}
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-          selectedDate={selectedDate}
-          setSelectedDate={setSelectedDate}
-          useAISearch={useAISearch}
-          setUseAISearch={setUseAISearch}
-          isAISearching={isAISearching}
-        />
+          <BlogFilters
+            posts={posts}
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+            selectedDate={selectedDate}
+            setSelectedDate={setSelectedDate}
+            useAISearch={useAISearch}
+            setUseAISearch={setUseAISearch}
+            isAISearching={isAISearching}
+          />
+        </div>
 
         <BlogPostList
           posts={filteredPosts}

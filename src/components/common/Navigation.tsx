@@ -2,6 +2,7 @@ import '../../styles/components/Navigation.scss';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { ChatBox } from './ChatBox';
+import { ThemeLamp } from './ThemeLamp';
 import { getSectionAnchor } from '../../utils/sectionAnchor';
 
 const navLinks = [
@@ -112,6 +113,7 @@ export function Navigation() {
         </div>
 
         <div className="nav-right">
+          <ThemeLamp />
           <button
             className="cta-button"
             onClick={() => setChatOpen(true)}

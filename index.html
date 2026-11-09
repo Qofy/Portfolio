@@ -1,7 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      try {
+        if (localStorage.getItem('portfolio-theme') === 'light') {
+          document.documentElement.dataset.theme = 'light';
+        }
+      } catch {
+        // The default theme is available when storage is disabled.
+      }
+    </script>
     <link rel="icon" type="image/jpeg" href="/public/profile2.png" />
     <link rel="apple-touch-icon" href="/public/profile2.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
