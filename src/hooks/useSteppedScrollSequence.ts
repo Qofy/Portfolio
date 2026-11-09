@@ -12,7 +12,7 @@ export const useSteppedScrollSequence = (
   sectionSelector: string,
   containerSelector: string,
   stepSelector: string,
-  { slideToNext = false, introSelector = '' } = {},
+  { slideToNext = false, introSelector = '', speed = 1 } = {},
 ) => {
   useEffect(() => {
     const section = document.querySelector<HTMLElement>(sectionSelector);
@@ -22,7 +22,7 @@ export const useSteppedScrollSequence = (
     const steps = container.querySelectorAll(stepSelector);
     if (!steps.length) return;
     const smoothReveal = !!introSelector && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const holdDuration = smoothReveal ? 0.15 : 1;
+    const holdDuration = (smoothReveal ? 0.15 : 1) / speed;
     const timelineDuration = steps.length + holdDuration;
 
     const context = gsap.context(() => {
@@ -89,7 +89,7 @@ export const useSteppedScrollSequence = (
         gsap.from(container.querySelectorAll(introSelector), {
           opacity: 0,
           y: 14,
-          duration: 2.4,
+          duration: 2.4 / speed,
           ease: 'power1.out',
           scrollTrigger: {
             trigger: section,
