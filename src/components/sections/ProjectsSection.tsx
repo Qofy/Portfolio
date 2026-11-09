@@ -9,6 +9,15 @@ import browserUI from '../../images/browserUi.png';
 import NutriScan from '../../images/nutriscan.png';
 import Firepup from '../../images/firepup.png';
 import internTracker from '../../images/internTracker.png';
+import jai1 from '../../images/jobai/jai1.png';
+import jai2 from '../../images/jobai/jai2.png';
+import jai3 from '../../images/jobai/jai3.png';
+import jai4 from '../../images/jobai/jai4.png';
+import jai5 from '../../images/jobai/jai5.png';
+import kanta1 from '../../images/kanta/kanta1.png';
+import kanta2 from '../../images/kanta/kanta2.png';
+import kanta3 from '../../images/kanta/kanta3.png';
+import kanta4 from '../../images/kanta/kanta4.png';
 import { ProjectDetail } from './ProjectDetail';
 
 
@@ -113,8 +122,8 @@ const projects = [
     title: 'Job Pilot AI - Your Next Chapter',
     category: 'Real Project',
     company: 'Personal Project',
-    image: internTracker,
-    images: [internTracker],
+    image: jai1,
+    images: [jai1, jai2, jai3, jai4, jai5],
     videoUrl: 'https://kofi-portfolio-vc.s3.eu-central-1.amazonaws.com/videos/jobai-demo.mp4',
     videoAutoplay: true,
     description: 'An AI-powered job recommendation and career guidance platform that helps users navigate their next career chapter.',
@@ -128,8 +137,8 @@ const projects = [
     title: 'Kanta - Buy & Sell Online Marketplace',
     category: 'Real Project',
     company: 'Personal Project',
-    image: internTracker,
-    images: [internTracker],
+    image: kanta1,
+    images: [kanta1, kanta2, kanta3, kanta4],
     videoUrl: 'https://kofi-portfolio-vc.s3.eu-central-1.amazonaws.com/videos/kanta-demo.mp4',
     videoAutoplay: true,
     description: 'A comprehensive online marketplace platform for buying and selling products with secure transactions and user-friendly interface.',
