@@ -1,4 +1,6 @@
+import { useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
+import gsap from 'gsap';
 import { BlogPost } from '../../types/blog';
 
 interface BlogReaderProps {
@@ -7,12 +9,54 @@ interface BlogReaderProps {
 }
 
 export function BlogReader({ post, onClose }: BlogReaderProps) {
+  const readerRef = useRef<HTMLDivElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!readerRef.current) return;
+
+    // Roll in animation
+    gsap.from(readerRef.current, {
+      rotationX: -90,
+      transformPerspective: 1000,
+      transformOrigin: 'top center',
+      opacity: 0,
+      duration: 0.6,
+      ease: 'power2.out',
+    });
+
+    gsap.to(overlayRef.current, {
+      opacity: 1,
+      duration: 0.3,
+      ease: 'power2.out',
+    });
+  }, []);
+
+  const handleClose = () => {
+    // Roll out animation
+    gsap.to(readerRef.current, {
+      rotationX: 90,
+      transformPerspective: 1000,
+      transformOrigin: 'top center',
+      opacity: 0,
+      duration: 0.5,
+      ease: 'power2.in',
+      onComplete: onClose,
+    });
+
+    gsap.to(overlayRef.current, {
+      opacity: 0,
+      duration: 0.3,
+      ease: 'power2.in',
+    });
+  };
+
   return (
-    <div className="blog-form-overlay" onClick={onClose}>
-      <div className="blog-reader" onClick={(e) => e.stopPropagation()}>
+    <div className="blog-form-overlay" onClick={handleClose} ref={overlayRef}>
+      <div className="blog-reader" onClick={(e) => e.stopPropagation()} ref={readerRef}>
         <div className="reader-header">
           <h2>{post.title}</h2>
-          <button className="close-btn" onClick={onClose}>
+          <button className="close-btn" onClick={handleClose}>
             <X size={20} />
           </button>
         </div>
