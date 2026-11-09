@@ -79,6 +79,7 @@ export function ProjectDetail({ project, allProjects, onClose }: ProjectDetailPr
                 autoPlay
                 muted
                 loop
+                playsInline
                 className="gallery-video"
               />
             ) : (

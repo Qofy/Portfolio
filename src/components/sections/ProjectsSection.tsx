@@ -205,6 +205,7 @@ export function ProjectsSection() {
                     autoPlay
                     muted
                     loop
+                    playsInline
                     className="project-video"
                   />
                 ) : (
