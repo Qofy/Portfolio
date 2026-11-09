@@ -16,13 +16,16 @@
   margin: 0 auto;
   padding: 0 4rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 2rem;
 }
 
 .nav-left {
   flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .available-badge {
