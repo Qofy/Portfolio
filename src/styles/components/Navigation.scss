@@ -44,8 +44,14 @@
 
 .nav-center {
   flex: 1;
-  display: flex;
+  display: none;
   justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .nav-center {
+    display: flex;
+  }
 }
 
 .nav-menu {
