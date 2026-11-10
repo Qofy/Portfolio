@@ -1,4 +1,5 @@
 import '../../styles/components/BackgroundSection.scss';
+import { SectionMesh } from '../common/SectionMesh';
 import { Briefcase, BookOpen, ExternalLink } from 'lucide-react';
 import djangset from '../../certificates/django-set.pdf';
 import degreeCertificate from '../../certificates/degree.pdf';
@@ -51,6 +52,7 @@ const backgroundData = [
 export function BackgroundSection() {
   return (
     <section className="background" data-section="background">
+      <SectionMesh />
       <div className="background-container">
         <div className="background-header">
           <h2>/BACKGROUND</h2>

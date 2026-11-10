@@ -1,4 +1,5 @@
 import '../../styles/components/ProjectsSection.scss';
+import { SectionMesh } from '../common/SectionMesh';
 import { ArrowUpRight } from 'lucide-react';
 import { useState, useRef } from 'react';
 import { useProjectsScrollSequence } from '../../hooks';
@@ -165,6 +166,7 @@ export function ProjectsSection() {
 
   return (
     <section className="projects" data-section="projects">
+      <SectionMesh />
       <div className="projects-container">
         <div className="projects-header">
           <h2>/SELECTED WORK</h2>

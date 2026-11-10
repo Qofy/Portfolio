@@ -1,4 +1,5 @@
 import '../../styles/components/ExperienceSection.scss';
+import { SectionMesh } from '../common/SectionMesh';
 
 const experiences = [
   {
@@ -18,6 +19,7 @@ const experiences = [
 export function ExperienceSection() {
   return (
     <section className="experience" data-section="experience">
+      <SectionMesh />
       <div className="experience-container">
         <div className="experience-header">
           <h2>/EXPERIENCE</h2>

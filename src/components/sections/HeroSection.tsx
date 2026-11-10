@@ -1,4 +1,5 @@
 import '../../styles/components/HeroSection.scss';
+import { SectionMesh } from '../common/SectionMesh';
 import { Github, Linkedin, Mail, Contact } from 'lucide-react';
 import profileImg from '../../images/profile2.png';
 import { useEffect, useRef } from 'react';
@@ -71,6 +72,7 @@ export function HeroSection() {
 
   return (
     <section className="hero" data-section="hero" ref={sectionRef}>
+      <SectionMesh />
       <div className="hero-container">
         <div className="hero-name-bg">
           <h1 className="hero-name">

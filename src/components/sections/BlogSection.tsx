@@ -1,4 +1,5 @@
 import '../../styles/components/BlogSection.scss';
+import { SectionMesh } from '../common/SectionMesh';
 import { useState, useEffect } from 'react';
 import { collection, addDoc, updateDoc, deleteDoc, doc, onSnapshot, query, orderBy } from 'firebase/firestore';
 import { db } from '../../config/firebase';
@@ -220,6 +221,7 @@ export function BlogSection() {
 
   return (
     <section className="blog" data-section="blog" ref={sectionRef}>
+      <SectionMesh />
       <div className="blog-container">
         <div className="blog-intro" data-blog-reveal="intro">
           <BlogHeader

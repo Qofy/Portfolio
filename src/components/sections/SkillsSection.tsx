@@ -1,4 +1,5 @@
 import '../../styles/components/SkillsSection.scss';
+import { SectionMesh } from '../common/SectionMesh';
 
 const skillsData = [
   {
@@ -73,6 +74,7 @@ const skillsData = [
 export function SkillsSection() {
   return (
     <section className="skills" data-section="skills">
+      <SectionMesh />
       <div className="skills-container">
         <div className="skills-header">
           <h2>/SKILLS & STACKS</h2>

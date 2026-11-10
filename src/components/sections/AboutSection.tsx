@@ -1,4 +1,5 @@
 import '../../styles/components/AboutSection.scss';
+import { SectionMesh } from '../common/SectionMesh';
 import { useRef } from 'react';
 
 export function AboutSection() {
@@ -6,6 +7,7 @@ export function AboutSection() {
 
   return (
     <section className="about" data-section="about" ref={sectionRef}>
+      <SectionMesh />
       <div className="about-container">
         <div className="about-header">
           <h2>About Me</h2>

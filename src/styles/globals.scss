@@ -44,6 +44,25 @@ main {
   width: 100%;
 }
 
+.section-mesh {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  width: 100%;
+  height: min(100%, 100dvh);
+  pointer-events: none;
+  background: radial-gradient(ellipse at 76% 82%, rgb(152 78 108 / 7%), transparent 60%);
+}
+
+:root[data-theme='dark'] .section-mesh,
+.experience > .section-mesh {
+  background: radial-gradient(ellipse at 76% 82%, rgb(167 76 145 / 12%), transparent 60%);
+}
+
+.section-mesh ~ :is(.about-container, .experience-container, .projects-container, .blog-container) {
+  position: relative;
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
