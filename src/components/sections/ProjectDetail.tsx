@@ -176,7 +176,9 @@ export function ProjectDetail({ project, allProjects, onClose }: ProjectDetailPr
           {/* Description */}
           <div className="project-description">
             <h2>Overview</h2>
-            <p>{project.fullDescription}</p>
+            {project.fullDescription.split('\n\n').map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
 
           {/* Technologies */}
